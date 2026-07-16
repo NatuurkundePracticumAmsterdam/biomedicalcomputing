@@ -2,3 +2,6 @@ site_name: Biomedical Computing
 site_url: https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing
 theme:
   name: material
+
+markdown_extensions:
+  - pymdownx.keys
