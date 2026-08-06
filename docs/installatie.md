@@ -67,11 +67,11 @@ code --install-extension njpwerner.autodocstring
 Er zijn drie instellingen om je code automatisch wat op te schonen en import statements te sorteren. Op die manier hoef je je veel minder druk te maken over hoe netjes je code eruitziet. Elke keer als je je bestand opslaat gaat de tool _ruff_ aan het werk.
 
 1. Open de app "Visual Studio Code".
-2. Kies **File>Preferences>Settings** of druk op ctrl-, (control-komma).
+2. Kies **File>Preferences>Settings** of druk op ++ctrl+comma++ (control-komma).
 3. Type nu in het zoekvenster: `chat: disable AI features` en vink de instelling aan.
 4. Type nu in het zoekvenster: `format on save` en vink de bovenste instelling aan.
 5. Type nu in het zoekvenster: `@lang:python default formatter` en kies `Ruff`
-6. Type nu in het zoekvenster: `@lang:python code actions on save` en kies `Edit in settings.json` en kies dan in het menuutje `source.organizeImports` en dan `explicit`.
+6. Type nu in het zoekvenster: `@lang:python code actions on save` en kies `Edit in settings.json` en kies dan in het menuutje `source.organizeImports.ruff` en dan `explicit`.
 7. Sla dan het bestand op met **File>Save** of ++ctrl+s++.
 8. Sluit de settingstabbladen.
 
