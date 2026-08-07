@@ -193,42 +193,56 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 Een klusje is pas echt stom als je het heel vaak achter elkaar moet doen. Computers zijn dan superhandig: je hoeft het klusje maar één keer te schrijven en te vertellen hoe vaak hij het moet uitvoeren.
 
-PREDICT THE OUTCOME IN EEN SCRIPT
+!!! warning
+    PREDICT THE OUTCOME IN EEN SCRIPT volgens schema. Hier de code plaatsen of niet?
 
 Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan tijdens DNA-replicatie waarbij in de nieuwe streng soms een foutje kan ontstaan. We gaan allereerst een script schrijven dat het proces van DNA-replicatie nabootst.
 
-Opdracht: replicatie.py.
+!!! opdracht-basis "Replicatie"
+    
+    Maak een nieuw bestand met de naam {{file}}`replicatie.py.`
 
-We beginnen met een stukje streng1 = `ATATAGAGTC`. Print de letters van de bijbehorende tweede streng los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.
+    1. We beginnen met een stukje `#!py streng1 = "ATATAGAGTC"`. Print de letters van de bijbehorende tweede streng, volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.
+    2. Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print `A -- T`, enz.
 
-Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print A — T, enz.
-
-PAARS: Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld A == T wilt printen in plaats van A — T, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2.
+!!! opdracht-meer "Vereenvoudigen"
+    Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld `A == T` wilt printen in plaats van `A -- T`, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2.
 
 Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis van wat de tweede streng zou _moeten_ zijn gebruiken om op zoek te gaan naar de fout.
 
-Opdracht: find\_DNA\_mistake.py.
+!!! opdracht-basis "Vind de fout"
 
-Neem weer streng1 = `ATATAGAGTC`. Daarnaast is streng2 = `AATATCGCAA`. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.
+    Maak een nieuw bestand met de naam {{file}}`find_DNA_mistake.py`.
 
-Schrijf een script dat op zoek gaat naar _alle_ fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.
+    1. Neem weer `#!py streng1 = "ATATAGAGTC"`. Daarnaast is `#!py streng2 = "AATATCGCAA"`. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.
+    2. Schrijf code dat op zoek gaat naar _alle_ fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.
 
 Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk veel sneller gewoon met de hand. Programmeren is pas nuttig als het zoeken met de hand veel langer duurt dan het programmeren. Dat is bijvoorbeeld het geval wanneer we een fout zoeken in 10.000 baseparen.
 
-Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.
+!!! opdracht-basis "Alle tijd van de wereld"
+    Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.
 
-Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels streng1 = … en streng2 = … aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele: streng1 = pathlib.path().read\_text().
+Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py streng1 = ...` en `#!py streng2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele:
+```py
+import pathlib
+streng1 = pathlib.path("streng1.txt").read_text().
+```
 
-Pas ook de regel voor streng2 aan en zoek de fouten.
+!!! warning
+    Pas de links hier en hier hierboven aan.
 
-PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.
+!!! opdracht-basis "Zoek de speld in de hooiberg"
+    Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen.
+
+!!! warning
+    PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???
 
 ### NOG: COMMENTS en WHILE-loop
+
+Deze stonden nog niet uitgewerkt in het schema.
 
 [^stuk]: Stukmaken mag, maar het terughalen van een oude versie is niet met één druk op de knop gebeurd. Vraag om hulp als je terug wilt naar een oude versie, wij helpen je graag!
 [^git_footnote]: <https://initialcommit.com/blog/How-Did-Git-Get-Its-Name>
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
-
 [^pro-account]: [https://github.com/education/students](https://github.com/education/students)
-
-    [^kabouter]: Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.
+[^kabouter]: Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.
