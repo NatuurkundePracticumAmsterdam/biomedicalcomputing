@@ -2,6 +2,11 @@ site_name: Biomedical Computing
 site_url: https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing
 theme:
   name: material
+  features:
+    - content.code.copy
+    - toc.integrate
+    - navigation.top
+    - content.code.annotate 
 
 plugins:
   - search
@@ -46,6 +51,7 @@ extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - stylesheets/extra.css
   - stylesheets/opdrachten.css
+  - stylesheets/folder_tree.css
   
 nav:
   - index.md
