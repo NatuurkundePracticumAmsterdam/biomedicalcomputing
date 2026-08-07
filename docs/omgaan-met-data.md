@@ -179,6 +179,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
     2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `Je bent een baas!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.
     3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `Je mag op social media!` Als je 16 jaar of ouder bent, print dan `Je mag een scooter besturen.` Print, vanaf 17 jaar, `Je mag je rijbewijs halen.` Vanaf 18 jaar: `Je bent volwassen en mag stemmen.` Vanaf 30 jaar: `Je mag geen studiefinanciering meer aanvragen.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
     4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `Je mag je rijbewijs halen.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
+    5. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 !!! warning
     OPLETTEN: IN HET GERAAMTE STAAT GEKOPPELDE IF-ELSE-STATEMENTS maar ik weet niet wat we daarmee bedoelden. Pas later komt in een paarse opdracht and en or voor? Dus deze verwijderen? Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.
@@ -187,7 +188,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
     
     Misschien heb je gemerkt dat als je `#!py print("Hoi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hoi Alice !` in plaats van `HoiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hoi"`) waar je de letter `f` vóór schrijft (`#!py f"Hoi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hoi {naam}!")` met als uitvoer `Hoi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hoi en Alice, maar niet tussen Alice en het uitroepteken.
 
-    Pas je script aan zodat je f-strings gebruikt, maar _alleen_ waar dat nodig of handig is.
+    Pas je script aan zodat je f-strings gebruikt, maar _alleen_ waar dat nodig of handig is, en commit de wijzigingen.
 
 ### DNA-replicatie
 
@@ -204,9 +205,10 @@ Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan
 
     1. We beginnen met een stukje `#!py streng1 = "ATATAGAGTC"`. Print de letters van de bijbehorende tweede streng, volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.
     2. Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print `A -- T`, enz.
+    3. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 !!! opdracht-meer "Vereenvoudigen"
-    Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld `A == T` wilt printen in plaats van `A -- T`, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2.
+    Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld `A == T` wilt printen in plaats van `A -- T`, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2. Commit je wijzigingen.
 
 Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis van wat de tweede streng zou _moeten_ zijn gebruiken om op zoek te gaan naar de fout.
 
@@ -216,6 +218,7 @@ Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis
 
     1. Neem weer `#!py streng1 = "ATATAGAGTC"`. Daarnaast is `#!py streng2 = "AATATCGCAA"`. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.
     2. Schrijf code dat op zoek gaat naar _alle_ fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.
+    3. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk veel sneller gewoon met de hand. Programmeren is pas nuttig als het zoeken met de hand veel langer duurt dan het programmeren. Dat is bijvoorbeeld het geval wanneer we een fout zoeken in 10.000 baseparen.
 
@@ -232,7 +235,7 @@ streng1 = pathlib.path("streng1.txt").read_text().
     Pas de links hier en hier hierboven aan.
 
 !!! opdracht-basis "Zoek de speld in de hooiberg"
-    Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen.
+    Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
 
 !!! warning
     PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???
