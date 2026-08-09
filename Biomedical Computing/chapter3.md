@@ -27,4 +27,16 @@ Omdat de exacte hoeveelheid ontvangen straling wordt bijgehouden met badges die 
 
 H = gamma \* A \* t / r\*\*2
 
-Met de ontvangen equivalente dosis H, de gammaconstante van de bron gamma, de activiteit van de bron A, de blootstellingstijd t en de afstand tot de bron r. Voor cesium-137 is de gammaconstante gelijk aan 84 microsievert square meter per gigabecquerel per hour.
+Met de ontvangen equivalente dosis H, de gammaconstante van de bron gamma, de activiteit van de bron A, de blootstellingstijd t en de afstand tot de bron r.
+
+OPDRACHT Stralingsveiligheid.
+
+Voor cesium-137 is de gammaconstante gelijk aan 84 microsievert square meter per gigabecquerel per hour. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 meter. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld A = …. Print het resultaat van je berekening. Commit.
+
+Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.
+
+Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn, maar aan de gebruiker worden gevraagd. Commit.
+
+### Nierfunctie
+
+Je nieren zijn een belangrijk orgaan. Je hebt er twee, en kunt er één missen, maar kunt absoluut niet zonder. Dit orgaan haalt afvalstoffen uit het bloed die je vervolgens uitplast. Mensen die een heel slechte nierfunctie hebben moeten gedialyseerd worden waarbij een machine gedurende een aantal uur de afvalstoffen uit het bloed haalt. Dit moet dan vaak zo’n drie keer per week.
