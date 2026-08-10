@@ -126,3 +126,11 @@ D = \frac{C_1}{C_2}.
     ```
     Pas het script voor je pipetteerschema aan zodat je de tabel print met gebruik van `#!py zip()`.
 
+!!! opdracht-basis "Pipetteerschema met input"
+
+    Ook hier kan het handig zijn om een mooi script te schrijven waar de gebruiker zelf de concentraties kan intypen. Vraag eerst hoeveel concentraties de gebruiker wil maken en schrijf dan een for-loop die de concentraties één voor één vraagt en toevoegt aan de lijst met concentraties. Daarna voer je de rest van je script uit.
+
+!!! opdracht-meer "Handiger input"
+
+    Nóg handiger is als je de gebruiker niet van tevoren hoeft te vragen hoeveel concentraties die wil hebben. Vraag de gebruiker om alle concentraties in één keer in te typen, gescheiden door een komma. Dus bijvoorbeeld: `0.025, 0.020, 0.015, 0.010, 0.005, 0`. Net zoals een list in Python de method `#!py .append()` kent, kun je in Python voor een string `#!py split()` gebruiken. Geef tussen de haakjes aan wat het scheidingsteken is (de `#!py ","`) en Python splitst de string en geeft je een lijst van de verschillende waardes. Dit zijn wel dan nog strings en je moet nog een for-loop schrijven om die te vertalen naar floats. Als dat lukt heb je wel iets heel moois gemaakt!
+
