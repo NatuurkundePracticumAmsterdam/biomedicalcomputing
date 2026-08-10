@@ -47,8 +47,16 @@ Het is de bedoeling om het verloop van de snelheid tijdens de parachutesprong in
 Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.[^champignon] Komt jouw plot overeen met dit diagram?
 ![$v,t$-diagram parachutesprong](figures/snelheid_tijd_diagram_parachutesprong.png){: style="width:60%"}
 
-!!! warning
-    Paarse opdracht(en) nodig voor snelle Japies.
+
+!!! opdracht-meer "Wat als?"
+    Nu je een model gemaakt hebt, kun je gaan kijken wat er gebeurt als je een parameter aanpast. Kies één van de onderstaande situaties en plot de verschillende scenario's in één grafiek. 
+
+    1. Hannes Arch weegt met parachute 91 kg. Hoe verandert het $v,t$-diagram voor een parachutespringer met meer of minder massa?
+    2. Hoe verandert het $v,t$-diagram wanneer de parachute minder goed ontvouwt en het frontale oppervlak kleiner is? 
+ 
+!!! opdracht-meer "Veilige landingssnelheid"
+    1. Zoek op wat een veilige landingssnelheid is. Print een conclusie met daarin de eindsnelheid van Hannes Arch, de veilige landingssnelheid en of de landing veilig is. 
+    2. Onderzoek wat er gebeurt als Hannes Arch zijn parachute op een ander tijdstip ontvouwt. Wat doet dit met de eindsnelheid en is de landing dan nog veilig? Op welk tijdstip moet de parachute uiterlijk ontvouwd worden?  
 
 ## Medicijnconcentratie in het bloed
 
