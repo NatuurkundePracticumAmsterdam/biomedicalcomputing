@@ -1,7 +1,6 @@
-
 # Rekenwerk
 
-In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. *To compute* betekent niet voor niets *berekenen.* Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.
+In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. _To compute_ betekent niet voor niets _berekenen._ Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.
 
 Het belangrijkste wat je moet weten is hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
 
@@ -20,7 +19,7 @@ Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, 
 !!! opdracht-basis "Stralingsveiligheid"
 
     In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule (1) de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.
-    
+
     1. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
 
     2. Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.
@@ -57,14 +56,14 @@ Met bovenstaande factoren wordt de eenheid van de eGFR de mL/min/1,73 m$^2$. Een
 
 Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te geven:
 
-| Stadium | Beschrijving |
-| --- | --- |
-| G1 | normale of hoge nierfunctie; de nieren werken voor meer dan 90% |
-| G2 | mild afgenomen nierfunctie; de nieren werken voor 60 - 89% |
-| G3a | mild tot matig afgenomen nierfunctie; de nieren werken voor 45 - 59% |
-| G3b | matig tot ernstig afgenomen nierfunctie; de nieren werken voor 30 - 44% |
-| G4 | ernstig afgenomen nierfunctie; de nieren werken voor 15 - 29% |
-| G5 | zeer ernstig afgenomen nierfunctie (nierfalen); de nieren werken voor minder dan 15% |    
+| Stadium | Beschrijving                                                                         |
+| ------- | ------------------------------------------------------------------------------------ |
+| G1      | normale of hoge nierfunctie; de nieren werken voor meer dan 90%                      |
+| G2      | mild afgenomen nierfunctie; de nieren werken voor 60 - 89%                           |
+| G3a     | mild tot matig afgenomen nierfunctie; de nieren werken voor 45 - 59%                 |
+| G3b     | matig tot ernstig afgenomen nierfunctie; de nieren werken voor 30 - 44%              |
+| G4      | ernstig afgenomen nierfunctie; de nieren werken voor 15 - 29%                        |
+| G5      | zeer ernstig afgenomen nierfunctie (nierfalen); de nieren werken voor minder dan 15% |
 
 !!! opdracht-basis "Nierfunctie eGFR"
 
@@ -72,5 +71,58 @@ Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te ge
     2. Breid je script uit zodat ook het stadium (bijvoorbeeld G2), en een beschrijving van dat stadium (bijvoorbeeld "mild afgenomen nierfunctie") worden gegeven.
     3. Vraag de gebruiker om de waardes van de variabelen in plaats van dat je ze definieert in je script. Test met een paar verschillend inputs.
 
-## Pipetteerschema
+## UV-VIS spectroscopie
+
+!!! info "Practicum bio-analytische chemie (jaar 1, periode 5)"
+
+    _UV-Vis-spectroscopie is een veelgebruikte detectietechniek om de concentratie van opgeloste stoﬀen te bepalen. De methode berust op de absorptie van licht bij specifieke golflengten, die karakteristiek zijn voor een bepaalde stoﬀen. Volgens de wet van Lambert-Beer is deze absorptie recht evenredig met de concentratie, waardoor de concentratie van een stof in oplossing kan worden bepaald. In dit experiment wordt deze techniek toegepast om de hoeveelheid vitamine B12 in een vitaminepil te bepalen. Hiervoor wordt een kalibratielijn opgesteld met een standaardoplossing van vitamine B12, waarmee de concentratie in het monster kan worden berekend._
+
+    -- Handleiding UV-Vis experiment, practicum bio-analytische chemie voor MNW, Vrije Universiteit
+
+Naast bepalen hoeveel vitamine er écht zit in een voedingssupplement kun je met behulp van deze techniek ook vragen beaantwoorden als _Hoeveel cafeïne zit er in een energy drink?_, of _welke zonnebrand heeft een hogere spf-factor?_. Om nauwkeurig te kunnen bepalen wat de concentratie is van een bepaalde stof in een bepaald oplosmiddel moeten wel een paar stappen worden doorlopen.
+
+In het experiment schijn je licht door je monster heen. De hoeveelheid licht die geabsorbeerd wordt is dan een maat voor de hoeveelheid stof. Daarvoor moet je wel weten hoeveel licht er normaal gesproken geabsorbeerd wordt door die stof. Daarvoor maak je heel nauwkeurig een oplossing met een bekende hoeveelheid stof (de _stockoplossing_) en die ga je vervolgens een aantal keer verdunnen zodat je veel verschillende concentraties hebt, van hoog naar laag, een _verdunningsreeks_. Die meet je allemaal door en zo kun je een ijklijn of calibratiecurve maken. Als laatste meet je de onbekende hoeveelheid door en dan kun je op de ijklijn aflezen hoeveel stof er in de onbekende oplossing zit.
+
+### Pipetteerschema voor een verdunningsreeks
+
+Om een verdunningsreeks te maken moet je een aantal keer een bepaalde hoeveelheid stockoplossing vermengen met een bepaalde hoeveelheid oplosmiddel. Bepalen hoeveel dat precies moet zijn is een rekenwerkje dat je goed uit moet voeren. Omdat tijdens het verdunnen de _hoeveelheid stof_ niet verandert, en omdat de hoeveelheid gelijk is aan de concentratie maal het volume, kun je zeggen:
+\begin{equation}
+C_1 V_1 = C_2 V_2,
+\end{equation}
+met $C_1$ de concentratie in de stockoplossing, $V_1$ de hoeveelheid stockoplossing die je neemt, $C_2$ de concentratie in de verdunde oplossing en $V_2$ de hoeveelheid verdunde oplossing. Meestal wil je bepalen hoeveel stockoplossing $V_1$ je nodig hebt voor een bepaalde verdunning, en hoeveel oplosmiddel daar bij moet ($V_2 - V_1$). De _verdunningsfactor_ $D$ wordt dan gegeven door:
+\begin{equation}
+D = \frac{C_1}{C_2}.
+\end{equation}
+
+!!! opdracht-basis "Pipetteerschema"
+
+    1. Stel je hebt een stockoplossing van 0.10 mol/L. Bereken, met de hand, hoeveel van deze oplossing je nodig hebt om 5.0 mL oplossing te maken die een concentratie heeft van 0.025 mol/L? Hoeveel verdund is dat? Hoeveel oplosmiddel heb je dan nog nodig?
+    2. Schrijf nu een script die deze berekening voor je uitvoert. Denk er weer aan om de formule te programmeren met grootheden, niet direct met getallen. Definieer de waardes van de grootheden weer bovenaan je script. Vergeet niet om je antwoord duidelijk te printen: verdunningsfactor, benodigde hoeveelheid stockoplossing, benodigde hoeveelheid oplosmiddel.
+    3. Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010, 0.005 en 0.000 mol/L.
+    4. Het kan soms handig zijn om de resultaten van je berekeningen te bewaren voor later, en pas op een later moment de resultaten te printen, of op te slaan in een bestand, of op een andere manier te gebruiken. Om dat te oefenen passen we ons script aan zodat de resultaten eerst worden bewaard en pas later worden geprint. Maak een lijst aan voor iedere grootheid die je wilt berekenen en bewaar het resultaat in die lijst, maar print niets binnen de for-loop. Als allerlaatste onderdeel van je script print je in één keer de resultaten.
+    
+!!! opdracht-meer "Tabellen printen"
+
+    Een mooie manier om de resultaten weer te geven is met een tabel. Je kunt als eerste een koptekst printen (`kolom 1  kolom 2`), vervolgens een lijn met streepjes (`-------`), en dan een for-loop waarbij je een index gebruikt om de eerste waarde voor kolom 1, de eerste waarde voor kolom 2, enz. te printen, regel voor regel. Om alles netjes te krijgen moet je dan wel zorgen dat de getallen netjes onder elkaar komen. Dat doe je door Python te vertellen hoeveel ruimte een getal moet innemen. Dat gaat veruit het makkelijkst met f-strings. De regel
+    ``` py
+    print(f"{number1:7.2f}  {number2:7.2f}")
+    ```
+    betekent dat de getallen in totaal zeven karakters mogen innemen (de lengte van de tekst `kolom #`) en dat je, binnen die zeven karakters, twee cijfers achter de komma wilt. De `f` betekent dat je wilt dat Python het getal behandelt als een floating point number, ofwel een kommagetal.
+
+    Pas je script voor het pipetteerschema aan zodat de resultaten worden weergegeven in een tabel. Schrijf een goede koptekst, tel de breedte van de kolommen en maak een mooi print-statement zodat alles netjes wordt uitgelijnd.
+
+!!! opdracht-meer "Ritsen"
+
+    Loopen met een index voelt misschien een beetje omslachtig aangezien je in Python ook direct kunt loopen over de elementen in een lijst. Je kunt zeggen `#!py for element in my_list: ...` in plaats van `#!py for idx in range(len(my_list)): ...`. Best handig, maar hoe doe je dat wanneer je wilt loopen over de elementen uit meerdere lijsten tegelijk? Dat kan met `#!py zip()`, als volgt:
+    ``` py
+    fruits = ["apple", "pear", "melon"]
+    prices = [0.99, 1.99, 2.99]
+    amounts = [10, 5, 2]
+    for fruit, price, amount in zip(fruits, prices, amounts):
+        print(fruit, price, amount)
+    # apple 0.99 10
+    # pear 1.99 5
+    # melon 2.99 2
+    ```
+    Pas het script voor je pipetteerschema aan zodat je de tabel print met gebruik van `#!py zip()`.
 
