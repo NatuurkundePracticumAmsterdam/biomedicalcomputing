@@ -128,7 +128,7 @@ D = \frac{C_1}{C_2}.
 
 !!! opdracht-basis "Pipetteerschema met input"
 
-    Ook hier kan het handig zijn om een mooi script te schrijven waar de gebruiker zelf de concentraties kan intypen. Vraag eerst hoeveel concentraties de gebruiker wil maken en schrijf dan een for-loop die de concentraties één voor één vraagt en toevoegt aan de lijst met concentraties. Daarna voer je de rest van je script uit.
+    Ook hier kan het handig zijn om een mooi script te schrijven waar de gebruiker zelf de concentraties kan intypen. Vraag eerst hoeveel concentraties de gebruiker wil maken en schrijf dan een for-loop die de concentraties één voor één vraagt en toevoegt aan de lijst met concentraties. Vergeet niet ook de concentratie van de stockoplossing te vragen, en de hoeveelheid oplossing die je wilt maken in je pipet. Daarna voer je de rest van je script uit.
 
 !!! opdracht-meer "Handiger input"
 
