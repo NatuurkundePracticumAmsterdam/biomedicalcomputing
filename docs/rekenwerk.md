@@ -71,7 +71,7 @@ Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te ge
     2. Breid je script uit zodat ook het stadium (bijvoorbeeld G2), en een beschrijving van dat stadium (bijvoorbeeld "mild afgenomen nierfunctie") worden gegeven.
     3. Vraag de gebruiker om de waardes van de variabelen in plaats van dat je ze definieert in je script. Test met een paar verschillend inputs.
 
-## UV-VIS spectroscopie
+## UV-Vis spectroscopie
 
 !!! info "Practicum bio-analytische chemie (jaar 1, periode 5)"
 
@@ -81,7 +81,7 @@ Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te ge
 
 Naast bepalen hoeveel vitamine er écht zit in een voedingssupplement kun je met behulp van deze techniek ook vragen beaantwoorden als _Hoeveel cafeïne zit er in een energy drink?_, of _welke zonnebrand heeft een hogere spf-factor?_. Om nauwkeurig te kunnen bepalen wat de concentratie is van een bepaalde stof in een bepaald oplosmiddel moeten wel een paar stappen worden doorlopen.
 
-In het experiment schijn je licht door je monster heen. De hoeveelheid licht die geabsorbeerd wordt is dan een maat voor de hoeveelheid stof. Daarvoor moet je wel weten hoeveel licht er normaal gesproken geabsorbeerd wordt door die stof. Daarvoor maak je heel nauwkeurig een oplossing met een bekende hoeveelheid stof (de _stockoplossing_) en die ga je vervolgens een aantal keer verdunnen zodat je veel verschillende concentraties hebt, van hoog naar laag, een _verdunningsreeks_. Die meet je allemaal door en zo kun je een ijklijn of calibratiecurve maken. Als laatste meet je de onbekende hoeveelheid door en dan kun je op de ijklijn aflezen hoeveel stof er in de onbekende oplossing zit.
+In het experiment schijn je licht door je monster heen. De hoeveelheid licht die geabsorbeerd wordt is dan een maat voor de hoeveelheid stof. Daarvoor moet je wel weten hoeveel licht er normaal gesproken geabsorbeerd wordt door die stof. Daarvoor maak je heel nauwkeurig een oplossing met een bekende hoeveelheid stof (de _stockoplossing_) en die ga je vervolgens een aantal keer verdunnen zodat je veel verschillende concentraties hebt, van hoog naar laag, een _verdunningsreeks_. Die meet je allemaal door en zo kun je een ijklijn of kalibratiecurve maken. Als laatste meet je de onbekende hoeveelheid door en dan kun je op de ijklijn aflezen hoeveel stof er in de onbekende oplossing zit.
 
 ### Pipetteerschema voor een verdunningsreeks
 
@@ -134,3 +134,26 @@ D = \frac{C_1}{C_2}.
 
     Nóg handiger is als je de gebruiker niet van tevoren hoeft te vragen hoeveel concentraties die wil hebben. Vraag de gebruiker om alle concentraties in één keer in te typen, gescheiden door een komma. Dus bijvoorbeeld: `0.025, 0.020, 0.015, 0.010, 0.005, 0`. Net zoals een list in Python de method `#!py .append()` kent, kun je in Python voor een string `#!py split()` gebruiken. Geef tussen de haakjes aan wat het scheidingsteken is (de `#!py ","`) en Python splitst de string en geeft je een lijst van de verschillende waardes. Dit zijn wel dan nog strings en je moet nog een for-loop schrijven om die te vertalen naar floats. Als dat lukt heb je wel iets heel moois gemaakt!
 
+### Kalibratiecurve
+
+Als je de verdunningsreeks gemaakt en doorgemeten hebt, wil je de kalibratiecurve opstellen. Neem de volgende metingen:
+
+| concentration | absorption |
+|---------------|------------|
+| 0.025         | 0.61       |
+| 0.02          | 0.45       |
+| 0.015         | 0.37       |
+| 0.01          | 0.23       |
+| 0.005         | 0.13       |
+| 0.0           | 0.0        |
+
+Aangezien de absorptie recht evenredig is met de hoeveelheid stof (en dus de concentratie) verwacht je een lineair verband, met mogelijk een correctie (asafsnijding):
+\begin{equation}
+S = ac_s + b,
+\end{equation}
+met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de helling $a$ en asafsnijding $b$ de kalibratieparameters.
+
+!!! opdracht-basis "IJken van de UV-Vis spectrometer"
+
+    1. Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule (8). 
+    2. Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41.
