@@ -7,7 +7,7 @@ Het belangrijkste wat je moet weten is hoe je in Python moet optellen, aftrekken
 
 ## Stralingsveiligheid
 
-Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel  zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.
+Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.
 
 Omdat de exacte hoeveelheid ontvangen straling wordt bijgehouden met badges die de medewerkers op hun lichaam dragen is het vaak voldoende om voor de berekeningen gebruik te maken van een vuistregel:
 
@@ -19,11 +19,17 @@ Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, 
 
 !!! opdracht-basis "Stralingsveiligheid"
 
-    1. Voor cesium-137 is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in bovenstaande formule de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
+    In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule (1) de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.
+    
+    1. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
 
     2. Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.
 
     3. Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn bovenaan je script, maar aan de gebruiker worden gevraagd. Commit.
+
+!!! opdracht-meer "Gammaconstantes"
+
+    Onze rekentool gaat nu altijd uit van cesium-137. Pas je script aan zodat de gebruiker gevraagd wordt naar de gammaconstante, maar zorg ervoor dat als de gebruiker niets invult dat het script dan uitgaat van de gammaconstante van cesium-137. Vertel ook aan de gebruiker dat de gammaconstante optioneel is en wat de standaardwaarde is.
 
 ## Nierfunctie
 
