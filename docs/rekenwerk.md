@@ -3,51 +3,7 @@
 
 In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. *To compute* betekent niet voor niets *berekenen.* Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.
 
-!!! warning
-    HERHALING: ACTIONS IN UNDERSTANDING?
-
-## Het ene getal is het andere niet
-
-Je hebt de vorige sessie al gemerkt dat als je Python vertelt hoe oud je bent, je het antwoord niet direct kunt gebruiken maar van de *tekst* “18” eerst het *getal* 18 moet maken met de functie int(). Dat is ook nodig als je wilt gaan rekenen. Blijkbaar kent Python verschillende *datatypes*.
-
-Bekijk de code en voorspel wat iedere regel doet, vóórdat je het uitprobeert.
-
-```py linenums="1"
-# Strings
-text1 = "Hoi" + "Alice"
-text2 = 40 * '='
-text3 = str(12345)
-
-# Integers
-number1 = int("42")
-number2 = 14 + 12
-number3 = 14 - 12
-number4 = 12 * 12
-number5 = 16**2
-
-# Check datatypes
-print(type("42"))
-print(type(42))
-
-# Floating point numbers
-number6 = float("18.2")
-number7 = 1.1 * 2.2
-number8 = 20 / 3
-number9 = 20 // 3
-number10 = 20 % 3
-
-# Lists
-newlist1 = [1, 2, 3] + [4, 5, 6]
-newlist2 = 10 * [1, 2, 3]
-
-# Order of calculation
-a = 4
-b = 5
-c = 10
-d = 8
-result = (a + b) * (c - d)
-```
-Het belangrijkste wat je hier van moet onthouden is hoe je moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
+Het belangrijkste wat je moet weten is hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
 
 ## Stralingsveiligheid
 
