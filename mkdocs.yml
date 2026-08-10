@@ -59,6 +59,7 @@ nav:
   - installatie.md
   - omgaan-met-data.md
   - rekenwerk.md
+  - modelleren-simuleren.md
 
 extra:
     arrow_rotate: ':fontawesome-solid-arrow-rotate-right:'
