@@ -228,7 +228,7 @@ Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk
 Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py streng1 = ...` en `#!py streng2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele:
 ```py
 import pathlib
-streng1 = pathlib.path("streng1.txt").read_text().
+streng1 = pathlib.Path("streng1.txt").read_text().
 ```
 
 !!! warning
