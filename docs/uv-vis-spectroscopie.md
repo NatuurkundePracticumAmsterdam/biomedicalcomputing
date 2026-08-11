@@ -1,8 +1,12 @@
-# Rekenwerk
+# UV-Vis spectroscopie
 
 In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. _To compute_ betekent niet voor niets _berekenen._ Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.
 
-Het belangrijkste wat je moet weten is hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
+Deze sessie oefenen we eerst met berekeningen over stralingsveiligheid en bepalen we de nierfunctie. Vervolgens richten we ons op het hoofdonderwerp _UV-Vis spectroscopie_. Dit onderwerp komt uitgebreid aan bod tijdens het vak _Practicum bio-analytische chemie_ dat gegeven wordt in periode 5 van het eerste jaar. De scripts die je hier gaat programmeren komen dan ook zeker van pas!
+
+!!! info "Operatoren"
+
+    Het is goed om te weten hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
 
 ## Stralingsveiligheid
 
