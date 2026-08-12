@@ -281,3 +281,32 @@ Omdat de exon-coördinaten 'absoluut' zijn kun je die direct uit het chromosoom 
     1. Knip exon 1 en exon 2 van het IFITM1 gen uit het chromosoom en plak ze aan elkaar. Dit is het stuk dat overeenkomt met het mRNA. Omdat we hier naar DNA-basen kijken, stop de gegevens in de variabele `mDNA`.
     1. Knip de _coding DNA sequence_ uit het mDNA, maak de aminozuursequentie en vergelijk of dit overeenkomt met je eerder gevonden sequentie.
 
+## De min-streng
+
+De natuur heeft nog een verrassing voor ons in petto. Het FASTA-bestand bevat een lange lijst van de nucleobasen in chromosoom 11. Het probleem is dat dit maar één lijst is, terwijl het DNA _twee_ strengen heeft. Slechts één van die twee strengen staat in het bestand. Deze streng noemt men de _plus-streng_. Dat is een afspraak. Het is gelukkig niet moeilijk om de andere streng, de _min-streng_, te achterhalen want tegenover iedere A ligt een T, tegenover iedere C een G, en omgekeerd. Toch wordt de situatie iets complexer.
+
+De machinerie in de cel zoekt binnen het DNA naar een _promotor site_ en begint vanaf daar het gen af te lezen. Het probleem is dat zo'n promotor site niet altijd op de plus-streng ligt. In ongeveer de helft van de gevallen ligt die op de min-streng. Ook is het zo dat de min-streng in omgekeerde richting wordt afgelezen. Dus als de plus-streng 'van links naar rechts' wordt afgelezen, dan wordt de min-streng 'van rechts van links' afgelezen. Als we een gen hebben dat op de min-streng ligt dan moeten we een exon uitknippen uit de plus-streng, omkeren en complementeren (de 'andere' base bepalen).
+
+!!! opdracht-basis "Reverse complement"
+
+    Werk verder in {{file}}`gene_splicing.py`.
+
+    1. Schrijf een functie `get_reverse_complement()` die een string met DNA-basen accepteert. De functie keert de string om, en geeft een string terug waarin elke A een T is geworden en omgekeerd, en iedere C een G en omgekeerd.
+    1. Test je functie met een heel kort stuk verzonnen DNA en controleer het resultaat met de hand.
+    1. Schrijf een functie `get_dna_minus_region()` die dna, begin en eind als parameters accepteert en dat je kunt gebruiken om een exon uit de min-streng te knippen. Deze functie knipt, keert om en complementeert. Tip: je had al een functie om te knippen en je hebt net een functie geschreven om om te keren en te complementeren. Gebruik die functies in plaats van dat je het nu weer opnieuw schrijft.
+
+Van een gen weten we het volgende:
+
+1. Het ligt op de min-streng.
+1. Exon 1 loopt van base 5226930 tot en met 5227071.
+1. Exon 2 loopt van base 5226577 tot en met 5226799.
+1. Exon 3 loopt van base 5225464 tot en met 5225726.
+1. Binnen het geconstrueerde mRNA loopt de coding sequence van base 51 tot en met 494.
+
+!!! opdracht-basis "Zoek het eiwit"
+
+    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Zoek in de [UniProt database](https://www.uniprot.org/blast) welk eiwit dit is.
+
+## DNA-mutaties
+
+ Het eiwit dat je hebt ontcijferd is, net als de meeste eiwitten, heel belangrijk voor de mens. Je wilt dus niet dat er iets mis is met dit eiwit. Toch komt het relatief veel voor dat er een fout zit in dit eiwit en dat mensen daar ziek van worden. 
