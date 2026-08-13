@@ -1,4 +1,4 @@
-# Installatie van benodigde software
+# Sessie 1: installatie van benodigde software
 
 ## Introductie
 

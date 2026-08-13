@@ -59,7 +59,7 @@ nav:
   - installatie.md
   - omgaan-met-data.md
   - uv-vis-spectroscopie.md
-  - modelleren-simuleren.md
+  - farmacokinetiek.md
 
 extra:
     arrow_rotate: ':fontawesome-solid-arrow-rotate-right:'

@@ -1,4 +1,4 @@
-# Farmocokinetiek
+# Sessie 4: farmacokinetiek
 
 In de voorgaande sessies hebben we al gezien dat programmeren handig kan zijn in bepaalde situaties. In de komende sessies gaan we dieper in op een toepassing die je waarschijnlijk al kent: het modelleren van verschijnselen. Grote kans dat je op de middelbare school modellen gemaakt hebt in Coach.[^coach] En ook bij het huidige natuurkunde practicum gebruik je modellen om een verschijnsel te beschrijven, bijvoorbeeld om een verwachting op te stellen of je resultaten te interpreteren. 
 

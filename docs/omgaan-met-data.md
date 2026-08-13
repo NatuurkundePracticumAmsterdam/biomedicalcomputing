@@ -1,4 +1,4 @@
-# Omgaan met data
+# Sessie 2: DNA replicatie
 
 ## Visual Studio Code
 
