@@ -22,7 +22,7 @@ Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, 
 
 !!! opdracht-basis "Stralingsveiligheid"
 
-    In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule (1) de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.
+    In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule 1 de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.
 
     1. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
 
@@ -159,5 +159,5 @@ met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de h
 
 !!! opdracht-basis "IJken van de UV-Vis spectrometer"
 
-    1. Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule (8). 
+    1. Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule 8. 
     2. Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41.
