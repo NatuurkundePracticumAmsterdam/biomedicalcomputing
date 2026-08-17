@@ -134,7 +134,8 @@ Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor e
     2. Maak een nieuw bestand aan met de naam {{new_file}}`paracetamol.py`. Kopieer de code uit het bestand {{file}}`numerical_appraoch.py` naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.
     3. Vergelijk de plot met je voorspelling. Komt het verloop overeen met wat je verwachtte? Zo niet, waar zit het verschil?
 
-
+!!! warning
+    Informatie en opdrachten over therapeutisch venster nog toevoegen.
 
 !!! warning
     Nieuwe Python constructen waarvoor (mogelijk) verwijzing naar appendix nodig is:
