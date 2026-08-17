@@ -1,0 +1,1158 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/omgaan-met-data/">
+      
+      
+        <link rel="prev" href="../installatie/">
+      
+      
+        <link rel="next" href="../uv-vis-spectroscopie/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sessie 2: DNA replicatie - Biomedical Computing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/opdrachten.css">
+    
+      <link rel="stylesheet" href="../stylesheets/folder_tree.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sessie-2-dna-replicatie" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biomedical Computing" class="md-header__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biomedical Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sessie 2: DNA replicatie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biomedical Computing" class="md-nav__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Biomedical Computing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installatie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 1: installatie van benodigde software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 2: DNA replicatie
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 2: DNA replicatie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visual-studio-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visual Studio Code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versiebeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versiebeheer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versiebeheer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-desktop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Desktop
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repositories-op-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repositories op GitHub
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eerste-stappen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Eerste stappen
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Eerste stappen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dna-replicatie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNA-replicatie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nog-comments-en-while-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NOG: COMMENTS en WHILE-loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv-vis-spectroscopie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 3: UV-Vis spectroscopie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../farmacokinetiek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 4: farmacokinetiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hoortest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 6: audiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 7: Bio-informatica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica-vervolg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 8: Bio-informatica (vervolg)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sessie-2-dna-replicatie">Sessie 2: DNA replicatie<a class="headerlink" href="#sessie-2-dna-replicatie" title="Permanent link">&para;</a></h1>
+<h2 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">&para;</a></h2>
+<p>Visual Studio Code is een gratis, open-source <em>code editor.</em> VS Code is heel populair en is beschikbaar voor Windows, macOS en Linux. Je kunt het gebruiken om code te schrijven, maar ook om de code uit te voeren en de resultaten te bekijken. Verder zit de editor vol snufjes die je helpen bij het schrijven van de code waardoor je minder hoeft te typen en minder fouten maakt.</p>
+<p>Het is handig om de code die bij elkaar hoort in één map te plaatsen en die map te openen met VS Code. De editor weet dan wat er bij elkaar hoort en dat helpt bij het schrijven en uitvoeren van je code. We gaan alle code voor deze cursus in één map plaatsen. Binnen die map mag je best submapjes aanmaken, maar open met VS Code steeds de map van de cursus. Noem, voor het gemak, de map <em>BiomedicalComputing.</em></p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Sessie starten in VS Code</p>
+<p>Start Visual Studio Code en open de map <code>BiomedicalComputing</code> via <strong>File &gt; Open Folder...</strong> of, in een leeg venster, het map-icoontje met <code>Open...</code> onder het kopje <strong>Start</strong>. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:</p>
+<ol>
+<li>Links onderin verschijnt een blauwe knop met <code>Restricted Mode</code>. Klik daarop, dan op Trust (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren) en dan rechtsboven in dat nieuwe venster klik je op het kruisje. Als het goed is, is het blauwe <code>Restricted Mode</code> verdwenen.</li>
+<li>Open een nieuwe <em>Terminal</em> via het menu <strong>Terminal &gt; New Terminal</strong>. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv venv
+</span></code></pre></div>
+    Met deze regel voer je het commando <code>uv</code> uit en vraag je die om een <em>virtual environment</em> aan te maken voor jouw project. Dit is een omgeving met Python en alle extra's die je nodig hebt.</li>
+<li>Aan de linkerkant zie je een lege balk met bovenin het woord <code>Explorer</code> met daaronder <code>BIOMEDICALCOMPUTING</code>. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam <code>hello.py</code>. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat VS Code dat voor je installeert. Klik op <code>Don't Ask Again</code>. We hebben Python immers zojuist geïnstalleerd...</li>
+</ol>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Hello World</p>
+<p>Klik in het centrale deel van VS Code (de editor). Hier kun je de code typen in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hello.py</code> die je daarna uit kunt voeren. Type in:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>met <strong>File &gt; Save</strong> of <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>. Druk dan rechtsbovenin het venster op het driehoekje <svg class="run" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 1 10 6 1 11 1 1"></polygon></svg> om de code uit te voeren. In de terminal onderaan het scherm verschijnt nu automatisch het commando om <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hello.py</code> uit te voeren én daarna de tekst <code>Hello World!</code> voordat er een nieuwe regel verschijnt waar je weer commando's kunt typen.</p>
+</div>
+<p>Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!</p>
+<h2 id="versiebeheer">Versiebeheer<a class="headerlink" href="#versiebeheer" title="Permanent link">&para;</a></h2>
+<p>Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt <em>nu</em>, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? Hoe ingewikkelder het script, hoe ingewikkelder de wijzigingen en hoe minder het vertrouwen dat het in één keer gaat lukken. Misschien heb je wel eens de ervaring gehad dat een wijziging maar niet wilde werken en dat je niet goed meer wist wat je precies had veranderd ten opzichte van toen het nog <em>wel</em> werkte. Veel mensen hebben daarom de neiging om naast een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script.py</code> een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-v1.py</code>, <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-v2.py</code>, enzovoorts aan te maken. Soms zelfs een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-eindversie.py</code> en met wat pech dan toch nog een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-eindversie-definitief.py</code>. Niet heel fijn. Je ziet dan nog steeds niet goed wat er veranderd is (dat blijft naast elkaar leggen en zoeken) en je map loopt vol met overbodige scripts. Dit kan beter&hellip; met versiebeheer!</p>
+<p>Versiebeheer (Engels: <em>version control</em>) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een <em>commit</em>. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer.</p>
+<p>Je versiebeheersysteem geeft ondertussen duidelijk al je wijzigingen weer ten opzichte van de laatste commit. Ook kun je de wijzigingen tussen oudere versies bekijken. Alles is relatief: je kunt zien wat er veranderd is tussen twee weken terug en gisteren, of tussen gisteren en vandaag; iedere commit kun je vergelijken met willekeurig iedere andere commit. Heb je iets verprutst en wil je een oude versie terughalen? Prima! Commit die ook, dan kun je zelfs dat weer terugdraaien. Je verliest zo nooit meer je werk. En stukmaken mag!<sup id="fnref:stuk"><a class="footnote-ref" href="#fn:stuk">1</a></sup></p>
+<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
+<p>Ruim tien jaar geleden werden er nog vele concurrerende systemen gebruikt. Die tijd is grotendeels voorbij. Eén van de nieuwste systemen, Git,<sup id="fnref:git_footnote"><a class="footnote-ref" href="#fn:git_footnote">2</a></sup> wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken.</p>
+<p>Git werkt in principe via de command-line. Je geeft opdrachten in de map waar je broncode staat: toevoegen van wijzigingen aan de <em>staging area</em>, bekijken van de meest recente wijzigingen, committen van je code, teruggaan en werken met oudere versies, aanmaken van <em>branches</em>,<sup id="fnref:branches"><a class="footnote-ref" href="#fn:branches">3</a></sup> je wijzigingen uploaden naar internet, enzovoorts. Het geheel van de map met broncode en de versiegeschiedenis wordt een <em>repository</em> genoemd.</p>
+<p>In deze cursus zul je gebruik maken van een grafische applicatie die eenvoudiger werkt. Je kunt daarna &mdash; als je dat wilt &mdash; de stap maken naar de command-line, waarmee je veel meer mogelijkheden tot je beschikking krijgt. Zie het boek <em>Pro Git</em>[@gitpro] voor meer informatie over Git en het gebruik via de command-line.</p>
+<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
+<p>Git is een <em>distributed version control system (DVCS)</em>, wat wil zeggen dat er geen centrale server hoeft te zijn. Je kunt volledig offline werken in je eigen repository en je wijzigingen af en toe committen. Als je daar zin in hebt kun je je wijzigingen naar een collega sturen (<em>pushen</em>) en je kunt een collega toestemming geven om de wijzigingen op te halen (<em>pullen</em>). Je bouwt dan aan één grote versiegeschiedenis met kopieën op meerdere computers. Je bent zo volledig onafhankelijk van bedrijven die servers in de lucht houden of bepalen wie er wel en niet toegang krijgt. Dat is fijn, maar een centrale plek om repositories neer te zetten heeft weer het grote voordeel dat je de wereld kunt laten zien wat voor moois je gemaakt hebt én het vermakkelijkt samenwerking. Daarnaast is iedereen uit je team up-to-date als iedereen regelmatig commits pusht naar een centrale server.</p>
+<p>Er zijn tegenwoordig veel websites die een plek bieden voor Git repositories. De bekendste zijn GitHub, GitLab, Bitbucket en SourceForge. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.</p>
+<p>In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) account aanmaken. Als student kom je ook nog in aanmerking voor een educatiekorting op een pro-account.<sup id="fnref:pro-account"><a class="footnote-ref" href="#fn:pro-account">4</a></sup> Je betaalt dan nog steeds niets.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Account aanmaken</p>
+<p>Ga naar <a href="https://github.com/">https://github.com/</a> en klik op <code>Sign up for GitHub</code>. Maak een account aan onder je <em>privé-emailadres</em>. Op deze manier blijf je toegang houden tot je account ook nadat je afgestudeerd bent.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Mogelijk heb je eerder al eens een account aangemaakt bij GitHub, bijvoorbeeld bij de cursus Project natuurkunde/sterrenkunde 1. Maak voor ECPC dan ook gebruik van dit account. Controleer wel nog even of je voor dit account je <em>privé-emailadres</em> gebruikt.</p>
+</div>
+</div>
+<h3 id="github-desktop">GitHub Desktop<a class="headerlink" href="#github-desktop" title="Permanent link">&para;</a></h3>
+<p>Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de map met de oefenopdrachten.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">GitHub Desktop installeren</p>
+<p>Ga naar <a href="https://desktop.github.com/download/">https://desktop.github.com/download/</a> om GitHub Desktop te downloaden. Zoek daarna het gedownloade bestand op en installeer de applicatie. Log nu in met jouw account.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Mogelijk heb je eerder al eens GitHub Desktop geïnstalleerd. Controleer dan of je met het juiste account ingelogd bent. Ga hiervoor naar <strong>Accounts</strong> via het dropdownmenu <strong>File</strong> &gt; <strong>Options</strong>.</p>
+</div>
+</div>
+<div id="opd:add_repository"></div>
+
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Van bestaande map repository maken</p>
+<p><div class="grid-tree" markdown>
+    <div>
+    <strong>Zorg dat Visual Studio Code is afgesloten en geen bestanden meer open heeft staan.</strong> Je gaat een repository maken van een bestaande map: <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code>.
+    <br>
+    <br>
+    Je gaat naar GitHub Desktop. Je vindt onder het dropdownmenu <strong>File</strong> drie opties:  <code>New repository...</code>, <code>Add local repository...</code> en <code>Clone repository...</code>. Hoewel <code>New repository...</code> een goede optie lijkt, is dit niet wat je zoekt. Op het moment dat je een nieuwe repository maakt, wordt er ook een nieuwe map aangemaakt en dat is niet wat je wilt. Daarom kies je voor <code>Add local repository...</code>. Je geeft de map <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> op als locatie en krijgt in rode tekst een waarschuwing. De waarschuwing geeft aan dat de map wel bestaat maar dat het geen <code>Git repository</code> is, daarom klik je op de blauwe tekst <code>create a repository</code>. Je vinkt <code>Initialize this repository with a README</code> aan en kiest bij <code>Git ignore</code> voor <q>Python</q>. Daarna klik je op de blauwe knop <code>Create Repository</code>. 
+    <br>
+    <br>
+    De repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> is in GitHub Desktop geopend en als je op het tabblad 'History' klikt dan zie je dat er een <code>Initial commit</code> is met wat <code>git</code>-bestanden en de Pythonscripts die je in de map hebt gezet. Vanaf nu staat <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> in versiebeheer en houdt Git je wijzigingen bij. Het is wel belangrijk dat je met regelmaat zelf <a href="#commit">commit</a>!
+    <br>
+    <br>
+    Open de repository in Visual Studio Code door op de knop <code>Open in Visual Studio Code</code> te klikken <em>of</em> via het pulldown-menu: <strong>Menu &gt; Repository &gt; Open in Visual Studio Code</strong>. Probeer maar eens of je het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hello.py</code> script kunt runnen.
+</div>
+    <div>
+    <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code><br />
+    ├── <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span> <code>hello.py</code><br />
+    └── &bull;&bull;&bull; 
+    </div>
+</div>  </p>
+<div class="admonition info">
+<p class="admonition-title"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span>-symbool</p>
+<p>Vanaf nu duiden we een repository aan met het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span>-symbool.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Git ignore Python</p>
+<p>Waarom zou je bij <code>Git ignore</code> voor Python kiezen, je gaat toch juist Python bestanden maken? De <code>Git ignore</code> zorgt ervoor dat allerlei <em>hulpbestanden</em> van Python niet bewaard worden als commit. Maar de Pythoncode zelf wordt wel bewaard.</p>
+</div>
+</div>
+<h3 id="commit">Commit<a class="headerlink" href="#commit" title="Permanent link">&para;</a></h3>
+<p>Alle wijzigingen aan bestanden in de repository kun je vanaf nu bijhouden door regelmatig een commit te maken. Met een commit maak je als het ware een snapshot van alle bestanden en hang je daar een labeltje aan.
+Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commit geef je een begeleidend schrijven mee, een <em>commit message</em>. Je hoopt dat jij &mdash; maar ook je collega &mdash; na het lezen van de commit message snel begrijpt wat er veranderd is én waarom. Wanneer je bepaalde wijzigingen ongedaan wilt maken, kan je door het lezen van de commit messages snel vinden bij welke commit je dan moet zijn. En wanneer je je applicatie gaat uitbrengen op GitHub, kun je de commit messages gebruiken om snel op te sommen wat de nieuwste versie van jouw app kan!</p>
+<p>Hieronder zie je een aantal voorbeelden van commit messages. De titel (<em>summary</em>) is kort en krachtig. In de beschrijving (<em>description</em>) staat specifieke en uitgebreidere informatie.</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body.commit {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f6f8fa;
+            margin: 0;
+        }
+
+        .md-typeset .commit {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 columns */
+            grid-gap: 20px;
+            /* Space between boxes */
+            padding: 20px;
+        }
+
+        .commit-box {
+            background-color: #f3f4f6;
+            /* Light grey background */
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /* Ensure boxes are responsive within the grid */
+        }
+
+        .commit-title-wrapper {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .commit-title-wrapper img {
+            margin-right: 8px;
+        }
+
+        .commit-title {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: white;
+            color: #495057;
+            pointer-events: none;
+            /* Disable editing */
+        }
+
+        .commit-description {
+            width: 100%;
+            padding: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: white;
+            color: #495057;
+            height: 80px;
+            resize: none;
+            pointer-events: none;
+            /* Disable editing */
+        }
+
+        /* create responsive title */
+        .commit-title-resp {
+            width: 100%;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: white;
+            color: #495057;
+        }
+
+        /* create responsive description */
+        .commit-description-resp {
+            width: 100%;
+            padding: 8px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            box-sizing: border-box;
+            background-color: white;
+            color: #495057;
+            height: 80px;
+            resize: none;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #00addcff;
+            /* ECPC Blue color */
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .submit-btn:hover {
+            background-color: #0071bcff;
+            /* Darker blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="commit">
+        <!-- Commit Box 1 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title" placeholder="Summary (required)"
+                    value="feat: implement initialization process" readonly>
+            </div>
+            <textarea class="commit-description" placeholder="Description"
+                readonly>Enabled initialization of the measurement instrument and calibration of sensors for accurate data collection.</textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+
+        <!-- Commit Box 2 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title" placeholder="Summary (required)"
+                    value="fix: correct calibration error" readonly>
+            </div>
+            <textarea class="commit-description" placeholder="Description"
+                readonly>Resolved calibration errors caused by incorrect sensor configurations.</textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+
+        <!-- Commit Box 3 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title" placeholder="Summary (required)"
+                    value="chore: upgrade dependencies" readonly>
+            </div>
+            <textarea class="commit-description" placeholder="Description"
+                readonly>Upgraded matplotlib and click to the latest versions to enable error bar functionality.</textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+
+        <!-- Commit Box 4 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title" placeholder="Summary (required)"
+                    value="refactor: streamline data flow" readonly>
+            </div>
+            <textarea class="commit-description" placeholder="Description"
+                readonly>Fetched all measurements prior to analysis to enhance performance and efficiency.</textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+
+        <!-- Commit Box 5 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="docs: update README"
+                    readonly>
+            </div>
+            <textarea class="commit-description" placeholder="Description"
+                readonly>Updated README to include information about the new plot button and save feature.</textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+
+        <!-- Commit Box 6 -->
+        <div class="commit-box">
+            <div class="commit-title-wrapper">
+                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <input type="text" class="commit-title-resp" placeholder="Summary (required)">
+            </div>
+            <textarea class="commit-description-resp" placeholder="Description"></textarea>
+            <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
+        </div>
+    </div>
+
+    <script>
+        // Store original title and description texts
+        const originalTexts = [
+            {
+                title: "feat: implement initialization process",
+                description: "Enabled initialization of the measurement instrument and calibration of sensors for accurate data collection."
+            },
+            {
+                title: "fix: correct calibration error",
+                description: "Resolved calibration errors caused by incorrect sensor configurations."
+            },
+            {
+                title: "chore: upgrade dependencies",
+                description: "Upgraded matplotlib and click to the latest versions to enable error bar functionality."
+            },
+            {
+                title: "refactor: streamline data flow",
+                description: "Fetched all measurements prior to analysis to enhance performance and efficiency."
+            },
+            {
+                title: "docs: update README",
+                description: "Updated README to include information about the new plot button and save feature."
+            },
+            {
+                title: '',
+                description: ''
+            }
+        ];
+
+        function handleSubmit(button) {
+            const commitBox = button.closest('.commit-box'); // Find the closest commit box
+            const titleInput = commitBox.querySelector('.commit-title, .commit-title-resp');
+            const descriptionTextarea = commitBox.querySelector('.commit-description, .commit-description-resp');
+
+
+            // Clear the text of the title and description
+            titleInput.value = '';
+            descriptionTextarea.value = '';
+
+            // Restore original text after a delay
+            const index = Array.from(commitBox.parentNode.children).indexOf(commitBox);
+            setTimeout(() => {
+                titleInput.value = originalTexts[index].title;
+                descriptionTextarea.value = originalTexts[index].description;
+            }, 1000); // 1000ms delay before restoring
+        }
+    </script>
+
+</body>
+
+</html>
+
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Commit</p>
+<p>Voer de volgende opdrachten uit:</p>
+<ol>
+<li>Open GitHub Desktop, klik op <em>Current repository</em> (links onder de menubalk) en selecteer de repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code>.</li>
+<li>Ga naar het dropdownmenu <strong>Repository</strong> en kies voor <code>Open in Visual Studio Code</code> (of druk op <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-a">A</kbd></span> ) en open de repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> in Visual Studio Code.</li>
+<li>Open in Visual Studio Code één van je Pythonscripts.</li>
+<li>Type een stukje code erbij &mdash; bijvoorbeeld een <code class="language-py highlight"><span class="nb">print</span></code>-statement &mdash; en haal ergens anders iets weg. Sla het bestand op.</li>
+<li>Ga terug naar GitHub Desktop. Controleer bij <em>Current repository</em> (links onder de menubalk) of de repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> nog steeds is geopend.</li>
+<li>Klik daaronder op het tabblad <em>Changes</em>.</li>
+<li>Als er meerdere bestanden gewijzigd zijn, kun je met een blauwe vinkje aangeven voor welke bestanden je een commit schrijft.</li>
+<li>Onder de lijst met gewijzigde bestanden vind je twee invulvelden. Een smal veld voor een titel en een groot veld voor een uitgebreide beschrijving (<em>Description</em>). In het veld voor een titel staat in lichtgrijs een nietzeggende commit, bijvoorbeeld <em>Update test.py</em>. Schrijf daar een nuttige commit message. Dus niet: <q>opdracht: commit</q>. Maar meer zoiets als: <q>feat: lookup port name for device</q>. Houd de titel in de commit message kort en krachtig. Een uitgebreidere beschrijving kun je kwijt in het grote veld.</li>
+<li>Klik op <em>Commit to main</em>. Gefeliciteerd! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.53 1.45-1.08 1.08 1.6 1.6q.33.375.33.87c0 .495-.11.64-.33.86L11.5 9.47l1 1.08 3.63-3.61c.53-.59.79-1.24.79-1.94s-.26-1.36-.79-1.95zm-3.98 2.02L9.47 4.55l.61.56c.22.22.33.52.33.89s-.11.67-.33.89l-.61.56 1.08 1.08.56-.61c.53-.59.8-1.23.8-1.92 0-.72-.27-1.37-.8-1.97zM21 5.06c-.69 0-1.33.27-1.92.8l-5.63 5.64 1.08 1 5.58-5.56c.25-.25.55-.38.89-.38s.64.13.89.38l.61.61 1.03-1.08-.56-.61c-.59-.53-1.25-.8-1.97-.8M7 8 2 22l14-5zm12 3.06c-.7 0-1.34.27-1.94.8l-1.59 1.59 1.08 1.08 1.59-1.59c.25-.25.53-.38.86-.38s.63.13.88.38l1.62 1.59 1.05-1.03-1.6-1.64c-.59-.53-1.25-.8-1.95-.8"/></svg></span> Je hebt je eerste commit gedaan!</li>
+</ol>
+</div>
+<p>In GitHub Desktop zie je nu bij <em>History</em> de commit staan, met in één oogopslag alle wijzigingen.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Als je wilt opzoeken hoe iets werkt bij GitHub Desktop, kijk dan in de documentatie: <a href="https://docs.github.com/en/desktop">https://docs.github.com/en/desktop</a>.</p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Push en pull</p>
+<p>De repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op <a href="https://github.com/">github.com</a>. Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen computerkabouters die 's nachts documenten verplaatsen of wissen.<sup id="fnref:kabouter"><a class="footnote-ref" href="#fn:kabouter">5</a></sup></p>
+<p>In GitHub Desktop vind je een knop <code>Publish repository; Publish this repository to GitHub</code>. Als je daar op drukt kun je nog een andere naam aan de repository geven (deze naam bepaalt de url op <a href="https://github.com/">github.com</a>), een beschrijving toevoegen en aangeven of de code privé moet zijn. Daarna klik je op de blauwe knop <code>Publish repository</code>. Als je nu naar <a href="https://github.com">github.com</a> gaat zie je bij jouw repositories de zojuist gepubliceerde repository staan.</p>
+<p>Om je wijzigen ook in de cloud op te slaan kun je commits <code>pushen</code> naar <a href="https://github.com/">github.com</a> met de knop <code>Push origin</code>. Als je op een andere computer gaat werken kun je de repository vanuit de cloud naar de computer halen door op <code>Fetch origin</code> te klikken en daarna op <code>Pull origin</code>.</p>
+</div>
+<h3 id="repositories-op-github">Repositories op GitHub<a class="headerlink" href="#repositories-op-github" title="Permanent link">&para;</a></h3>
+<p>Om makkelijk je Git repository te delen met vrienden, collega's en de rest van de wereld kun je er dus voor kiezen om deze op GitHub te zetten. Je kunt dan je commits pushen naar GitHub en wijzigingen die je vrienden hebben gemaakt pullen, zodat jij er ook weer aan verder kan werken. Van alle repositories die op GitHub staan én openbaar zijn kun je de broncode clonen en er zelf mee aan de slag! Laten we eens een kijkje nemen op GitHub.</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Tailor</p>
+<p>Als je nog nooit op GitHub bent geweest dan kunnen de pagina's nogal intimiderend overkomen. De informatiedichtheid is nogal hoog. Na een paar bezoeken weet je meestal wel waar je dingen kunt vinden. David heeft een data-analyse app geschreven dat Tailor heet. Deze app wordt gebruikt bij natuurkundepractica voor studenten Medische natuurwetenschappen en Science, business and innovation. Interessant om eens te kijken wat je hierover kunt vinden op GitHub.</p>
+<ol>
+<li>Zoek de repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>/davidfokkema/tailor</code> op <a href="https://github.com">github.com</a> op.</li>
+<li>Je komt nu terecht op de hoofdpagina. Hier zie je een mappenstructuur met een aantal bestanden. Rechts daarvan staat een korte beschrijving onder het kopje <em>About</em>. Een uitgebreidere beschrijving vind je als je naar beneden scrolt onder <em>README</em>.</li>
+<li>Linksboven zie je een aantal tabbladen (<em>Code</em>, <em>Issues</em>, <em>Pull requests</em>, enzovoorts). Het tabblad <em>Code</em> is de hoofdpagina met de mappenstructuur. Navigeer door de mappen, wat staat er op regel 14 van <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>plot_tab.py</code>?</li>
+<li>Ga terug naar de hoofdpagina. In de regel boven de mappenstructuur vind je onder andere informatie over de commits (onder de groene knop met <em>Code</em>). Hoeveel commits zijn er gemaakt? Klik op <em>Commits</em> en daarna op een aantal commit messages. Hoeveel regels zijn er bij een commit message weggehaald of bijgekomen?</li>
+<li>Je kunt per bestand bekijken wanneer die is aangepast en wat er is aangepast. Ga naar het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>pyproject.toml</code> en klik rechtsboven op <em>History</em>. Wat is er aangepast in <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>pyproject.toml</code> bij de commit <q>Release v2.0.0</q>? Je ziet ook welke bestanden nog meer zijn gewijzigd in deze commit, welk bestand is nog meer gewijzigd bij de commit <q>Release v2.0.0</q>?</li>
+<li>Ga terug naar de hoofdpagina. Welke versie van Tailor is als laatste gereleased? Kijk hiervoor onder <em>Releases</em> aan de rechterkant.</li>
+<li>Je kent het misschien wel, dat je een app gebruikt maar dat het niet helemaal goed werkt (<em>bug</em>), of je hebt een idee hoe het nog beter kan worden (<em>enhancement</em>). Daarvoor is op GitHub het tabblad <code>Issues</code>. Hoeveel bugs zijn er gerapporteerd? En hoeveel enhancements?</li>
+<li>Als het jou gelukt is om een bug te fixen, of je hebt een super handige feature ontworpen, dan kan je de eigenaren van de repository vragen om jouw code te implementeren door een pull request te sturen. Ga naar het tabblad <em>Pull requests</em>, klik op <em>Closed</em> en bekijk welke pull requests zijn geïmplementeerd.</li>
+<li>Het meest tabblad <em>Insights</em> geeft je, tegen alle verwachtingen in, inzicht. Je kan bijvoorbeeld zien door hoeveel mensen er aan het project gewerkt wordt (<em>Contributors</em>). En kijk eens bij <em>Code frequency</em>, in welke periode is er het meest aan de code veranderd?</li>
+<li>Als je een repository goed/handig/slim/fijn vindt, kun je dit aangeven met een ster. Klik daarvoor rechtsboven op <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.62L12 2 9.19 8.62 2 9.24l5.45 4.73L5.82 21z"/></svg></span> <em>Star</em>.</li>
+<li>Dan tot slot die ene, meest in het oogspringende groene <em>Code</em>-knop op de hoofdpagina. Met die knop kun je de repository als ZIP-bestand downloaden of openen met GitHub Desktop.</li>
+</ol>
+</div>
+<h2 id="eerste-stappen">Eerste stappen<a class="headerlink" href="#eerste-stappen" title="Permanent link">&para;</a></h2>
+<p>Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de eerste stappen. Je hebt al wat Pythoncode gezien; nu gaan we het schrijven. We beginnen (heel) eenvoudig, maar gaan deze sessie verder uitbreiden naar code die echt bruikbaar is.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Naam en leeftijd</p>
+<p>In het allereerste voorbeeld heb je al gezien dat je met <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> dingen kunt <em>printen</em> naar het beeldscherm. Met <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> kun je dingen <em>vragen</em> aan de gebruiker. Het antwoord van de gebruiker slaan we op in een <em>variabele</em>. Zie ook de vorige sessie.</p>
+<ol>
+<li>Schrijf een script dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Hoe heet je? Alice
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Hoi Alice
+</span></code></pre></div></li>
+<li>Breid nu je script uit zodat hij controleert of je naam gelijk is aan <code>admin</code>, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan <code>admin</code> moet je script roepen: <code>Je bent een baas!</code> In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.</li>
+<li>Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam <em>niet</em> admin is). Hint: gebruik <code class="language-py highlight"><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="o">...</span><span class="p">))</span></code>. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan <code>Je mag op social media!</code> Als je 16 jaar of ouder bent, print dan <code>Je mag een scooter besturen.</code> Print, vanaf 17 jaar, <code>Je mag je rijbewijs halen.</code> Vanaf 18 jaar: <code>Je bent volwassen en mag stemmen.</code> Vanaf 30 jaar: <code>Je mag geen studiefinanciering meer aanvragen.</code> Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.</li>
+<li>Soms wil je juist <em>niet</em> dat het lijstje steeds langer wordt. Pas het script aan zodat hij <em>alleen</em> de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan <em>alleen</em> <code>Je mag je rijbewijs halen.</code> Hint: gebruik hiervoor een <code class="language-py highlight"><span class="k">if</span> <span class="o">...</span> <span class="k">elif</span></code> construct.</li>
+<li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
+</ol>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>OPLETTEN: IN HET GERAAMTE STAAT GEKOPPELDE IF-ELSE-STATEMENTS maar ik weet niet wat we daarmee bedoelden. Pas later komt in een paarse opdracht and en or voor? Dus deze verwijderen? Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen <code>Je bent nog een tiener, maar al wel volwassen!</code> Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Opdracht-meer</p>
+<p>Misschien heb je gemerkt dat als je <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hoi&quot;</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span></code> gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus <code>Hoi Alice !</code> in plaats van <code>HoiAlice!</code>. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten <em>f-strings</em> gebruiken. Een f-string is een string (<code class="language-py highlight"><span class="s2">&quot;Hoi&quot;</span></code>) waar je de letter <code>f</code> vóór schrijft (<code class="language-py highlight"><span class="sa">f</span><span class="s2">&quot;Hoi&quot;</span></code>). Als je dat doet dan werkt dat hetzelfde als een gewone string, <em>behalve</em> dat dingen die tussen accolades <code>{}</code> staan worden vervangen. Je kunt dan schrijven: <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hoi </span><span class="si">{</span><span class="n">naam</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span></code> met als uitvoer <code>Hoi Alice!</code>. De variabele die tussen haakjes stond is vervangen door de <em>waarde</em> van die variabele. Hierbij heb je dus kunnen kiezen voor <em>wel</em> een spatie tussen Hoi en Alice, maar niet tussen Alice en het uitroepteken.</p>
+<p>Pas je script aan zodat je f-strings gebruikt, maar <em>alleen</em> waar dat nodig of handig is, en commit de wijzigingen.</p>
+</div>
+<h3 id="dna-replicatie">DNA-replicatie<a class="headerlink" href="#dna-replicatie" title="Permanent link">&para;</a></h3>
+<p>Een klusje is pas echt stom als je het heel vaak achter elkaar moet doen. Computers zijn dan superhandig: je hoeft het klusje maar één keer te schrijven en te vertellen hoe vaak hij het moet uitvoeren.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PREDICT THE OUTCOME IN EEN SCRIPT volgens schema. Hier de code plaatsen of niet?</p>
+</div>
+<p>Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan tijdens DNA-replicatie waarbij in de nieuwe streng soms een foutje kan ontstaan. We gaan allereerst een script schrijven dat het proces van DNA-replicatie nabootst.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Replicatie</p>
+<p>Maak een nieuw bestand met de naam <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>replicatie.py.</code></p>
+<ol>
+<li>We beginnen met een stukje <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Print de letters van de bijbehorende tweede streng, volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.</li>
+<li>Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print <code>A -- T</code>, enz.</li>
+<li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Vereenvoudigen</p>
+<p>Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld <code>A == T</code> wilt printen in plaats van <code>A -- T</code>, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2. Commit je wijzigingen.</p>
+</div>
+<p>Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis van wat de tweede streng zou <em>moeten</em> zijn gebruiken om op zoek te gaan naar de fout.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Vind de fout</p>
+<p>Maak een nieuw bestand met de naam <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>find_DNA_mistake.py</code>.</p>
+<ol>
+<li>Neem weer <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Daarnaast is <code class="language-py highlight"><span class="n">streng2</span> <span class="o">=</span> <span class="s2">&quot;AATATCGCAA&quot;</span></code>. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.</li>
+<li>Schrijf code dat op zoek gaat naar <em>alle</em> fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.</li>
+<li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
+</ol>
+</div>
+<p>Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk veel sneller gewoon met de hand. Programmeren is pas nuttig als het zoeken met de hand veel langer duurt dan het programmeren. Dat is bijvoorbeeld het geval wanneer we een fout zoeken in 10.000 baseparen.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Alle tijd van de wereld</p>
+<p>Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.</p>
+</div>
+<p>Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="o">...</span></code> en <code class="language-py highlight"><span class="n">streng2</span> <span class="o">=</span> <span class="o">...</span></code> aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen [hier] en [hier]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">streng1</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;streng1.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span>
+</span></code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pas de links hier en hier hierboven aan.</p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Zoek de speld in de hooiberg</p>
+<p>Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???</p>
+</div>
+<h3 id="nog-comments-en-while-loop">NOG: COMMENTS en WHILE-loop<a class="headerlink" href="#nog-comments-en-while-loop" title="Permanent link">&para;</a></h3>
+<p>Deze stonden nog niet uitgewerkt in het schema.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:stuk">
+<p>Stukmaken mag, maar het terughalen van een oude versie is niet met één druk op de knop gebeurd. Vraag om hulp als je terug wilt naar een oude versie, wij helpen je graag!&#160;<a class="footnote-backref" href="#fnref:stuk" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:git_footnote">
+<p><a href="https://initialcommit.com/blog/How-Did-Git-Get-Its-Name">https://initialcommit.com/blog/How-Did-Git-Get-Its-Name</a>&#160;<a class="footnote-backref" href="#fnref:git_footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:branches">
+<p>Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te <em>mergen</em> met je main branch, maar dat hoeft niet.&#160;<a class="footnote-backref" href="#fnref:branches" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:pro-account">
+<p><a href="https://github.com/education/students">https://github.com/education/students</a>&#160;<a class="footnote-backref" href="#fnref:pro-account" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:kabouter">
+<p>Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.&#160;<a class="footnote-backref" href="#fnref:kabouter" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "toc.integrate", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

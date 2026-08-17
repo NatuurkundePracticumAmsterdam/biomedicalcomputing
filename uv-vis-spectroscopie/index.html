@@ -1,0 +1,809 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/uv-vis-spectroscopie/">
+      
+      
+        <link rel="prev" href="../omgaan-met-data/">
+      
+      
+        <link rel="next" href="../farmacokinetiek/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Sessie 3: UV-Vis spectroscopie - Biomedical Computing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/opdrachten.css">
+    
+      <link rel="stylesheet" href="../stylesheets/folder_tree.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sessie-3-uv-vis-spectroscopie" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biomedical Computing" class="md-header__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biomedical Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sessie 3: UV-Vis spectroscopie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biomedical Computing" class="md-nav__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Biomedical Computing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installatie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 1: installatie van benodigde software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../omgaan-met-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 2: DNA replicatie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 3: UV-Vis spectroscopie
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 3: UV-Vis spectroscopie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stralingsveiligheid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stralingsveiligheid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nierfunctie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nierfunctie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uv-vis-spectroscopie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UV-Vis spectroscopie
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UV-Vis spectroscopie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipetteerschema-voor-een-verdunningsreeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipetteerschema voor een verdunningsreeks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kalibratiecurve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kalibratiecurve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../farmacokinetiek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 4: farmacokinetiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hoortest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 6: audiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 7: Bio-informatica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica-vervolg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 8: Bio-informatica (vervolg)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sessie-3-uv-vis-spectroscopie">Sessie 3: UV-Vis spectroscopie<a class="headerlink" href="#sessie-3-uv-vis-spectroscopie" title="Permanent link">&para;</a></h1>
+<p>In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. <em>To compute</em> betekent niet voor niets <em>berekenen.</em> Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.</p>
+<p>Deze sessie oefenen we eerst met berekeningen over stralingsveiligheid en bepalen we de nierfunctie. Vervolgens richten we ons op het hoofdonderwerp <em>UV-Vis spectroscopie</em>. Dit onderwerp komt uitgebreid aan bod tijdens het vak <em>Practicum bio-analytische chemie</em> dat gegeven wordt in periode 5 van het eerste jaar. De scripts die je hier gaat programmeren komen dan ook zeker van pas!</p>
+<div class="admonition info">
+<p class="admonition-title">Operatoren</p>
+<p>Het is goed om te weten hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met <code class="language-py highlight"><span class="nb">int</span><span class="p">()</span></code> en <code class="language-py highlight"><span class="nb">float</span><span class="p">()</span></code>.</p>
+</div>
+<h2 id="stralingsveiligheid">Stralingsveiligheid<a class="headerlink" href="#stralingsveiligheid" title="Permanent link">&para;</a></h2>
+<p>Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.</p>
+<p>Omdat de exacte hoeveelheid ontvangen straling wordt bijgehouden met badges die de medewerkers op hun lichaam dragen is het vaak voldoende om voor de berekeningen gebruik te maken van een vuistregel:</p>
+<p>\begin{equation}
+H = \gamma \frac{A t}{r^2},
+\end{equation}</p>
+<p>Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, de activiteit van de bron $A$, de blootstellingstijd $t$ en de afstand tot de bron $r$.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Stralingsveiligheid</p>
+<p>In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule 1 de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.</p>
+<ol>
+<li>
+<p>Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld <code class="language-py highlight"><span class="n">A</span> <span class="o">=</span> <span class="o">...</span></code>. Print het resultaat van je berekening. Commit je code.</p>
+</li>
+<li>
+<p>Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.</p>
+</li>
+<li>
+<p>Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn bovenaan je script, maar aan de gebruiker worden gevraagd. Commit.</p>
+</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Gammaconstantes</p>
+<p>Onze rekentool gaat nu altijd uit van cesium-137. Pas je script aan zodat de gebruiker gevraagd wordt naar de gammaconstante, maar zorg ervoor dat als de gebruiker niets invult dat het script dan uitgaat van de gammaconstante van cesium-137. Vertel ook aan de gebruiker dat de gammaconstante optioneel is en wat de standaardwaarde is.</p>
+</div>
+<h2 id="nierfunctie">Nierfunctie<a class="headerlink" href="#nierfunctie" title="Permanent link">&para;</a></h2>
+<p>Je nieren zijn een belangrijk orgaan. Je hebt er twee, en kunt er één missen, maar kunt absoluut niet zonder. Dit orgaan haalt afvalstoffen uit het bloed die je vervolgens uitplast. Mensen die een heel slechte nierfunctie hebben moeten gedialyseerd worden waarbij een machine gedurende een aantal uur de afvalstoffen uit het bloed haalt. Dit moet dan vaak zo’n drie keer per week. Als een arts vermoedt dat er mogelijk iets mis is met je nieren, kan je nierfunctie worden gemeten.</p>
+<p>De eGFR-meting (<em>estimated Glomerular Filtration Rate</em>) meet de hoeveelheid kreatine in je bloed. Kreatine is een afvalproduct van de spieren en je nieren filteren dat uit het bloed, tenzij ze niet goed meer functioneren. Hoeveel kreatine er normaal gesproken in het bloed zit (en dus mág zitten) verschilt per persoon afhankelijk van de hoeveelheid spiermassa. Dit kan geschat worden op basis van het biologisch geslacht en de leeftijd van de patiënt. Aan de hand van de meting van de kreatineconcentratie, geslacht en leeftijd kan de glomerulaire filtratiesnelheid als schatting worden berekend aan de hand van de volgende empirische formules:</p>
+<p>\begin{equation}
+\text{eGFR} = 144 \cdot \left( \frac{\text{cr.conc.}}{62} \right)^{-0.329} \cdot 0.993^{\text{age}} \quad (\text{vrouw, cr.conc. } \leq 62\, \mu\text{mol}/\text{L})
+\end{equation}</p>
+<p>\begin{equation}
+\text{eGFR} = 144 \cdot \left( \frac{\text{cr.conc.}}{62} \right)^{-1.209} \cdot 0.993^{\text{age}} \quad (\text{vrouw, cr.conc. } \gt 62\, \mu\text{mol}/\text{L})
+\end{equation}</p>
+<p>\begin{equation}
+\text{eGFR} = 141 \cdot \left( \frac{\text{cr.conc.}}{80} \right)^{-0.411} \cdot 0.993^{\text{age}} \quad (\text{man, cr.conc. } \leq 80\, \mu\text{mol}/\text{L})
+\end{equation}</p>
+<p>\begin{equation}
+\text{eGFR} = 141 \cdot \left( \frac{\text{cr.conc.}}{80} \right)^{-1.209} \cdot 0.993^{\text{age}} \quad (\text{man, cr.conc. } \gt 80\, \mu\text{mol}/\text{L})
+\end{equation}</p>
+<p>Met bovenstaande factoren wordt de eenheid van de eGFR de mL/min/1,73 m$^2$. Een beetje vreemde eenheid waarbij het lichaamsoppervlak gestandaardiseerd wordt op 1,73 m$^2$, en dat vaak ook als percentage wordt gepresenteerd. Dus als je een eGFR vindt van 83 (mL/min/1,73 m$^2$) dan wordt vaak gezegd dat je nieren nog voor 83 % functioneren.</p>
+<p>Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te geven:</p>
+<table>
+<thead>
+<tr>
+<th>Stadium</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td>normale of hoge nierfunctie; de nieren werken voor meer dan 90%</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>mild afgenomen nierfunctie; de nieren werken voor 60 - 89%</td>
+</tr>
+<tr>
+<td>G3a</td>
+<td>mild tot matig afgenomen nierfunctie; de nieren werken voor 45 - 59%</td>
+</tr>
+<tr>
+<td>G3b</td>
+<td>matig tot ernstig afgenomen nierfunctie; de nieren werken voor 30 - 44%</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>ernstig afgenomen nierfunctie; de nieren werken voor 15 - 29%</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>zeer ernstig afgenomen nierfunctie (nierfalen); de nieren werken voor minder dan 15%</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Nierfunctie eGFR</p>
+<ol>
+<li>Schrijf een script waarbij je bovenin je script variabelen definieert voor geslacht, leeftijd en de kreatineconcentratie. Bereken vervolgens de eGFR. Tip: gebruik <code class="language-py highlight"><span class="k">if</span><span class="o">...</span><span class="k">else</span><span class="o">...</span></code>-statements om de goede formule te gebruiken. Print de gevonden waarde.</li>
+<li>Breid je script uit zodat ook het stadium (bijvoorbeeld G2), en een beschrijving van dat stadium (bijvoorbeeld "mild afgenomen nierfunctie") worden gegeven.</li>
+<li>Vraag de gebruiker om de waardes van de variabelen in plaats van dat je ze definieert in je script. Test met een paar verschillend inputs.</li>
+</ol>
+</div>
+<h2 id="uv-vis-spectroscopie">UV-Vis spectroscopie<a class="headerlink" href="#uv-vis-spectroscopie" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Practicum bio-analytische chemie (jaar 1, periode 5)</p>
+<p><em>UV-Vis-spectroscopie is een veelgebruikte detectietechniek om de concentratie van opgeloste stoﬀen te bepalen. De methode berust op de absorptie van licht bij specifieke golflengten, die karakteristiek zijn voor een bepaalde stoﬀen. Volgens de wet van Lambert-Beer is deze absorptie recht evenredig met de concentratie, waardoor de concentratie van een stof in oplossing kan worden bepaald. In dit experiment wordt deze techniek toegepast om de hoeveelheid vitamine B12 in een vitaminepil te bepalen. Hiervoor wordt een kalibratielijn opgesteld met een standaardoplossing van vitamine B12, waarmee de concentratie in het monster kan worden berekend.</em></p>
+<p>-- Handleiding UV-Vis experiment, practicum bio-analytische chemie voor MNW, Vrije Universiteit</p>
+</div>
+<p>Naast bepalen hoeveel vitamine er écht zit in een voedingssupplement kun je met behulp van deze techniek ook vragen beaantwoorden als <em>Hoeveel cafeïne zit er in een energy drink?</em>, of <em>welke zonnebrand heeft een hogere spf-factor?</em>. Om nauwkeurig te kunnen bepalen wat de concentratie is van een bepaalde stof in een bepaald oplosmiddel moeten wel een paar stappen worden doorlopen.</p>
+<p>In het experiment schijn je licht door je monster heen. De hoeveelheid licht die geabsorbeerd wordt is dan een maat voor de hoeveelheid stof. Daarvoor moet je wel weten hoeveel licht er normaal gesproken geabsorbeerd wordt door die stof. Daarvoor maak je heel nauwkeurig een oplossing met een bekende hoeveelheid stof (de <em>stockoplossing</em>) en die ga je vervolgens een aantal keer verdunnen zodat je veel verschillende concentraties hebt, van hoog naar laag, een <em>verdunningsreeks</em>. Die meet je allemaal door en zo kun je een ijklijn of kalibratiecurve maken. Als laatste meet je de onbekende hoeveelheid door en dan kun je op de ijklijn aflezen hoeveel stof er in de onbekende oplossing zit.</p>
+<h3 id="pipetteerschema-voor-een-verdunningsreeks">Pipetteerschema voor een verdunningsreeks<a class="headerlink" href="#pipetteerschema-voor-een-verdunningsreeks" title="Permanent link">&para;</a></h3>
+<p>Om een verdunningsreeks te maken moet je een aantal keer een bepaalde hoeveelheid stockoplossing vermengen met een bepaalde hoeveelheid oplosmiddel. Bepalen hoeveel dat precies moet zijn is een rekenwerkje dat je goed uit moet voeren. Omdat tijdens het verdunnen de <em>hoeveelheid stof</em> niet verandert, en omdat de hoeveelheid gelijk is aan de concentratie maal het volume, kun je zeggen:
+\begin{equation}
+C_1 V_1 = C_2 V_2,
+\end{equation}
+met $C_1$ de concentratie in de stockoplossing, $V_1$ de hoeveelheid stockoplossing die je neemt, $C_2$ de concentratie in de verdunde oplossing en $V_2$ de hoeveelheid verdunde oplossing. Meestal wil je bepalen hoeveel stockoplossing $V_1$ je nodig hebt voor een bepaalde verdunning, en hoeveel oplosmiddel daar bij moet ($V_2 - V_1$). De <em>verdunningsfactor</em> $D$ wordt dan gegeven door:
+\begin{equation}
+D = \frac{C_1}{C_2}.
+\end{equation}</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Pipetteerschema</p>
+<ol>
+<li>Stel je hebt een stockoplossing van 0.10 mol/L. Bereken, met de hand, hoeveel van deze oplossing je nodig hebt om 5.0 mL oplossing te maken die een concentratie heeft van 0.025 mol/L? Hoeveel verdund is dat? Hoeveel oplosmiddel heb je dan nog nodig?</li>
+<li>Schrijf nu een script die deze berekening voor je uitvoert. Denk er weer aan om de formule te programmeren met grootheden, niet direct met getallen. Definieer de waardes van de grootheden weer bovenaan je script. Vergeet niet om je antwoord duidelijk te printen: verdunningsfactor, benodigde hoeveelheid stockoplossing, benodigde hoeveelheid oplosmiddel.</li>
+<li>Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010, 0.005 en 0.000 mol/L.</li>
+<li>Het kan soms handig zijn om de resultaten van je berekeningen te bewaren voor later, en pas op een later moment de resultaten te printen, of op te slaan in een bestand, of op een andere manier te gebruiken. Om dat te oefenen passen we ons script aan zodat de resultaten eerst worden bewaard en pas later worden geprint. Maak een lijst aan voor iedere grootheid die je wilt berekenen en bewaar het resultaat in die lijst, maar print niets binnen de for-loop. Als allerlaatste onderdeel van je script print je in één keer de resultaten.</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Tabellen printen</p>
+<p>Een mooie manier om de resultaten weer te geven is met een tabel. Je kunt als eerste een koptekst printen (<code>kolom 1  kolom 2</code>), vervolgens een lijn met streepjes (<code>-------</code>), en dan een for-loop waarbij je een index gebruikt om de eerste waarde voor kolom 1, de eerste waarde voor kolom 2, enz. te printen, regel voor regel. Om alles netjes te krijgen moet je dan wel zorgen dat de getallen netjes onder elkaar komen. Dat doe je door Python te vertellen hoeveel ruimte een getal moet innemen. Dat gaat veruit het makkelijkst met f-strings. De regel
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number1</span><span class="si">:</span><span class="s2">7.2f</span><span class="si">}</span><span class="s2">  </span><span class="si">{</span><span class="n">number2</span><span class="si">:</span><span class="s2">7.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+betekent dat de getallen in totaal zeven karakters mogen innemen (de lengte van de tekst <code>kolom #</code>) en dat je, binnen die zeven karakters, twee cijfers achter de komma wilt. De <code>f</code> betekent dat je wilt dat Python het getal behandelt als een floating point number, ofwel een kommagetal.</p>
+<p>Pas je script voor het pipetteerschema aan zodat de resultaten worden weergegeven in een tabel. Schrijf een goede koptekst, tel de breedte van de kolommen en maak een mooi print-statement zodat alles netjes wordt uitgelijnd.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Ritsen</p>
+<p>Loopen met een index voelt misschien een beetje omslachtig aangezien je in Python ook direct kunt loopen over de elementen in een lijst. Je kunt zeggen <code class="language-py highlight"><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span> <span class="o">...</span></code> in plaats van <code class="language-py highlight"><span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)):</span> <span class="o">...</span></code>. Best handig, maar hoe doe je dat wanneer je wilt loopen over de elementen uit meerdere lijsten tegelijk? Dat kan met <code class="language-py highlight"><span class="nb">zip</span><span class="p">()</span></code>, als volgt:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;pear&quot;</span><span class="p">,</span> <span class="s2">&quot;melon&quot;</span><span class="p">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.99</span><span class="p">,</span> <span class="mf">1.99</span><span class="p">,</span> <span class="mf">2.99</span><span class="p">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">amounts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">for</span> <span class="n">fruit</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">amount</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">fruits</span><span class="p">,</span> <span class="n">prices</span><span class="p">,</span> <span class="n">amounts</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># apple 0.99 10</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># pear 1.99 5</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># melon 2.99 2</span>
+</span></code></pre></div>
+Pas het script voor je pipetteerschema aan zodat je de tabel print met gebruik van <code class="language-py highlight"><span class="nb">zip</span><span class="p">()</span></code>.</p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Pipetteerschema met input</p>
+<p>Ook hier kan het handig zijn om een mooi script te schrijven waar de gebruiker zelf de concentraties kan intypen. Vraag eerst hoeveel concentraties de gebruiker wil maken en schrijf dan een for-loop die de concentraties één voor één vraagt en toevoegt aan de lijst met concentraties. Vergeet niet ook de concentratie van de stockoplossing te vragen, en de hoeveelheid oplossing die je wilt maken in je pipet. Daarna voer je de rest van je script uit.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Handiger input</p>
+<p>Nóg handiger is als je de gebruiker niet van tevoren hoeft te vragen hoeveel concentraties die wil hebben. Vraag de gebruiker om alle concentraties in één keer in te typen, gescheiden door een komma. Dus bijvoorbeeld: <code>0.025, 0.020, 0.015, 0.010, 0.005, 0</code>. Net zoals een list in Python de method <code class="language-py highlight"><span class="o">.</span><span class="n">append</span><span class="p">()</span></code> kent, kun je in Python voor een string <code class="language-py highlight"><span class="n">split</span><span class="p">()</span></code> gebruiken. Geef tussen de haakjes aan wat het scheidingsteken is (de <code class="language-py highlight"><span class="s2">&quot;,&quot;</span></code>) en Python splitst de string en geeft je een lijst van de verschillende waardes. Dit zijn wel dan nog strings en je moet nog een for-loop schrijven om die te vertalen naar floats. Als dat lukt heb je wel iets heel moois gemaakt!</p>
+</div>
+<h3 id="kalibratiecurve">Kalibratiecurve<a class="headerlink" href="#kalibratiecurve" title="Permanent link">&para;</a></h3>
+<p>Als je de verdunningsreeks gemaakt en doorgemeten hebt, wil je de kalibratiecurve opstellen. Neem de volgende metingen:</p>
+<table>
+<thead>
+<tr>
+<th>concentration</th>
+<th>absorption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.025</td>
+<td>0.61</td>
+</tr>
+<tr>
+<td>0.02</td>
+<td>0.45</td>
+</tr>
+<tr>
+<td>0.015</td>
+<td>0.37</td>
+</tr>
+<tr>
+<td>0.01</td>
+<td>0.23</td>
+</tr>
+<tr>
+<td>0.005</td>
+<td>0.13</td>
+</tr>
+<tr>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<p>Aangezien de absorptie recht evenredig is met de hoeveelheid stof (en dus de concentratie) verwacht je een lineair verband, met mogelijk een correctie (asafsnijding):
+\begin{equation}
+S = ac_s + b,
+\end{equation}
+met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de helling $a$ en asafsnijding $b$ de kalibratieparameters.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">IJken van de UV-Vis spectrometer</p>
+<ol>
+<li>Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule 8. </li>
+<li>Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41.</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "toc.integrate", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
