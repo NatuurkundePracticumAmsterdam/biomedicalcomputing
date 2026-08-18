@@ -112,7 +112,7 @@ We weten nu hoe we een toon kunnen produceren en welke strategie we willen gebru
 
     Het is goed om de strategie eerst op papier uit te werken. Zo krijg je een idee van wat je programma moet kunnen en kun je het voorbeeld later gebruiken om je programma te testen.
 
-    We gaan ervan uit dat de ondergrens van het hoorbare frequentiebereik tussen 10 Hz en 11000 Hz ligt. We kiezen de onderkant van dit bereik iets scherper dan wat de literatuur aangeeft, om er zeker van te zijn dat de proefpersoon de laagste frequentie niet kan horen. En we kiezen 11000 Hz als bovenkant omdat de meeste mensen eze frequentie kunnen horen.
+    We gaan ervan uit dat de ondergrens van het hoorbare frequentiebereik tussen 10 Hz en 11000 Hz ligt. We kiezen de onderkant van dit bereik iets scherper dan wat de literatuur aangeeft, om er zeker van te zijn dat de proefpersoon de laagste frequentie niet kan horen. En we kiezen 11000 Hz als bovenkant omdat de meeste mensen deze frequentie kunnen horen.
 
     We testen eerst of de proefpersoon de uiterste waarden van het bereik kan horen. Kan die 11000 Hz horen? En 10 Hz? Als het antwoord op de eerste vraag 'ja' is en op de tweede vraag 'nee', weet je dat de ondergrens van het hoorbare frequentiebereik ergens tussen deze twee waarden ligt. 
 
