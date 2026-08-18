@@ -193,11 +193,11 @@ Nu de ondergrens bekend is, bepalen we op een vergelijkbare manier de bovengrens
     Je geeft `plt.barh()` als eerste de naam op de $y$-as mee. Daarna volgt de breedte van de balk: de bovengrens min de ondergrens. Met `left=` geef je aan waar de balk begint en met `height=` stel je de dikte van de balk in. Voor meerdere dieren en je eigen testresultaat voeg je simpelweg meer regels `plt.barh()` toe.
 
     !!! opdracht-meer "Jij versus het dierenrijk"
-        1. Voeg aan het bestand {{file}}`hearing_test.py` een horizontaal staafdiagram toe. Plot jouw eigen testresultaat als horizontale staaf. Welke variabelen moet je tijdens de gehoortest opslaan om je testresultaat te kunnen tekenen? 
-        2. Kies vijf dieren naar keuze uit bovenstaand figuur en voeg hun frequentiebereik toe aan het staafdiagram.
-        3. Met `plt.semilogx()` maak je de $x$-as logaritmisch. Voeg dit toe. Wat valt je op ten opzichte van de lineaire schaal?
+        1. Voeg aan het bestand {{file}}`hearing_test.py` een horizontaal staafdiagram toe. Plot jouw eigen testresultaat als horizontale staaf. Welke variabelen moet je tijdens de gehoortest opslaan om je testresultaat te kunnen tekenen? Commit.
+        2. Kies vijf dieren naar keuze uit bovenstaand figuur en voeg hun frequentiebereik toe aan het staafdiagram. Commit.
+        3. Met `plt.semilogx()` maak je de $x$-as logaritmisch. Voeg dit toe. Wat valt je op ten opzichte van de lineaire schaal? Commit.
         4. Je kunt je testresultaat als transparante balk over het gehele diagram weergeven. Het wordt dan nog makkelijker om jouw frequentiebereik te vergelijken met dat van andere dieren. Je doet dit met `plt.axvspan()`. We gebruiken de het frequentiebereik van de goudvis weer als voorbeeld:
         ```py
         plt.axvspan(20, 3000, facecolor="lavender", zorder=0)
         ```
-        Geef als eerste de ondergrens mee en daarna de bovengrens. Je kunt een eigen kleur kiezen uit het [beschikbare overzicht van CSS Colors](https://matplotlib.org/stable/gallery/color/named_colors.html). De parameter `zorder=0` zorgt ervoor dat de balk als achtergrond wordt getekend en dat de andere staven er overheen worden getekend. Voeg een dergelijke balk toe voor je eigen testresultaat. 
+        Geef als eerste de ondergrens mee en daarna de bovengrens. Je kunt een eigen kleur kiezen uit het [beschikbare overzicht van CSS Colors](https://matplotlib.org/stable/gallery/color/named_colors.html). De parameter `zorder=0` zorgt ervoor dat de balk als achtergrond wordt getekend en dat de andere staven er overheen worden getekend. Voeg een dergelijke balk toe voor je eigen testresultaat. Commit.
