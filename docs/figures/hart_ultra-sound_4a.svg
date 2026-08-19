@@ -46,7 +46,9 @@
        inkscape:label="4a" />
   </sodipodi:namedview>
   <defs
-     id="defs1" />
+     id="defs1">
+    <style>svg * { mix-blend-mode: normal !important; }</style>
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
