@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="hart_ultra-sound.svg"
+   inkscape:export-batch-path="..\Documents\GitHub\brainstorm-antada\notes\Werkcollege-opdrachten\ultrasound-werkcollege"
+   inkscape:export-batch-name="hart_ultra-sound"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.1378333"
+     inkscape:cx="3075.5438"
+     inkscape:cy="176.58065"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3-6"
+     showguides="true">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="100"
+       height="100"
+       id="page2"
+       margin="0"
+       bleed="0"
+       inkscape:label="2" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-222.63714,1.0307275)">
+    <g
+       id="g10">
+      <g
+         id="g15-82"
+         transform="translate(233.81895,10.859705)">
+        <g
+           id="g14-4"
+           style="mix-blend-mode:normal">
+          <g
+             id="g12-9-4"
+             style="mix-blend-mode:lighten"
+             transform="translate(0,10)" />
+        </g>
+        <g
+           id="g8-46"
+           style="mix-blend-mode:normal" />
+        <rect
+           style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+           id="rect1"
+           width="50"
+           height="50"
+           x="13.818192"
+           y="13.109566" />
+      </g>
+      <path
+         style="opacity:1;fill:#999999;fill-opacity:1;stroke-width:0.1;stroke-linecap:square;stroke-linejoin:round;paint-order:markers fill stroke"
+         d="m 272.62913,34.60869 c -3.04633,-15.845827 -16.35136,-11.725441 -14.99905,-1.251459 1.0403,8.05737 14.76348,20.844573 14.76348,20.844573 0,0 15.13373,-12.002478 15.25295,-21.887138 0.10421,-8.640289 -10.91128,-13.731328 -15.01738,2.294024 z"
+         id="path7-8"
+         sodipodi:nodetypes="cscsc" />
+    </g>
+  </g>
+</svg>
