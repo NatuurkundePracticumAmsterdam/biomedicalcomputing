@@ -47,6 +47,7 @@
   </sodipodi:namedview>
   <defs
      id="defs1">
+    <style>svg * { mix-blend-mode: normal !important; }</style>
     <marker
        style="overflow:visible"
        id="marker21"
