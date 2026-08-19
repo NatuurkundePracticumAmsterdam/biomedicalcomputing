@@ -32,23 +32,19 @@ Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!
 
 ## Versiebeheer
 
-Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt _nu_, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? Hoe ingewikkelder het script, hoe ingewikkelder de wijzigingen en hoe minder het vertrouwen dat het in één keer gaat lukken. Misschien heb je wel eens de ervaring gehad dat een wijziging maar niet wilde werken en dat je niet goed meer wist wat je precies had veranderd ten opzichte van toen het nog _wel_ werkte. Veel mensen hebben daarom de neiging om naast een {{file}}`script.py` een {{file}}`script-v1.py`, {{file}}`script-v2.py`, enzovoorts aan te maken. Soms zelfs een {{file}}`script-eindversie.py` en met wat pech dan toch nog een {{file}}`script-eindversie-definitief.py`. Niet heel fijn. Je ziet dan nog steeds niet goed wat er veranderd is (dat blijft naast elkaar leggen en zoeken) en je map loopt vol met overbodige scripts. Dit kan beter&hellip;\ met versiebeheer!
+Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt _nu_, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? En als het op een gegeven moment niet meer werkt, waar ligt dat dan aan? Veel mensen hebben daarom de neiging om naast een {{file}}`script.py` een {{file}}`script-v1.py`, {{file}}`script-v2.py`, enzovoorts aan te maken. Misschien herken je dat wel een beetje van je profielwerkstuk (eerste versie, versie na feedback van docent, definitieve versie), of het natuurkundepracticum. Ook op het practicum ben je veel aan het doen en uitproberen en heb je uiteindelijk een verzameling metingen gedaan. Waarom was die ene meting beter dan die andere? Wat heb je vorige keer ook alweer anders gedaan? Op het practicum houd je daarom alles netjes bij in een labjournaal. Niet alleen onderzoekers doen dat; ook software-ontwikkelaars houden een soort labjournaal bij: een digitaal systeem dat alle wijzigingen netjes bijhoudt, waar je notities maakt en waar je later precies kunt zien _wat_ je veranderd hebt, en _waarom_. Dat heet _versiebeheer_.
 
-Versiebeheer (Engels: _version control_) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een _commit_. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer.
+Versiebeheer (Engels: _version control_) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een _commit_. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer. Een verzameling van scripts en alle wijzigingen met labjournaal-achtige notities noem je samen een _repository_.
 
-Je versiebeheersysteem geeft ondertussen duidelijk al je wijzigingen weer ten opzichte van de laatste commit. Ook kun je de wijzigingen tussen oudere versies bekijken. Alles is relatief: je kunt zien wat er veranderd is tussen twee weken terug en gisteren, of tussen gisteren en vandaag; iedere commit kun je vergelijken met willekeurig iedere andere commit. Heb je iets verprutst en wil je een oude versie terughalen? Prima! Commit die ook, dan kun je zelfs dat weer terugdraaien. Je verliest zo nooit meer je werk. En stukmaken mag![^stuk]
+Je versiebeheersysteem geeft duidelijk al je wijzigingen weer ten opzichte van de laatste commit. Ook kun je de wijzigingen tussen oudere versies bekijken. Heb je iets verprutst en wil je een oude versie terughalen? Prima! Je verliest zo nooit meer je werk. En stukmaken mag![^stuk]
 
 ### Git
 
-Ruim tien jaar geleden werden er nog vele concurrerende systemen gebruikt. Die tijd is grotendeels voorbij. Eén van de nieuwste systemen, Git,[^git_footnote] wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken.
+Git,[^git_footnote] een versiebeheersysteem, wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.
 
-Git werkt in principe via de command-line. Je geeft opdrachten in de map waar je broncode staat: toevoegen van wijzigingen aan de _staging area_, bekijken van de meest recente wijzigingen, committen van je code, teruggaan en werken met oudere versies, aanmaken van _branches_,[^branches] je wijzigingen uploaden naar internet, enzovoorts. Het geheel van de map met broncode en de versiegeschiedenis wordt een _repository_ genoemd.
-
-In deze cursus zul je gebruik maken van een grafische applicatie die eenvoudiger werkt. Je kunt daarna &mdash; als je dat wilt &mdash; de stap maken naar de command-line, waarmee je veel meer mogelijkheden tot je beschikking krijgt. Zie het boek _Pro Git_[@gitpro] voor meer informatie over Git en het gebruik via de command-line.
+In deze cursus zul je gebruik maken van een grafische applicatie die eenvoudiger werkt, maar op de achtergrond Git gebruikt.[^git_cli_footnote]
 
 ### GitHub
-
-Git is een _distributed version control system (DVCS)_, wat wil zeggen dat er geen centrale server hoeft te zijn. Je kunt volledig offline werken in je eigen repository en je wijzigingen af en toe committen. Als je daar zin in hebt kun je je wijzigingen naar een collega sturen (_pushen_) en je kunt een collega toestemming geven om de wijzigingen op te halen (_pullen_). Je bouwt dan aan één grote versiegeschiedenis met kopieën op meerdere computers. Je bent zo volledig onafhankelijk van bedrijven die servers in de lucht houden of bepalen wie er wel en niet toegang krijgt. Dat is fijn, maar een centrale plek om repositories neer te zetten heeft weer het grote voordeel dat je de wereld kunt laten zien wat voor moois je gemaakt hebt én het vermakkelijkt samenwerking. Daarnaast is iedereen uit je team up-to-date als iedereen regelmatig commits pusht naar een centrale server.
 
 Er zijn tegenwoordig veel websites die een plek bieden voor Git repositories. De bekendste zijn GitHub, GitLab, Bitbucket en SourceForge. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.
 
@@ -58,10 +54,6 @@ In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) accoun
 
     Ga naar [https://github.com/](https://github.com/) en klik op `Sign up for GitHub`. Maak een account aan onder je _privé-emailadres_. Op deze manier blijf je toegang houden tot je account ook nadat je afgestudeerd bent.
 
-    !!! info
-
-        Mogelijk heb je eerder al eens een account aangemaakt bij GitHub, bijvoorbeeld bij de cursus Project natuurkunde/sterrenkunde 1. Maak voor ECPC dan ook gebruik van dit account. Controleer wel nog even of je voor dit account je _privé-emailadres_ gebruikt.
-
 ### GitHub Desktop
 
 Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de map met de oefenopdrachten.
@@ -69,10 +61,6 @@ Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een d
 !!! opdracht-basis "GitHub Desktop installeren"
 
     Ga naar [https://desktop.github.com/download/](https://desktop.github.com/download/) om GitHub Desktop te downloaden. Zoek daarna het gedownloade bestand op en installeer de applicatie. Log nu in met jouw account.
-
-    !!! info
-
-        Mogelijk heb je eerder al eens GitHub Desktop geïnstalleerd. Controleer dan of je met het juiste account ingelogd bent. Ga hiervoor naar **Accounts** via het dropdownmenu **File** > **Options**.
 
 <div id="opd:add_repository"></div>
 
@@ -137,11 +125,11 @@ In GitHub Desktop zie je nu bij _History_ de commit staan, met in één oogopsla
 
 !!! opdracht-basis "Push en pull"
 
-    De repository {{github}}`BiomedicalComputing` bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op [github.com](https://github.com/). Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen computerkabouters die 's nachts documenten verplaatsen of wissen.[^kabouter]
+    De repository {{github}}`BiomedicalComputing` bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op [github.com](https://github.com/). Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen verlies van je laptop of, als je op een zaalcomputer werkt, computerkabouters die 's nachts documenten verplaatsen of wissen.[^kabouter]
 
     In GitHub Desktop vind je een knop `Publish repository; Publish this repository to GitHub`. Als je daar op drukt kun je nog een andere naam aan de repository geven (deze naam bepaalt de url op [github.com](https://github.com/)), een beschrijving toevoegen en aangeven of de code privé moet zijn. Daarna klik je op de blauwe knop `Publish repository`. Als je nu naar [github.com](https://github.com) gaat zie je bij jouw repositories de zojuist gepubliceerde repository staan.
 
-    Om je wijzigen ook in de cloud op te slaan kun je commits `pushen` naar [github.com](https://github.com/) met de knop `Push origin`. Als je op een andere computer gaat werken kun je de repository vanuit de cloud naar de computer halen door op `Fetch origin` te klikken en daarna op `Pull origin`.
+    Om je wijzigen ook in de cloud op te slaan kun je commits `pushen` naar [github.com](https://github.com/) met de knop `Push origin`. Als je op een andere computer gaat werken kun je de laatste wijzigingen vanuit de cloud naar de computer halen door op `Fetch origin` te klikken en daarna op `Pull origin`.
 
 ### Repositories op GitHub
 
@@ -194,9 +182,6 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 Een klusje is pas echt stom als je het heel vaak achter elkaar moet doen. Computers zijn dan superhandig: je hoeft het klusje maar één keer te schrijven en te vertellen hoe vaak hij het moet uitvoeren.
 
-!!! warning
-    PREDICT THE OUTCOME IN EEN SCRIPT volgens schema. Hier de code plaatsen of niet?
-
 Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan tijdens DNA-replicatie waarbij in de nieuwe streng soms een foutje kan ontstaan. We gaan allereerst een script schrijven dat het proces van DNA-replicatie nabootst.
 
 !!! opdracht-basis "Replicatie"
@@ -246,6 +231,7 @@ Deze stonden nog niet uitgewerkt in het schema.
 
 [^stuk]: Stukmaken mag, maar het terughalen van een oude versie is niet met één druk op de knop gebeurd. Vraag om hulp als je terug wilt naar een oude versie, wij helpen je graag!
 [^git_footnote]: <https://initialcommit.com/blog/How-Did-Git-Get-Its-Name>
+[^git_cli_footnote]: Je kunt &mdash; als je dat wilt &mdash; de stap maken naar de command-line, waarmee je veel meer mogelijkheden tot je beschikking krijgt. Zie het boek _Pro Git_[@gitpro] voor meer informatie over Git en het gebruik via de command-line. De grafische applicatie is veel makkelijker; de command-line applicatie is veel krachiger.
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
 [^pro-account]: [https://github.com/education/students](https://github.com/education/students)
 [^kabouter]: Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.
