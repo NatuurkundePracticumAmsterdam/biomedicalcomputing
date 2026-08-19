@@ -105,6 +105,7 @@ D = \frac{C_1}{C_2}.
     3. Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010, 0.005 en 0.000 mol/L.
     4. Het kan soms handig zijn om de resultaten van je berekeningen te bewaren voor later, en pas op een later moment de resultaten te printen, of op te slaan in een bestand, of op een andere manier te gebruiken. Om dat te oefenen passen we ons script aan zodat de resultaten eerst worden bewaard en pas later worden geprint. Maak een lijst aan voor iedere grootheid die je wilt berekenen en bewaar het resultaat in die lijst, maar print niets binnen de for-loop. Als allerlaatste onderdeel van je script print je in één keer de resultaten.
     
+<div id="opdr:tabellen-printen"></div>
 !!! opdracht-meer "Tabellen printen"
 
     Een mooie manier om de resultaten weer te geven is met een tabel. Je kunt als eerste een koptekst printen (`kolom 1  kolom 2`), vervolgens een lijn met streepjes (`-------`), en dan een for-loop waarbij je een index gebruikt om de eerste waarde voor kolom 1, de eerste waarde voor kolom 2, enz. te printen, regel voor regel. Om alles netjes te krijgen moet je dan wel zorgen dat de getallen netjes onder elkaar komen. Dat doe je door Python te vertellen hoeveel ruimte een getal moet innemen. Dat gaat veruit het makkelijkst met f-strings. De regel
