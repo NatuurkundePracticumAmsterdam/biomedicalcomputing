@@ -12,6 +12,13 @@ Maar wat bedoelen we eigenlijk met het woord _model_? Een model is een vereenvou
 
 [^verslag]: [https://www.lorentz.leidenuniv.nl/history/zuiderzee/zuiderzee.html](https://www.lorentz.leidenuniv.nl/history/zuiderzee/zuiderzee.html)
 
+!!! opdracht-basis "Module `matplotlib` installeren"
+
+    Voor het visualiseren van modellen gebruiken we de module `matplotlib`. Om deze module te kunnen gebruiken, moet je deze eerst installeren in de virtuele omgeving. Open in Visual Studio Code een terminal via het dropdownmenu **Terminal** en kies **New Terminal**. Installeer vervolgens de module met:
+    ```
+    uv pip install matplotlib
+    ```
+
 ## Parachutesprong
 
 In deze sessie modelleren en visualiseren we de concentratie van een medicijn in het lichaam. Maar eerst oefenen we met een kleinere opdracht: een parachutesprong. Daarbij gebruiken we een examenopgave uit 2005.[^champignon]
@@ -26,22 +33,22 @@ Hannes Arch is de eerste mens die een parachutesprong waagde van de Champignon, 
 \begin{equation}
     F_w = k \cdot A \cdot v^2.
 \end{equation}
-Hierin is $k$ een constante waarvan de waarde geschat wordt op $0.37 \text{ kg} \, \text{m}^{-3}$, $A$ het frontale oppervlak van de parachutist inclusief parachute in $\text{m}^2$ en $v$ de snelheid in $\text{m} \, \text{s}^{-1}$.
+Hierin is $k$ een constante waarvan de waarde geschat wordt op 0.37 kg$\,$m$^{-3}$, $A$ het frontale oppervlak van de parachutist inclusief parachute in m$^2$ en $v$ de snelheid in m$\,$s$^{-1}$.
 
-De massa van Hannes mét parachute is 91 kg. Zolang de parachute nog niet is geopend, is het frontale oppervlak $0.80 \text{ m}^2$. Na 13 s opent Hannes zijn parachute. De parachute ontvouwt zich geleidelijk in $3.8 \text{ s}$ tot een frontaal oppervlak van $42.6 \text{ m}^2$. Tijdens het openen van de parachute neemt het frontale oppervlak lineair toe in de tijd.
+De massa van Hannes mét parachute is 91 kg. Zolang de parachute nog niet is geopend, is het frontale oppervlak 0.80 m$^2$. Na 13 s opent Hannes zijn parachute. De parachute ontvouwt zich geleidelijk in 3.8 s tot een frontaal oppervlak van 42.6 m$^2$. Tijdens het openen van de parachute neemt het frontale oppervlak lineair toe in de tijd.
 
 <div id="opdr:verken-probleem"></div>
 !!! opdracht-basis "(Ver)ken je probleem"
     
-    Voordat je gaat programmeren, is het handig om eerst het probleem te verkennen. Zo weet je welke grootheden en vergelijkingen je in het model nodig hebt. Werk op papier en overleg vooral ook met een buurmens.
+    Voordat je gaat programmeren, is het handig om eerst het probleem te verkennen. Zo weet je welke grootheden en formules je in het model nodig hebt. Werk op papier en overleg vooral ook met een buurmens.
 
     1. Maak een overzicht van alle constante grootheden en hun waarden.
     2. De parachutesprong bestaat uit drie fases. Beschrijf elke fase. Noteer per fase de tijdsgrenzen en het frontale oppervlak.
-    3. Schrijf op welke vergelijkingen je nodig hebt om de snelheid op een tijdstip te berekenen. Gelden deze vergelijkingen in alle fases, of verschilt dit per fase? 
+    3. Schrijf op welke formules je nodig hebt om de snelheid op een tijdstip te berekenen. Gelden deze formules in alle fases, of verschilt dit per fase? 
 
-We programmeren het verloop van de snelheid tijdens de eerste $20 \text{ s}$ van de parachutesprong, met tijdstappen van $0.1 \text{ s}$. We bouwen het programma stap voor stap op en testen de code regelmatig. Zo blijven de stappen behapbaar en kun je controleren of het model het verwachte verloop geeft.
+We programmeren het verloop van de snelheid tijdens de eerste 20 s van de parachutesprong, met tijdstappen van 0.1 s. We bouwen het programma stap voor stap op en testen de code regelmatig. Zo blijven de stappen behapbaar en kun je controleren of het model het verwachte verloop geeft.
 
-!!! opdracht-basis "Vrije val"
+!!! opdracht-basis "Parachutesprong"
 
     1. Maak een nieuw bestand aan met de naam {{new_file}}`base_jumping.py`. Definieer bovenaan in het bestand alle constante grootheden, zie [_opdracht (Ver)ken je probleem_](#opdr:verken-probleem).
     2. Bereken de snelheid voor alle tijdstappen in de eerste fase, de fase waarin de parachute nog niet is geopend. Maak een plot waarin je de snelheid $v$ uitzet tegen de tijd $t$. Test je code. Komt de plot overeen met wat je verwacht? Commit.
@@ -49,17 +56,121 @@ We programmeren het verloop van de snelheid tijdens de eerste $20 \text{ s}$ van
     4. Bereken nu ook de snelheid voor alle tijdstappen in de laatste fase, de fase waarin de parachute volledig geopend is. Maak een plot van alle fases. Test je code. Komt de plot overeen met wat je verwacht? Commit.
 
 Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.[^champignon] Komt jouw plot met dit diagram overeen?
-![$v,t$-diagram parachutesprong](figures/snelheid_tijd_diagram_parachutesprong.png){: style="width:60%"}
+![$v,t$-diagram parachutesprong](figures/snelheid_tijd_diagram_parachutesprong.png){: style="width:75%"}
 
 !!! opdracht-meer "Wat als?"
     
-    Je hebt nu een model gemaakt van de parachutesprong. Onderzoek hoe het snelheidsverloop verandert wanneer je een parameter van het model aanpast. Kies één van de onderstaande situaties en plot verschillende scenario's in één grafiek. Geef de lijnen in de grafiek duidelijke labels.
+    Je hebt nu een model gemaakt van de parachutesprong. Onderzoek hoe het snelheidsverloop verandert wanneer je een parameter van het model aanpast. Kies één van de onderstaande situaties en plot verschillende scenario's in één grafiek. Geef de lijnen in de grafiek duidelijke labels en voeg een legenda toe.
 
     1. Hannes Arch heeft met parachute een massa van 91 kg. Hoe verandert het $v,t$-diagram voor een parachutespringer met meer of minder massa?
     2. Wat gebeurt er als de parachute zich niet volledig ontvouwt? Hoe verandert het $v,t$-diagram als het frontale oppervlak kleiner is? 
  
-!!! warning
-    Nog een meer leren opdracht nodig.
+???+ meer-leren "Van Hannes Arch naar Felix Baumgartner"
+
+    Op 14 oktober 2012 sprong Felix Baumgartner uit een capsule op 38969 m hoogte, in de stratosfeer. Hij bereikte een maximale snelheid van 1357.6 km/h en doorbrak daarmee als eerste mens de geluidsbarrière in vrije val. Na 4 minuten en 19 seconden opende hij zijn parachute. De sprong is [op video vastgelegd](https://www.youtube.com/watch?v=dOoHArAzdug). 
+
+    Voor deze sprong volstaat het model dat we voor Hannes Arch hebben opgesteld niet meer. We hebben in dat model namelijk twee aannames gedaan die dicht bij het aardoppervlak redelijk zijn, maar op bijna 39 km hoogte niet meer opgaan: de zwaartekracht is constant en de luchtdichtheid is constant. In deze opdracht modelleren we de vrije val van Felix Baumgartner en vervangen we deze aannames door betere modellen.
+
+    We beginnen met de zwaartekracht. Hiervoor gebruiken we de gravitatiewet, die aangeeft hoe twee deeltjes elkaar aantrekken: 
+    \begin{equation}
+    F_z = G \cdot \frac{m \cdot M}{(R + h)^2}.
+    \end{equation}
+    In deze vergelijking is $F_z$ de zwaartekracht tussen twee massa's, $G$ de gravitatieconstante, $m$ de massa van Felix Baumgartner mét uitrusting (geschat op 120 kg), $M$ de massa van de Aarde, $R$ de straal van de Aarde en $h$ de hoogte boven het aardoppervlak. 
+
+    !!! opdracht-meer "Zwaartekracht afhankelijk van hoogte"
+
+        1. Maak een nieuw bestand aan met de naam {{new_file}}`stratos_jump.py`. 
+        2. Bekijk de code in het bestand {{file}}`base_jumping.py` en kopieer de delen die je kunt hergebruiken naar {{file}}`stratos_jump.py`. Je modelleert alleen de vrije val, code die samenhangt met het openen van de parachute heb je hier niet nodig. 
+        3. Zoek de waarden op van de gravitatieconstante $G$, de massa van de Aarde $M$ en de straal van de Aarde $R$, en definieer deze bovenaan in het bestand samen met de andere constante grootheden.
+        4. Modelleer de eerste 250 s van de vrije val. Pas het model zo aan dat de zwaartekracht bij elke tijdstap opnieuw wordt berekend op basis van de huidige hoogte. Houd de luchtdichtheid en daarmee de luchtweerstand voor nu nog constant. _Tip_: de hoogte neemt bij elke tijdstap af. Commit.
+
+    De luchtdichtheid verandert sterk met de hoogte. Om dit te modelleren gebruiken we het [atmosfeermodel van NASA](https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html) dat de atmosfeer in drie lagen verdeelt. In elke laag gelden andere formules voor de temperatuur en de luchtdruk. Als de luchtdruk bekend is, dan kan de luchtdichtheid berekend worden.
+
+    In het model voor Hannes Arch gebruiken we voor de luchtweerstand
+    $$
+    F_w = k \cdot A \cdot v^2,
+    $$
+    waarbij $k$ een constante is die enkele eigenschappen van lucht en het voorwerp samenvoegt. Nu de luchtdichtheid varieert met de hoogte, moeten we deze expliciet meenemen. De volledige formule voor de luchtweerstand is:
+    \begin{equation}
+    F_w = \frac{1}{2} \cdot \rho(h) \cdot C_w \cdot A \cdot v^2.
+    \end{equation}
+    Hierin is $\rho$ de luchtdichtheid die varieert met de hoogte $h$ en $C_w$ de weerstandscoëfficiënt van het voorwerp. Voor Felix Baumgartner in vrije val schatten we $A = 1 \text{ m}^2$ en $C_w = 1$.
+        
+    !!! opdracht-meer "Luchtdichtheid afhankelijk van hoogte"
+
+        5. Zoek op de [website van NASA](https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html) de formules op voor de temperatuur, de luchtdruk en de luchtdichtheid voor elk van de drie atmosfeerlagen.
+        6. Voeg de drie lagen toe aan het model. Bereken bij elke tijdstap de temperatuur, de luchtdruk en de luchtdichtheid op basis van de huidige hoogte en gebruik de luchtdichtheid in de berekening van de luchtweerstand. _Tip_: gebruik `#!py from math import exp` om `#!py exp` te kunnen gebruiken bij de exponentiële functie. Commit.
+
+    !!! opdracht-meer "Vrije val"
+
+        Nu kun je het programma uitvoeren en zien wat de uitkomst is. Zorg dat je als uitkomst een $v,t$-diagram hebt. Vergelijk de maximale snelheid met de werkelijke waarde, 1357.6 km/h.
+        
+    !!! opdracht-meer "Model versus werkelijkheid"
+       
+        In een [video](https://www.redbull.com/int-en/fly-with-felix-red-bull-stratos-pov-video) van de sprong zijn de tijd en de snelheid zichtbaar, waardoor je het model direct kunt vergelijken met de werkelijke data. Kopieer onderstaande lijsten en zet ze bovenaan in het bestand {{file}}`stratos_jump.py`: 
+            ```python
+            t_real = [
+                0,
+                10,
+                21,
+                30,
+                40,
+                50,
+                60,
+                70,
+                80,
+                90,
+                100,
+                110,
+                120,
+                130,
+                140,
+                150,
+                160,
+                170,
+                180,
+                190,
+                200,
+                210,
+                220,
+                230,
+                240,
+                250,
+            ]
+            v_real = [
+                0,
+                364,
+                749,
+                1013,
+                1260,
+                1355,
+                1196,
+                917,
+                726,
+                611,
+                500,
+                440,
+                386,
+                375,
+                359,
+                347,
+                312,
+                286,
+                285,
+                271,
+                229,
+                221,
+                219,
+                213,
+                210,
+                199,
+            ]
+            ```
+        Voeg de echte data toe aan je $v,t$-diagram. Hoe goed volgt het model de werkelijkheid? Waar wijkt het af en wat zou dat kunnen verklaren? Commit.
+    
+    !!! opdracht-meer "Geluidsbarrière" 
+    
+        De geluidssnelheid is afhankelijk van de temperatuur en dus van de hoogte. Bereken de geluidssnelheid op de hoogte waarop Felix Baumgartner de geluidsbarrière doorbrak en voeg deze als horizontale lijn toe aan het $v,t$-diagram. Commit.
 
 ## Medicijnconcentratie in het lichaam
 
