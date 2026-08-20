@@ -172,9 +172,13 @@ Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.[^cha
     
         De geluidssnelheid is afhankelijk van de temperatuur en dus van de hoogte. Bereken de geluidssnelheid op de hoogte waarop Felix Baumgartner de geluidsbarrière doorbrak en voeg deze als horizontale lijn toe aan het $v,t$-diagram. Commit.
 
-## Medicijnconcentratie in het lichaam
+## Hoeveelheid paracetamol in het lichaam
 
-De aanpak die je zojuist toegepast hebt, kunnen we ook in andere situaties gebruiken. We kunnen bijvoorbeeld een model opzetten waarin we de hoeveelheid van een medicijn in het lichaam over de tijd bijhouden.
+De aanpak die je zojuist toegepast hebt, kunnen we ook in andere situaties gebruiken. Een voorbeeld uit de klinische chemie is farmacokinetiek: het vakgebied dat beschrijft hoe het lichaam een medicijn opneemt, verdeelt, afbreekt en uitscheidt. We zetten een model op waarin we de hoeveelheid van een medicijn in het lichaam over de tijd bijhouden.
+
+!!! info "Aansluiting MNW-programma"
+
+    Farmacokinetiek sluit aan bij de MNW-leerlijn _Scheikunde en klinische chemie_. In het vak _Klinische en analytische chemie_ leer je analytische technieken toepassen om stoffen in geneesmiddelen en biologische monsters te meten. In het _Practicum bio-analytische chemie_ pas je die technieken toe. Het model dat we hier bouwen laat zien wat er met een medicijn in het lichaam gebeurt nadat het is ingenomen, een basis die je later in het lab kunt koppelen aan echte metingen.
 
 !!! opdracht-basis "Voorspellen"
 
@@ -219,8 +223,8 @@ Elke tijdstap bereken je dus aan de hand van de hoeveelheid in de vorige tijdsta
 
     Leveren de twee aanpakken daadwerkelijk hetzelfde resultaat op? Je gaat dit onderzoeken door beide aanpakken te programmeren en de resultaten te vergelijken.
 
-    1. Maak een nieuw bestand aan met de naam {{new_file}}`analytical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken met de analytische formule, vergelijking 2, de hoeveelheid paracetamol in het lichaam voor elk uur gedurende de eerste 24 uur. Plot het resultaat. Commit.
-    2. Maak een nieuw bestand aan met de naam {{new_file}}`numerical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken de fractie $r$ met behulp van vergelijking 3. Gebruik deze fractie vervolgens om de hoeveelheid paracetamol in het lichaam stap voor stap te berekenen voor de eerste 24 uur, met tijdstappen van 1 uur. Plot het resultaat. Commit.
+    1. Maak een nieuw bestand aan met de naam {{new_file}}`analytical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken met de analytische formule, vergelijking 4, de hoeveelheid paracetamol in het lichaam voor elk uur gedurende de eerste 24 uur. Plot het resultaat. Commit.
+    2. Maak een nieuw bestand aan met de naam {{new_file}}`numerical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken de fractie $r$ met behulp van vergelijking 5. Gebruik deze fractie vervolgens om de hoeveelheid paracetamol in het lichaam stap voor stap te berekenen voor de eerste 24 uur, met tijdstappen van 1 uur. Plot het resultaat. Commit.
     3. Vergelijk beide grafieken. Komen de resultaten overeen?
     !!! warning 
         Nog een oplossing vinden om de beide grafieken echt te kunnen vergelijken (VS Code wil niet twee scripts draaien als er een grafiek open staat).
@@ -231,11 +235,11 @@ Je hebt gezien dat de analytische en numerieke aanpak voor één dosis paracetam
 
     Stel dat je na 6 uur een tweede tablet paracetamol van 500 mg inneemt. Bespreek met een buurmens onderstaande situaties. Je hoeft hiervoor je programma nog niet aan te passen.
 
-    1. Kun je de analytische aanpak nog gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?
-    2. Kun je de numerieke aanpak nog gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe moet je het model aanpassen?
+    1. Kun je de analytische aanpak gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?
+    2. Kun je de numerieke aanpak gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?
     3. Welke aanpak zou je kiezen als je een tweede tablet inneemt? En welke aanpak zou je kiezen als je vaker een nieuw tablet inneemt? Leg uit waarom.
 
-De analytische aanpak is voor één dosis heel handig, je kunt voor ieder tijdstip direct berekenen hoeveel paracetamol er nog in het lichaam aanwezig is. Ook voor een tweede dosis is een analytische aanpak nog mogelijk, maar het wordt wel al wat meer gedoe. Maar hoe verder je het model uitbreidt, hoe ingewikkelder de analytische aanpak wordt. Wat als je meerdere doses inneemt? Wat als je een dosis vergeet of juist later inneemt? En wat als de snelheid waarmee paracetamol wordt verandert in de tijd? Bij de numerieke aanpak hoeven we voor deze uitbreidingen weinig te veranderen. Bij iedere tijdstap berekenen we hoeveel paracetamol er nog aanwezig is vanuit de vorige tijdstap en voegen we toe wat er tijdens die tijdstap wordt ingenomen. De berekening per tijdstap blijft hetzelfde. We kunnen daarom nieuwe situaties aan het model toevoegen zonder de hele berekening opnieuw te programmeren.
+De analytische aanpak is voor één dosis heel handig, je kunt voor ieder tijdstip direct berekenen hoeveel paracetamol er nog in het lichaam aanwezig is. Ook voor een tweede dosis is een analytische aanpak nog mogelijk, maar het wordt wel al wat meer gedoe. Maar hoe verder je het model uitbreidt, hoe ingewikkelder de analytische aanpak wordt. Wat als je meerdere doses inneemt? Wat als je een dosis vergeet of juist later inneemt? En wat als de snelheid waarmee paracetamol wordt afgebroken verandert in de tijd? Bij de numerieke aanpak hoeven we voor deze uitbreidingen weinig te veranderen. Bij iedere tijdstap berekenen we hoeveel paracetamol er nog aanwezig is vanuit de vorige tijdstap en voegen we toe wat er tijdens die tijdstap wordt ingenomen. De berekening per tijdstap blijft hetzelfde. We kunnen daarom nieuwe situaties aan het model toevoegen zonder de hele berekening opnieuw te programmeren.
 
 Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor eenvoudige problemen kan een analytische aanpak juist heel handig zijn. Een numerieke aanpak wordt vooral interessant wanneer je het model wilt uitbreiden of wanneer een analytische oplossing moeilijk of niet beschikbaar is, zoals bij de opdacht van de parachutesprong.
 
@@ -244,20 +248,60 @@ Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor e
     Een patiënt in het ziekenhuis krijgt paracetamol als pijnstiller. De patiënt neemt elke 6 uur een tablet van 500 mg in, te beginnen op tijdstip $t=0$.
 
     1. Schets hoe je verwacht dat de hoeveelheid paracetamol in het lichaam gedurende de eerste 24 uur verloopt. Geef duidelijk de momenten aan waarop de patiënt een nieuwe tablet inneemt.
-    2. Maak een nieuw bestand aan met de naam {{new_file}}`paracetamol.py`. Kopieer de code uit het bestand {{file}}`numerical_appraoch.py` naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.
+    2. Maak een nieuw bestand aan met de naam {{new_file}}`paracetamol.py`. Kopieer de code uit het bestand {{file}}`numerical_approach.py` naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.
     3. Vergelijk de plot met je voorspelling. Komt het verloop overeen met wat je verwachtte? Zo niet, waar zit het verschil?
 
-!!! warning
-    Informatie en opdrachten over therapeutisch venster nog toevoegen.
+### Therapeutisch venster
 
-!!! warning
-    Nieuwe Python constructen waarvoor (mogelijk) verwijzing naar appendix nodig is:
+Tot nu toe hebben we de hoeveelheid paracetamol in het lichaam over de tijd berekend en geplot. Maar om te beoordelen of een medicijn ook daadwerkelijk werkt en niet schadelijk is, kijken we naar de concentratie van het medicijn in het bloed, niet naar de hoeveelheid in het lichaam. Die concentratie vergelijken we daarna met het therapeutisch venster: de zone waarbinnen een medicijn effectief is. De grenzen van het therapeutisch venster voor paracetamol verschillen iets per bron, sommige bronnen hanteren 5-20 mg/l[^venster-5-20], andere 10-20 mg/l[^venster-10-20] en weer andere 10-30 mg/l[^venster-10-30]. De ondergrens van 5 mg/l komt overeen met de minimale effectieve concentratie voor koortsvermindering, voor pijnstilling ligt de grens rond de 10 mg/l. In onze opdrachten werken we met een venster van 5-20 mg/l. 
 
-    1. Plotten
-    2. Horizontale lijn in plot tekenen
-    3. Importeren modules (of zit deze al in sessie 3?)
-    4. ImportError (of zit deze al in sessie 3?)
+[^venster-5-20]: I. A. Gibb en B.J.Anderson. "Paracetamol (acetaminophen) pharmacodynamics: interpreting the plasma concentration". In: _Archives of Disease in Childhood_ 2008.93 (2008), p. 241-247. 
 
-    Nieuwe error constructen waarvoor (mogelijk) verwijzing naar appendix nodig is:
+[^venster-10-20]: [https://www.umcutrecht.nl/bepalingenwijzer/paracetamol](https://www.umcutrecht.nl/bepalingenwijzer/paracetamol)
 
-    5. Traceback
+[^venster-10-30]: [https://www.thepathologycentre.org/test/paracetamol-2/](https://www.thepathologycentre.org/test/paracetamol-2/)
+
+!!! warning "Uitsluitend bedoeld als voorbeeld"
+
+    De modellen in de opdrachten zijn sterk vereenvoudigd. Trek er geen conclusies uit over hoe jij paracetamol zou moeten gebruiken. Volg altijd de bijsluiter of het advies van een arts of apotheker.
+
+Om van hoeveelheid naar concentratie te gaan, hebben we het verdelingsvolume $V_d$ nodig. Wanneer je een medicijn inneemt, verspreidt het zich over het lichaam. Een deel blijft in het bloed en een deel trekt weg naar lichaamsweefsels. De concentratie van het medicijn meten we in het bloed, maar die weerspiegelt niet de totale hoeveelheid in het lichaam. Het verdelingsvolume koppelt dit aan elkaar: het is het hypothetische volume waarin de totale hoeveelheid medicijn zich zou moeten bevinden om de gemeten bloedconcentratie te verklaren. 
+
+Voor paracetamol is het verdelingsvolume 1 l$\,$kg$^{-1}$.[^verdelingsvolume-paracetamol] Voor het berekenen van de concentratie vermenigvuldigen we $V_d$ eerst met de lichaamsmassa $m$ om het totale verdelingsvolume in liters te krijgen. De concentratie berekenen we dan met 
+\begin{equation}
+C = \frac{Q}{V_d}.
+\end{equation}
+Voor een persoon van 80 kg en een dosis paracetamol van 500 mg geeft dat $C$ = 500 mg / (1 l$\,$kg$^{-1} \cdot$ 80 kg) = 6.25 mg/l.
+
+[^verdelingsvolume-paracetamol]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol)
+
+Merk op dat dit model een vereenvoudiging is. We gaan ervan uit dat de volledige dosis direct beschikbaar is, terwijl in werkelijkheid een deel van het medicijn verloren gaat bij de eerste passage door de lever en de concentratie oploopt naar een piek. Nieuwsgierig naar wat er echt gebeurt? Op [https://trc-p.nl/23/](https://trc-p.nl/23/) lees je er meer over.
+
+!!! opdracht-basis "Van concentratie naar therapeutisch venster"
+
+    In het bestand {{file}}`paracetamol.py` heb je de hoeveelheid paracetamol in het lichaam over de tijd berekend en geplot, waarbij elke zes uur een nieuwe dosis wordt toegediend. We zetten de hoeveelheid nu om naar concentratie en vergelijken die met het therapeutisch venster. 
+
+    1. Pas de code in het bestand {{file}}`paracetamol.py` aan zodat de concentratie tegen de tijd geplot wordt voor een persoon met een massa van 80 kg. Commit.
+    2. Voeg het therapeutisch venster van 5-20 mg/l toe als horizontale lijnen met `#!py plt.axhline()`. Zorg voor duidelijke labels en een legenda. Commit.
+    3. Ligt de concentratie paracetamol binnen het therapeutisch venster? Wat zou er gebeuren als deze persoon niet één maar twee tabletten per keer neemt?
+    4. Wat verandert er als de persoon een massa van 60 kg heeft in plaats van 80 kg? En 120 kg? Dit verklaart waarom artsen de dosis van sommige medicijnen afstemmen op het lichaamsgewicht.
+
+### Van paracetamol naar fenytoïne
+
+Het model dat we voor paracetamol hebben gebeouwd beschrijft de concentratie in het bloed, maar de piekconcentratie ligt maar net boven de ondergrens. Het effect van een andere dosering of een vergeten dosis is daardoor moeilijker zichtbaar te maken. Om de kracht van farmacokinetische modellen beter te laten zien, kijken we naar een medicijn waarbij een vergeten dosis directe klinische gevolgen kan hebben.
+
+Fenytoïne is een medicijn dat wordt gebruikt bij epilepsie. Het onderdrukt overmatige elektrische activiteit in de hersenen en voorkomt daarmee aanvallen. Wat fenytoïne bijzonder maakt vanuit farmacokinetisch oogpunt, is het therapeutisch venster. De concentratie in het bloek moet tussen de 8 mg/l en 20 mg/l liggen. Onder de 8 mg/l is het medicijn onvoldoende werkzaam en bestaat er het risico op een epileptische aanval. Boven de 20 mg/l treedt toxiciteit op, met bijwerkingen zoals nystagmus (onwillekeurige oogbewegingen), coördinatiestoornissen en verwardheid. De toxische grens valt hier samen met de bovengrens van het therapeutisch venster, er is dus geen veiligheidsmarge. 
+
+De relevante parameters voor fenytoïne zijn:
+
+* Dosering: 200-400 mg/dag[^farkompas-fenytoine]
+* Halfwaardetijd: ongeveer 24 uur[^farkompas-fenytoine]
+* Verdelingsvolume: ongeveer 0.65 l/kg[^farkompas-fenytoine]
+* Therapeutisch venster: 8-20 mg/l[^bepalingwijzer-fenytoine]
+* Toxische waarde: > 20 mg/l[^bepalingwijzer-fenytoine]
+
+[^farkompas-fenytoine]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine)
+
+[^bepalingwijzer-fenytoine]: [https://www.umcutrecht.nl/bepalingenwijzer/fenytoine](https://www.umcutrecht.nl/bepalingenwijzer/fenytoine)]
+
+Net als bij paracetamol maken we ook hier een vereenvoudigd model. We gaan er opnieuw vanuit dat de absorptie onmiddelijk en volledig plaatsvindt en dat het medicijn zich gelijkmatig verdeelt over het verdelingsvolume. De werkelijkheid is complexer.
