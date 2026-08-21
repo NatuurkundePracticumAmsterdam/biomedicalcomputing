@@ -161,7 +161,7 @@ Nu de ondergrens bekend is, bepalen we op een vergelijkbare manier de bovengrens
 !!! opdracht-basis "Bovengrens vaststellen"
 
     1. Je voegt de bepaling van de bovengrens toe aan het bestand {{file}}`hearing_test.py`. Commentarieer eerst de code voor de ondergrens uit, zodat je bij het testen niet steeds de stappen van de ondergrens hoeft te doorlopen. Selecteer de betreffende regels code en gebruik de sneltoetscombinatie CTRL + /. 
-    2. Voeg code toe voor de bepaling van de bovengrens. Test eerst de uiterste waarden 11000 Hz en 22000 Hz, pas daarna je strategie toe en maak het programma gebruiksvriendelijker. Volg hierbij de stappen uit de [_opdracht Ondergrens vaststellen_](#opdr:ondergrens). Je kunt $mdash; als je dat wilt &mdash; de variabelen `freq_min` en `freq_max` hergebruiken. Commit tussendoor regelmatig.
+    2. Voeg code toe voor de bepaling van de bovengrens. Test eerst de uiterste waarden 11000 Hz en 22000 Hz, pas daarna je strategie toe en maak het programma gebruiksvriendelijker. Volg hierbij de stappen uit de [_opdracht Ondergrens vaststellen_](#opdr:ondergrens). Je kunt &mdash; als je dat wilt &mdash; de variabelen `freq_min` en `freq_max` hergebruiken. Commit tussendoor regelmatig.
     3. Test je programma met het fictieve voorbeeld uit de vorige opdracht. Krijg je dezelfde stappen en hetzelfde eindresultaat?
 
 !!! opdracht-basis "Hoortest"
