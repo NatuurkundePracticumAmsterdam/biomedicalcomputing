@@ -80,7 +80,7 @@ Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.[^cha
     !!! opdracht-meer "Zwaartekracht afhankelijk van hoogte"
 
         1. Maak een nieuw bestand aan met de naam {{new_file}}`stratos_jump.py`. 
-        2. Bekijk de code in het bestand {{file}}`base_jumping.py` en kopieer de delen die je kunt hergebruiken naar {{file}}`stratos_jump.py`. Je modelleert alleen de vrije val, code die samenhangt met het openen van de parachute heb je hier niet nodig. 
+        2. Bekijk de code in het bestand {{file}}`base_jumping.py` en kopieer de delen die je kunt hergebruiken naar het bestand {{file}}`stratos_jump.py`. Je modelleert alleen de vrije val, code die samenhangt met het openen van de parachute heb je hier niet nodig. 
         3. Zoek de waarden op van de gravitatieconstante $G$, de massa van de Aarde $M$ en de straal van de Aarde $R$, en definieer deze bovenaan in het bestand samen met de andere constante grootheden.
         4. Modelleer de eerste 250 s van de vrije val. Pas het model zo aan dat de zwaartekracht bij elke tijdstap opnieuw wordt berekend op basis van de huidige hoogte. Houd de luchtdichtheid en daarmee de luchtweerstand voor nu nog constant. _Tip_: de hoogte neemt bij elke tijdstap af. Commit.
 
@@ -107,7 +107,7 @@ Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.[^cha
         
     !!! opdracht-meer "Model versus werkelijkheid"
        
-        In een [video](https://www.redbull.com/int-en/fly-with-felix-red-bull-stratos-pov-video) van de sprong zijn de tijd en de snelheid zichtbaar, waardoor je het model direct kunt vergelijken met de werkelijke data. Kopieer onderstaande lijsten en zet ze bovenaan in het bestand {{file}}`stratos_jump.py`: 
+        In een [video van de sprong](https://www.redbull.com/int-en/fly-with-felix-red-bull-stratos-pov-video) zijn de tijd en de snelheid zichtbaar, waardoor je het model direct kunt vergelijken met de werkelijke data. Kopieer onderstaande lijsten en zet ze bovenaan in het bestand {{file}}`stratos_jump.py`: 
             ```python
             t_real = [
                 0,
@@ -178,7 +178,7 @@ De aanpak die je zojuist toegepast hebt, kunnen we ook in andere situaties gebru
 
 !!! info "Aansluiting MNW-programma"
 
-    Farmacokinetiek sluit aan bij de MNW-leerlijn _Scheikunde en klinische chemie_. In het vak _Klinische en analytische chemie_ leer je analytische technieken toepassen om stoffen in geneesmiddelen en biologische monsters te meten. In het _Practicum bio-analytische chemie_ pas je die technieken toe. Het model dat we hier bouwen laat zien wat er met een medicijn in het lichaam gebeurt nadat het is ingenomen, een basis die je later in het lab kunt koppelen aan echte metingen.
+    Farmacokinetiek sluit aan bij de MNW-leerlijn _Scheikunde en klinische chemie_. In het vak _Klinische en analytische chemie_ leer je over analytische technieken om stoffen in geneesmiddelen en biologische monsters te meten. In het _Practicum bio-analytische chemie_ pas je die technieken toe. Het model dat we hier bouwen laat zien wat er met een medicijn in het lichaam gebeurt nadat het is ingenomen, een basis die je later in het lab kunt koppelen aan echte metingen.
 
 !!! opdracht-basis "Voorspellen"
 
@@ -195,7 +195,7 @@ Bij een analytische aanpak beschrijf je de afname van de hoeveelheid paracetamol
 \begin{equation}
     Q(t) = Q_0 \cdot \frac{1}{2}^{\frac{t}{t_{1/2}}}.
 \end{equation}
-Hierin is $Q$ de hoeveelheid op tijdstip $t$, $Q_0$ de beginhoeveelheid en $t_{1/2}$ de halfwaardetijd. Na één halfwaardetijd resteert de helft van de beginhoeveelheid: $Q=\frac{1}{2}Q_0$. Na twee halfwaardetijden resteert een kwart: $Q=\frac{1}{2}^2 \cdot Q_0 = \frac{1}{4} Q_0$. Voor paracetamol is de halfwaardetijd 2.5 uur. Na 2.5 uur is dus de helft van de beginhoeveelheid over en na 5 uur een kwart. 
+Hierin is $Q$ de hoeveelheid op tijdstip $t$, $Q_0$ de beginhoeveelheid en $t_{1/2}$ de halfwaardetijd. Na één halfwaardetijd resteert de helft van de beginhoeveelheid: $Q=\frac{1}{2}Q_0$. Na twee halfwaardetijden resteert een kwart: $Q=\frac{1}{2}^2 \cdot Q_0 = \frac{1}{4} Q_0$. Voor paracetamol is de halfwaardetijd gemiddeld 2.5 uur. Na 2.5 uur is dus de helft van de beginhoeveelheid over en na 5 uur een kwart. 
 
 Bij de numerieke aanpak bekijk je wat er per tijdstap gebeurt. Je berekent hoeveel paracetamol er na één tijdstap overblijft en gebruikt die hoeveelheid vervolgens als beginpunt voor de volgende tijdstap. De fractie $r$ die na één tijdstap $\Delta t$ overblijft, is 
 \begin{equation}
@@ -225,9 +225,7 @@ Elke tijdstap bereken je dus aan de hand van de hoeveelheid in de vorige tijdsta
 
     1. Maak een nieuw bestand aan met de naam {{new_file}}`analytical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken met de analytische formule, vergelijking 4, de hoeveelheid paracetamol in het lichaam voor elk uur gedurende de eerste 24 uur. Plot het resultaat. Commit.
     2. Maak een nieuw bestand aan met de naam {{new_file}}`numerical_approach.py`. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken de fractie $r$ met behulp van vergelijking 5. Gebruik deze fractie vervolgens om de hoeveelheid paracetamol in het lichaam stap voor stap te berekenen voor de eerste 24 uur, met tijdstappen van 1 uur. Plot het resultaat. Commit.
-    3. Vergelijk beide grafieken. Komen de resultaten overeen?
-    !!! warning 
-        Nog een oplossing vinden om de beide grafieken echt te kunnen vergelijken (VS Code wil niet twee scripts draaien als er een grafiek open staat).
+    3. Werk voor deze opdracht samen met een buurmens. Eén van jullie voert het bestand {{file}}`analytical_approach.py` uit en de ander het bestand {{file}}`numerical_approach.py`. Vergelijk beide grafieken. Komen de resultaten overeen?
 
 Je hebt gezien dat de analytische en numerieke aanpak voor één dosis paracetamol hetzelfde resultaat geven. Maar wat gebeurt er als we het model uitbreiden?
 
@@ -241,7 +239,7 @@ Je hebt gezien dat de analytische en numerieke aanpak voor één dosis paracetam
 
 De analytische aanpak is voor één dosis heel handig, je kunt voor ieder tijdstip direct berekenen hoeveel paracetamol er nog in het lichaam aanwezig is. Ook voor een tweede dosis is een analytische aanpak nog mogelijk, maar het wordt wel al wat meer gedoe. Maar hoe verder je het model uitbreidt, hoe ingewikkelder de analytische aanpak wordt. Wat als je meerdere doses inneemt? Wat als je een dosis vergeet of juist later inneemt? En wat als de snelheid waarmee paracetamol wordt afgebroken verandert in de tijd? Bij de numerieke aanpak hoeven we voor deze uitbreidingen weinig te veranderen. Bij iedere tijdstap berekenen we hoeveel paracetamol er nog aanwezig is vanuit de vorige tijdstap en voegen we toe wat er tijdens die tijdstap wordt ingenomen. De berekening per tijdstap blijft hetzelfde. We kunnen daarom nieuwe situaties aan het model toevoegen zonder de hele berekening opnieuw te programmeren.
 
-Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor eenvoudige problemen kan een analytische aanpak juist heel handig zijn. Een numerieke aanpak wordt vooral interessant wanneer je het model wilt uitbreiden of wanneer een analytische oplossing moeilijk of niet beschikbaar is, zoals bij de opdacht van de parachutesprong.
+Een numerieke aanpak is niet per se beter dan een analytische aanpak. Voor eenvoudige problemen kan een analytische aanpak juist heel handig zijn. Een numerieke aanpak wordt vooral interessant wanneer je het model wilt uitbreiden of wanneer een analytische oplossing moeilijk of niet beschikbaar is, zoals bij de opdacht van de parachutesprong.
 
 !!! opdracht-basis "Meerdere doses"
 
@@ -251,9 +249,9 @@ Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor e
     2. Maak een nieuw bestand aan met de naam {{new_file}}`paracetamol.py`. Kopieer de code uit het bestand {{file}}`numerical_approach.py` naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.
     3. Vergelijk de plot met je voorspelling. Komt het verloop overeen met wat je verwachtte? Zo niet, waar zit het verschil?
 
-### Therapeutisch venster
+## Therapeutisch venster
 
-Tot nu toe hebben we de hoeveelheid paracetamol in het lichaam over de tijd berekend en geplot. Maar om te beoordelen of een medicijn ook daadwerkelijk werkt en niet schadelijk is, kijken we naar de concentratie van het medicijn in het bloed, niet naar de hoeveelheid in het lichaam. Die concentratie vergelijken we daarna met het therapeutisch venster: de zone waarbinnen een medicijn effectief is. De grenzen van het therapeutisch venster voor paracetamol verschillen iets per bron, sommige bronnen hanteren 5-20 mg/l[^venster-5-20], andere 10-20 mg/l[^venster-10-20] en weer andere 10-30 mg/l[^venster-10-30]. De ondergrens van 5 mg/l komt overeen met de minimale effectieve concentratie voor koortsvermindering, voor pijnstilling ligt de grens rond de 10 mg/l. In onze opdrachten werken we met een venster van 5-20 mg/l. 
+Tot nu toe hebben we de hoeveelheid paracetamol in het lichaam voor verschillende tijdstappen berekend en geplot. Maar om te beoordelen of een medicijn ook daadwerkelijk werkt en niet schadelijk is, kijken we naar de concentratie van het medicijn in het bloed, niet naar de hoeveelheid in het lichaam. Die concentratie vergelijken we daarna met het therapeutisch venster: de zone waarbinnen een medicijn effectief is. De grenzen van het therapeutisch venster voor paracetamol verschillen iets per bron, sommige bronnen hanteren 5-20 mg$\,$l$^{-1}$[^venster-5-20], andere 10-20 mg$\,$l$^{-1}$[^venster-10-20] en weer andere 10-30 mg$\,$l$^{-1}$[^venster-10-30]. De ondergrens van 5 mg$\,$l$^{-1}$ komt overeen met de minimale effectieve concentratie voor koortsvermindering, voor pijnstilling ligt de grens rond de 10 mg$\,$l$^{-1}$. In onze opdrachten werken we met een therapeutisch venster van 5-20 mg$\,$l$^{-1}$. 
 
 [^venster-5-20]: I. A. Gibb en B.J.Anderson. "Paracetamol (acetaminophen) pharmacodynamics: interpreting the plasma concentration". In: _Archives of Disease in Childhood_ 2008.93 (2008), p. 241-247. 
 
@@ -261,47 +259,71 @@ Tot nu toe hebben we de hoeveelheid paracetamol in het lichaam over de tijd bere
 
 [^venster-10-30]: [https://www.thepathologycentre.org/test/paracetamol-2/](https://www.thepathologycentre.org/test/paracetamol-2/)
 
-!!! warning "Uitsluitend bedoeld als voorbeeld"
+!!! warning "Huidige modellen zijn sterk vereenvoudigd"
 
-    De modellen in de opdrachten zijn sterk vereenvoudigd. Trek er geen conclusies uit over hoe jij paracetamol zou moeten gebruiken. Volg altijd de bijsluiter of het advies van een arts of apotheker.
+    De modellen in de opdrachten zijn sterk vereenvoudigd en beschrijven maar deels hoe paracetamol zich in werkelijkheid gedraagt. Trek er daarom geen conclusies uit over hoe jij paracetamol zou moeten gebruiken. Volg altijd de bijsluiter of het advies van een arts of apotheker.
 
-Om van hoeveelheid naar concentratie te gaan, hebben we het verdelingsvolume $V_d$ nodig. Wanneer je een medicijn inneemt, verspreidt het zich over het lichaam. Een deel blijft in het bloed en een deel trekt weg naar lichaamsweefsels. De concentratie van het medicijn meten we in het bloed, maar die weerspiegelt niet de totale hoeveelheid in het lichaam. Het verdelingsvolume koppelt dit aan elkaar: het is het hypothetische volume waarin de totale hoeveelheid medicijn zich zou moeten bevinden om de gemeten bloedconcentratie te verklaren. 
+Om van een hoeveelheid naar een concentratie te gaan, hebben we het verdelingsvolume $V_d$ nodig. Wanneer je een medicijn inneemt, verspreidt het zich over het lichaam. Een deel blijft in het bloed en een deel wordt opgenomen in lichaamsweefsels. De concentratie van het medicijn meten we in het bloed, maar die weerspiegelt niet de totale hoeveelheid in het lichaam. Het verdelingsvolume koppelt dit aan elkaar: het is het hypothetische volume waarin de totale hoeveelheid van het medicijn zich zou moeten bevinden om de gemeten bloedconcentratie te verklaren. 
 
-Voor paracetamol is het verdelingsvolume 1 l$\,$kg$^{-1}$.[^verdelingsvolume-paracetamol] Voor het berekenen van de concentratie vermenigvuldigen we $V_d$ eerst met de lichaamsmassa $m$ om het totale verdelingsvolume in liters te krijgen. De concentratie berekenen we dan met 
+Voor paracetamol is het verdelingsvolume 1 l$\,$kg$^{-1}$.[^paracetamol-halfwaardetijd] Voor het berekenen van de concentratie vermenigvuldigen we $V_d$ eerst met de lichaamsmassa $m$ om het totale verdelingsvolume in liters te krijgen. De concentratie berekenen we dan met 
 \begin{equation}
 C = \frac{Q}{V_d}.
 \end{equation}
-Voor een persoon van 80 kg en een dosis paracetamol van 500 mg geeft dat $C$ = 500 mg / (1 l$\,$kg$^{-1} \cdot$ 80 kg) = 6.25 mg/l.
+[^conventie] Voor een persoon van 80 kg en een dosis paracetamol van 500 mg geeft dat: $C$ = 500 mg / (1 l$\,$kg$^{-1} \cdot$ 80 kg) = 6.25 mg$\,$l$^{-1}$.
 
-[^verdelingsvolume-paracetamol]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol)
+[^conventie]: Het verdelingsvolume $V_d$ wordt uitgedrukt in l$\,$kg$^{-1}$, dit is het volume per kilogram lichaamsgewicht. Maar bij het rekenen heb je het totale verdelingsvolume in liters nodig, dat ook wordt aangeduid met $V_d$. Je zou kunnen zeggen dat de vergelijking eigenlijk $C = Q / (V_d \cdot m)$ zou moeten zijn. In de farmacokinetiek is het echter gebruikelijk om de $m$ niet expliciet te noteren. In de handleiding volgen we deze conventie, wat betekent dat je altijd even moet bedenken in welke eenheid je het verdelingsvolume nodig hebt. 
 
-Merk op dat dit model een vereenvoudiging is. We gaan ervan uit dat de volledige dosis direct beschikbaar is, terwijl in werkelijkheid een deel van het medicijn verloren gaat bij de eerste passage door de lever en de concentratie oploopt naar een piek. Nieuwsgierig naar wat er echt gebeurt? Op [https://trc-p.nl/23/](https://trc-p.nl/23/) lees je er meer over.
+Merk op dat het model een vereenvoudiging is. We gaan ervan uit dat de volledige dosis direct beschikbaar is. In werkelijkheid loopt de concentratie na inname eerst geleidelijk op naar een piek, omdat het medicijn tijd nodig heeft om vanuit de maag en darmen in het bloed te worden opgenomen. Daarna daalt de concentratie weer. Bovendien gaat een deel van het medicijn verloren bij de eerste passage door de lever. Nieuwsgierig naar wat er echt gebeurt? Op [https://trc-p.nl/23/](https://trc-p.nl/23/) lees je er meer over.
 
-!!! opdracht-basis "Van concentratie naar therapeutisch venster"
+!!! opdracht-basis "Het therapeutisch venster in beeld"
 
     In het bestand {{file}}`paracetamol.py` heb je de hoeveelheid paracetamol in het lichaam over de tijd berekend en geplot, waarbij elke zes uur een nieuwe dosis wordt toegediend. We zetten de hoeveelheid nu om naar concentratie en vergelijken die met het therapeutisch venster. 
 
     1. Pas de code in het bestand {{file}}`paracetamol.py` aan zodat de concentratie tegen de tijd geplot wordt voor een persoon met een massa van 80 kg. Commit.
-    2. Voeg het therapeutisch venster van 5-20 mg/l toe als horizontale lijnen met `#!py plt.axhline()`. Zorg voor duidelijke labels en een legenda. Commit.
-    3. Ligt de concentratie paracetamol binnen het therapeutisch venster? Wat zou er gebeuren als deze persoon niet één maar twee tabletten per keer neemt?
-    4. Wat verandert er als de persoon een massa van 60 kg heeft in plaats van 80 kg? En 120 kg? Dit verklaart waarom artsen de dosis van sommige medicijnen afstemmen op het lichaamsgewicht.
+    2. Voeg de onder- en bovengrens van het therapeutisch venster, 5-20 mg$\,$l$^{-1}$, toe aan de plot als horizontale lijnen. Hiervoor kun je gebruikmaken van `#!py plt.axhline()`. Zorg voor duidelijke labels en een legenda. Commit.
+    3. Bekijk de plot over de volledige 24 uur. Ligt de concentratie paracetamol binnen het therapeutisch venster? 
+    4. Bij hevige pijn, bijvoorbeeld na een operatie, wordt soms de maximale dosering paracetamol voorgeschreven. De patiënt neemt dan vier keer daags twee tabletten paracetamol van 500 mg. Pas de code aan en bekijk de plot over de volledige 24 uur. Hoe verhoudt de concentratie zich tot het therapeutisch venster?
+    5. Artsen stemmen de dosis van sommige medicijnen af op het lichaamsgewicht van de patiënt.[^afstemming-dosis] Maar waarom eigenlijk? Pas de massa in het model aan naar 60 kg. Wat verandert er aan de concentratie ten opzichte van een massa van 80 kg? En bij 120 kg?
+    6. De halfwaardetijd van paracetamol is gemiddeld 2.5 uur, maar varieert tussen de 1 en 4 uur[^paracetamol-halfwaardetijd] door onder andere individuele verschillen in levermetabolisme. Pas de halfwaardetijd aan naar 1 uur en naar 4 uur. Wat verandert er aan de concentratie ten opzichte van 2.5 uur?
+
+    [^afstemming-dosis]: Voor paracetamol gebeurt dit bij volwassenen doorgaans niet, omdat de toxische grens ruim boven het therapeutisch venster ligt. De concentratieverschillen tussen volwassenen met verschillend lichaamsgewicht zijn klein genoeg om binnen veilige grenzen te blijven. Voor kinderen geldt dat echter niet, door hun lagere lichaamsgewicht moet de dosis worden aangepast. Kijk maar eens in de bijsluiter van paracetamol!
 
 ### Van paracetamol naar fenytoïne
 
-Het model dat we voor paracetamol hebben gebeouwd beschrijft de concentratie in het bloed, maar de piekconcentratie ligt maar net boven de ondergrens. Het effect van een andere dosering of een vergeten dosis is daardoor moeilijker zichtbaar te maken. Om de kracht van farmacokinetische modellen beter te laten zien, kijken we naar een medicijn waarbij een vergeten dosis directe klinische gevolgen kan hebben.
+Het model dat we voor paracetamol hebben gebouwd, beschrijft de concentratie paracetamol in het bloed redelijk goed, al komt de piekconcentratie bij een enkele dosis soms maar net boven de ondergrens uit. Wat paracetamol relatief veilig maakt, is dat de toxische grens ver boven de bovengrens van het therapeutisch venster ligt (150 mg$\,$l$^{-1}$[^venster-10-20]). Maar niet elk medicijn heeft zo'n ruime marge tot de toxische grens. Bij sommige medicijnen is die marge veel kleiner. Fenytoïne is daar een goed voorbeeld van.
 
-Fenytoïne is een medicijn dat wordt gebruikt bij epilepsie. Het onderdrukt overmatige elektrische activiteit in de hersenen en voorkomt daarmee aanvallen. Wat fenytoïne bijzonder maakt vanuit farmacokinetisch oogpunt, is het therapeutisch venster. De concentratie in het bloek moet tussen de 8 mg/l en 20 mg/l liggen. Onder de 8 mg/l is het medicijn onvoldoende werkzaam en bestaat er het risico op een epileptische aanval. Boven de 20 mg/l treedt toxiciteit op, met bijwerkingen zoals nystagmus (onwillekeurige oogbewegingen), coördinatiestoornissen en verwardheid. De toxische grens valt hier samen met de bovengrens van het therapeutisch venster, er is dus geen veiligheidsmarge. 
+Fenytoïne is een medicijn dat bij epilepsie kan worden voorgeschreven. Het onderdrukt overmatige elektrische activiteit in de hersenen en voorkomt daarmee epileptische aanvallen. Vanuit farmacokinetisch oogpunt is fenytoïne bijzonder omdat de toxische grens samenvalt met de bovengrens van het therapeutisch venster. De concentratie in het bloed moet tussen de 8 mg$\,$l$^{-1}$ en 20 mg$\,$l$^{-1}$ liggen.[^bepalingwijzer-fenytoine] Onder de 8 mg$\,$l$^{-1}$ is het medicijn onvoldoende werkzaam en bestaat er het risico op een epileptische aanval. Boven de 20 mg$\,$l$^{-1}$ treedt toxiciteit op[^bepalingwijzer-fenytoine], er is geen veiligheidsmarge. 
 
-De relevante parameters voor fenytoïne zijn:
+[^bepalingwijzer-fenytoine]: [https://www.umcutrecht.nl/bepalingenwijzer/fenytoine](https://www.umcutrecht.nl/bepalingenwijzer/fenytoine)
 
-* Dosering: 200-400 mg/dag[^farkompas-fenytoine]
-* Halfwaardetijd: ongeveer 24 uur[^farkompas-fenytoine]
-* Verdelingsvolume: ongeveer 0.65 l/kg[^farkompas-fenytoine]
-* Therapeutisch venster: 8-20 mg/l[^bepalingwijzer-fenytoine]
-* Toxische waarde: > 20 mg/l[^bepalingwijzer-fenytoine]
+Net als bij paracetamol maken we ook hier een vereenvoudigd model. We gaan ervan uit dat de absorptie onmiddellijk en volledig plaatsvindt en dat het medicijn zich gelijkmatig verdeelt over het verdelingsvolume. De werkelijkheid is natuurlijk complexer.
 
-[^farkompas-fenytoine]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine)
+<div id="opdr:dosis-fenytoine"></div>
+!!! opdracht-basis "Veilige dosis" 
 
-[^bepalingwijzer-fenytoine]: [https://www.umcutrecht.nl/bepalingenwijzer/fenytoine](https://www.umcutrecht.nl/bepalingenwijzer/fenytoine)]
+    1. Maak een nieuw bestand aan met de naam {{new_file}}`fenytoine.py`. Kopieer de code uit het bestand {{file}}`paracetamol.py` naar dit nieuwe bestand. Gebruik de volgende waarden voor fenytoïne:
+        * Dosering: 200-400 mg, eenmaal per dag[^farkompas-fenytoine]
+        * Halfwaardetijd: ongeveer 24 uur[^farkompas-fenytoine]
+        * Verdelingsvolume: ongeveer 0.65 l$\,$kg$^{-1}$[^farkompas-fenytoine]
+        * Therapeutisch venster: 8-20 mg$\,$l$^{-1}$[^bepalingwijzer-fenytoine]
+        * Toxische grens: > 20 mg$\,$l$^{-1}$[^bepalingwijzer-fenytoine]
+    2. Modelleer de concentratie fenytoïne in het bloed gedurende 20 dagen voor een persoon met een massa van 80 kg. Kies zelf een dagelijkse dosis. Plot de concentratie tegen de tijd en geef het therapeutisch venster met horizontale lijnen weer. Zit je binnen het therapeutisch venster? Commit.
+    3. Neem twee patiënten: patiënt 1 heeft een massa van 80 kg en patiënt 2 een massa van 60 kg. Welke dagelijkse dosis is voor elk van hen het meest geschikt?
 
-Net als bij paracetamol maken we ook hier een vereenvoudigd model. We gaan er opnieuw vanuit dat de absorptie onmiddelijk en volledig plaatsvindt en dat het medicijn zich gelijkmatig verdeelt over het verdelingsvolume. De werkelijkheid is complexer.
+    [^farkompas-fenytoine]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine)
+
+<div id="opdr:vergeten-dosis"></div>
+!!! opdracht-basis "Vergeten dosis"
+
+    In de [_opdracht Veilige dosis_](#opdr:dosis-fenytoine) heb je een geschikte dagelijkse dosis bepaald voor een patiënt. Gebruik dit als startpunt bij deze opdracht.
+
+    1. Stel dat de patiënt op dag 12 de dosis vergeet. Pas het model zo aan dat er op dag 12 geen dosis wordt ingenomen. Wat gebeurt er met de concentratie fenytoïne in het bloed? Commit.
+    2. Soms is de neiging om de vergeten dosis de volgende dag in te halen. Simuleer wat er gebeurt als de patiënt op dag 13 een dubbele dosis neemt. Waarom wordt afgeraden dit te doen? Commit.
+    3. De patiënt realiseert zich later op dag 12 dat die de dosis vergeten is. Bekijk wat er gebeurt als de patiënt de dosis alsnog inneemt na 6, 12 of 18 uur. Tot hoe laat op dag 12, afgerond op hele uren, kan de patiënt de dosis nog veilig inhalen? Geldt deze grens ook voor een patiënt met een andere massa en een andere dosis? 
+
+!!! opdracht-meer "Automatisch zoeken" 
+
+    In de [_opdracht Vergeten dosis_](#opdr:vergeten-dosis) heb je handmatig bepaald tot hoe laat de patiënt een vergeten dosis nog veilig kan inhalen. Dat werkt, maar het is ook omslachtig. Je kunt ook de computer dat werk laten doen.
+
+    Breid je programma uit met code die voor elk uur op dag 12 controleert of het nog veilig is om de dosis in te halen. Welke grens binnen het therapeutisch venster wil je hanteren als veilige grens? Laat je programma de laatste veilige inhaaltijd in de terminal printen en geef de bijbehorende plot. Test je programma voor patiënten met verschillende massa's en doses. Doet je programma wat je verwacht? Commit.
+
