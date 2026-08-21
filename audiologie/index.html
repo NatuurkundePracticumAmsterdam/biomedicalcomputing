@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/hoortest/">
+        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/audiologie/">
       
       
-        <link rel="prev" href="../farmacokinetiek/">
+        <link rel="prev" href="../epidemiologie/">
       
       
         <link rel="next" href="../bio-informatica/">
@@ -340,6 +340,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../epidemiologie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 5: epidemiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -497,6 +524,87 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echografie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 9: Echografie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pet-scan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 10: PET scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eindopdracht/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 11 &amp; 12: vrije eindopdracht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -616,7 +724,7 @@ Om het signaal alleen rechts af te spelen, zet je de linkerwaarde op nul. </p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Strategie ondergrens uitwerken</p>
 <p>Het is goed om de strategie eerst op papier uit te werken. Zo krijg je een idee van wat je programma moet kunnen en kun je het voorbeeld later gebruiken om je programma te testen.</p>
-<p>We gaan ervan uit dat de ondergrens van het hoorbare frequentiebereik tussen 10 Hz en 11000 Hz ligt. We kiezen de onderkant van dit bereik iets scherper dan wat de literatuur aangeeft, om er zeker van te zijn dat de proefpersoon de laagste frequentie niet kan horen. En we kiezen 11000 Hz als bovenkant omdat de meeste mensen eze frequentie kunnen horen.</p>
+<p>We gaan ervan uit dat de ondergrens van het hoorbare frequentiebereik tussen 10 Hz en 11000 Hz ligt. We kiezen de onderkant van dit bereik iets scherper dan wat de literatuur aangeeft, om er zeker van te zijn dat de proefpersoon de laagste frequentie niet kan horen. En we kiezen 11000 Hz als bovenkant omdat de meeste mensen deze frequentie kunnen horen.</p>
 <p>We testen eerst of de proefpersoon de uiterste waarden van het bereik kan horen. Kan die 11000 Hz horen? En 10 Hz? Als het antwoord op de eerste vraag 'ja' is en op de tweede vraag 'nee', weet je dat de ondergrens van het hoorbare frequentiebereik ergens tussen deze twee waarden ligt. </p>
 <ol>
 <li>Welke frequentie vraag je daarna uit volgens jouw strategie? En hoe pas je het bereik aan als het antwoord 'ja' is? En als het 'nee' is?</li>
@@ -695,13 +803,13 @@ Je geeft <code>plt.barh()</code> als eerste de naam op de $y$-as mee. Daarna vol
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Jij versus het dierenrijk</p>
 <ol>
-<li>Voeg aan het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hearing_test.py</code> een horizontaal staafdiagram toe. Plot jouw eigen testresultaat als horizontale staaf. Welke variabelen moet je tijdens de gehoortest opslaan om je testresultaat te kunnen tekenen? </li>
-<li>Kies vijf dieren naar keuze uit bovenstaand figuur en voeg hun frequentiebereik toe aan het staafdiagram.</li>
-<li>Met <code>plt.semilogx()</code> maak je de $x$-as logaritmisch. Voeg dit toe. Wat valt je op ten opzichte van de lineaire schaal?</li>
+<li>Voeg aan het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hearing_test.py</code> een horizontaal staafdiagram toe. Plot jouw eigen testresultaat als horizontale staaf. Welke variabelen moet je tijdens de gehoortest opslaan om je testresultaat te kunnen tekenen? Commit.</li>
+<li>Kies vijf dieren naar keuze uit bovenstaand figuur en voeg hun frequentiebereik toe aan het staafdiagram. Commit.</li>
+<li>Met <code>plt.semilogx()</code> maak je de $x$-as logaritmisch. Voeg dit toe. Wat valt je op ten opzichte van de lineaire schaal? Commit.</li>
 <li>Je kunt je testresultaat als transparante balk over het gehele diagram weergeven. Het wordt dan nog makkelijker om jouw frequentiebereik te vergelijken met dat van andere dieren. Je doet dit met <code>plt.axvspan()</code>. We gebruiken de het frequentiebereik van de goudvis weer als voorbeeld:
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s2">&quot;lavender&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div>
-Geef als eerste de ondergrens mee en daarna de bovengrens. Je kunt een eigen kleur kiezen uit het <a href="https://matplotlib.org/stable/gallery/color/named_colors.html">beschikbare overzicht van CSS Colors</a>. De parameter <code>zorder=0</code> zorgt ervoor dat de balk als achtergrond wordt getekend en dat de andere staven er overheen worden getekend. Voeg een dergelijke balk toe voor je eigen testresultaat. </li>
+Geef als eerste de ondergrens mee en daarna de bovengrens. Je kunt een eigen kleur kiezen uit het <a href="https://matplotlib.org/stable/gallery/color/named_colors.html">beschikbare overzicht van CSS Colors</a>. De parameter <code>zorder=0</code> zorgt ervoor dat de balk als achtergrond wordt getekend en dat de andere staven er overheen worden getekend. Voeg een dergelijke balk toe voor je eigen testresultaat. Commit.</li>
 </ol>
 </div>
 </details>

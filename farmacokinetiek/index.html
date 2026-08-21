@@ -14,7 +14,7 @@
         <link rel="prev" href="../uv-vis-spectroscopie/">
       
       
-        <link rel="next" href="../hoortest/">
+        <link rel="next" href="../epidemiologie/">
       
       
         
@@ -387,13 +387,41 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#medicijnconcentratie-in-het-lichaam" class="md-nav__link">
+  <a href="#hoeveelheid-paracetamol-in-het-lichaam" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Medicijnconcentratie in het lichaam
+        Hoeveelheid paracetamol in het lichaam
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#therapeutisch-venster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Therapeutisch venster
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Therapeutisch venster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#van-paracetamol-naar-fenytoine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Van paracetamol naar fenytoïne
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -412,7 +440,34 @@
   
   
     <li class="md-nav__item">
-      <a href="../hoortest/" class="md-nav__link">
+      <a href="../epidemiologie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 5: epidemiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audiologie/" class="md-nav__link">
         
   
   
@@ -486,6 +541,87 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echografie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 9: Echografie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pet-scan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 10: PET scan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eindopdracht/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 11 &amp; 12: vrije eindopdracht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -504,30 +640,39 @@
 
 
 <h1 id="sessie-4-farmacokinetiek">Sessie 4: farmacokinetiek<a class="headerlink" href="#sessie-4-farmacokinetiek" title="Permanent link">&para;</a></h1>
-<p>In de voorgaande sessies hebben we al gezien dat programmeren handig kan zijn in bepaalde situaties. In de komende sessies gaan we dieper in op een toepassing die je waarschijnlijk al kent: het modelleren van verschijnselen. Grote kans dat je op de middelbare school modellen gemaakt hebt in Coach.<sup id="fnref:coach"><a class="footnote-ref" href="#fn:coach">1</a></sup> En ook bij het huidige natuurkunde practicum gebruik je modellen om een verschijnsel te beschrijven, bijvoorbeeld om een verwachting op te stellen of je resultaten te interpreteren. </p>
-<p>Maar wat bedoelen we nu eigenlijk met de woorden <em>modelleren</em> en <em>simuleren</em>? Een model is een vereenvoudigde weergave van de werkelijkheid. Je beschrijft een verschijnsel met formules, waarbij je keuzes maakt over wat je wel en niet meeneemt in het model. Een model dat alles probeert te beschrijven, wordt al snel te complex om mee te werken.<sup id="fnref:aanname"><a class="footnote-ref" href="#fn:aanname">2</a></sup> Bij een simulatie gebruik je zo'n model om situaties door te rekenen. Door parameters aan te passen, kun je onderzoeken hoe een uitkomst verandert. Dit maakt het mogelijk om situaties te testen die in het echt moeilijk of onmogelijk uit te voeren zijn, zoals het simuleren van een epidemie.</p>
-<p>Een computer is bij uitstek geschikt voor modelleren en simuleren. Berekeningen die met de hand onpraktisch zijn<sup id="fnref:Zuiderzee"><a class="footnote-ref" href="#fn:Zuiderzee">3</a></sup>, voert een computer een stuk sneller uit. En je kunt eenvoudig verschillende situaties vergelijken door een parameter te veranderen.</p>
+<p>In de voorgaande sessies hebben we al gezien dat programmeren handig kan zijn in bepaalde situaties. In deze sessie gaan we dieper in op iets dat je waarschijnlijk al kent: het modelleren van verschijnselen. Grote kans dat je op de middelbare school modellen gemaakt hebt in Coach.<sup id="fnref:coach"><a class="footnote-ref" href="#fn:coach">1</a></sup> En ook bij het huidige natuurkunde practicum gebruik je modellen om een verschijnsel te beschrijven, bijvoorbeeld om een verwachting op te stellen of je resultaten te interpreteren. </p>
+<p>Maar wat bedoelen we eigenlijk met het woord <em>model</em>? Een model is een vereenvoudigde weergave van de werkelijkheid. Je beschrijft een verschijnsel met formules, waarbij je keuzes maakt over wat je wel en niet meeneemt in het model. Een model dat alles probeert te beschrijven, wordt al snel te complex om mee te werken.<sup id="fnref:aanname"><a class="footnote-ref" href="#fn:aanname">2</a></sup> Een computer is daarbij een handig hulpmiddel. Berekeningen die met de hand onpraktisch zijn<sup id="fnref:Zuiderzee"><a class="footnote-ref" href="#fn:Zuiderzee">3</a></sup>, voert een computer snel uit. En door resultaten te visualiseren, maken we de uitkomsten van het model inzichtelijk.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Module <code>matplotlib</code> installeren</p>
+<p>Voor het visualiseren van modellen gebruiken we de module <code>matplotlib</code>. Om deze module te kunnen gebruiken, moet je deze eerst installeren in de virtuele omgeving. Open in Visual Studio Code een terminal via het dropdownmenu <strong>Terminal</strong> en kies <strong>New Terminal</strong>. Installeer vervolgens de module met:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv pip install matplotlib
+</span></code></pre></div></p>
+</div>
 <h2 id="parachutesprong">Parachutesprong<a class="headerlink" href="#parachutesprong" title="Permanent link">&para;</a></h2>
-<p>In deze sessie modelleren we de concentratie van een medicijn in het lichaam. Maar eerst oefenen we met een kleinere opdracht: een parachutesprong. Dit doen we aan de hand van een examenopgave uit 2005.<sup id="fnref:champignon"><a class="footnote-ref" href="#fn:champignon">5</a></sup></p>
-<p>Hannes Arch is de eerste mens die een parachutesprong waagde van de Champignon, een 1800 meter hoge rots aan de noordwand van de Eiger in Zwitserland. We maken een model om het verloop van zijn snelheid tijdens de parachutesprong te benaderen. In dit model nemen we luchtweerstand mee. Voor de luchtwaarstand geldt
+<p>In deze sessie modelleren en visualiseren we de concentratie van een medicijn in het lichaam. Maar eerst oefenen we met een kleinere opdracht: een parachutesprong. Daarbij gebruiken we een examenopgave uit 2005.<sup id="fnref:champignon"><a class="footnote-ref" href="#fn:champignon">5</a></sup></p>
+<div class="admonition info">
+<p class="admonition-title">Aansluiting MNW-programma</p>
+<p>De parachutesprong is een voorbeeld uit de klassieke mechanica. Dat is misschien niet het eerste onderwerp waar je aan denkt bij medische natuurwetenschappen, maar de onderliggende principes &mdash; krachten, beweging en weerstand &mdash; komen ook in de (bio)medische wereld voor. Bij het vak <em>Fysica: mechanica, electriciteit en magnetisme</em> (jaar 1, periode 4 + 5) leer je onder andere meer over deze principes. En bij de module <em>Natuurkunde practicum</em> (jaar 1, periode 1) kun je bij het experiment ultrasoondetector vallende objecten in meer detail bestuderen.</p>
+</div>
+<p>Hannes Arch is de eerste mens die een parachutesprong waagde van de Champignon, een 1800 meter hoge rots aan de noordwand van de Eiger in Zwitserland. We maken een model dat het verloop van zijn snelheid tijdens de sprong benadert. In dit model nemen we luchtweerstand mee. Voor de luchtweerstand geldt
 \begin{equation}
     F_w = k \cdot A \cdot v^2.
 \end{equation}
-Hierin is $k$ een constante waarvan de waarde geschat wordt op $0.37 \text{ kg} \, \text{m}^{-3}$, $A$ het frontale oppervlak van de parachutist inclusief parachute in $\text{m}^2$ en $v$ de snelheid in $\text{m} \, \text{s}^{-1}$.</p>
-<p>De massa van Hannes mét parachute is 91 kg. Zolang de parachute nog niet is geopend, is het frontale oppervlak $0.80 \text{ m}^2$. Na 13 s opent Hannes zijn parachute. De parachute ontvouwt zich geleidelijk in $3.8 \text{ s}$ tot een frontale oppervlak van $42.6 \text{ m}^2$. Tijdens het openen van de parachute neemt het frontale oppervlak lineair toe in de tijd.</p>
+Hierin is $k$ een constante waarvan de waarde geschat wordt op 0.37 kg$\,$m$^{-3}$, $A$ het frontale oppervlak van de parachutist inclusief parachute in m$^2$ en $v$ de snelheid in m$\,$s$^{-1}$.</p>
+<p>De massa van Hannes mét parachute is 91 kg. Zolang de parachute nog niet is geopend, is het frontale oppervlak 0.80 m$^2$. Na 13 s opent Hannes zijn parachute. De parachute ontvouwt zich geleidelijk in 3.8 s tot een frontaal oppervlak van 42.6 m$^2$. Tijdens het openen van de parachute neemt het frontale oppervlak lineair toe in de tijd.</p>
 <div id="opdr:verken-probleem"></div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">(Ver)ken je probleem</p>
-<p>Voordat je gaat programmeren, is het handig om eerst het probleem te verkennen, zodat je straks houvast hebt. Doe dit op papier en overleg vooral ook met een buurmens.</p>
+<p>Voordat je gaat programmeren, is het handig om eerst het probleem te verkennen. Zo weet je welke grootheden en formules je in het model nodig hebt. Werk op papier en overleg vooral ook met een buurmens.</p>
 <ol>
 <li>Maak een overzicht van alle constante grootheden en hun waarden.</li>
-<li>De sprong bestaat uit drie fases. Beschrijf elke fase, geef de bijbehorende tijdsgrenzen en het frontale oppervlak.</li>
-<li>Schrijf op welke vergelijkingen je nodig hebt om de snelheid op een tijdstip te berekenen. Gelden deze vergelijkingen voor alle fases of verschillen ze per fase? </li>
+<li>De parachutesprong bestaat uit drie fases. Beschrijf elke fase. Noteer per fase de tijdsgrenzen en het frontale oppervlak.</li>
+<li>Schrijf op welke formules je nodig hebt om de snelheid op een tijdstip te berekenen. Gelden deze formules in alle fases, of verschilt dit per fase? </li>
 </ol>
 </div>
-<p>Het is de bedoeling om het verloop van de snelheid tijdens de parachutesprong in de eerste $20 \text{ s}$ te programmeren met tijdstappen van $0.1 \text{ s}$. Om het programmeren overzichtelijk te houden, programmeer je stap voor stap en test je je code regelmatig. Zo blijven de stappen behapbaar en houd je controle.</p>
+<p>We programmeren het verloop van de snelheid tijdens de eerste 20 s van de parachutesprong, met tijdstappen van 0.1 s. We bouwen het programma stap voor stap op en testen de code regelmatig. Zo blijven de stappen behapbaar en kun je controleren of het model het verwachte verloop geeft.</p>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Vrije val</p>
+<p class="admonition-title">Parachutesprong</p>
 <ol>
 <li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>base_jumping.py</code>. Definieer bovenaan in het bestand alle constante grootheden, zie <a href="#opdr:verken-probleem"><em>opdracht (Ver)ken je probleem</em></a>.</li>
 <li>Bereken de snelheid voor alle tijdstappen in de eerste fase, de fase waarin de parachute nog niet is geopend. Maak een plot waarin je de snelheid $v$ uitzet tegen de tijd $t$. Test je code. Komt de plot overeen met wat je verwacht? Commit.</li>
@@ -535,25 +680,131 @@ Hierin is $k$ een constante waarvan de waarde geschat wordt op $0.37 \text{ kg} 
 <li>Bereken nu ook de snelheid voor alle tijdstappen in de laatste fase, de fase waarin de parachute volledig geopend is. Maak een plot van alle fases. Test je code. Komt de plot overeen met wat je verwacht? Commit.</li>
 </ol>
 </div>
-<p>Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.<sup id="fnref2:champignon"><a class="footnote-ref" href="#fn:champignon">5</a></sup> Komt jouw plot overeen met dit diagram?
-<img alt="$v,t$-diagram parachutesprong" src="../figures/snelheid_tijd_diagram_parachutesprong.png" style="width:60%" /></p>
+<p>Volgens de examenopgave zou het $v,t$-diagram er als volgt uit moeten zien.<sup id="fnref2:champignon"><a class="footnote-ref" href="#fn:champignon">5</a></sup> Komt jouw plot met dit diagram overeen?
+<img alt="$v,t$-diagram parachutesprong" src="../figures/snelheid_tijd_diagram_parachutesprong.png" style="width:75%" /></p>
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Wat als?</p>
-<p>Nu je een model gemaakt hebt, kun je gaan kijken wat er gebeurt als je een parameter aanpast. Kies één van de onderstaande situaties en plot de verschillende scenario's in één grafiek. </p>
+<p>Je hebt nu een model gemaakt van de parachutesprong. Onderzoek hoe het snelheidsverloop verandert wanneer je een parameter van het model aanpast. Kies één van de onderstaande situaties en plot verschillende scenario's in één grafiek. Geef de lijnen in de grafiek duidelijke labels en voeg een legenda toe.</p>
 <ol>
-<li>Hannes Arch weegt met parachute 91 kg. Hoe verandert het $v,t$-diagram voor een parachutespringer met meer of minder massa?</li>
-<li>Hoe verandert het $v,t$-diagram wanneer de parachute minder goed ontvouwt en het frontale oppervlak kleiner is? </li>
+<li>Hannes Arch heeft met parachute een massa van 91 kg. Hoe verandert het $v,t$-diagram voor een parachutespringer met meer of minder massa?</li>
+<li>Wat gebeurt er als de parachute zich niet volledig ontvouwt? Hoe verandert het $v,t$-diagram als het frontale oppervlak kleiner is? </li>
 </ol>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Nog een meer leren opdracht nodig.</p>
+<details class="meer-leren" open="open">
+<summary>Van Hannes Arch naar Felix Baumgartner</summary>
+<p>Op 14 oktober 2012 sprong Felix Baumgartner uit een capsule op 38969 m hoogte, in de stratosfeer. Hij bereikte een maximale snelheid van 1357.6 km/h en doorbrak daarmee als eerste mens de geluidsbarrière in vrije val. Na 4 minuten en 19 seconden opende hij zijn parachute. De sprong is <a href="https://www.youtube.com/watch?v=dOoHArAzdug">op video vastgelegd</a>. </p>
+<p>Voor deze sprong volstaat het model dat we voor Hannes Arch hebben opgesteld niet meer. We hebben in dat model namelijk twee aannames gedaan die dicht bij het aardoppervlak redelijk zijn, maar op bijna 39 km hoogte niet meer opgaan: de zwaartekracht is constant en de luchtdichtheid is constant. In deze opdracht modelleren we de vrije val van Felix Baumgartner en vervangen we deze aannames door betere modellen.</p>
+<p>We beginnen met de zwaartekracht. Hiervoor gebruiken we de gravitatiewet, die aangeeft hoe twee deeltjes elkaar aantrekken: 
+\begin{equation}
+F_z = G \cdot \frac{m \cdot M}{(R + h)^2}.
+\end{equation}
+In deze vergelijking is $F_z$ de zwaartekracht tussen twee massa's, $G$ de gravitatieconstante, $m$ de massa van Felix Baumgartner mét uitrusting (geschat op 120 kg), $M$ de massa van de Aarde, $R$ de straal van de Aarde en $h$ de hoogte boven het aardoppervlak. </p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Zwaartekracht afhankelijk van hoogte</p>
+<ol>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>stratos_jump.py</code>. </li>
+<li>Bekijk de code in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>base_jumping.py</code> en kopieer de delen die je kunt hergebruiken naar het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>stratos_jump.py</code>. Je modelleert alleen de vrije val, code die samenhangt met het openen van de parachute heb je hier niet nodig. </li>
+<li>Zoek de waarden op van de gravitatieconstante $G$, de massa van de Aarde $M$ en de straal van de Aarde $R$, en definieer deze bovenaan in het bestand samen met de andere constante grootheden.</li>
+<li>Modelleer de eerste 250 s van de vrije val. Pas het model zo aan dat de zwaartekracht bij elke tijdstap opnieuw wordt berekend op basis van de huidige hoogte. Houd de luchtdichtheid en daarmee de luchtweerstand voor nu nog constant. <em>Tip</em>: de hoogte neemt bij elke tijdstap af. Commit.</li>
+</ol>
 </div>
-<h2 id="medicijnconcentratie-in-het-lichaam">Medicijnconcentratie in het lichaam<a class="headerlink" href="#medicijnconcentratie-in-het-lichaam" title="Permanent link">&para;</a></h2>
-<p>De aanpak die je zojuist toegepast hebt, kunnen we ook in andere situaties gebruiken. We kunnen bijvoorbeeld een model opzetten waarin we de hoeveelheid van een medicijn in het lichaam over de tijd bijhouden.</p>
+<p>De luchtdichtheid verandert sterk met de hoogte. Om dit te modelleren gebruiken we het <a href="https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html">atmosfeermodel van NASA</a> dat de atmosfeer in drie lagen verdeelt. In elke laag gelden andere formules voor de temperatuur en de luchtdruk. Als de luchtdruk bekend is, dan kan de luchtdichtheid berekend worden.</p>
+<p>In het model voor Hannes Arch gebruiken we voor de luchtweerstand
+$$
+F_w = k \cdot A \cdot v^2,
+$$
+waarbij $k$ een constante is die enkele eigenschappen van lucht en het voorwerp samenvoegt. Nu de luchtdichtheid varieert met de hoogte, moeten we deze expliciet meenemen. De volledige formule voor de luchtweerstand is:
+\begin{equation}
+F_w = \frac{1}{2} \cdot \rho(h) \cdot C_w \cdot A \cdot v^2.
+\end{equation}
+Hierin is $\rho$ de luchtdichtheid die varieert met de hoogte $h$ en $C_w$ de weerstandscoëfficiënt van het voorwerp. Voor Felix Baumgartner in vrije val schatten we $A = 1 \text{ m}^2$ en $C_w = 1$.</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Luchtdichtheid afhankelijk van hoogte</p>
+<ol>
+<li>Zoek op de <a href="https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html">website van NASA</a> de formules op voor de temperatuur, de luchtdruk en de luchtdichtheid voor elk van de drie atmosfeerlagen.</li>
+<li>Voeg de drie lagen toe aan het model. Bereken bij elke tijdstap de temperatuur, de luchtdruk en de luchtdichtheid op basis van de huidige hoogte en gebruik de luchtdichtheid in de berekening van de luchtweerstand. <em>Tip</em>: gebruik <code class="language-py highlight"><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">exp</span></code> om <code class="language-py highlight"><span class="n">exp</span></code> te kunnen gebruiken bij de exponentiële functie. Commit.</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Vrije val</p>
+<p>Nu kun je het programma uitvoeren en zien wat de uitkomst is. Zorg dat je als uitkomst een $v,t$-diagram hebt. Vergelijk de maximale snelheid met de werkelijke waarde, 1357.6 km/h.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Model versus werkelijkheid</p>
+<p>In een <a href="https://www.redbull.com/int-en/fly-with-felix-red-bull-stratos-pov-video">video van de sprong</a> zijn de tijd en de snelheid zichtbaar, waardoor je het model direct kunt vergelijken met de werkelijke data. Kopieer onderstaande lijsten en zet ze bovenaan in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>stratos_jump.py</code>: 
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">t_real</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="mi">21</span><span class="p">,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="mi">30</span><span class="p">,</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="mi">40</span><span class="p">,</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="mi">50</span><span class="p">,</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="mi">60</span><span class="p">,</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="mi">70</span><span class="p">,</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="mi">80</span><span class="p">,</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="mi">90</span><span class="p">,</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="mi">110</span><span class="p">,</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="mi">120</span><span class="p">,</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="mi">130</span><span class="p">,</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="mi">140</span><span class="p">,</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="mi">150</span><span class="p">,</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="mi">160</span><span class="p">,</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="mi">170</span><span class="p">,</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="mi">180</span><span class="p">,</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="mi">190</span><span class="p">,</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="mi">200</span><span class="p">,</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="mi">210</span><span class="p">,</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="mi">220</span><span class="p">,</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="mi">230</span><span class="p">,</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>    <span class="mi">240</span><span class="p">,</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="mi">250</span><span class="p">,</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">]</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="n">v_real</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    <span class="mi">364</span><span class="p">,</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>    <span class="mi">749</span><span class="p">,</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>    <span class="mi">1013</span><span class="p">,</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>    <span class="mi">1260</span><span class="p">,</span>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="mi">1355</span><span class="p">,</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    <span class="mi">1196</span><span class="p">,</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="mi">917</span><span class="p">,</span>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="mi">726</span><span class="p">,</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="mi">611</span><span class="p">,</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>    <span class="mi">500</span><span class="p">,</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="mi">440</span><span class="p">,</span>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="mi">386</span><span class="p">,</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>    <span class="mi">375</span><span class="p">,</span>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>    <span class="mi">359</span><span class="p">,</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>    <span class="mi">347</span><span class="p">,</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="mi">312</span><span class="p">,</span>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="mi">286</span><span class="p">,</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    <span class="mi">285</span><span class="p">,</span>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    <span class="mi">271</span><span class="p">,</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    <span class="mi">229</span><span class="p">,</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>    <span class="mi">221</span><span class="p">,</span>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    <span class="mi">219</span><span class="p">,</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>    <span class="mi">213</span><span class="p">,</span>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="mi">210</span><span class="p">,</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>    <span class="mi">199</span><span class="p">,</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="p">]</span>
+</span></code></pre></div>
+Voeg de echte data toe aan je $v,t$-diagram. Hoe goed volgt het model de werkelijkheid? Waar wijkt het af en wat zou dat kunnen verklaren? Commit.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Geluidsbarrière</p>
+<p>De geluidssnelheid is afhankelijk van de temperatuur en dus van de hoogte. Bereken de geluidssnelheid op de hoogte waarop Felix Baumgartner de geluidsbarrière doorbrak en voeg deze als horizontale lijn toe aan het $v,t$-diagram. Commit.</p>
+</div>
+</details>
+<h2 id="hoeveelheid-paracetamol-in-het-lichaam">Hoeveelheid paracetamol in het lichaam<a class="headerlink" href="#hoeveelheid-paracetamol-in-het-lichaam" title="Permanent link">&para;</a></h2>
+<p>De aanpak die je zojuist toegepast hebt, kunnen we ook in andere situaties gebruiken. Een voorbeeld uit de klinische chemie is farmacokinetiek: het vakgebied dat beschrijft hoe het lichaam een medicijn opneemt, verdeelt, afbreekt en uitscheidt. We zetten een model op waarin we de hoeveelheid van een medicijn in het lichaam over de tijd bijhouden.</p>
+<div class="admonition info">
+<p class="admonition-title">Aansluiting MNW-programma</p>
+<p>Farmacokinetiek sluit aan bij de MNW-leerlijn <em>Scheikunde en klinische chemie</em>. In het vak <em>Klinische en analytische chemie</em> leer je over analytische technieken om stoffen in geneesmiddelen en biologische monsters te meten. In het <em>Practicum bio-analytische chemie</em> pas je die technieken toe. Het model dat we hier bouwen laat zien wat er met een medicijn in het lichaam gebeurt nadat het is ingenomen, een basis die je later in het lab kunt koppelen aan echte metingen.</p>
+</div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Voorspellen</p>
-<p>Paracetamol is een veelgebruikte pijnstiller. Stel je neemt een tablet paracetamol van 500 mg. De halfwaardetijd van paracetamol &mdash; de tijd die nodig is om de hoeveelheid in je lichaam te halveren &mdash; is gemiddeld genomen 2.5 uur.<sup id="fnref:paracetamol-halfwaardetijd"><a class="footnote-ref" href="#fn:paracetamol-halfwaardetijd">6</a></sup> </p>
+<p>Paracetamol is een veelgebruikte pijnstiller. Stel je neemt een tablet paracetamol van 500 mg. De halfwaardetijd van paracetamol &mdash; de tijd die nodig is om de hoeveelheid in je lichaam te halveren &mdash; is gemiddeld genomen 2.5 uur.<sup id="fnref2:paracetamol-halfwaardetijd"><a class="footnote-ref" href="#fn:paracetamol-halfwaardetijd">6</a></sup> </p>
 <ol>
 <li>Hoe verwacht je dat de hoeveelheid paracetamol in je lichaam afneemt over de tijd? Schets een grafiek.</li>
 <li>Hoeveel procent van de paracetamol blijft er na elk uur over? Hoe bepaal je dit?</li>
@@ -564,7 +815,7 @@ Hierin is $k$ een constante waarvan de waarde geschat wordt op $0.37 \text{ kg} 
 \begin{equation}
     Q(t) = Q_0 \cdot \frac{1}{2}^{\frac{t}{t_{1/2}}}.
 \end{equation}
-Hierin is $Q$ de hoeveelheid op tijdstip $t$, $Q_0$ de beginhoeveelheid en $t_{1/2}$ de halfwaardetijd. Na één halfwaardetijd resteert de helft van de beginhoeveelheid: $Q=\frac{1}{2}Q_0$. Na twee halfwaardetijden resteert een kwart: $Q=\frac{1}{2}^2 \cdot Q_0 = \frac{1}{4} Q_0$. Voor paracetamol is de halfwaardetijd 2.5 uur. Na 2.5 uur is dus de helft van de beginhoeveelheid over en na 5 uur een kwart. </p>
+Hierin is $Q$ de hoeveelheid op tijdstip $t$, $Q_0$ de beginhoeveelheid en $t_{1/2}$ de halfwaardetijd. Na één halfwaardetijd resteert de helft van de beginhoeveelheid: $Q=\frac{1}{2}Q_0$. Na twee halfwaardetijden resteert een kwart: $Q=\frac{1}{2}^2 \cdot Q_0 = \frac{1}{4} Q_0$. Voor paracetamol is de halfwaardetijd gemiddeld 2.5 uur. Na 2.5 uur is dus de helft van de beginhoeveelheid over en na 5 uur een kwart. </p>
 <p>Bij de numerieke aanpak bekijk je wat er per tijdstap gebeurt. Je berekent hoeveel paracetamol er na één tijdstap overblijft en gebruikt die hoeveelheid vervolgens als beginpunt voor de volgende tijdstap. De fractie $r$ die na één tijdstap $\Delta t$ overblijft, is 
 \begin{equation}
     r = \frac{1}{2}^{\frac{\Delta t}{t_{1/2}}}.
@@ -590,53 +841,91 @@ Elke tijdstap bereken je dus aan de hand van de hoeveelheid in de vorige tijdsta
 <p class="admonition-title">Vergelijken</p>
 <p>Leveren de twee aanpakken daadwerkelijk hetzelfde resultaat op? Je gaat dit onderzoeken door beide aanpakken te programmeren en de resultaten te vergelijken.</p>
 <ol>
-<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>analytical_approach.py</code>. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken met de analytische formule, vergelijking 2, de hoeveelheid paracetamol in het lichaam voor elk uur gedurende de eerste 24 uur. Plot het resultaat. Commit.</li>
-<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>numerical_approach.py</code>. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken de fractie $r$ met behulp van vergelijking 3. Gebruik deze fractie vervolgens om de hoeveelheid paracetamol in het lichaam stap voor stap te berekenen voor de eerste 24 uur, met tijdstappen van 1 uur. Plot het resultaat. Commit.</li>
-<li>Vergelijk beide grafieken. Komen de resultaten overeen?</li>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>analytical_approach.py</code>. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken met de analytische formule, vergelijking 4, de hoeveelheid paracetamol in het lichaam voor elk uur gedurende de eerste 24 uur. Plot het resultaat. Commit.</li>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>numerical_approach.py</code>. Definieer bovenaan in het bestand de beginhoeveelheid paracetamol en de halfwaardetijd. Bereken de fractie $r$ met behulp van vergelijking 5. Gebruik deze fractie vervolgens om de hoeveelheid paracetamol in het lichaam stap voor stap te berekenen voor de eerste 24 uur, met tijdstappen van 1 uur. Plot het resultaat. Commit.</li>
+<li>Werk voor deze opdracht samen met een buurmens. Eén van jullie voert het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>analytical_approach.py</code> uit en de ander het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>numerical_approach.py</code>. Vergelijk beide grafieken. Komen de resultaten overeen?</li>
 </ol>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Nog een oplossing vinden om de beide grafieken echt te kunnen vergelijken (VS Code wil niet twee scripts draaien als er een grafiek open staat).</p>
-</div>
 </div>
 <p>Je hebt gezien dat de analytische en numerieke aanpak voor één dosis paracetamol hetzelfde resultaat geven. Maar wat gebeurt er als we het model uitbreiden?</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Uitbreiden</p>
 <p>Stel dat je na 6 uur een tweede tablet paracetamol van 500 mg inneemt. Bespreek met een buurmens onderstaande situaties. Je hoeft hiervoor je programma nog niet aan te passen.</p>
 <ol>
-<li>Kun je de analytische aanpak nog gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?</li>
-<li>Kun je de numerieke aanpak nog gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe moet je het model aanpassen?</li>
+<li>Kun je de analytische aanpak gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?</li>
+<li>Kun je de numerieke aanpak gebruiken om de hoeveelheid paracetamol in het lichaam te berekenen? Zo ja, hoe zou je dat aanpakken?</li>
 <li>Welke aanpak zou je kiezen als je een tweede tablet inneemt? En welke aanpak zou je kiezen als je vaker een nieuw tablet inneemt? Leg uit waarom.</li>
 </ol>
 </div>
-<p>De analytische aanpak is voor één dosis heel handig, je kunt voor ieder tijdstip direct berekenen hoeveel paracetamol er nog in het lichaam aanwezig is. Ook voor een tweede dosis is een analytische aanpak nog mogelijk, maar het wordt wel al wat meer gedoe. Maar hoe verder je het model uitbreidt, hoe ingewikkelder de analytische aanpak wordt. Wat als je meerdere doses inneemt? Wat als je een dosis vergeet of juist later inneemt? En wat als de snelheid waarmee paracetamol wordt verandert in de tijd? Bij de numerieke aanpak hoeven we voor deze uitbreidingen weinig te veranderen. Bij iedere tijdstap berekenen we hoeveel paracetamol er nog aanwezig is vanuit de vorige tijdstap en voegen we toe wat er tijdens die tijdstap wordt ingenomen. De berekening per tijdstap blijft hetzelfde. We kunnen daarom nieuwe situaties aan het model toevoegen zonder de hele berekening opnieuw te programmeren.</p>
-<p>Een numerieke aanpak is dus niet per se beter dan een analytische aanpak. Voor eenvoudige problemen kan een analytische aanpak juist heel handig zijn. Een numerieke aanpak wordt vooral interessant wanneer je het model wilt uitbreiden of wanneer een analytische oplossing moeilijk of niet beschikbaar is, zoals bij de opdacht van de parachutesprong.</p>
+<p>De analytische aanpak is voor één dosis heel handig, je kunt voor ieder tijdstip direct berekenen hoeveel paracetamol er nog in het lichaam aanwezig is. Ook voor een tweede dosis is een analytische aanpak nog mogelijk, maar het wordt wel al wat meer gedoe. Maar hoe verder je het model uitbreidt, hoe ingewikkelder de analytische aanpak wordt. Wat als je meerdere doses inneemt? Wat als je een dosis vergeet of juist later inneemt? En wat als de snelheid waarmee paracetamol wordt afgebroken verandert in de tijd? Bij de numerieke aanpak hoeven we voor deze uitbreidingen weinig te veranderen. Bij iedere tijdstap berekenen we hoeveel paracetamol er nog aanwezig is vanuit de vorige tijdstap en voegen we toe wat er tijdens die tijdstap wordt ingenomen. De berekening per tijdstap blijft hetzelfde. We kunnen daarom nieuwe situaties aan het model toevoegen zonder de hele berekening opnieuw te programmeren.</p>
+<p>Een numerieke aanpak is niet per se beter dan een analytische aanpak. Voor eenvoudige problemen kan een analytische aanpak juist heel handig zijn. Een numerieke aanpak wordt vooral interessant wanneer je het model wilt uitbreiden of wanneer een analytische oplossing moeilijk of niet beschikbaar is, zoals bij de opdacht van de parachutesprong.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Meerdere doses</p>
 <p>Een patiënt in het ziekenhuis krijgt paracetamol als pijnstiller. De patiënt neemt elke 6 uur een tablet van 500 mg in, te beginnen op tijdstip $t=0$.</p>
 <ol>
 <li>Schets hoe je verwacht dat de hoeveelheid paracetamol in het lichaam gedurende de eerste 24 uur verloopt. Geef duidelijk de momenten aan waarop de patiënt een nieuwe tablet inneemt.</li>
-<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>paracetamol.py</code>. Kopieer de code uit het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>numerical_appraoch.py</code> naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.</li>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>paracetamol.py</code>. Kopieer de code uit het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>numerical_approach.py</code> naar dit nieuwe bestand. Pas het model aan zodat de patiënt elke 6 uur een tablet van 500 mg inneemt. Bereken de hoeveelheid paracetamol in het lichaam voor de eerste 24 uur en plot het resultaat. Commit.</li>
 <li>Vergelijk de plot met je voorspelling. Komt het verloop overeen met wat je verwachtte? Zo niet, waar zit het verschil?</li>
 </ol>
 </div>
+<h2 id="therapeutisch-venster">Therapeutisch venster<a class="headerlink" href="#therapeutisch-venster" title="Permanent link">&para;</a></h2>
+<p>Tot nu toe hebben we de hoeveelheid paracetamol in het lichaam voor verschillende tijdstappen berekend en geplot. Maar om te beoordelen of een medicijn ook daadwerkelijk werkt en niet schadelijk is, kijken we naar de concentratie van het medicijn in het bloed, niet naar de hoeveelheid in het lichaam. Die concentratie vergelijken we daarna met het therapeutisch venster: de zone waarbinnen een medicijn effectief is. De grenzen van het therapeutisch venster voor paracetamol verschillen iets per bron, sommige bronnen hanteren 5-20 mg$\,$l$^{-1}$<sup id="fnref:venster-5-20"><a class="footnote-ref" href="#fn:venster-5-20">7</a></sup>, andere 10-20 mg$\,$l$^{-1}$<sup id="fnref:venster-10-20"><a class="footnote-ref" href="#fn:venster-10-20">8</a></sup> en weer andere 10-30 mg$\,$l$^{-1}$<sup id="fnref:venster-10-30"><a class="footnote-ref" href="#fn:venster-10-30">9</a></sup>. De ondergrens van 5 mg$\,$l$^{-1}$ komt overeen met de minimale effectieve concentratie voor koortsvermindering, voor pijnstilling ligt de grens rond de 10 mg$\,$l$^{-1}$. In onze opdrachten werken we met een therapeutisch venster van 5-20 mg$\,$l$^{-1}$. </p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Informatie en opdrachten over therapeutisch venster nog toevoegen.</p>
+<p class="admonition-title">Huidige modellen zijn sterk vereenvoudigd</p>
+<p>De modellen in de opdrachten zijn sterk vereenvoudigd en beschrijven maar deels hoe paracetamol zich in werkelijkheid gedraagt. Trek er daarom geen conclusies uit over hoe jij paracetamol zou moeten gebruiken. Volg altijd de bijsluiter of het advies van een arts of apotheker.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Nieuwe Python constructen waarvoor (mogelijk) verwijzing naar appendix nodig is:</p>
+<p>Om van een hoeveelheid naar een concentratie te gaan, hebben we het verdelingsvolume $V_d$ nodig. Wanneer je een medicijn inneemt, verspreidt het zich over het lichaam. Een deel blijft in het bloed en een deel wordt opgenomen in lichaamsweefsels. De concentratie van het medicijn meten we in het bloed, maar die weerspiegelt niet de totale hoeveelheid in het lichaam. Het verdelingsvolume koppelt dit aan elkaar: het is het hypothetische volume waarin de totale hoeveelheid van het medicijn zich zou moeten bevinden om de gemeten bloedconcentratie te verklaren. </p>
+<p>Voor paracetamol is het verdelingsvolume 1 l$\,$kg$^{-1}$.<sup id="fnref:paracetamol-halfwaardetijd"><a class="footnote-ref" href="#fn:paracetamol-halfwaardetijd">6</a></sup> Voor het berekenen van de concentratie vermenigvuldigen we $V_d$ eerst met de lichaamsmassa $m$ om het totale verdelingsvolume in liters te krijgen. De concentratie berekenen we dan met 
+\begin{equation}
+C = \frac{Q}{V_d}.
+\end{equation}
+<sup id="fnref:conventie"><a class="footnote-ref" href="#fn:conventie">10</a></sup> Voor een persoon van 80 kg en een dosis paracetamol van 500 mg geeft dat: $C$ = 500 mg / (1 l$\,$kg$^{-1} \cdot$ 80 kg) = 6.25 mg$\,$l$^{-1}$.</p>
+<p>Merk op dat het model een vereenvoudiging is. We gaan ervan uit dat de volledige dosis direct beschikbaar is. In werkelijkheid loopt de concentratie na inname eerst geleidelijk op naar een piek, omdat het medicijn tijd nodig heeft om vanuit de maag en darmen in het bloed te worden opgenomen. Daarna daalt de concentratie weer. Bovendien gaat een deel van het medicijn verloren bij de eerste passage door de lever. Nieuwsgierig naar wat er echt gebeurt? Op <a href="https://trc-p.nl/23/">https://trc-p.nl/23/</a> lees je er meer over.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Het therapeutisch venster in beeld</p>
+<p>In het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>paracetamol.py</code> heb je de hoeveelheid paracetamol in het lichaam over de tijd berekend en geplot, waarbij elke zes uur een nieuwe dosis wordt toegediend. We zetten de hoeveelheid nu om naar concentratie en vergelijken die met het therapeutisch venster. </p>
 <ol>
-<li>Plotten</li>
-<li>Horizontale lijn in plot tekenen</li>
-<li>Importeren modules (of zit deze al in sessie 3?)</li>
-<li>ImportError (of zit deze al in sessie 3?)</li>
+<li>Pas de code in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>paracetamol.py</code> aan zodat de concentratie tegen de tijd geplot wordt voor een persoon met een massa van 80 kg. Commit.</li>
+<li>Voeg de onder- en bovengrens van het therapeutisch venster, 5-20 mg$\,$l$^{-1}$, toe aan de plot als horizontale lijnen. Hiervoor kun je gebruikmaken van <code class="language-py highlight"><span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">()</span></code>. Zorg voor duidelijke labels en een legenda. Commit.</li>
+<li>Bekijk de plot over de volledige 24 uur. Ligt de concentratie paracetamol binnen het therapeutisch venster? </li>
+<li>Bij hevige pijn, bijvoorbeeld na een operatie, wordt soms de maximale dosering paracetamol voorgeschreven. De patiënt neemt dan vier keer daags twee tabletten paracetamol van 500 mg. Pas de code aan en bekijk de plot over de volledige 24 uur. Hoe verhoudt de concentratie zich tot het therapeutisch venster?</li>
+<li>Artsen stemmen de dosis van sommige medicijnen af op het lichaamsgewicht van de patiënt.<sup id="fnref:afstemming-dosis"><a class="footnote-ref" href="#fn:afstemming-dosis">11</a></sup> Maar waarom eigenlijk? Pas de massa in het model aan naar 60 kg. Wat verandert er aan de concentratie ten opzichte van een massa van 80 kg? En bij 120 kg?</li>
+<li>De halfwaardetijd van paracetamol is gemiddeld 2.5 uur, maar varieert tussen de 1 en 4 uur<sup id="fnref3:paracetamol-halfwaardetijd"><a class="footnote-ref" href="#fn:paracetamol-halfwaardetijd">6</a></sup> door onder andere individuele verschillen in levermetabolisme. Pas de halfwaardetijd aan naar 1 uur en naar 4 uur. Wat verandert er aan de concentratie ten opzichte van 2.5 uur?</li>
 </ol>
-<p>Nieuwe error constructen waarvoor (mogelijk) verwijzing naar appendix nodig is:</p>
+</div>
+<h3 id="van-paracetamol-naar-fenytoine">Van paracetamol naar fenytoïne<a class="headerlink" href="#van-paracetamol-naar-fenytoine" title="Permanent link">&para;</a></h3>
+<p>Het model dat we voor paracetamol hebben gebouwd, beschrijft de concentratie paracetamol in het bloed redelijk goed, al komt de piekconcentratie bij een enkele dosis soms maar net boven de ondergrens uit. Wat paracetamol relatief veilig maakt, is dat de toxische grens ver boven de bovengrens van het therapeutisch venster ligt (150 mg$\,$l$^{-1}$<sup id="fnref2:venster-10-20"><a class="footnote-ref" href="#fn:venster-10-20">8</a></sup>). Maar niet elk medicijn heeft zo'n ruime marge tot de toxische grens. Bij sommige medicijnen is die marge veel kleiner. Fenytoïne is daar een goed voorbeeld van.</p>
+<p>Fenytoïne is een medicijn dat bij epilepsie kan worden voorgeschreven. Het onderdrukt overmatige elektrische activiteit in de hersenen en voorkomt daarmee epileptische aanvallen. Vanuit farmacokinetisch oogpunt is fenytoïne bijzonder omdat de toxische grens samenvalt met de bovengrens van het therapeutisch venster. De concentratie in het bloed moet tussen de 8 mg$\,$l$^{-1}$ en 20 mg$\,$l$^{-1}$ liggen.<sup id="fnref:bepalingwijzer-fenytoine"><a class="footnote-ref" href="#fn:bepalingwijzer-fenytoine">12</a></sup> Onder de 8 mg$\,$l$^{-1}$ is het medicijn onvoldoende werkzaam en bestaat er het risico op een epileptische aanval. Boven de 20 mg$\,$l$^{-1}$ treedt toxiciteit op<sup id="fnref2:bepalingwijzer-fenytoine"><a class="footnote-ref" href="#fn:bepalingwijzer-fenytoine">12</a></sup>, er is geen veiligheidsmarge. </p>
+<p>Net als bij paracetamol maken we ook hier een vereenvoudigd model. We gaan ervan uit dat de absorptie onmiddellijk en volledig plaatsvindt en dat het medicijn zich gelijkmatig verdeelt over het verdelingsvolume. De werkelijkheid is natuurlijk complexer.</p>
+<div id="opdr:dosis-fenytoine"></div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Veilige dosis</p>
 <ol>
-<li>Traceback</li>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>fenytoine.py</code>. Kopieer de code uit het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>paracetamol.py</code> naar dit nieuwe bestand. Gebruik de volgende waarden voor fenytoïne:<ul>
+<li>Dosering: 200-400 mg, eenmaal per dag<sup id="fnref:farkompas-fenytoine"><a class="footnote-ref" href="#fn:farkompas-fenytoine">13</a></sup></li>
+<li>Halfwaardetijd: ongeveer 24 uur<sup id="fnref2:farkompas-fenytoine"><a class="footnote-ref" href="#fn:farkompas-fenytoine">13</a></sup></li>
+<li>Verdelingsvolume: ongeveer 0.65 l$\,$kg$^{-1}$<sup id="fnref3:farkompas-fenytoine"><a class="footnote-ref" href="#fn:farkompas-fenytoine">13</a></sup></li>
+<li>Therapeutisch venster: 8-20 mg$\,$l$^{-1}$<sup id="fnref3:bepalingwijzer-fenytoine"><a class="footnote-ref" href="#fn:bepalingwijzer-fenytoine">12</a></sup></li>
+<li>Toxische grens: &gt; 20 mg$\,$l$^{-1}$<sup id="fnref4:bepalingwijzer-fenytoine"><a class="footnote-ref" href="#fn:bepalingwijzer-fenytoine">12</a></sup></li>
+</ul>
+</li>
+<li>Modelleer de concentratie fenytoïne in het bloed gedurende 20 dagen voor een persoon met een massa van 80 kg. Kies zelf een dagelijkse dosis. Plot de concentratie tegen de tijd en geef het therapeutisch venster met horizontale lijnen weer. Zit je binnen het therapeutisch venster? Commit.</li>
+<li>Neem twee patiënten: patiënt 1 heeft een massa van 80 kg en patiënt 2 een massa van 60 kg. Welke dagelijkse dosis is voor elk van hen het meest geschikt?</li>
 </ol>
+</div>
+<div id="opdr:vergeten-dosis"></div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Vergeten dosis</p>
+<p>In de <a href="#opdr:dosis-fenytoine"><em>opdracht Veilige dosis</em></a> heb je een geschikte dagelijkse dosis bepaald voor een patiënt. Gebruik dit als startpunt bij deze opdracht.</p>
+<ol>
+<li>Stel dat de patiënt op dag 12 de dosis vergeet. Pas het model zo aan dat er op dag 12 geen dosis wordt ingenomen. Wat gebeurt er met de concentratie fenytoïne in het bloed? Commit.</li>
+<li>Soms is de neiging om de vergeten dosis de volgende dag in te halen. Simuleer wat er gebeurt als de patiënt op dag 13 een dubbele dosis neemt. Waarom wordt afgeraden dit te doen? Commit.</li>
+<li>De patiënt realiseert zich later op dag 12 dat die de dosis vergeten is. Bekijk wat er gebeurt als de patiënt de dosis alsnog inneemt na 6, 12 of 18 uur. Tot hoe laat op dag 12, afgerond op hele uren, kan de patiënt de dosis nog veilig inhalen? Geldt deze grens ook voor een patiënt met een andere massa en een andere dosis? </li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Automatisch zoeken</p>
+<p>In de <a href="#opdr:vergeten-dosis"><em>opdracht Vergeten dosis</em></a> heb je handmatig bepaald tot hoe laat de patiënt een vergeten dosis nog veilig kan inhalen. Dat werkt, maar het is ook omslachtig. Je kunt ook de computer dat werk laten doen.</p>
+<p>Breid je programma uit met code die voor elk uur op dag 12 controleert of het nog veilig is om de dosis in te halen. Welke grens binnen het therapeutisch venster wil je hanteren als veilige grens? Laat je programma de laatste veilige inhaaltijd in de terminal printen en geef de bijbehorende plot. Test je programma voor patiënten met verschillende massa's en doses. Doet je programma wat je verwacht? Commit.</p>
 </div>
 <div class="footnote">
 <hr />
@@ -648,7 +937,7 @@ Elke tijdstap bereken je dus aan de hand van de hoeveelheid in de vorige tijdsta
 <p>Stel je modelleert een vallend voorwerp. In werkelijkheid speelt luchtwrijving een rol, maar die bijdrage is vaak verwaarloosbaar klein. In het model neem je daarom de luchtwrijving niet mee. Niet omdat je het effect vergeet, maar omdat het model anders onnodig ingewikkeld wordt.&#160;<a class="footnote-backref" href="#fnref:aanname" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Zuiderzee">
-<p>Een historisch voorbeeld: natuurkundige Hendrik Antoon Lorentz leidde van 1918 tot 1926 de Staatscommissie Zuiderzee, die de effecten van een afsluitdijk op de waterstanden moest berekenen.<sup id="fnref:verslag"><a class="footnote-ref" href="#fn:verslag">4</a></sup> En dit gebeurde volledig met de hand, een enorme klus zonder computer!&#160;<a class="footnote-backref" href="#fnref:Zuiderzee" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Een historisch voorbeeld: natuurkundige Hendrik Antoon Lorentz leidde van 1918 tot 1926 de Staatscommissie Zuiderzee, die de effecten van een afsluitdijk op de waterstanden moest berekenen.<sup id="fnref:verslag"><a class="footnote-ref" href="#fn:verslag">4</a></sup> Dit gebeurde volledig met de hand, een enorme klus zonder computer!&#160;<a class="footnote-backref" href="#fnref:Zuiderzee" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:verslag">
 <p><a href="https://www.lorentz.leidenuniv.nl/history/zuiderzee/zuiderzee.html">https://www.lorentz.leidenuniv.nl/history/zuiderzee/zuiderzee.html</a>&#160;<a class="footnote-backref" href="#fnref:verslag" title="Jump back to footnote 4 in the text">&#8617;</a></p>
@@ -657,7 +946,28 @@ Elke tijdstap bereken je dus aan de hand van de hoeveelheid in de vorige tijdsta
 <p><a href="https://www.nvon.nl/examen/examen-2005-1-vwo-natuurkunde-12">https://www.nvon.nl/examen/examen-2005-1-vwo-natuurkunde-12</a>&#160;<a class="footnote-backref" href="#fnref:champignon" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:champignon" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:paracetamol-halfwaardetijd">
-<p><a href="https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol">https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol</a>&#160;<a class="footnote-backref" href="#fnref:paracetamol-halfwaardetijd" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p><a href="https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol">https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/p/paracetamol</a>&#160;<a class="footnote-backref" href="#fnref:paracetamol-halfwaardetijd" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:paracetamol-halfwaardetijd" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:paracetamol-halfwaardetijd" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:venster-5-20">
+<p>I. A. Gibb en B.J.Anderson. "Paracetamol (acetaminophen) pharmacodynamics: interpreting the plasma concentration". In: <em>Archives of Disease in Childhood</em> 2008.93 (2008), p. 241-247.&#160;<a class="footnote-backref" href="#fnref:venster-5-20" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:venster-10-20">
+<p><a href="https://www.umcutrecht.nl/bepalingenwijzer/paracetamol">https://www.umcutrecht.nl/bepalingenwijzer/paracetamol</a>&#160;<a class="footnote-backref" href="#fnref:venster-10-20" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:venster-10-20" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:venster-10-30">
+<p><a href="https://www.thepathologycentre.org/test/paracetamol-2/">https://www.thepathologycentre.org/test/paracetamol-2/</a>&#160;<a class="footnote-backref" href="#fnref:venster-10-30" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:conventie">
+<p>Het verdelingsvolume $V_d$ wordt uitgedrukt in l$\,$kg$^{-1}$, dit is het volume per kilogram lichaamsgewicht. Maar bij het rekenen heb je het totale verdelingsvolume in liters nodig, dat ook wordt aangeduid met $V_d$. Je zou kunnen zeggen dat de vergelijking eigenlijk $C = Q / (V_d \cdot m)$ zou moeten zijn. In de farmacokinetiek is het echter gebruikelijk om de $m$ niet expliciet te noteren. In de handleiding volgen we deze conventie, wat betekent dat je altijd even moet bedenken in welke eenheid je het verdelingsvolume nodig hebt.&#160;<a class="footnote-backref" href="#fnref:conventie" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:afstemming-dosis">
+<p>Voor paracetamol gebeurt dit bij volwassenen doorgaans niet, omdat de toxische grens ruim boven het therapeutisch venster ligt. De concentratieverschillen tussen volwassenen met verschillend lichaamsgewicht zijn klein genoeg om binnen veilige grenzen te blijven. Voor kinderen geldt dat echter niet, door hun lagere lichaamsgewicht moet de dosis worden aangepast. Kijk maar eens in de bijsluiter van paracetamol!&#160;<a class="footnote-backref" href="#fnref:afstemming-dosis" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bepalingwijzer-fenytoine">
+<p><a href="https://www.umcutrecht.nl/bepalingenwijzer/fenytoine">https://www.umcutrecht.nl/bepalingenwijzer/fenytoine</a>&#160;<a class="footnote-backref" href="#fnref:bepalingwijzer-fenytoine" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:bepalingwijzer-fenytoine" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:bepalingwijzer-fenytoine" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:bepalingwijzer-fenytoine" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn:farkompas-fenytoine">
+<p><a href="https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine">https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine</a>&#160;<a class="footnote-backref" href="#fnref:farkompas-fenytoine" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:farkompas-fenytoine" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:farkompas-fenytoine" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
