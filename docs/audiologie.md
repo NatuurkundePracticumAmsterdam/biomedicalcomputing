@@ -10,7 +10,7 @@ Tot nu toe hebben we Python-programma's geschreven voor het doorzoeken van data,
 
 Voor een hoortest hebben we geluid nodig. Geluid is een trilling die zich voortplant als een golf door de lucht. Onderstaand figuur[^giancoli] laat zien hoe een enkele toon zich voortplant als longitudinale golf (a). Een enkele toon is wiskundig te beschrijven als een sinusgolf (b): een periodieke trilling met een vaste frequentie. De frequentie bepaalt de toonhoogte en wordt uitgedrukt in hertz (Hz). Een menselijk oor is gevoelig voor frequenties tussen de 20 Hz en 20000 Hz, hoewel dit per persoon verschilt. Door ouderdom wordt het bijvoorbeeld lastiger om hoge frequenties te horen.
 
-![Geluidsgolf met mathematische representatie](figures/geluidsgolf.png){: style="width:60%"}
+![Geluidsgolf met mathematische representatie](figures/geluidsgolf.png){: style="width:75%"}
 
 [^giancoli]: Douglas C. Giancoli. _Physics: principles with applications_. 6de ed. Upper Saddle River, New Jersy: Pearson Education, 2005.
 
@@ -57,6 +57,7 @@ Eerst importeren we de module. Daarna maken we een lijst aan met de waarden van 
 
     Probeer met behulp van je programma te achterhalen wat de laagste en de hoogste frequentie is die je nog kunt horen. 
 
+<div id="opdr:fade-out"></div>
 !!! opdracht-meer "Fade out"
 
     Je kunt natuurlijk het volume van de toon aanpassen via de instellingen van je laptop. Maar je kunt de toon ook zachter of harder maken door de amplitude van het signaal aan te passen. 
@@ -64,6 +65,8 @@ Eerst importeren we de module. Daarna maken we een lijst aan met de waarden van 
     1. Maak een nieuw bestand aan met de naam {{new_file}}`fade_out.py` en kopieer je code uit het bestand {{file}}`play_tone.py` naar dit bestand. 
     2. Pas de code aan zodat de amplitude van de sinusgolf geleidelijk afneemt naar nul. Commit.
 
+
+<div id="opdr:stereo-panning"></div>
 !!! opdracht-meer "Stereo panning"
 
     Bij een gehoortest wil je soms het linker- en het rechteroor apart testen. Met stereogeluid kun je een toon aan één oor aanbieden door het signaal alleen via de linker- of rechterluidspreker af te spelen. 
