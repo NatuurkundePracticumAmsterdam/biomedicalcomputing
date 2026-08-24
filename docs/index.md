@@ -21,4 +21,4 @@ In de handleiding staan twee soorten opdrachten. Je maakt deze _tijdens_ de sess
 
 !!! opdracht-meer "Verdiepende opdracht"
 
-    Deze opdrachten gaan verder dan de basis. Soms gaan ze dieper in op het thema en soms introduceren ze nieuwe programmeertechnieken. Maak eerst de basisopdrachten en ga pas naar een verdiepende opdracht als je daarvoor de tijd hebt. Verdiepende opdrachten bouwen meestal niet op elkaar voort, dus je kunt zelf kiezen welke je wilt maken. 
+    Deze opdrachten gaan verder dan de basis. Soms gaan ze dieper in op het thema en soms introduceren ze nieuwe programmeertechnieken. Maak eerst de basisopdrachten en ga pas daarna naar een verdiepende opdracht. Verdiepende opdrachten bouwen meestal niet op elkaar voort, dus je kunt zelf kiezen welke je wilt maken. 
