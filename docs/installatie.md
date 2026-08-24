@@ -1,78 +1,138 @@
 # Sessie 1: installatie van benodigde software
 
-## Introductie
+In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet zelf code geschreven. Voordat je dat kunt, moet je een aantal programma's installeren. Je hebt het volgende nodig: 
 
-We beschrijven hier de installatie van een ontwikkelomgeving voor Python. De instructies gaan er vanuit dat je een _schone_ omgeving hebt, dus zonder Python en Visual Studio Code bijvoorbeeld. Kijk dus zelf welke instructies je precies nodig hebt. Eerst volgen instructies die voor Windows en MacOS verschillend zijn. Daarna volgen nog algemene instructies. _Lees die ook!_
+* _Python_: de programmeertaal die we gebruiken
+* _uv_: een tool om Python en losse pakketten te installeren
+* _Visual Studio Code_: de editor waarin je straks code schrijft
+* _GitHub Desktop_: een programma om je code online te kunnen bewaren
 
-## Installatie &mdash; Windows
+In de volgende opdracht vind je de installatie-instructies. Aangezien deze instructies afhankelijk zijn van het besturingssysteem zijn er specifieke instructies geschreven voor macOS en voor Windows. De instructies gaan ervan uit dat je Python, uv, Visual Studio Code én GitHub Desktop nog niet geïnstalleerd hebt. Heb je één of meer van deze programma's al geïnstalleerd, kijk dan even welke stappen je kunt overslaan.
 
-We gebruiken uv, Visual Studio Code en GitHub Desktop. Je kunt die via de verschillende websites downloaden en installeren, maar het kan ook vanuit een terminal met Winget, een populaire package manager. Doe vooral wat je fijn vindt. Als je Winget wilt gebruiken: open een _Terminal_ en type in:
+!!! opdracht-basis "Benodigde programma's installeren"
 
-```
-winget install astral-sh.uv
-winget install microsoft.visualstudiocode
-winget install github.githubdesktop
-winget install git.git
-```
+    === "macOS"
 
-In de PowerShell (de standaard shell) is het nodig om toestemming te geven om scripts uit te voeren. Het volgende commando staat dat toe voor de huidige gebruiker (jijzelf) voor scripts die digitaal zijn ondertekend waardoor Microsoft ze kan blokkeren als dat nodig is. Dit is dus een veilige optie. Type in:
+        Hieronder staan de installatie-instructies voor **macOS**. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows. 
+        <br><br>
 
-```
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
+        **Stap 1: installeer Homebrew**
 
-Open een _nieuwe_ Terminal en installeer Python:
+        We gebruiken Homebrew, een populaire package manager voor macOS, om de benodigde programma's te installeren.
 
-```
-uv python install
-```
+        1. Open een terminal door op ++cmd+space++ te drukken en te zoeken op _Terminal_.
+        2. Kopieer het volgende commando en plak het in de terminal:
+            ```
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            ```
+        3. Sluit de terminal af.
+        <br><br>
 
-## Installatie &mdash; macOS
+        **Stap 2: installeer uv, Visual Studio Code en GitHub Desktop**
+        
+        4. Open opnieuw een terminal door op ++cmd+space++ te drukken en te zoeken op _Terminal_.
+        5. Kopieer de volgende commando's en plak deze in de terminal:
+            ```
+            brew install uv
+            brew install visual-studio-code
+            brew install github
+            ```
+        6. Sluit de terminal af.
+        <br><br>
 
-We gebruiken uv, Visual Studio Code en GitHub Desktop. Je kunt die via de verschillende websites downloaden en installeren, maar het kan ook vanuit een terminal met Homebrew, een populaire package manager. Doe vooral wat je fijn vindt. Installeer de package manager _Homebrew_ als volgt. Open een _terminal_ en type in (of kopieer van [https://brew.sh](https://brew.sh)):
+        **Stap 3: installeer Python**
 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+        7. Open nogmaals een terminal door op ++cmd+space++ te drukken en te zoeken op _Terminal_.
+        8. Kopieer het volgende commando en plak het in de terminal:
+            ```
+            uv python install 
+            ```
+        9. Sluit de terminal af.
 
-Sluit de terminal af en open een _nieuwe_ terminal. We installeren de ontwikkelomgeving met:
+    === "Windows"
 
-```
-brew install uv
-brew install visual-studio-code
-brew install github
-```
+        Hieronder staan de installatie-instructies voor **Windows**. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS. 
+        <br><br>
 
-Open opnieuw een _nieuwe_ terminal en installeer Python:
+        **Stap 1: installeer uv, Visual Studio Code en GitHub Desktop**
+   
+        We gebruiken Winget, een package manager die standaard beschikbaar is op Windows, om de benodigde programma's te installeren.
 
-```
-uv python install
-```
+        10. Open een terminal door in het zoekveld van de taakbalk te zoeken op _Windows PowerShell_.
+        11. Kopieer de volgende commando's en plak deze in de terminal:
+            ```
+            winget install astral-sh.uv
+            winget install microsoft.visualstudiocode
+            winget install github.githubdesktop
+            winget install git.git
+            ```
+        12. Sluit de terminal nog niet af.
+        <br><br>
 
-Zie voor verdere instructies de volgende secties.
+        **Stap 2: sta het uitvoeren van scripts toe**
 
-## VS Code extensions &mdash; Alle OSes
+        In de PowerShell, de terminal die Visual Studio Code gebruikt, is het standaard niet toegestaan om scripts uit te voeren. Het volgende commando staat dat toe voor de huidige gebruiker, maar alleen voor scripts van vertrouwde partijen, zoals Microsoft. Willekeurige of onbekende scripts worden ook na dit commando nog steeds geblokkeerd. 
 
-Sluit de terminal of prompt af. Je kunt in Visual Studio Code zelf extensies zoeken en installeren door te klikken op het 'blokjes' icoon in de linkerbalk. De namen van de extenties staan hieronder. Je kunt ze ook in een terminal of prompt installeren. Open dan een _nieuwe_ terminal of prompt. We installeren de extensions voor Visual Studio Code in één keer met:
+        13. Kopieer het volgende commando en plak het in de terminal:
+            ```
+            Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+            ```
+        14. Sluit de terminal af.
+        <br><br>
 
-```
-code --install-extension ms-python.python
-code --install-extension charliermarsh.ruff
-code --install-extension tamasfe.even-better-toml
-code --install-extension njpwerner.autodocstring
-```
+         **Stap 3: installeer Python**
 
-## Instellingen VS Code &mdash; Alle OSes
+        15. Open opnieuw een terminal door in het zoekveld van de taakbalk te zoeken op _Windows PowerShell_.
+        16. Kopieer het volgende commando en plak het in de terminal:
+            ```
+            uv python install 
+            ```
+        17. Sluit de terminal af.
 
-Er zijn drie instellingen om je code automatisch wat op te schonen en import statements te sorteren. Op die manier hoef je je veel minder druk te maken over hoe netjes je code eruitziet. Elke keer als je je bestand opslaat gaat de tool _ruff_ aan het werk.
+Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual Studio Code.[^installatie-extensies] Met extensies voeg je aan Visual Studio Code extra functionaliteiten toe, in ons geval ondersteuning voor Python en een tool die je code automatisch netjes maakt. 
 
-1. Open de app "Visual Studio Code".
-2. Kies **File>Preferences>Settings** of druk op ++ctrl+comma++ (control-komma).
-3. Type nu in het zoekvenster: `chat: disable AI features` en vink de instelling aan.
-4. Type nu in het zoekvenster: `format on save` en vink de bovenste instelling aan.
-5. Type nu in het zoekvenster: `@lang:python default formatter` en kies `Ruff`
-6. Type nu in het zoekvenster: `@lang:python code actions on save` en kies `Edit in settings.json` en kies dan in het menuutje `source.organizeImports.ruff` en dan `explicit`.
-7. Sla dan het bestand op met **File>Save** of ++ctrl+s++.
-8. Sluit de settingstabbladen.
+[^installatie-extensies]: We kiezen er voor om nu de extensies via de terminal te installeren. Maar je kunt ze ook installeren via Visual Studio Code zelf. Klik daarvoor op het blokjes-icoon in de linkerbalk, zoek op de naam van de extensie en klik op _Install_.
 
-Zodra je een Pythonbestand hebt geopend kun je rechts onderin bij `Select interpreter` het juiste environment kiezen.
+!!! opdracht-basis "Benodigde extensies installeren"
+
+    === "macOS"
+
+        Hieronder staan de installatie-instructies voor **macOS**. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows. 
+        <br><br>
+        
+        1. Open een terminal door op ++cmd+space++ te drukken en te zoeken op _Terminal_.
+        2. Kopieer de volgende commando's en plak deze in de terminal:
+            ```
+            code --install-extension ms-python.python
+            code --install-extension charliermarsh.ruff
+            ```
+        3. Sluit de terminal af.
+    
+    === "Windows"
+
+        Hieronder staan de installatie-instructies voor **Windows**. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS. 
+        <br><br>
+
+        1. Open een terminal door in het zoekveld van de taakbalk te zoeken op _Windows PowerShell_.   
+        2. Kopieer de volgende commando's en plak deze in de terminal:
+            ```
+            code --install-extension ms-python.python
+            code --install-extension charliermarsh.ruff
+            ```
+        3. Sluit de terminal af. 
+
+Bijna klaar &mdash; nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met ++cmd+s++ (macOS)/++ctrl+s++ (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.
+
+!!! opdracht-basis "Instellingen Visual Studio Code"
+
+    Onderstaande stappen zijn gelijk voor macOS en Windows.
+
+    1. Open Visual Studio Code.
+    2. Kies via het dropdownmenu **File** voor **Preferences > Settings**. 
+    3. Typ in het zoekvenster _chat: disable AI features_ en vink de instelling aan.
+    4. Typ in het zoekvenster _format on save_ en vink de bovenste instelling aan.
+    5. Typ in het zoekvenster _@lang:python default formatter_ en kies _Ruff_.
+    6. Typ in het zoekvenster _@lang:python code actions on save_, kies _Edit in settings.json_ en selecteer _source.organizeImports.ruff_. Zet de waarde op _explicit_. De volledige regel luidt dan: ```"source.organizeImports.ruff": "explicit"```. Sla de wijzigingen op via het dropdownmenu **File** en kies **Save** of met ++cmd+s++ (macOS)/++ctrl+s++ (Windows).
+    7. Sluit de tabbladen met de instellingen.
+
+Dat was het voor sessie 1: de programma's staan klaar en de instellingen zijn goed. Je bent klaar voor sessie 2 {{feesttoeter}} We gaan in sessie 2 de eerste regels Python-code schrijven in Visual Studio Code. Hoe dat precies werkt leggen we dan stap voor stap uit.
