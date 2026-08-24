@@ -1,4 +1,4 @@
-# Sessie 2: DNA replicatie
+# Sessie 2: DNA-replicatie
 
 ## Visual Studio Code
 
@@ -157,16 +157,16 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 !!! opdracht-basis "Naam en leeftijd"
 
-    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. Zie ook de vorige sessie.
+    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. Zie ook de vorige sessie. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen, én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ in het Nederlands.
 
-    1. Schrijf een script dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
+    1. Schrijf een script {{file}}`name_and_age.py` dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
         ```
-        Hoe heet je? Alice
-        Hoi Alice
+        What is your name? Alice
+        Hi Alice
         ```
-    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `Je bent een baas!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.
-    3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `Je mag op social media!` Als je 16 jaar of ouder bent, print dan `Je mag een scooter besturen.` Print, vanaf 17 jaar, `Je mag je rijbewijs halen.` Vanaf 18 jaar: `Je bent volwassen en mag stemmen.` Vanaf 30 jaar: `Je mag geen studiefinanciering meer aanvragen.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
-    4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `Je mag je rijbewijs halen.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
+    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `You're a legend!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.
+    3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `You're allowed on social media!` Als je 16 jaar of ouder bent, print dan `You can drive a scooter.` Print, vanaf 17 jaar, `You can get a driving license.` Vanaf 18 jaar: `You're a grown-up now and are allowed to vote.` Vanaf 30 jaar: `You can no longer apply for student finance.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
+    4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `You can get a driving license.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
     5. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 !!! warning
@@ -174,7 +174,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 !!! opdracht-meer
     
-    Misschien heb je gemerkt dat als je `#!py print("Hoi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hoi Alice !` in plaats van `HoiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hoi"`) waar je de letter `f` vóór schrijft (`#!py f"Hoi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hoi {naam}!")` met als uitvoer `Hoi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hoi en Alice, maar niet tussen Alice en het uitroepteken.
+    Misschien heb je gemerkt dat als je `#!py print("Hi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hi Alice !` in plaats van `HiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hi"`) waar je de letter `f` vóór schrijft (`#!py f"Hi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hi {naam}!")` met als uitvoer `Hi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.
 
     Pas je script aan zodat je f-strings gebruikt, maar _alleen_ waar dat nodig of handig is, en commit de wijzigingen.
 
@@ -186,14 +186,14 @@ Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan
 
 !!! opdracht-basis "Replicatie"
     
-    Maak een nieuw bestand met de naam {{file}}`replicatie.py.`
+    Maak een nieuw bestand met de naam {{file}}`dna_replication.py.`
 
-    1. We beginnen met een stukje `#!py streng1 = "ATATAGAGTC"`. Print de letters van de bijbehorende tweede streng, volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.
-    2. Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print `A -- T`, enz.
+    1. We beginnen met een stukje `#!py strand1 = "ATATAGAGTC"`. Print de letters van de bijbehorende tweede streng (Engels: _strand_), volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit strand1, als de letter een A is, print een T, als de letter een C is, print een G, enz.
+    2. Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit strand1 een A is, print `A -- T`, enz.
     3. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 !!! opdracht-meer "Vereenvoudigen"
-    Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld `A == T` wilt printen in plaats van `A -- T`, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2. Commit je wijzigingen.
+    Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld `A == T` wilt printen in plaats van `A -- T`, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit strand2. Commit je wijzigingen.
 
 Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis van wat de tweede streng zou _moeten_ zijn gebruiken om op zoek te gaan naar de fout.
 
@@ -201,8 +201,8 @@ Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis
 
     Maak een nieuw bestand met de naam {{file}}`find_DNA_mistake.py`.
 
-    1. Neem weer `#!py streng1 = "ATATAGAGTC"`. Daarnaast is `#!py streng2 = "AATATCGCAA"`. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.
-    2. Schrijf code dat op zoek gaat naar _alle_ fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.
+    1. Neem weer `#!py strand1 = "ATATAGAGTC"`. Daarnaast is `#!py strand2 = "AATATCGCAA"`. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit strand1 vergelijken met de eerste letter uit strand2, en vervolgens de tweede letter uit strand1 vergelijken met de tweede letter uit strand2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.
+    2. Schrijf code dat op zoek gaat naar _alle_ fouten in strand2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.
     3. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk veel sneller gewoon met de hand. Programmeren is pas nuttig als het zoeken met de hand veel langer duurt dan het programmeren. Dat is bijvoorbeeld het geval wanneer we een fout zoeken in 10.000 baseparen.
@@ -210,17 +210,17 @@ Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk
 !!! opdracht-basis "Alle tijd van de wereld"
     Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.
 
-Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py streng1 = ...` en `#!py streng2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele:
+Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py strand1 = ...` en `#!py strand2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
 ```py
 import pathlib
-streng1 = pathlib.Path("streng1.txt").read_text().
+strand1 = pathlib.Path("strand1.txt").read_text().
 ```
 
 !!! warning
     Pas de links hier en hier hierboven aan.
 
 !!! opdracht-basis "Zoek de speld in de hooiberg"
-    Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
+    Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
 
 !!! warning
     PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???
