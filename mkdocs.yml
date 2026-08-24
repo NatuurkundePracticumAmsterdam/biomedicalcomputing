@@ -57,7 +57,7 @@ extra_css:
 nav:
   - index.md
   - installatie.md
-  - omgaan-met-data.md
+  - dna-replicatie.md
   - uv-vis-spectroscopie.md
   - farmacokinetiek.md
   - epidemiologie.md
