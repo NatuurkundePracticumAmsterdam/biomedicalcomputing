@@ -1,4 +1,4 @@
-# Sessie 2: DNA-replicatie
+# Sessie 2: DNA-mutaties
 
 ## Visual Studio Code
 
