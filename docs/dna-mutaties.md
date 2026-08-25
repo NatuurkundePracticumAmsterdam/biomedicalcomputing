@@ -6,20 +6,32 @@ Visual Studio Code is een gratis, open-source _code editor._ VS Code is heel pop
 
 Het is handig om de code die bij elkaar hoort in één map te plaatsen en die map te openen met VS Code. De editor weet dan wat er bij elkaar hoort en dat helpt bij het schrijven en uitvoeren van je code. We gaan alle code voor deze cursus in één map plaatsen. Binnen die map mag je best submapjes aanmaken, maar open met VS Code steeds de map van de cursus. Noem, voor het gemak, de map _BiomedicalComputing._
 
+
 !!! opdracht-basis "Map aanmaken voor de cursus"
+
+    Veel computers synchroniseren hun bestanden naar OneDrive of iCloud. Dat kan heel handig zijn: je kunt vanaf meerdere computers bij je bestanden en als je computer stukgaat of gestolen wordt dan zijn je bestanden nog steeds veilig. Maar het kan ook voor problemen zorgen: als je mappen synchroniseert met veel kleine bestanden dan kunnen OneDrive en iCloud overstuur raken en dat zorgt dan ook voor problemen met je andere bestanden. Om dat te voorkomen[^venvs-sync] gaan we in deze cursus een map aanmaken _buiten_ OneDrive, iCloud, of een andere service.
 
     === "macOS"
         
-        Map in homefolder.
+        1. Open Finder.
+        1. Ga via de menubalk naar **Ga -> Thuismap**.
+        1. Ga via de menubalk naar **Archief -> Nieuwe map**.
+        1. Type als naam `BiomedicalComputing` (zonder spatie).
 
     === "Windows"
 
-        Map in user folder.
+        1. Open Verkenner.
+        1. Klik op het :octicons-chevron-right-16:-symbool meteen rechts naast het :fontawesome-regular-home:-icoon.
+        1. Klik onderin het menu op je eigen naam.
+        1. Klik linksboven op **Nieuw** en kies dan **Map**.
+        1. Type als naam `BiomedicalComputing` (zonder spatie).
     
+!!! warning "Open altijd de goede map"
+    Test nog een keer of "select environment" nodig is, of zeg daar in ieder geval iets over. VS Code -> Visual Studio Code. Versiebeheer verplaatsen (zie geraamte). 
 
 !!! opdracht-basis "Sessie starten in VS Code"
 
-    Start Visual Studio Code en open de map `BiomedicalComputing` via **File > Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
+    Start Visual Studio Code en open de map `BiomedicalComputing` via **File > Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. In het venster dat opent is normaal gesproken direct je thuismap gekozen en zie je `BiomedicalComputing` er tussenstaan. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
 
     1.  Links onderin verschijnt een blauwe knop met `Restricted Mode`. Klik daarop, dan op Trust (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren) en dan rechtsboven in dat nieuwe venster klik je op het kruisje. Als het goed is, is het blauwe `Restricted Mode` verdwenen.
     2.  Open een nieuwe _Terminal_ via het menu **Terminal > New Terminal**. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
@@ -41,7 +53,43 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
 
 Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!
 
+!!! info "Open altijd de goede map"
+
+    De map `BiomedicalComputing` is je projectmap. Hierin komt alle code te staan die we tijdens deze cursus gaan schrijven. Je mag, als je dat wilt, submapjes aanmaken en je code organiseren. Bijvoorbeeld per sessie, of per onderwerp. _Maar:_ als je Visual Studio Code opnieuw opent, open dan _altijd_ de `BiomedicalComputing` map, en _niet_ een submapje.[^vscode-submap]
+
+## Eerste stappen
+
+Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de eerste stappen. Je hebt al wat Pythoncode gezien; nu gaan we het schrijven. We beginnen (heel) eenvoudig, maar gaan deze sessie verder uitbreiden naar code die echt bruikbaar is.
+
+!!! opdracht-basis "Naam en leeftijd"
+
+    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. Zie ook de vorige sessie. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen, én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ in het Nederlands.
+
+    1. Schrijf een script {{file}}`name_and_age.py` dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
+        ```
+        What is your name? Alice
+        Hi Alice
+        ```
+    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `You're a legend!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven. Zorg dat je ook (kort) comments schrijft in je script om duidelijk te maken welk stukje wat doet.
+    3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `You're allowed on social media!` Als je 16 jaar of ouder bent, print dan `You can drive a scooter.` Print, vanaf 17 jaar, `You can get a driving license.` Vanaf 18 jaar: `You're a grown-up now and are allowed to vote.` Vanaf 30 jaar: `You can no longer apply for student finance.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
+    4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `You can get a driving license.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
+    5. Ga naar GitHub Desktop en commit de code van deze opdracht.
+
+!!! warning
+    
+    Paarse opdracht: Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd. Ook met 'not'.
+
+!!! opdracht-meer
+    
+    Misschien heb je gemerkt dat als je `#!py print("Hi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hi Alice !` in plaats van `HiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hi"`) waar je de letter `f` vóór schrijft (`#!py f"Hi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hi {naam}!")` met als uitvoer `Hi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.
+
+    Pas je script aan zodat je f-strings gebruikt, maar _alleen_ waar dat nodig of handig is, en commit de wijzigingen.
+
 ## Versiebeheer
+
+!!! warning
+
+    Begin vanuit het punt van backup / online opslag. Nóg korter, git helemaal weg of naar footnote. Commit messages beter maken. Aangepast, gefixt, enz. Verplaatsen naar vóór DNA-replicatie.
 
 Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt _nu_, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? En als het op een gegeven moment niet meer werkt, waar ligt dat dan aan? Veel mensen hebben daarom de neiging om naast een {{file}}`script.py` een {{file}}`script-v1.py`, {{file}}`script-v2.py`, enzovoorts aan te maken. Misschien herken je dat wel een beetje van je profielwerkstuk (eerste versie, versie na feedback van docent, definitieve versie), of het natuurkundepracticum. Ook op het practicum ben je veel aan het doen en uitproberen en heb je uiteindelijk een verzameling metingen gedaan. Waarom was die ene meting beter dan die andere? Wat heb je vorige keer ook alweer anders gedaan? Op het practicum houd je daarom alles netjes bij in een labjournaal. Niet alleen onderzoekers doen dat; ook software-ontwikkelaars houden een soort labjournaal bij: een digitaal systeem dat alle wijzigingen netjes bijhoudt, waar je notities maakt en waar je later precies kunt zien _wat_ je veranderd hebt, en _waarom_. Dat heet _versiebeheer_.
 
@@ -67,11 +115,11 @@ In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) accoun
 
 ### GitHub Desktop
 
-Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de map met de oefenopdrachten.
+Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de _BiomedicalComputing_ map.
 
-!!! opdracht-basis "GitHub Desktop installeren"
+!!! opdracht-basis "GitHub Desktop inloggen"
 
-    Ga naar [https://desktop.github.com/download/](https://desktop.github.com/download/) om GitHub Desktop te downloaden. Zoek daarna het gedownloade bestand op en installeer de applicatie. Log nu in met jouw account.
+    Start GitHub Desktop en log nu in met jouw account.
 
 <div id="opd:add_repository"></div>
 
@@ -144,6 +192,9 @@ In GitHub Desktop zie je nu bij _History_ de commit staan, met in één oogopsla
 
 ### Repositories op GitHub
 
+!!! warning "paars maken"
+    hele stuk paars maken. Farmacokinetiek blokje tweede paarse blok naar Baumgartner.
+
 Om makkelijk je Git repository te delen met vrienden, collega's en de rest van de wereld kun je er dus voor kiezen om deze op GitHub te zetten. Je kunt dan je commits pushen naar GitHub en wijzigingen die je vrienden hebben gemaakt pullen, zodat jij er ook weer aan verder kan werken. Van alle repositories die op GitHub staan én openbaar zijn kun je de broncode clonen en er zelf mee aan de slag! Laten we eens een kijkje nemen op GitHub.
 
 !!! opdracht-meer "Tailor"
@@ -162,35 +213,7 @@ Om makkelijk je Git repository te delen met vrienden, collega's en de rest van d
     10. Als je een repository goed/handig/slim/fijn vindt, kun je dit aangeven met een ster. Klik daarvoor rechtsboven op {{star}} _Star_.
     11. Dan tot slot die ene, meest in het oogspringende groene _Code_-knop op de hoofdpagina. Met die knop kun je de repository als ZIP-bestand downloaden of openen met GitHub Desktop.
 
-## Eerste stappen
-
-Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de eerste stappen. Je hebt al wat Pythoncode gezien; nu gaan we het schrijven. We beginnen (heel) eenvoudig, maar gaan deze sessie verder uitbreiden naar code die echt bruikbaar is.
-
-!!! opdracht-basis "Naam en leeftijd"
-
-    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. Zie ook de vorige sessie. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen, én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ in het Nederlands.
-
-    1. Schrijf een script {{file}}`name_and_age.py` dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
-        ```
-        What is your name? Alice
-        Hi Alice
-        ```
-    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `You're a legend!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven. Zorg dat je ook (kort) comments schrijft in je script om duidelijk te maken welk stukje wat doet.
-    3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `You're allowed on social media!` Als je 16 jaar of ouder bent, print dan `You can drive a scooter.` Print, vanaf 17 jaar, `You can get a driving license.` Vanaf 18 jaar: `You're a grown-up now and are allowed to vote.` Vanaf 30 jaar: `You can no longer apply for student finance.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
-    4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `You can get a driving license.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
-    5. Ga naar GitHub Desktop en commit de code van deze opdracht.
-
-!!! warning
-    
-    Paarse opdracht: Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd. Ook met 'not'.
-
-!!! opdracht-meer
-    
-    Misschien heb je gemerkt dat als je `#!py print("Hi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hi Alice !` in plaats van `HiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hi"`) waar je de letter `f` vóór schrijft (`#!py f"Hi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hi {naam}!")` met als uitvoer `Hi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.
-
-    Pas je script aan zodat je f-strings gebruikt, maar _alleen_ waar dat nodig of handig is, en commit de wijzigingen.
-
-### DNA-replicatie
+## DNA-replicatie
 
 Een klusje is pas echt stom als je het heel vaak achter elkaar moet doen. Computers zijn dan superhandig: je hoeft het klusje maar één keer te schrijven en te vertellen hoe vaak hij het moet uitvoeren.
 
@@ -273,3 +296,5 @@ Deze stonden nog niet uitgewerkt in het schema.
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
 [^pro-account]: [https://github.com/education/students](https://github.com/education/students)
 [^kabouter]: Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.
+[^venvs-sync]: Als je met Pythonprojecten werkt dan kun je helaas gemakkelijk in de situatie komen waar je problemen krijgt met de synchronisatie. Met de instructies in deze cursus kun je dat voorkomen.
+[^vscode-submap]: Als je dat doet dan weet Visual Studio Code niet welke bestanden allemaal bij je project horen en draait hij de code niet in je projectmap, maar in de submap. Je code kan dan errors geven als die bestanden op een andere plek zoekt.
