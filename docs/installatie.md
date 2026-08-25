@@ -9,6 +9,10 @@ In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet
 
 In de volgende opdracht vind je de installatie-instructies. Aangezien deze instructies afhankelijk zijn van het besturingssysteem zijn er specifieke instructies geschreven voor macOS en voor Windows. De instructies gaan ervan uit dat je Python, uv, Visual Studio Code én GitHub Desktop nog niet geïnstalleerd hebt. Heb je één of meer van deze programma's al geïnstalleerd, kijk dan even welke stappen je kunt overslaan.
 
+!!! warning "Controleer of de installatie gelukt is"
+
+    Lees tijdens de installatie de meldingen die in de terminal verschijnen. Meestal zie je een bevestiging dat een programma succesvol is geïnstalleerd. Twijfel je of een stap goed is gegaan, roep er dan een assistent bij zodat die even met je mee kan kijken.
+
 !!! opdracht-basis "Benodigde programma's installeren"
 
     === "macOS"
@@ -121,7 +125,7 @@ Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual
             ```
         3. Sluit de terminal af. 
 
-Bijna klaar &mdash; nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met ++cmd+s++ (macOS)/++ctrl+s++ (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.
+Nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met ++cmd+s++ (macOS)/++ctrl+s++ (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.
 
 !!! opdracht-basis "Instellingen Visual Studio Code"
 
