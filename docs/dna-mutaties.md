@@ -6,6 +6,17 @@ Visual Studio Code is een gratis, open-source _code editor._ VS Code is heel pop
 
 Het is handig om de code die bij elkaar hoort in één map te plaatsen en die map te openen met VS Code. De editor weet dan wat er bij elkaar hoort en dat helpt bij het schrijven en uitvoeren van je code. We gaan alle code voor deze cursus in één map plaatsen. Binnen die map mag je best submapjes aanmaken, maar open met VS Code steeds de map van de cursus. Noem, voor het gemak, de map _BiomedicalComputing._
 
+!!! opdracht-basis "Map aanmaken voor de cursus"
+
+    === "macOS"
+        
+        Map in homefolder.
+
+    === "Windows"
+
+        Map in user folder.
+    
+
 !!! opdracht-basis "Sessie starten in VS Code"
 
     Start Visual Studio Code en open de map `BiomedicalComputing` via **File > Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
@@ -164,13 +175,14 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
         What is your name? Alice
         Hi Alice
         ```
-    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `You're a legend!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.
+    2. Breid nu je script uit zodat hij controleert of je naam gelijk is aan `admin`, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan `admin` moet je script roepen: `You're a legend!` In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven. Zorg dat je ook (kort) comments schrijft in je script om duidelijk te maken welk stukje wat doet.
     3. Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam _niet_ admin is). Hint: gebruik `#!py int(input(...))`. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan `You're allowed on social media!` Als je 16 jaar of ouder bent, print dan `You can drive a scooter.` Print, vanaf 17 jaar, `You can get a driving license.` Vanaf 18 jaar: `You're a grown-up now and are allowed to vote.` Vanaf 30 jaar: `You can no longer apply for student finance.` Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.
     4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `You can get a driving license.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
     5. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
 !!! warning
-    OPLETTEN: IN HET GERAAMTE STAAT GEKOPPELDE IF-ELSE-STATEMENTS maar ik weet niet wat we daarmee bedoelden. Pas later komt in een paarse opdracht and en or voor? Dus deze verwijderen? Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.
+    
+    Paarse opdracht: Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd. Ook met 'not'.
 
 !!! opdracht-meer
     
@@ -223,9 +235,35 @@ strand1 = pathlib.Path("strand1.txt").read_text().
     Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
 
 !!! warning
-    PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???
+    PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt. Paars: fix the mistake:
+    ```py
+    >>> strand = "ATCGGA"
+    >>> strand[3]
+    'G'
+    >>> strand[:3] + "T" + strand[4:]
+    'ATCTGA'
+    ```
 
 ### NOG: COMMENTS en WHILE-loop
+
+Terug naar programma naam/leeftijd.
+```py
+# stap 1:
+age = int(input("What's your age?"))
+while age < 0:
+    age = int(input("What's your age?"))
+
+# stap 2:
+age = -1
+while age < 0:
+    age = int(input("What's your age?"))
+
+# stap 3:
+while True:
+    name = input("What's your name?")
+    if name == "stop":
+        break
+```
 
 Deze stonden nog niet uitgewerkt in het schema.
 
