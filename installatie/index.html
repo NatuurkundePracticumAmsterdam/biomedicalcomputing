@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../omgaan-met-data/">
+        <link rel="next" href="../dna-mutaties/">
       
       
         
@@ -272,14 +272,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../omgaan-met-data/" class="md-nav__link">
+      <a href="../dna-mutaties/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sessie 2: DNA replicatie
+    Sessie 2: DNA-mutaties
   
 
     
@@ -553,7 +553,7 @@
 
 
 <h1 id="sessie-1-installatie-van-benodigde-software">Sessie 1: installatie van benodigde software<a class="headerlink" href="#sessie-1-installatie-van-benodigde-software" title="Permanent link">&para;</a></h1>
-<p>In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet zelf code geschreven. Voordat je dat kunt, moet je een aantal programma's installeren. Je hebt het volgende nodig: </p>
+<p>In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet zelf code geschreven. Voordat je dat kunt, moet je een aantal programma's installeren. Je hebt het volgende nodig:</p>
 <ul>
 <li><em>Python</em>: de programmeertaal die we gebruiken</li>
 <li><em>uv</em>: een tool om Python en losse pakketten te installeren</li>
@@ -561,12 +561,16 @@
 <li><em>GitHub Desktop</em>: een programma om je code online te kunnen bewaren</li>
 </ul>
 <p>In de volgende opdracht vind je de installatie-instructies. Aangezien deze instructies afhankelijk zijn van het besturingssysteem zijn er specifieke instructies geschreven voor macOS en voor Windows. De instructies gaan ervan uit dat je Python, uv, Visual Studio Code én GitHub Desktop nog niet geïnstalleerd hebt. Heb je één of meer van deze programma's al geïnstalleerd, kijk dan even welke stappen je kunt overslaan.</p>
+<div class="admonition warning">
+<p class="admonition-title">Controleer of de installatie gelukt is</p>
+<p>Lees tijdens de installatie de meldingen die in de terminal verschijnen. Meestal zie je een bevestiging dat een programma succesvol is geïnstalleerd. Twijfel je of een stap goed is gegaan, roep er dan een assistent bij zodat die even met je mee kan kijken.</p>
+</div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Benodigde programma's installeren</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Hieronder staan de installatie-instructies voor <strong>macOS</strong>. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows. 
+<p>Hieronder staan de installatie-instructies voor <strong>macOS</strong>. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows.
 <br><br></p>
 <p><strong>Stap 1: installeer Homebrew</strong></p>
 <p>We gebruiken Homebrew, een populaire package manager voor macOS, om de benodigde programma's te installeren.</p>
@@ -599,7 +603,7 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Hieronder staan de installatie-instructies voor <strong>Windows</strong>. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS. 
+<p>Hieronder staan de installatie-instructies voor <strong>Windows</strong>. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS.
 <br><br></p>
 <p><strong>Stap 1: installeer uv, Visual Studio Code en GitHub Desktop</strong></p>
 <p>We gebruiken Winget, een package manager die standaard beschikbaar is op Windows, om de benodigde programma's te installeren.</p>
@@ -615,7 +619,7 @@
 <br><br></li>
 </ol>
 <p><strong>Stap 2: sta het uitvoeren van scripts toe</strong></p>
-<p>In de PowerShell, de terminal die Visual Studio Code gebruikt, is het standaard niet toegestaan om scripts uit te voeren. Het volgende commando staat dat toe voor de huidige gebruiker, maar alleen voor scripts van vertrouwde partijen, zoals Microsoft. Willekeurige of onbekende scripts worden ook na dit commando nog steeds geblokkeerd. </p>
+<p>In de PowerShell, de terminal die Visual Studio Code gebruikt, is het standaard niet toegestaan om scripts uit te voeren. Het volgende commando staat dat toe voor de huidige gebruiker, maar alleen voor scripts van vertrouwde partijen, zoals Microsoft. Willekeurige of onbekende scripts worden ook na dit commando nog steeds geblokkeerd.</p>
 <ol>
 <li>Kopieer het volgende commando en plak het in de terminal:
     <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
@@ -635,13 +639,13 @@
 </div>
 </div>
 </div>
-<p>Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual Studio Code.<sup id="fnref:installatie-extensies"><a class="footnote-ref" href="#fn:installatie-extensies">1</a></sup> Met extensies voeg je aan Visual Studio Code extra functionaliteiten toe, in ons geval ondersteuning voor Python en een tool die je code automatisch netjes maakt. </p>
+<p>Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual Studio Code.<sup id="fnref:installatie-extensies"><a class="footnote-ref" href="#fn:installatie-extensies">1</a></sup> Met extensies voeg je aan Visual Studio Code extra functionaliteiten toe, in ons geval ondersteuning voor Python en een tool die je code automatisch netjes maakt.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Benodigde extensies installeren</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">macOS</label><label for="__tabbed_2_2">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Hieronder staan de installatie-instructies voor <strong>macOS</strong>. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows. 
+<p>Hieronder staan de installatie-instructies voor <strong>macOS</strong>. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows.
 <br><br></p>
 <ol>
 <li>Open een terminal door op <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-space">Space</kbd></span> te drukken en te zoeken op <em>Terminal</em>.</li>
@@ -653,27 +657,28 @@
 </ol>
 </div>
 <div class="tabbed-block">
-<p>Hieronder staan de installatie-instructies voor <strong>Windows</strong>. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS. 
+<p>Hieronder staan de installatie-instructies voor <strong>Windows</strong>. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS.
 <br><br></p>
 <ol>
-<li>Open een terminal door in het zoekveld van de taakbalk te zoeken op <em>Windows PowerShell</em>.   </li>
+<li>Open een terminal door in het zoekveld van de taakbalk te zoeken op <em>Windows PowerShell</em>.  </li>
 <li>Kopieer de volgende commando's en plak deze in de terminal:
     <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>code --install-extension ms-python.python
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>code --install-extension charliermarsh.ruff
 </span></code></pre></div></li>
-<li>Sluit de terminal af. </li>
+<li>Sluit de terminal af.</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
-<p>Bijna klaar &mdash; nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-s">S</kbd></span> (macOS)/<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.</p>
+<p>Nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-s">S</kbd></span> (macOS)/<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span> (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Instellingen Visual Studio Code</p>
 <p>Onderstaande stappen zijn gelijk voor macOS en Windows.</p>
 <ol>
 <li>Open Visual Studio Code.</li>
-<li>Kies via het dropdownmenu <strong>File</strong> voor <strong>Preferences &gt; Settings</strong>. </li>
+<li>Als je een venster krijgt met <em>Welcome to VS Code / Continue with GitHub</em> klik dan rechtsonderin op <em>Continue without Signing In</em>.</li>
+<li>Kies via het dropdownmenu <strong>File</strong> voor <strong>Preferences &gt; Settings</strong>.</li>
 <li>Typ in het zoekvenster <em>chat: disable AI features</em> en vink de instelling aan.</li>
 <li>Typ in het zoekvenster <em>format on save</em> en vink de bovenste instelling aan.</li>
 <li>Typ in het zoekvenster <em>@lang:python default formatter</em> en kies <em>Ruff</em>.</li>

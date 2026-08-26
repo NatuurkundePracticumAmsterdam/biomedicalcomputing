@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/omgaan-met-data/">
+        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/dna-mutaties/">
       
       
         <link rel="prev" href="../installatie/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Sessie 2: DNA replicatie - Biomedical Computing</title>
+        <title>Sessie 2: DNA-mutaties - Biomedical Computing</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sessie-2-dna-replicatie" class="md-skip">
+        <a href="#sessie-2-dna-mutaties" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sessie 2: DNA replicatie
+              Sessie 2: DNA-mutaties
             
           </span>
         </div>
@@ -278,7 +278,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 2: DNA replicatie
+    Sessie 2: DNA-mutaties
   
 
     
@@ -296,7 +296,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 2: DNA replicatie
+    Sessie 2: DNA-mutaties
   
 
     
@@ -333,78 +333,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#versiebeheer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Versiebeheer
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Versiebeheer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Git
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GitHub
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#github-desktop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GitHub Desktop
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commit
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#repositories-op-github" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repositories op GitHub
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#eerste-stappen" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -413,10 +341,20 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Eerste stappen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versiebeheer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versiebeheer
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dna-replicatie" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -425,7 +363,8 @@
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="DNA-replicatie">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#nog-comments-en-while-loop" class="md-nav__link">
@@ -711,20 +650,49 @@
 
 
 
-<h1 id="sessie-2-dna-replicatie">Sessie 2: DNA replicatie<a class="headerlink" href="#sessie-2-dna-replicatie" title="Permanent link">&para;</a></h1>
+<h1 id="sessie-2-dna-mutaties">Sessie 2: DNA-mutaties<a class="headerlink" href="#sessie-2-dna-mutaties" title="Permanent link">&para;</a></h1>
 <h2 id="visual-studio-code">Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permanent link">&para;</a></h2>
 <p>Visual Studio Code is een gratis, open-source <em>code editor.</em> VS Code is heel populair en is beschikbaar voor Windows, macOS en Linux. Je kunt het gebruiken om code te schrijven, maar ook om de code uit te voeren en de resultaten te bekijken. Verder zit de editor vol snufjes die je helpen bij het schrijven van de code waardoor je minder hoeft te typen en minder fouten maakt.</p>
 <p>Het is handig om de code die bij elkaar hoort in één map te plaatsen en die map te openen met VS Code. De editor weet dan wat er bij elkaar hoort en dat helpt bij het schrijven en uitvoeren van je code. We gaan alle code voor deze cursus in één map plaatsen. Binnen die map mag je best submapjes aanmaken, maar open met VS Code steeds de map van de cursus. Noem, voor het gemak, de map <em>BiomedicalComputing.</em></p>
 <div class="admonition opdracht-basis">
+<p class="admonition-title">Map aanmaken voor de cursus</p>
+<p>Veel computers synchroniseren hun bestanden naar OneDrive of iCloud. Dat kan heel handig zijn: je kunt vanaf meerdere computers bij je bestanden en als je computer stukgaat of gestolen wordt dan zijn je bestanden nog steeds veilig. Maar het kan ook voor problemen zorgen: als je mappen synchroniseert met veel kleine bestanden dan kunnen OneDrive en iCloud overstuur raken en dat zorgt dan ook voor problemen met je andere bestanden. Om dat te voorkomen<sup id="fnref:venvs-sync"><a class="footnote-ref" href="#fn:venvs-sync">5</a></sup> gaan we in deze cursus een map aanmaken <em>buiten</em> OneDrive, iCloud, of een andere service.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS</label><label for="__tabbed_1_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Open Finder.</li>
+<li>Ga via de menubalk naar <strong>Ga -&gt; Thuismap</strong>.</li>
+<li>Ga via de menubalk naar <strong>Archief -&gt; Nieuwe map</strong>.</li>
+<li>Type als naam <code>BiomedicalComputing</code> (zonder spatie).</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Open Verkenner.</li>
+<li>Klik op het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.22 3.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042L9.94 8 6.22 4.28a.75.75 0 0 1 0-1.06"/></svg></span>-symbool meteen rechts naast het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M240 6.1c9.1-8.2 22.9-8.2 32 0l232 208c9.9 8.8 10.7 24 1.8 33.9s-24 10.7-33.9 1.8l-8-7.2v205.3c0 35.3-28.7 64-64 64h-288c-35.3 0-64-28.7-64-64V242.6l-8 7.2c-9.9 8.8-25 8-33.9-1.8s-8-25 1.8-33.9zm16 50.1L96 199.7V448c0 8.8 7.2 16 16 16h48V360c0-39.8 32.2-72 72-72h48c39.8 0 72 32.2 72 72v104h48c8.8 0 16-7.2 16-16V199.7L256 56.3zM208 464h96V360c0-13.3-10.7-24-24-24h-48c-13.3 0-24 10.7-24 24z"/></svg></span>-icoon.</li>
+<li>Klik onderin het menu op je eigen naam.</li>
+<li>Klik linksboven op <strong>Nieuw</strong> en kies dan <strong>Map</strong>.</li>
+<li>Type als naam <code>BiomedicalComputing</code> (zonder spatie).</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Open altijd de goede map</p>
+<p>Test nog een keer of "select environment" nodig is, of zeg daar in ieder geval iets over. VS Code -&gt; Visual Studio Code. Versiebeheer verplaatsen (zie geraamte). </p>
+</div>
+<div class="admonition opdracht-basis">
 <p class="admonition-title">Sessie starten in VS Code</p>
-<p>Start Visual Studio Code en open de map <code>BiomedicalComputing</code> via <strong>File &gt; Open Folder...</strong> of, in een leeg venster, het map-icoontje met <code>Open...</code> onder het kopje <strong>Start</strong>. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:</p>
+<p>Start Visual Studio Code en open de map <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> via <strong>File &gt; Open Folder...</strong> of, in een leeg venster, het map-icoontje met <code>Open...</code> onder het kopje <strong>Start</strong>. In het venster dat opent is normaal gesproken direct je thuismap gekozen en zie je <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> er tussenstaan. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:</p>
 <ol>
 <li>Links onderin verschijnt een blauwe knop met <code>Restricted Mode</code>. Klik daarop, dan op Trust (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren) en dan rechtsboven in dat nieuwe venster klik je op het kruisje. Als het goed is, is het blauwe <code>Restricted Mode</code> verdwenen.</li>
 <li>Open een nieuwe <em>Terminal</em> via het menu <strong>Terminal &gt; New Terminal</strong>. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv venv
 </span></code></pre></div>
     Met deze regel voer je het commando <code>uv</code> uit en vraag je die om een <em>virtual environment</em> aan te maken voor jouw project. Dit is een omgeving met Python en alle extra's die je nodig hebt.</li>
-<li>Aan de linkerkant zie je een lege balk met bovenin het woord <code>Explorer</code> met daaronder <code>BIOMEDICALCOMPUTING</code>. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam <code>hello.py</code>. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat VS Code dat voor je installeert. Klik op <code>Don't Ask Again</code>. We hebben Python immers zojuist geïnstalleerd...</li>
+<li>Aan de linkerkant zie je een lege balk met bovenin het woord <code>Explorer</code> met daaronder <code>BiomedicalComputing</code>. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam <code>hello.py</code>. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat VS Code dat voor je installeert. Klik op <code>Don't Ask Again</code>. We hebben Python immers zojuist geïnstalleerd...</li>
 </ol>
 </div>
 <div class="admonition opdracht-basis">
@@ -735,25 +703,58 @@
 <p>met <strong>File &gt; Save</strong> of <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-s">S</kbd></span>. Druk dan rechtsbovenin het venster op het driehoekje <svg class="run" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 1 10 6 1 11 1 1"></polygon></svg> om de code uit te voeren. In de terminal onderaan het scherm verschijnt nu automatisch het commando om <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hello.py</code> uit te voeren én daarna de tekst <code>Hello World!</code> voordat er een nieuwe regel verschijnt waar je weer commando's kunt typen.</p>
 </div>
 <p>Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!</p>
+<div class="admonition info">
+<p class="admonition-title">Open altijd de goede map</p>
+<p>De map <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> is je projectmap. Hierin komt alle code te staan die we tijdens deze cursus gaan schrijven. Je mag, als je dat wilt, submapjes aanmaken en je code organiseren. Bijvoorbeeld per sessie, of per onderwerp. <em>Maar:</em> als je Visual Studio Code opnieuw opent, open dan <em>altijd</em> de <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> map, en <em>niet</em> een submapje.<sup id="fnref:vscode-submap"><a class="footnote-ref" href="#fn:vscode-submap">6</a></sup></p>
+</div>
+<h2 id="eerste-stappen">Eerste stappen<a class="headerlink" href="#eerste-stappen" title="Permanent link">&para;</a></h2>
+<p>Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de eerste stappen. Je hebt al wat Pythoncode gezien; nu gaan we het schrijven. We beginnen (heel) eenvoudig, maar gaan deze sessie verder uitbreiden naar code die echt bruikbaar is.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Naam en leeftijd</p>
+<p>In het allereerste voorbeeld heb je al gezien dat je met <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> dingen kunt <em>printen</em> naar het beeldscherm. Met <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> kun je dingen <em>vragen</em> aan de gebruiker. Het antwoord van de gebruiker slaan we op in een <em>variabele</em>. Zie ook de vorige sessie. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen, én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe <em>alles</em> in het Nederlands.</p>
+<ol>
+<li>Schrijf een script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>name_and_age.py</code> dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>What is your name? Alice
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Hi Alice
+</span></code></pre></div></li>
+<li>Breid nu je script uit zodat hij controleert of je naam gelijk is aan <code>admin</code>, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan <code>admin</code> moet je script roepen: <code>You're a legend!</code> In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven. Zorg dat je ook (kort) comments schrijft in je script om duidelijk te maken welk stukje wat doet.</li>
+<li>Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam <em>niet</em> admin is). Hint: gebruik <code class="language-py highlight"><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="o">...</span><span class="p">))</span></code>. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan <code>You're allowed on social media!</code> Als je 16 jaar of ouder bent, print dan <code>You can drive a scooter.</code> Print, vanaf 17 jaar, <code>You can get a driving license.</code> Vanaf 18 jaar: <code>You're a grown-up now and are allowed to vote.</code> Vanaf 30 jaar: <code>You can no longer apply for student finance.</code> Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.</li>
+<li>Soms wil je juist <em>niet</em> dat het lijstje steeds langer wordt. Pas het script aan zodat hij <em>alleen</em> de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan <em>alleen</em> <code>You can get a driving license.</code> Hint: gebruik hiervoor een <code class="language-py highlight"><span class="k">if</span> <span class="o">...</span> <span class="k">elif</span></code> construct.</li>
+<li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Meerdere condities</p>
+<p>Soms wil je testen op meerdere condities tegelijk. Een bepaalde vrucht kan een banaan zijn, <em>en</em> groot. Het kan een appel <em>of</em> een peer zijn (één van de twee), en niet iets anders. Dit kan met een <code class="language-py highlight"><span class="k">if</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span></code> of een <code class="language-py highlight"><span class="k">if</span> <span class="o">...</span> <span class="ow">or</span> <span class="o">...</span></code> construct. Bijvoorbeeld:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Banaan en groot</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s2">&quot;banana&quot;</span> <span class="ow">and</span> <span class="n">size_cm</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yes, a large banana!&quot;</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Appel of peer</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">if</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s2">&quot;apple&quot;</span> <span class="ow">or</span> <span class="n">fruit</span> <span class="o">==</span> <span class="s2">&quot;pear&quot;</span><span class="p">:</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Phew, I only like apples and pears.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+Laat je script, als je tussen de 18 en 20 jaar oud bent, printen <code>You're still a teenager, but already an adult!</code> Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">F-strings</p>
+<p>Misschien heb je gemerkt dat als je <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span></code> gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus <code>Hi Alice !</code> in plaats van <code>HiAlice!</code>. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten <em>f-strings</em> gebruiken. Een f-string is een string (<code class="language-py highlight"><span class="s2">&quot;Hi&quot;</span></code>) waar je de letter <code>f</code> vóór schrijft (<code class="language-py highlight"><span class="sa">f</span><span class="s2">&quot;Hi&quot;</span></code>). Als je dat doet dan werkt dat hetzelfde als een gewone string, <em>behalve</em> dat dingen die tussen accolades <code>{}</code> staan worden vervangen. Je kunt dan schrijven: <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hi </span><span class="si">{</span><span class="n">naam</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span></code> met als uitvoer <code>Hi Alice!</code>. De variabele die tussen haakjes stond is vervangen door de <em>waarde</em> van die variabele. Hierbij heb je dus kunnen kiezen voor <em>wel</em> een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.</p>
+<p>Pas je script aan zodat je f-strings gebruikt, maar <em>alleen</em> waar dat nodig of handig is, en commit de wijzigingen.</p>
+</div>
 <h2 id="versiebeheer">Versiebeheer<a class="headerlink" href="#versiebeheer" title="Permanent link">&para;</a></h2>
-<p>Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt <em>nu</em>, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? En als het op een gegeven moment niet meer werkt, waar ligt dat dan aan? Veel mensen hebben daarom de neiging om naast een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script.py</code> een <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-v1.py</code>, <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>script-v2.py</code>, enzovoorts aan te maken. Misschien herken je dat wel een beetje van je profielwerkstuk (eerste versie, versie na feedback van docent, definitieve versie), of het natuurkundepracticum. Ook op het practicum ben je veel aan het doen en uitproberen en heb je uiteindelijk een verzameling metingen gedaan. Waarom was die ene meting beter dan die andere? Wat heb je vorige keer ook alweer anders gedaan? Op het practicum houd je daarom alles netjes bij in een labjournaal. Niet alleen onderzoekers doen dat; ook software-ontwikkelaars houden een soort labjournaal bij: een digitaal systeem dat alle wijzigingen netjes bijhoudt, waar je notities maakt en waar je later precies kunt zien <em>wat</em> je veranderd hebt, en <em>waarom</em>. Dat heet <em>versiebeheer</em>.</p>
-<p>Versiebeheer (Engels: <em>version control</em>) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een <em>commit</em>. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer. Een verzameling van scripts en alle wijzigingen met labjournaal-achtige notities noem je samen een <em>repository</em>.</p>
-<p>Je versiebeheersysteem geeft duidelijk al je wijzigingen weer ten opzichte van de laatste commit. Ook kun je de wijzigingen tussen oudere versies bekijken. Heb je iets verprutst en wil je een oude versie terughalen? Prima! Je verliest zo nooit meer je werk. En stukmaken mag!<sup id="fnref:stuk"><a class="footnote-ref" href="#fn:stuk">1</a></sup></p>
-<h3 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h3>
-<p>Git,<sup id="fnref:git_footnote"><a class="footnote-ref" href="#fn:git_footnote">2</a></sup> een versiebeheersysteem, wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.</p>
-<p>In deze cursus zul je gebruik maken van een grafische applicatie die eenvoudiger werkt, maar op de achtergrond Git gebruikt.<sup id="fnref:git_cli_footnote"><a class="footnote-ref" href="#fn:git_cli_footnote">3</a></sup></p>
-<h3 id="github">GitHub<a class="headerlink" href="#github" title="Permanent link">&para;</a></h3>
-<p>Er zijn tegenwoordig veel websites die een plek bieden voor Git repositories. De bekendste zijn GitHub, GitLab, Bitbucket en SourceForge. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.</p>
-<p>In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) account aanmaken. Als student kom je ook nog in aanmerking voor een educatiekorting op een pro-account.<sup id="fnref:pro-account"><a class="footnote-ref" href="#fn:pro-account">5</a></sup> Je betaalt dan nog steeds niets.</p>
+<p>We hebben de map <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 400h384c8.8 0 16-7.2 16-16V144c0-8.8-7.2-16-16-16H298.7c-17.3 0-34.2-5.6-48-16l-38.4-28.8c-2.8-2.1-6.1-3.2-9.6-3.2H64c-8.8 0-16 7.2-16 16v288c0 8.8 7.2 16 16 16m384 48H64c-35.3 0-64-28.7-64-64V96c0-35.3 28.7-64 64-64h138.7c13.8 0 27.3 4.5 38.4 12.8l38.4 28.8c5.5 4.2 12.3 6.4 19.2 6.4H448c35.3 0 64 28.7 64 64v240c0 35.3-28.7 64-64 64"/></svg></span><code>BiomedicalComputing</code> nu niet op OneDrive, iCloud Drive, Dropbox, Google Drive of wat dan ook staan. We hebben dus geen cloud-opslag en géén backup. Dat is niet zo mooi als je je laptop kwijtraakt of als je per ongeluk bestanden wist. Bij veel cloudaanbieders kun je een gewist bestand nog 30 dagen terughalen. OneDrive bewaart zelfs (tijdelijk) oude versies van een bestand, maar daar hebben wij dus nu niets aan. We gaan dit oplossen, op een manier die veel gebruikt wordt door programmeurs: met <em>versiebeheer</em>.</p>
+<p>Versiebeheer (Engels: <em>version control</em>) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een <em>commit</em>. Bij het maken van een commit type je een korte notitie: wat heb je toegevoegd, gewijzigd, of gefixt? Je houdt eigenlijk een soort labjournaal bij, maar dan heel kort. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer. Een verzameling van scripts en alle wijzigingen met labjournaal-achtige notities noem je samen een <em>repository</em>.</p>
+<p>Je versiebeheersysteem geeft duidelijk al je wijzigingen weer ten opzichte van de laatste momentopname. Ook kun je de wijzigingen tussen oudere versies bekijken. Je bladert dan als het ware door een labjournaal.</p>
+<p>Er zijn tegenwoordig veel websites die een plek bieden voor repositories. Die zijn dus een soort online backup, maar je kunt daar ook je code delen met anderen als je dat wilt. De bekendste websites zijn GitHub, GitLab, en Codeberg. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.</p>
+<p>In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) account aanmaken. Als student kom je ook nog in aanmerking voor een educatiekorting op een pro-account.<sup id="fnref:pro-account"><a class="footnote-ref" href="#fn:pro-account">3</a></sup> Je betaalt dan nog steeds niets.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Account aanmaken</p>
 <p>Ga naar <a href="https://github.com/">https://github.com/</a> en klik op <code>Sign up for GitHub</code>. Maak een account aan onder je <em>privé-emailadres</em>. Op deze manier blijf je toegang houden tot je account ook nadat je afgestudeerd bent.</p>
 </div>
-<h3 id="github-desktop">GitHub Desktop<a class="headerlink" href="#github-desktop" title="Permanent link">&para;</a></h3>
-<p>Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de map met de oefenopdrachten.</p>
+<p>Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop.<sup id="fnref:git"><a class="footnote-ref" href="#fn:git">1</a></sup> Je gaat GitHub Desktop gebruiken om een repository te maken van de <em>BiomedicalComputing</em> map.</p>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">GitHub Desktop installeren</p>
-<p>Ga naar <a href="https://desktop.github.com/download/">https://desktop.github.com/download/</a> om GitHub Desktop te downloaden. Zoek daarna het gedownloade bestand op en installeer de applicatie. Log nu in met jouw account.</p>
+<p class="admonition-title">GitHub Desktop inloggen</p>
+<p>Start GitHub Desktop en log nu in met jouw account.</p>
 </div>
 <div id="opd:add_repository"></div>
 
@@ -787,9 +788,8 @@
 <p>Waarom zou je bij <code>Git ignore</code> voor Python kiezen, je gaat toch juist Python bestanden maken? De <code>Git ignore</code> zorgt ervoor dat allerlei <em>hulpbestanden</em> van Python niet bewaard worden als commit. Maar de Pythoncode zelf wordt wel bewaard.</p>
 </div>
 </div>
-<h3 id="commit">Commit<a class="headerlink" href="#commit" title="Permanent link">&para;</a></h3>
 <p>Alle wijzigingen aan bestanden in de repository kun je vanaf nu bijhouden door regelmatig een commit te maken. Met een commit maak je als het ware een snapshot van alle bestanden en hang je daar een labeltje aan.
-Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commit geef je een begeleidend schrijven mee, een <em>commit message</em>. Je hoopt dat jij &mdash; maar ook je collega &mdash; na het lezen van de commit message snel begrijpt wat er veranderd is én waarom. Wanneer je bepaalde wijzigingen ongedaan wilt maken, kan je door het lezen van de commit messages snel vinden bij welke commit je dan moet zijn. En wanneer je je applicatie gaat uitbrengen op GitHub, kun je de commit messages gebruiken om snel op te sommen wat de nieuwste versie van jouw app kan!</p>
+Dit kan in GitHub Desktop. Elke commit geef je een begeleidend schrijven mee, een <em>commit message</em>. Je hoopt dat jij &mdash; maar ook je collega &mdash; na het lezen van de commit message snel begrijpt wat er veranderd is én waarom.</p>
 <p>Hieronder zie je een aantal voorbeelden van commit messages. De titel (<em>summary</em>) is kort en krachtig. In de beschrijving (<em>description</em>) staat specifieke en uitgebreidere informatie.</p>
 <!DOCTYPE html>
 <html lang="en">
@@ -922,67 +922,67 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
         <!-- Commit Box 1 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
-                <input type="text" class="commit-title" placeholder="Summary (required)"
-                    value="feat: implement initialization process" readonly>
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="Added age verification"
+                    readonly>
             </div>
             <textarea class="commit-description" placeholder="Description"
-                readonly>Enabled initialization of the measurement instrument and calibration of sensors for accurate data collection.</textarea>
+                readonly>We now check the age of the person, they must be an adult.</textarea>
             <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
         </div>
 
         <!-- Commit Box 2 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
-                <input type="text" class="commit-title" placeholder="Summary (required)"
-                    value="fix: correct calibration error" readonly>
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="Fix incorrect age"
+                    readonly>
             </div>
             <textarea class="commit-description" placeholder="Description"
-                readonly>Resolved calibration errors caused by incorrect sensor configurations.</textarea>
+                readonly>The if-statement checked for "age larger than 18" instead of including 18.</textarea>
             <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
         </div>
 
         <!-- Commit Box 3 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
-                <input type="text" class="commit-title" placeholder="Summary (required)"
-                    value="chore: upgrade dependencies" readonly>
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="Added comments"
+                    readonly>
             </div>
             <textarea class="commit-description" placeholder="Description"
-                readonly>Upgraded matplotlib and click to the latest versions to enable error bar functionality.</textarea>
+                readonly>Added a few comments to explain the difficult parts of the code.</textarea>
             <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
         </div>
 
         <!-- Commit Box 4 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
-                <input type="text" class="commit-title" placeholder="Summary (required)"
-                    value="refactor: streamline data flow" readonly>
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="Removed duplicate code"
+                    readonly>
             </div>
             <textarea class="commit-description" placeholder="Description"
-                readonly>Fetched all measurements prior to analysis to enhance performance and efficiency.</textarea>
+                readonly>I had accidentally copied code twice instead of once.</textarea>
             <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
         </div>
 
         <!-- Commit Box 5 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
-                <input type="text" class="commit-title" placeholder="Summary (required)" value="docs: update README"
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
+                <input type="text" class="commit-title" placeholder="Summary (required)" value="Updated README"
                     readonly>
             </div>
             <textarea class="commit-description" placeholder="Description"
-                readonly>Updated README to include information about the new plot button and save feature.</textarea>
+                readonly>Updated README to include information about the method we use to check for DNA mutations.</textarea>
             <button class="submit-btn" onclick="handleSubmit(this)">Commit to main</button>
         </div>
 
         <!-- Commit Box 6 -->
         <div class="commit-box">
             <div class="commit-title-wrapper">
-                <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24">
+                <!-- <img src="..\figures\ECPC_logo_simple.svg" alt="ECPC logo" width="24" height="24"> -->
                 <input type="text" class="commit-title-resp" placeholder="Summary (required)">
             </div>
             <textarea class="commit-description-resp" placeholder="Description"></textarea>
@@ -1053,7 +1053,7 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
 <li>Ga terug naar GitHub Desktop. Controleer bij <em>Current repository</em> (links onder de menubalk) of de repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> nog steeds is geopend.</li>
 <li>Klik daaronder op het tabblad <em>Changes</em>.</li>
 <li>Als er meerdere bestanden gewijzigd zijn, kun je met een blauwe vinkje aangeven voor welke bestanden je een commit schrijft.</li>
-<li>Onder de lijst met gewijzigde bestanden vind je twee invulvelden. Een smal veld voor een titel en een groot veld voor een uitgebreide beschrijving (<em>Description</em>). In het veld voor een titel staat in lichtgrijs een nietzeggende commit, bijvoorbeeld <em>Update test.py</em>. Schrijf daar een nuttige commit message. Dus niet: <q>opdracht: commit</q>. Maar meer zoiets als: <q>feat: lookup port name for device</q>. Houd de titel in de commit message kort en krachtig. Een uitgebreidere beschrijving kun je kwijt in het grote veld.</li>
+<li>Onder de lijst met gewijzigde bestanden vind je twee invulvelden. Een smal veld voor een titel en een groot veld voor een uitgebreide beschrijving (<em>Description</em>). In het veld voor een titel staat in lichtgrijs een nietzeggende commit, bijvoorbeeld <em>Update test.py</em>. Schrijf daar een nuttige commit message. Dus niet: <q>opdracht: commit</q>. Maar meer zoiets als: <q>feat: add age verification</q>. Houd de titel in de commit message kort en krachtig. Een uitgebreidere beschrijving kun je kwijt in het grote veld.</li>
 <li>Klik op <em>Commit to main</em>. Gefeliciteerd! <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.53 1.45-1.08 1.08 1.6 1.6q.33.375.33.87c0 .495-.11.64-.33.86L11.5 9.47l1 1.08 3.63-3.61c.53-.59.79-1.24.79-1.94s-.26-1.36-.79-1.95zm-3.98 2.02L9.47 4.55l.61.56c.22.22.33.52.33.89s-.11.67-.33.89l-.61.56 1.08 1.08.56-.61c.53-.59.8-1.23.8-1.92 0-.72-.27-1.37-.8-1.97zM21 5.06c-.69 0-1.33.27-1.92.8l-5.63 5.64 1.08 1 5.58-5.56c.25-.25.55-.38.89-.38s.64.13.89.38l.61.61 1.03-1.08-.56-.61c-.59-.53-1.25-.8-1.97-.8M7 8 2 22l14-5zm12 3.06c-.7 0-1.34.27-1.94.8l-1.59 1.59 1.08 1.08 1.59-1.59c.25-.25.53-.38.86-.38s.63.13.88.38l1.62 1.59 1.05-1.03-1.6-1.64c-.59-.53-1.25-.8-1.95-.8"/></svg></span> Je hebt je eerste commit gedaan!</li>
 </ol>
 </div>
@@ -1064,11 +1064,12 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
 </div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Push en pull</p>
-<p>De repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op <a href="https://github.com/">github.com</a>. Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen verlies van je laptop of, als je op een zaalcomputer werkt, computerkabouters die 's nachts documenten verplaatsen of wissen.<sup id="fnref:kabouter"><a class="footnote-ref" href="#fn:kabouter">6</a></sup></p>
+<p>De repository <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg></span><code>BiomedicalComputing</code> bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op <a href="https://github.com/">github.com</a>. Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen verlies van je laptop of bestanden.</p>
 <p>In GitHub Desktop vind je een knop <code>Publish repository; Publish this repository to GitHub</code>. Als je daar op drukt kun je nog een andere naam aan de repository geven (deze naam bepaalt de url op <a href="https://github.com/">github.com</a>), een beschrijving toevoegen en aangeven of de code privé moet zijn. Daarna klik je op de blauwe knop <code>Publish repository</code>. Als je nu naar <a href="https://github.com">github.com</a> gaat zie je bij jouw repositories de zojuist gepubliceerde repository staan.</p>
 <p>Om je wijzigen ook in de cloud op te slaan kun je commits <code>pushen</code> naar <a href="https://github.com/">github.com</a> met de knop <code>Push origin</code>. Als je op een andere computer gaat werken kun je de laatste wijzigingen vanuit de cloud naar de computer halen door op <code>Fetch origin</code> te klikken en daarna op <code>Pull origin</code>.</p>
 </div>
-<h3 id="repositories-op-github">Repositories op GitHub<a class="headerlink" href="#repositories-op-github" title="Permanent link">&para;</a></h3>
+<details class="meer-leren">
+<summary>Openbare code en samenwerken</summary>
 <p>Om makkelijk je Git repository te delen met vrienden, collega's en de rest van de wereld kun je er dus voor kiezen om deze op GitHub te zetten. Je kunt dan je commits pushen naar GitHub en wijzigingen die je vrienden hebben gemaakt pullen, zodat jij er ook weer aan verder kan werken. Van alle repositories die op GitHub staan én openbaar zijn kun je de broncode clonen en er zelf mee aan de slag! Laten we eens een kijkje nemen op GitHub.</p>
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Tailor</p>
@@ -1087,54 +1088,30 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
 <li>Dan tot slot die ene, meest in het oogspringende groene <em>Code</em>-knop op de hoofdpagina. Met die knop kun je de repository als ZIP-bestand downloaden of openen met GitHub Desktop.</li>
 </ol>
 </div>
-<h2 id="eerste-stappen">Eerste stappen<a class="headerlink" href="#eerste-stappen" title="Permanent link">&para;</a></h2>
-<p>Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de eerste stappen. Je hebt al wat Pythoncode gezien; nu gaan we het schrijven. We beginnen (heel) eenvoudig, maar gaan deze sessie verder uitbreiden naar code die echt bruikbaar is.</p>
-<div class="admonition opdracht-basis">
-<p class="admonition-title">Naam en leeftijd</p>
-<p>In het allereerste voorbeeld heb je al gezien dat je met <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> dingen kunt <em>printen</em> naar het beeldscherm. Met <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> kun je dingen <em>vragen</em> aan de gebruiker. Het antwoord van de gebruiker slaan we op in een <em>variabele</em>. Zie ook de vorige sessie.</p>
-<ol>
-<li>Schrijf een script dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van een sessie:
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Hoe heet je? Alice
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Hoi Alice
-</span></code></pre></div></li>
-<li>Breid nu je script uit zodat hij controleert of je naam gelijk is aan <code>admin</code>, de standaardnaam voor accounts met alle rechten op een computersysteem. Alleen als je naam gelijk is aan <code>admin</code> moet je script roepen: <code>Je bent een baas!</code> In alle andere gevallen zegt hij je nog steeds gedag, zoals hierboven.</li>
-<li>Breid je script uit zodat hij ook vraagt om je leeftijd (maar alleen als je naam <em>niet</em> admin is). Hint: gebruik <code class="language-py highlight"><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="o">...</span><span class="p">))</span></code>. Als je leeftijd hoger of gelijk is aan 13 jaar, print dan <code>Je mag op social media!</code> Als je 16 jaar of ouder bent, print dan <code>Je mag een scooter besturen.</code> Print, vanaf 17 jaar, <code>Je mag je rijbewijs halen.</code> Vanaf 18 jaar: <code>Je bent volwassen en mag stemmen.</code> Vanaf 30 jaar: <code>Je mag geen studiefinanciering meer aanvragen.</code> Hoe ouder je bent, hoe langer het lijstje wordt dat op het scherm verschijnt.</li>
-<li>Soms wil je juist <em>niet</em> dat het lijstje steeds langer wordt. Pas het script aan zodat hij <em>alleen</em> de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan <em>alleen</em> <code>Je mag je rijbewijs halen.</code> Hint: gebruik hiervoor een <code class="language-py highlight"><span class="k">if</span> <span class="o">...</span> <span class="k">elif</span></code> construct.</li>
-<li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
-</ol>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>OPLETTEN: IN HET GERAAMTE STAAT GEKOPPELDE IF-ELSE-STATEMENTS maar ik weet niet wat we daarmee bedoelden. Pas later komt in een paarse opdracht and en or voor? Dus deze verwijderen? Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen <code>Je bent nog een tiener, maar al wel volwassen!</code> Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.</p>
-</div>
-<div class="admonition opdracht-meer">
-<p class="admonition-title">Opdracht-meer</p>
-<p>Misschien heb je gemerkt dat als je <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hoi&quot;</span><span class="p">,</span> <span class="n">naam</span><span class="p">,</span> <span class="s2">&quot;!&quot;</span><span class="p">)</span></code> gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus <code>Hoi Alice !</code> in plaats van <code>HoiAlice!</code>. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten <em>f-strings</em> gebruiken. Een f-string is een string (<code class="language-py highlight"><span class="s2">&quot;Hoi&quot;</span></code>) waar je de letter <code>f</code> vóór schrijft (<code class="language-py highlight"><span class="sa">f</span><span class="s2">&quot;Hoi&quot;</span></code>). Als je dat doet dan werkt dat hetzelfde als een gewone string, <em>behalve</em> dat dingen die tussen accolades <code>{}</code> staan worden vervangen. Je kunt dan schrijven: <code class="language-py highlight"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hoi </span><span class="si">{</span><span class="n">naam</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span></code> met als uitvoer <code>Hoi Alice!</code>. De variabele die tussen haakjes stond is vervangen door de <em>waarde</em> van die variabele. Hierbij heb je dus kunnen kiezen voor <em>wel</em> een spatie tussen Hoi en Alice, maar niet tussen Alice en het uitroepteken.</p>
-<p>Pas je script aan zodat je f-strings gebruikt, maar <em>alleen</em> waar dat nodig of handig is, en commit de wijzigingen.</p>
-</div>
-<h3 id="dna-replicatie">DNA-replicatie<a class="headerlink" href="#dna-replicatie" title="Permanent link">&para;</a></h3>
+</details>
+<h2 id="dna-replicatie">DNA-replicatie<a class="headerlink" href="#dna-replicatie" title="Permanent link">&para;</a></h2>
 <p>Een klusje is pas echt stom als je het heel vaak achter elkaar moet doen. Computers zijn dan superhandig: je hoeft het klusje maar één keer te schrijven en te vertellen hoe vaak hij het moet uitvoeren.</p>
 <p>Jullie hebben al eerder, handmatig, in DNA gezocht naar een fout die is ontstaan tijdens DNA-replicatie waarbij in de nieuwe streng soms een foutje kan ontstaan. We gaan allereerst een script schrijven dat het proces van DNA-replicatie nabootst.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Replicatie</p>
-<p>Maak een nieuw bestand met de naam <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>replicatie.py.</code></p>
+<p>Maak een nieuw bestand met de naam <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>dna_replication.py.</code></p>
 <ol>
-<li>We beginnen met een stukje <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Print de letters van de bijbehorende tweede streng, volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit streng1, als de letter een A is, print een T, als de letter een C is, print een G, enz.</li>
-<li>Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit streng1 een A is, print <code>A -- T</code>, enz.</li>
+<li>We beginnen met een stukje <code class="language-py highlight"><span class="n">strand1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Print de letters van de bijbehorende tweede streng (Engels: <em>strand</em>), volgens de regels van DNA-replicatie, los onder elkaar. Dus, voor iedere letter uit strand1, als de letter een A is, print een T, als de letter een C is, print een G, enz.</li>
+<li>Het is duidelijker om beide strengen naast elkaar te printen. Als de letter uit strand1 een A is, print <code>A -- T</code>, enz.</li>
 <li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
 </ol>
 </div>
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Vereenvoudigen</p>
-<p>Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld <code>A == T</code> wilt printen in plaats van <code>A -- T</code>, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit streng2. Commit je wijzigingen.</p>
+<p>Je hebt nu waarschijnlijk een verzameling print-statements. Als je de vorm van de output wilt veranderen, bijvoorbeeld <code>A == T</code> wilt printen in plaats van <code>A -- T</code>, dan moet je dat op vier plekken aanpassen. Dat kan beter. Pas het script aan zodat hij hetzelfde doet, maar slechts één print-statement bevat. Tip: maak een nieuwe variabele aan voor de letter uit strand2. Commit je wijzigingen.</p>
 </div>
 <p>Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis van wat de tweede streng zou <em>moeten</em> zijn gebruiken om op zoek te gaan naar de fout.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Vind de fout</p>
 <p>Maak een nieuw bestand met de naam <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>find_DNA_mistake.py</code>.</p>
 <ol>
-<li>Neem weer <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Daarnaast is <code class="language-py highlight"><span class="n">streng2</span> <span class="o">=</span> <span class="s2">&quot;AATATCGCAA&quot;</span></code>. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit streng1 vergelijken met de eerste letter uit streng2, en vervolgens de tweede letter uit streng1 vergelijken met de tweede letter uit streng2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.</li>
-<li>Schrijf code dat op zoek gaat naar <em>alle</em> fouten in streng2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.</li>
+<li>Neem weer <code class="language-py highlight"><span class="n">strand1</span> <span class="o">=</span> <span class="s2">&quot;ATATAGAGTC&quot;</span></code>. Daarnaast is <code class="language-py highlight"><span class="n">strand2</span> <span class="o">=</span> <span class="s2">&quot;AATATCGCAA&quot;</span></code>. We willen nu weer een for-loop schrijven, maar hierbij de eerste letter uit strand1 vergelijken met de eerste letter uit strand2, en vervolgens de tweede letter uit strand1 vergelijken met de tweede letter uit strand2, enz. Dit betekent dat we een specifieke vorm van for-loop nodig hebben. Overleg welke.</li>
+<li>Schrijf code dat op zoek gaat naar <em>alle</em> fouten in strand2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt.</li>
 <li>Ga naar GitHub Desktop en commit de code van deze opdracht.</li>
 </ol>
 </div>
@@ -1143,9 +1120,9 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
 <p class="admonition-title">Alle tijd van de wereld</p>
 <p>Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.</p>
 </div>
-<p>Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels <code class="language-py highlight"><span class="n">streng1</span> <span class="o">=</span> <span class="o">...</span></code> en <code class="language-py highlight"><span class="n">streng2</span> <span class="o">=</span> <span class="o">...</span></code> aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen [hier] en [hier]. Gebruik de volgende regel om de data van streng1 in te lezen en te bewaren in de variabele:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">streng1</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;streng1.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span>
+<p>Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels <code class="language-py highlight"><span class="n">strand1</span> <span class="o">=</span> <span class="o">...</span></code> en <code class="language-py highlight"><span class="n">strand2</span> <span class="o">=</span> <span class="o">...</span></code> aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen [hier] en [hier]. Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">strand1</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;strand1.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span>
 </span></code></pre></div></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1153,34 +1130,72 @@ Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commi
 </div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Zoek de speld in de hooiberg</p>
-<p>Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor streng1, en ook voor streng2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.</p>
+<p>Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt.???</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Meer condities</p>
+<p>Als je code geneste if-statements bevat, zoals:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">if</span> <span class="o">...</span><span class="p">:</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>        <span class="o">...</span>
+</span></code></pre></div>
+pas je code dan aan met <code>and</code> of <code>or</code> zodat je in totaal maar vier if-statements nodig hebt (in plaats van acht).</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Repareer de mutatie</p>
+<p>Bekijk de volgende code, waarbij een mutatie in de vierde base wordt gerepareerd door stukjes DNA aan elkaar te plakken:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># DNA with mutation in base 4</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">strand</span> <span class="o">=</span> <span class="s2">&quot;ATCGGA&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># print base 4</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">strand</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># &#39;G&#39;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># Built new strand with the original base T restored</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">fixed_strand</span> <span class="o">=</span> <span class="n">strand</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;T&quot;</span> <span class="o">+</span> <span class="n">strand</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">fixed_strand</span><span class="p">)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="c1"># &#39;ATCTGA&#39;</span>
+</span></code></pre></div>
+Begrijp je wat er gebeurt in de code? Er is wel een tekortkoming: in deze code staat de positie van de mutatie (base 4) in het script. De correcte base (T) staat ook keihard in het script. Voeg functionaliteit aan jouw bestaande code toe zodat je ongeveer hetzelfde doet, maar dan op basis van wat je script gevonden heeft: welke base en wat zou de correcte base moeten zijn? De voorbeelcode werkt maar in één specifiek geval. Zorg dat jouw code in alle gevallen werkt.</p>
 </div>
 <h3 id="nog-comments-en-while-loop">NOG: COMMENTS en WHILE-loop<a class="headerlink" href="#nog-comments-en-while-loop" title="Permanent link">&para;</a></h3>
-<p>Deze stonden nog niet uitgewerkt in het schema.</p>
+<p>Terug naar programma naam/leeftijd.
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># stap 1:</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># stap 2:</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># stap 3:</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name?&quot;</span><span class="p">)</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span><span class="p">:</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="k">break</span>
+</span></code></pre></div></p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn:stuk">
-<p>Stukmaken mag, maar het terughalen van een oude versie is niet met één druk op de knop gebeurd. Vraag om hulp als je terug wilt naar een oude versie, wij helpen je graag!&#160;<a class="footnote-backref" href="#fnref:stuk" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:git_footnote">
-<p><a href="https://initialcommit.com/blog/How-Did-Git-Get-Its-Name">https://initialcommit.com/blog/How-Did-Git-Get-Its-Name</a>&#160;<a class="footnote-backref" href="#fnref:git_footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:git_cli_footnote">
-<p>Je kunt &mdash; als je dat wilt &mdash; de stap maken naar de command-line, waarmee je veel meer mogelijkheden tot je beschikking krijgt. Zie het boek <em>Pro Git</em>[@gitpro] voor meer informatie over Git en het gebruik via de command-line. De grafische applicatie is veel makkelijker; de command-line applicatie is veel krachiger.&#160;<a class="footnote-backref" href="#fnref:git_cli_footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn:git">
+<p>GitHub is een gebruiksvriendelijke laag over Git, het eigenlijke versiebeheersysteem. Git wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.&#160;<a class="footnote-backref" href="#fnref:git" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:branches">
-<p>Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te <em>mergen</em> met je main branch, maar dat hoeft niet.&#160;<a class="footnote-backref" href="#fnref:branches" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te <em>mergen</em> met je main branch, maar dat hoeft niet.&#160;<a class="footnote-backref" href="#fnref:branches" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:pro-account">
-<p><a href="https://github.com/education/students">https://github.com/education/students</a>&#160;<a class="footnote-backref" href="#fnref:pro-account" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p><a href="https://github.com/education/students">https://github.com/education/students</a>&#160;<a class="footnote-backref" href="#fnref:pro-account" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:kabouter">
-<p>Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.&#160;<a class="footnote-backref" href="#fnref:kabouter" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.&#160;<a class="footnote-backref" href="#fnref:kabouter" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:venvs-sync">
+<p>Als je met Pythonprojecten werkt dan kun je helaas gemakkelijk in de situatie komen waar je problemen krijgt met de synchronisatie. Met de instructies in deze cursus kun je dat voorkomen.&#160;<a class="footnote-backref" href="#fnref:venvs-sync" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:vscode-submap">
+<p>Als je dat doet dan weet Visual Studio Code niet welke bestanden allemaal bij je project horen en draait hij de code niet in je projectmap, maar in de submap. Je code kan dan errors geven als die bestanden op een andere plek zoekt.&#160;<a class="footnote-backref" href="#fnref:vscode-submap" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
