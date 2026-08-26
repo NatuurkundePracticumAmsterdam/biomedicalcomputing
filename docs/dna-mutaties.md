@@ -248,15 +248,31 @@ strand1 = pathlib.Path("strand1.txt").read_text().
 !!! opdracht-basis "Zoek de speld in de hooiberg"
     Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
 
-!!! warning
-    PAARS: als je code geneste if-statements bevat, pas je code aan met AND of OR zodat je maar vier if-statements nodig hebt. Paars: fix the mistake:
+!!! opdracht-meer "Meer condities"
+    Als je code geneste if-statements bevat, zoals:
     ```py
-    >>> strand = "ATCGGA"
-    >>> strand[3]
-    'G'
-    >>> strand[:3] + "T" + strand[4:]
-    'ATCTGA'
+    if ...:
+        if ...:
+            ...
     ```
+    pas je code dan aan met `and` of `or` zodat je in totaal maar vier if-statements nodig hebt (in plaats van acht).
+    
+!!! opdracht-meer "Repareer de mutatie"
+    Bekijk de volgende code, waarbij een mutatie in de vierde base wordt gerepareerd door stukjes DNA aan elkaar te plakken:
+    ```py
+    # DNA with mutation in base 4
+    strand = "ATCGGA"
+    
+    # print base 4
+    print(strand[3])
+    # 'G'
+
+    # Built new strand with the original base T restored
+    fixed_strand = strand[:3] + "T" + strand[4:]
+    print(fixed_strand)
+    # 'ATCTGA'
+    ```
+    Begrijp je wat er gebeurt in de code? Er is wel een tekortkoming: in deze code staat de positie van de mutatie (base 4) in het script. De correcte base (T) staat ook keihard in het script. Voeg functionaliteit aan jouw bestaande code toe zodat je ongeveer hetzelfde doet, maar dan op basis van wat je script gevonden heeft: welke base en wat zou de correcte base moeten zijn? De voorbeelcode werkt maar in één specifiek geval. Zorg dat jouw code in alle gevallen werkt.
 
 ### NOG: COMMENTS en WHILE-loop
 
@@ -278,8 +294,6 @@ while True:
     if name == "stop":
         break
 ```
-
-Deze stonden nog niet uitgewerkt in het schema.
 
 [^git]: GitHub is een gebruiksvriendelijke laag over Git, het eigenlijke versiebeheersysteem. Git wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
