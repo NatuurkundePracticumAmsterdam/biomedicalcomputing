@@ -31,7 +31,7 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
 
 !!! opdracht-basis "Sessie starten in VS Code"
 
-    Start Visual Studio Code en open de map `BiomedicalComputing` via **File > Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. In het venster dat opent is normaal gesproken direct je thuismap gekozen en zie je `BiomedicalComputing` er tussenstaan. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
+    Start Visual Studio Code en open de map {{folder}}`BiomedicalComputing` via **File > Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. In het venster dat opent is normaal gesproken direct je thuismap gekozen en zie je {{folder}}`BiomedicalComputing` er tussenstaan. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
 
     1.  Links onderin verschijnt een blauwe knop met `Restricted Mode`. Klik daarop, dan op Trust (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren) en dan rechtsboven in dat nieuwe venster klik je op het kruisje. Als het goed is, is het blauwe `Restricted Mode` verdwenen.
     2.  Open een nieuwe _Terminal_ via het menu **Terminal > New Terminal**. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
@@ -39,7 +39,7 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
     uv venv
     ```
         Met deze regel voer je het commando `uv` uit en vraag je die om een _virtual environment_ aan te maken voor jouw project. Dit is een omgeving met Python en alle extra's die je nodig hebt.
-    3.  Aan de linkerkant zie je een lege balk met bovenin het woord `Explorer` met daaronder `BIOMEDICALCOMPUTING`. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam `hello.py`. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat VS Code dat voor je installeert. Klik op `Don't Ask Again`. We hebben Python immers zojuist geïnstalleerd...
+    3.  Aan de linkerkant zie je een lege balk met bovenin het woord `Explorer` met daaronder `BiomedicalComputing`. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam `hello.py`. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat VS Code dat voor je installeert. Klik op `Don't Ask Again`. We hebben Python immers zojuist geïnstalleerd...
 
 !!! opdracht-basis "Hello World"
 
@@ -55,7 +55,7 @@ Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!
 
 !!! info "Open altijd de goede map"
 
-    De map `BiomedicalComputing` is je projectmap. Hierin komt alle code te staan die we tijdens deze cursus gaan schrijven. Je mag, als je dat wilt, submapjes aanmaken en je code organiseren. Bijvoorbeeld per sessie, of per onderwerp. _Maar:_ als je Visual Studio Code opnieuw opent, open dan _altijd_ de `BiomedicalComputing` map, en _niet_ een submapje.[^vscode-submap]
+    De map {{folder}}`BiomedicalComputing` is je projectmap. Hierin komt alle code te staan die we tijdens deze cursus gaan schrijven. Je mag, als je dat wilt, submapjes aanmaken en je code organiseren. Bijvoorbeeld per sessie, of per onderwerp. _Maar:_ als je Visual Studio Code opnieuw opent, open dan _altijd_ de {{folder}}`BiomedicalComputing` map, en _niet_ een submapje.[^vscode-submap]
 
 ## Eerste stappen
 
@@ -97,25 +97,13 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 ## Versiebeheer
 
-!!! warning
+We hebben de map {{folder}}`BiomedicalComputing` nu niet op OneDrive, iCloud Drive, Dropbox, Google Drive of wat dan ook staan. We hebben dus geen cloud-opslag en géén backup. Dat is niet zo mooi als je je laptop kwijtraakt of als je per ongeluk bestanden wist. Bij veel cloudaanbieders kun je een gewist bestand nog 30 dagen terughalen. OneDrive bewaart zelfs (tijdelijk) oude versies van een bestand, maar daar hebben wij dus nu niets aan. We gaan dit oplossen, op een manier die veel gebruikt wordt door programmeurs: met _versiebeheer_.
 
-    Begin vanuit het punt van backup / online opslag. Nóg korter, git helemaal weg of naar footnote. Commit messages beter maken. Aangepast, gefixt, enz. Verplaatsen naar vóór DNA-replicatie.
+Versiebeheer (Engels: _version control_) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een _commit_. Bij het maken van een commit type je een korte notitie: wat heb je toegevoegd, gewijzigd, of gefixt? Je houdt eigenlijk een soort labjournaal bij, maar dan heel kort. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer. Een verzameling van scripts en alle wijzigingen met labjournaal-achtige notities noem je samen een _repository_.
 
-Zodra je scripts wat ingewikkelder worden, begin je tegen heel praktische problemen aan te lopen. Het werkt _nu_, maar je wilt een flinke aanpassing gaan doen. Werkt het dan straks nog wel? En als het op een gegeven moment niet meer werkt, waar ligt dat dan aan? Veel mensen hebben daarom de neiging om naast een {{file}}`script.py` een {{file}}`script-v1.py`, {{file}}`script-v2.py`, enzovoorts aan te maken. Misschien herken je dat wel een beetje van je profielwerkstuk (eerste versie, versie na feedback van docent, definitieve versie), of het natuurkundepracticum. Ook op het practicum ben je veel aan het doen en uitproberen en heb je uiteindelijk een verzameling metingen gedaan. Waarom was die ene meting beter dan die andere? Wat heb je vorige keer ook alweer anders gedaan? Op het practicum houd je daarom alles netjes bij in een labjournaal. Niet alleen onderzoekers doen dat; ook software-ontwikkelaars houden een soort labjournaal bij: een digitaal systeem dat alle wijzigingen netjes bijhoudt, waar je notities maakt en waar je later precies kunt zien _wat_ je veranderd hebt, en _waarom_. Dat heet _versiebeheer_.
+Je versiebeheersysteem geeft duidelijk al je wijzigingen weer ten opzichte van de laatste momentopname. Ook kun je de wijzigingen tussen oudere versies bekijken. Je bladert dan als het ware door een labjournaal.
 
-Versiebeheer (Engels: _version control_) stelt je in staat om af en toe een momentopname te maken van al je bestanden in een bepaalde map, inclusief alle submappen. Dit doe je niet na iedere regel code, maar bijvoorbeeld wel als je een stukje code af hebt en na het testen weet dat het werkt. Zo'n momentopname heet een _commit_. Hoe vaak je commit is aan jou; maar wacht niet te lang &mdash; anders is het geen versiebeheer meer. Een verzameling van scripts en alle wijzigingen met labjournaal-achtige notities noem je samen een _repository_.
-
-Je versiebeheersysteem geeft duidelijk al je wijzigingen weer ten opzichte van de laatste commit. Ook kun je de wijzigingen tussen oudere versies bekijken. Heb je iets verprutst en wil je een oude versie terughalen? Prima! Je verliest zo nooit meer je werk. En stukmaken mag![^stuk]
-
-### Git
-
-Git,[^git_footnote] een versiebeheersysteem, wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.
-
-In deze cursus zul je gebruik maken van een grafische applicatie die eenvoudiger werkt, maar op de achtergrond Git gebruikt.[^git_cli_footnote]
-
-### GitHub
-
-Er zijn tegenwoordig veel websites die een plek bieden voor Git repositories. De bekendste zijn GitHub, GitLab, Bitbucket en SourceForge. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.
+Er zijn tegenwoordig veel websites die een plek bieden voor repositories. Die zijn dus een soort online backup, maar je kunt daar ook je code delen met anderen als je dat wilt. De bekendste websites zijn GitHub, GitLab, en Codeberg. GitHub, aangekocht door Microsoft, is op dit moment het bekendste en grootste platform. Veel bekende softwareprojecten vinden daar hun thuis.
 
 In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) account aanmaken. Als student kom je ook nog in aanmerking voor een educatiekorting op een pro-account.[^pro-account] Je betaalt dan nog steeds niets.
 
@@ -123,9 +111,7 @@ In deze cursus ga je werken met GitHub. Je moet hiervoor wel een (gratis) accoun
 
     Ga naar [https://github.com/](https://github.com/) en klik op `Sign up for GitHub`. Maak een account aan onder je _privé-emailadres_. Op deze manier blijf je toegang houden tot je account ook nadat je afgestudeerd bent.
 
-### GitHub Desktop
-
-Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop. Je gaat GitHub Desktop gebruiken om een repository te maken van de _BiomedicalComputing_ map.
+Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een desktopapplicatie ontwikkeld met de naam GitHub Desktop.[^git] Je gaat GitHub Desktop gebruiken om een repository te maken van de _BiomedicalComputing_ map.
 
 !!! opdracht-basis "GitHub Desktop inloggen"
 
@@ -163,10 +149,8 @@ Om het programmeurs makkelijker te maken met GitHub te werken heeft GitHub een d
 
         Waarom zou je bij `Git ignore` voor Python kiezen, je gaat toch juist Python bestanden maken? De `Git ignore` zorgt ervoor dat allerlei _hulpbestanden_ van Python niet bewaard worden als commit. Maar de Pythoncode zelf wordt wel bewaard.
 
-### Commit
-
 Alle wijzigingen aan bestanden in de repository kun je vanaf nu bijhouden door regelmatig een commit te maken. Met een commit maak je als het ware een snapshot van alle bestanden en hang je daar een labeltje aan.
-Dit kan in GitHub Desktop, maar ook direct vanuit Visual Studio Code. Elke commit geef je een begeleidend schrijven mee, een _commit message_. Je hoopt dat jij &mdash; maar ook je collega &mdash; na het lezen van de commit message snel begrijpt wat er veranderd is én waarom. Wanneer je bepaalde wijzigingen ongedaan wilt maken, kan je door het lezen van de commit messages snel vinden bij welke commit je dan moet zijn. En wanneer je je applicatie gaat uitbrengen op GitHub, kun je de commit messages gebruiken om snel op te sommen wat de nieuwste versie van jouw app kan!
+Dit kan in GitHub Desktop. Elke commit geef je een begeleidend schrijven mee, een _commit message_. Je hoopt dat jij &mdash; maar ook je collega &mdash; na het lezen van de commit message snel begrijpt wat er veranderd is én waarom.
 
 Hieronder zie je een aantal voorbeelden van commit messages. De titel (_summary_) is kort en krachtig. In de beschrijving (_description_) staat specifieke en uitgebreidere informatie.
 
@@ -183,7 +167,7 @@ Hieronder zie je een aantal voorbeelden van commit messages. De titel (_summary_
     5. Ga terug naar GitHub Desktop. Controleer bij _Current repository_ (links onder de menubalk) of de repository {{github}}`BiomedicalComputing` nog steeds is geopend.
     6. Klik daaronder op het tabblad _Changes_.
     7. Als er meerdere bestanden gewijzigd zijn, kun je met een blauwe vinkje aangeven voor welke bestanden je een commit schrijft.
-    8. Onder de lijst met gewijzigde bestanden vind je twee invulvelden. Een smal veld voor een titel en een groot veld voor een uitgebreide beschrijving (_Description_). In het veld voor een titel staat in lichtgrijs een nietzeggende commit, bijvoorbeeld _Update test.py_. Schrijf daar een nuttige commit message. Dus niet: <q>opdracht: commit</q>. Maar meer zoiets als: <q>feat: lookup port name for device</q>. Houd de titel in de commit message kort en krachtig. Een uitgebreidere beschrijving kun je kwijt in het grote veld.
+    8. Onder de lijst met gewijzigde bestanden vind je twee invulvelden. Een smal veld voor een titel en een groot veld voor een uitgebreide beschrijving (_Description_). In het veld voor een titel staat in lichtgrijs een nietzeggende commit, bijvoorbeeld _Update test.py_. Schrijf daar een nuttige commit message. Dus niet: <q>opdracht: commit</q>. Maar meer zoiets als: <q>feat: add age verification</q>. Houd de titel in de commit message kort en krachtig. Een uitgebreidere beschrijving kun je kwijt in het grote veld.
     9. Klik op _Commit to main_. Gefeliciteerd! {{feesttoeter}} Je hebt je eerste commit gedaan!
 
 In GitHub Desktop zie je nu bij _History_ de commit staan, met in één oogopslag alle wijzigingen.
@@ -194,34 +178,31 @@ In GitHub Desktop zie je nu bij _History_ de commit staan, met in één oogopsla
 
 !!! opdracht-basis "Push en pull"
 
-    De repository {{github}}`BiomedicalComputing` bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op [github.com](https://github.com/). Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen verlies van je laptop of, als je op een zaalcomputer werkt, computerkabouters die 's nachts documenten verplaatsen of wissen.[^kabouter]
+    De repository {{github}}`BiomedicalComputing` bestaat alleen nog maar op de computer. Het kan fijn zijn om de repository ook in de cloud te hebben op [github.com](https://github.com/). Het geeft de mogelijkheid je code op andere computers binnen te halen en te delen met anderen. Bovendien ben je dan beschermd tegen verlies van je laptop of bestanden.
 
     In GitHub Desktop vind je een knop `Publish repository; Publish this repository to GitHub`. Als je daar op drukt kun je nog een andere naam aan de repository geven (deze naam bepaalt de url op [github.com](https://github.com/)), een beschrijving toevoegen en aangeven of de code privé moet zijn. Daarna klik je op de blauwe knop `Publish repository`. Als je nu naar [github.com](https://github.com) gaat zie je bij jouw repositories de zojuist gepubliceerde repository staan.
 
     Om je wijzigen ook in de cloud op te slaan kun je commits `pushen` naar [github.com](https://github.com/) met de knop `Push origin`. Als je op een andere computer gaat werken kun je de laatste wijzigingen vanuit de cloud naar de computer halen door op `Fetch origin` te klikken en daarna op `Pull origin`.
 
-### Repositories op GitHub
+??? meer-leren "Openbare code en samenwerken"
 
-!!! warning "paars maken"
-    hele stuk paars maken. Farmacokinetiek blokje tweede paarse blok naar Baumgartner.
+    Om makkelijk je Git repository te delen met vrienden, collega's en de rest van de wereld kun je er dus voor kiezen om deze op GitHub te zetten. Je kunt dan je commits pushen naar GitHub en wijzigingen die je vrienden hebben gemaakt pullen, zodat jij er ook weer aan verder kan werken. Van alle repositories die op GitHub staan én openbaar zijn kun je de broncode clonen en er zelf mee aan de slag! Laten we eens een kijkje nemen op GitHub.
 
-Om makkelijk je Git repository te delen met vrienden, collega's en de rest van de wereld kun je er dus voor kiezen om deze op GitHub te zetten. Je kunt dan je commits pushen naar GitHub en wijzigingen die je vrienden hebben gemaakt pullen, zodat jij er ook weer aan verder kan werken. Van alle repositories die op GitHub staan én openbaar zijn kun je de broncode clonen en er zelf mee aan de slag! Laten we eens een kijkje nemen op GitHub.
+    !!! opdracht-meer "Tailor"
 
-!!! opdracht-meer "Tailor"
+        Als je nog nooit op GitHub bent geweest dan kunnen de pagina's nogal intimiderend overkomen. De informatiedichtheid is nogal hoog. Na een paar bezoeken weet je meestal wel waar je dingen kunt vinden. David heeft een data-analyse app geschreven dat Tailor heet. Deze app wordt gebruikt bij natuurkundepractica voor studenten Medische natuurwetenschappen en Science, business and innovation. Interessant om eens te kijken wat je hierover kunt vinden op GitHub.
 
-    Als je nog nooit op GitHub bent geweest dan kunnen de pagina's nogal intimiderend overkomen. De informatiedichtheid is nogal hoog. Na een paar bezoeken weet je meestal wel waar je dingen kunt vinden. David heeft een data-analyse app geschreven dat Tailor heet. Deze app wordt gebruikt bij natuurkundepractica voor studenten Medische natuurwetenschappen en Science, business and innovation. Interessant om eens te kijken wat je hierover kunt vinden op GitHub.
-
-    1. Zoek de repository {{github}}`/davidfokkema/tailor` op [github.com](https://github.com) op.
-    2. Je komt nu terecht op de hoofdpagina. Hier zie je een mappenstructuur met een aantal bestanden. Rechts daarvan staat een korte beschrijving onder het kopje _About_. Een uitgebreidere beschrijving vind je als je naar beneden scrolt onder _README_.
-    3. Linksboven zie je een aantal tabbladen (_Code_, _Issues_, _Pull requests_, enzovoorts). Het tabblad _Code_ is de hoofdpagina met de mappenstructuur. Navigeer door de mappen, wat staat er op regel 14 van {{file}}`plot_tab.py`?
-    4. Ga terug naar de hoofdpagina. In de regel boven de mappenstructuur vind je onder andere informatie over de commits (onder de groene knop met _Code_). Hoeveel commits zijn er gemaakt? Klik op _Commits_ en daarna op een aantal commit messages. Hoeveel regels zijn er bij een commit message weggehaald of bijgekomen?
-    5. Je kunt per bestand bekijken wanneer die is aangepast en wat er is aangepast. Ga naar het bestand {{file}}`pyproject.toml` en klik rechtsboven op _History_. Wat is er aangepast in {{file}}`pyproject.toml` bij de commit <q>Release v2.0.0</q>? Je ziet ook welke bestanden nog meer zijn gewijzigd in deze commit, welk bestand is nog meer gewijzigd bij de commit <q>Release v2.0.0</q>?
-    6. Ga terug naar de hoofdpagina. Welke versie van Tailor is als laatste gereleased? Kijk hiervoor onder _Releases_ aan de rechterkant.
-    7. Je kent het misschien wel, dat je een app gebruikt maar dat het niet helemaal goed werkt (_bug_), of je hebt een idee hoe het nog beter kan worden (_enhancement_). Daarvoor is op GitHub het tabblad `Issues`. Hoeveel bugs zijn er gerapporteerd? En hoeveel enhancements?
-    8. Als het jou gelukt is om een bug te fixen, of je hebt een super handige feature ontworpen, dan kan je de eigenaren van de repository vragen om jouw code te implementeren door een pull request te sturen. Ga naar het tabblad _Pull requests_, klik op _Closed_ en bekijk welke pull requests zijn geïmplementeerd.
-    9. Het meest tabblad _Insights_ geeft je, tegen alle verwachtingen in, inzicht. Je kan bijvoorbeeld zien door hoeveel mensen er aan het project gewerkt wordt (_Contributors_). En kijk eens bij _Code frequency_, in welke periode is er het meest aan de code veranderd?
-    10. Als je een repository goed/handig/slim/fijn vindt, kun je dit aangeven met een ster. Klik daarvoor rechtsboven op {{star}} _Star_.
-    11. Dan tot slot die ene, meest in het oogspringende groene _Code_-knop op de hoofdpagina. Met die knop kun je de repository als ZIP-bestand downloaden of openen met GitHub Desktop.
+        1. Zoek de repository {{github}}`/davidfokkema/tailor` op [github.com](https://github.com) op.
+        2. Je komt nu terecht op de hoofdpagina. Hier zie je een mappenstructuur met een aantal bestanden. Rechts daarvan staat een korte beschrijving onder het kopje _About_. Een uitgebreidere beschrijving vind je als je naar beneden scrolt onder _README_.
+        3. Linksboven zie je een aantal tabbladen (_Code_, _Issues_, _Pull requests_, enzovoorts). Het tabblad _Code_ is de hoofdpagina met de mappenstructuur. Navigeer door de mappen, wat staat er op regel 14 van {{file}}`plot_tab.py`?
+        4. Ga terug naar de hoofdpagina. In de regel boven de mappenstructuur vind je onder andere informatie over de commits (onder de groene knop met _Code_). Hoeveel commits zijn er gemaakt? Klik op _Commits_ en daarna op een aantal commit messages. Hoeveel regels zijn er bij een commit message weggehaald of bijgekomen?
+        5. Je kunt per bestand bekijken wanneer die is aangepast en wat er is aangepast. Ga naar het bestand {{file}}`pyproject.toml` en klik rechtsboven op _History_. Wat is er aangepast in {{file}}`pyproject.toml` bij de commit <q>Release v2.0.0</q>? Je ziet ook welke bestanden nog meer zijn gewijzigd in deze commit, welk bestand is nog meer gewijzigd bij de commit <q>Release v2.0.0</q>?
+        6. Ga terug naar de hoofdpagina. Welke versie van Tailor is als laatste gereleased? Kijk hiervoor onder _Releases_ aan de rechterkant.
+        7. Je kent het misschien wel, dat je een app gebruikt maar dat het niet helemaal goed werkt (_bug_), of je hebt een idee hoe het nog beter kan worden (_enhancement_). Daarvoor is op GitHub het tabblad `Issues`. Hoeveel bugs zijn er gerapporteerd? En hoeveel enhancements?
+        8. Als het jou gelukt is om een bug te fixen, of je hebt een super handige feature ontworpen, dan kan je de eigenaren van de repository vragen om jouw code te implementeren door een pull request te sturen. Ga naar het tabblad _Pull requests_, klik op _Closed_ en bekijk welke pull requests zijn geïmplementeerd.
+        9. Het meest tabblad _Insights_ geeft je, tegen alle verwachtingen in, inzicht. Je kan bijvoorbeeld zien door hoeveel mensen er aan het project gewerkt wordt (_Contributors_). En kijk eens bij _Code frequency_, in welke periode is er het meest aan de code veranderd?
+        10. Als je een repository goed/handig/slim/fijn vindt, kun je dit aangeven met een ster. Klik daarvoor rechtsboven op {{star}} _Star_.
+        11. Dan tot slot die ene, meest in het oogspringende groene _Code_-knop op de hoofdpagina. Met die knop kun je de repository als ZIP-bestand downloaden of openen met GitHub Desktop.
 
 ## DNA-replicatie
 
@@ -300,9 +281,7 @@ while True:
 
 Deze stonden nog niet uitgewerkt in het schema.
 
-[^stuk]: Stukmaken mag, maar het terughalen van een oude versie is niet met één druk op de knop gebeurd. Vraag om hulp als je terug wilt naar een oude versie, wij helpen je graag!
-[^git_footnote]: <https://initialcommit.com/blog/How-Did-Git-Get-Its-Name>
-[^git_cli_footnote]: Je kunt &mdash; als je dat wilt &mdash; de stap maken naar de command-line, waarmee je veel meer mogelijkheden tot je beschikking krijgt. Zie het boek _Pro Git_[@gitpro] voor meer informatie over Git en het gebruik via de command-line. De grafische applicatie is veel makkelijker; de command-line applicatie is veel krachiger.
+[^git]: GitHub is een gebruiksvriendelijke laag over Git, het eigenlijke versiebeheersysteem. Git wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
 [^pro-account]: [https://github.com/education/students](https://github.com/education/students)
 [^kabouter]: Dit kan echt gebeuren en is dus geen grap. Zo worden de zaalcomputers om privacy- en efficiëntieredenen met enige regelmaat automatisch opgeschoond. Je bent dan alles kwijt. Ok, het zijn waarschijnlijk geen kabouters &mdash; dat is wel een grap, denken we.
