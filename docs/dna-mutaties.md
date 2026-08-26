@@ -75,11 +75,21 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
     4. Soms wil je juist _niet_ dat het lijstje steeds langer wordt. Pas het script aan zodat hij _alleen_ de regel print die nog net bij je leeftijd hoort. Dus als je 17 invult, print dan _alleen_ `You can get a driving license.` Hint: gebruik hiervoor een `#!py if ... elif` construct.
     5. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
-!!! warning
+!!! opdracht-meer "Meerdere condities"
     
-    Paarse opdracht: Soms wil je testen of meerdere condities tegelijk waar zijn. Dit kan met een if … and … of een if … or … construct. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `Je bent nog een tiener, maar al wel volwassen!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd. Ook met 'not'.
+    Soms wil je testen op meerdere condities tegelijk. Een bepaalde vrucht kan een banaan zijn, _en_ groot. Het kan een appel _of_ een peer zijn (één van de twee), en niet iets anders. Dit kan met een `#!py if ... and ...` of een `#!py if ... or ...` construct. Bijvoorbeeld:
+    ```py
+    # Banaan en groot
+    if fruit == "banana" and size_cm > 20:
+        print("Yes, a large banana!")
+    
+    # Appel of peer
+    if fruit == "apple" or fruit == "pear":
+        print("Phew, I only like apples and pears.")
+    ```
+    Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `You're still a teenager, but already an adult!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.
 
-!!! opdracht-meer
+!!! opdracht-meer "F-strings"
     
     Misschien heb je gemerkt dat als je `#!py print("Hi", naam, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hi Alice !` in plaats van `HiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hi"`) waar je de letter `f` vóór schrijft (`#!py f"Hi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hi {naam}!")` met als uitvoer `Hi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.
 
