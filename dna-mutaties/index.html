@@ -1114,14 +1114,10 @@ Dit kan in GitHub Desktop. Elke commit geef je een begeleidend schrijven mee, ee
 <p class="admonition-title">Alle tijd van de wereld</p>
 <p>Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.</p>
 </div>
-<p>Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels <code class="language-py highlight"><span class="n">strand1</span> <span class="o">=</span> <span class="o">...</span></code> en <code class="language-py highlight"><span class="n">strand2</span> <span class="o">=</span> <span class="o">...</span></code> aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen [hier] en [hier]. Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
+<p>Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels <code class="language-py highlight"><span class="n">strand1</span> <span class="o">=</span> <span class="o">...</span></code> en <code class="language-py highlight"><span class="n">strand2</span> <span class="o">=</span> <span class="o">...</span></code> aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen <a href="../data/strand1.txt">hier</a> en <a href="../data/strand2.txt">hier</a>. Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">strand1</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;strand1.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span>
 </span></code></pre></div></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pas de links hier en hier hierboven aan.</p>
-</div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Zoek de speld in de hooiberg</p>
 <p>Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.</p>
