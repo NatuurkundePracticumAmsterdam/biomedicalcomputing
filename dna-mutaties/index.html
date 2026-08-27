@@ -363,22 +363,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="DNA-replicatie">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nog-comments-en-while-loop" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#even-herhalen-maar-dan-anders" class="md-nav__link">
     <span class="md-ellipsis">
       
-        NOG: COMMENTS en WHILE-loop
+        Even herhalen, maar dan anders
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1158,24 +1152,22 @@ pas je code dan aan met <code>and</code> of <code>or</code> zodat je in totaal m
 </span></code></pre></div>
 Begrijp je wat er gebeurt in de code? Er is wel een tekortkoming: in deze code staat de positie van de mutatie (base 4) in het script. De correcte base (T) staat ook keihard in het script. Voeg functionaliteit aan jouw bestaande code toe zodat je ongeveer hetzelfde doet, maar dan op basis van wat je script gevonden heeft: welke base en wat zou de correcte base moeten zijn? De voorbeelcode werkt maar in één specifiek geval. Zorg dat jouw code in alle gevallen werkt.</p>
 </div>
-<h3 id="nog-comments-en-while-loop">NOG: COMMENTS en WHILE-loop<a class="headerlink" href="#nog-comments-en-while-loop" title="Permanent link">&para;</a></h3>
-<p>Terug naar programma naam/leeftijd.
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># stap 1:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># stap 2:</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">while</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your age?&quot;</span><span class="p">))</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="c1"># stap 3:</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What&#39;s your name?&quot;</span><span class="p">)</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span><span class="p">:</span>
-</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="k">break</span>
-</span></code></pre></div></p>
+<h2 id="even-herhalen-maar-dan-anders">Even herhalen, maar dan anders<a class="headerlink" href="#even-herhalen-maar-dan-anders" title="Permanent link">&para;</a></h2>
+<p>We hebben 10.000 baseparen gecontroleerd op mutaties. Dat was een kleine taak, die we <em>heel vaak</em> hebben uitgevoerd. We wisten van tevoren <em>hoe</em> vaak: namelijk één keer voor ieder basepaar in het stuk DNA dat we bekeken hebben. Soms wil je echter een taak uitvoeren <em>zonder</em> dat je van tevoren weet hoe lang. Je wilt de taak <em>blijven uitvoeren terwijl ...</em> De letterlijke vertaling van <em>terwijl</em> is <em>while</em> en we gaan in de volgende opdrachten aan de slag met <code class="language-py highlight"><span class="k">while</span></code>-loops.</p>
+<p>Om dit te oefenen gaan we voor het gemak even terug naar ons script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>name_and_age.py</code>.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title"><em>Hoe</em> oud ben je?</p>
+<p>In het script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>name_and_age.py</code> vragen we naar de leeftijd van de gebruiker. Maar... wat als die een onzin-leeftijd geeft? Wat als de gebruiker vertelt dat zij $-20$ jaar oud is? Als dat gebeurt wil je graag nogmaals de leeftijd blijven vragen, en dat <em>blijven</em> doen terwijl de leeftijd onder nul is. Is de leeftijd nul of hoger, dan gaat het programma door. Voeg een <code class="language-py highlight"><span class="k">while</span></code>-loop toe aan je programma zodat je altijd een leeftijd krijgt die positief is. Zorg eerst dat het werkt, en denk dan na of er andere oplossingen mogelijk zijn en kies de handigste.</p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Stop-conditie</p>
+<p>Regelmatig heb je voor een taak input nodig van de gebruiker en wil je de taak blijven herhalen. Je wilt de taak <em>altijd</em> blijven uitvoeren. Als je je laptop openklapt vul je je wachtwoord in en ga je aan het werk. Niet drie keer, niet vijf keer, maar <em>altijd</em>. Het zou raar zijn als je laptop na de vijfde keer besluit volledig uit te schakelen omdat het wel mooi is geweest voor vandaag.</p>
+<p>Je kunt een <code class="language-py highlight"><span class="k">while</span></code>-loop gebruiken om iets altijd te blijven doen door een conditie te kiezen die altijd waar is.</p>
+<ol>
+<li>Pas je script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>name_and_age.py</code> aan zodat hij altijd blijft herhalen. Hij vraagt je naam, je leeftijd, geeft output en herhaalt door opnieuw je naam te vragen.</li>
+<li>Echt <em>voor altijd</em> is niet handig. Breek de <code class="language-py highlight"><span class="k">while</span></code>-loop af wanneer iemand als naam "STOP" intypt.</li>
+</ol>
+</div>
 <div class="footnote">
 <hr />
 <ol>
