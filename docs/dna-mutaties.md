@@ -236,14 +236,11 @@ Fijn dat het werkt, maar fouten zoeken in zo’n klein stukje DNA kan natuurlijk
 !!! opdracht-basis "Alle tijd van de wereld"
     Maak een schatting van hoe lang je daar met de hand mee bezig zou zijn.
 
-Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py strand1 = ...` en `#!py strand2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen \[hier\] en \[hier\]. Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
+Je hebt al een script dat de fout kan zoeken in kleine stukjes DNA. Maar je hoeft niet veel aan te passen om te zoeken in 10.000 baseparen. Je hoeft alleen maar de regels `#!py strand1 = ...` en `#!py strand2 = ...` aan te passen. Het kopiëren en plakken van 10.000 baseparen per streng is niet handig in een script. Daarom is het makkelijker om de gegevens op te slaan in bestanden en die bestanden in te lezen in je script. Download de gegevens voor beiden strengen [hier](data/strand1.txt) en [hier](data/strand2.txt). Gebruik de volgende regel om de data van strand1 in te lezen en te bewaren in de variabele:
 ```py
 import pathlib
 strand1 = pathlib.Path("strand1.txt").read_text().
 ```
-
-!!! warning
-    Pas de links hier en hier hierboven aan.
 
 !!! opdracht-basis "Zoek de speld in de hooiberg"
     Pas je script aan door gebruik te maken van bovenstaande regel om data in te lezen voor strand1, en ook voor strand2 en zoek de fouten in de 10.000 baseparen. Commit je wijzigingen.
