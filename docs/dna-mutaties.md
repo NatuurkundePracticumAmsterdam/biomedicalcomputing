@@ -274,26 +274,24 @@ strand1 = pathlib.Path("strand1.txt").read_text().
     ```
     Begrijp je wat er gebeurt in de code? Er is wel een tekortkoming: in deze code staat de positie van de mutatie (base 4) in het script. De correcte base (T) staat ook keihard in het script. Voeg functionaliteit aan jouw bestaande code toe zodat je ongeveer hetzelfde doet, maar dan op basis van wat je script gevonden heeft: welke base en wat zou de correcte base moeten zijn? De voorbeelcode werkt maar in één specifiek geval. Zorg dat jouw code in alle gevallen werkt.
 
-### NOG: COMMENTS en WHILE-loop
+## Even herhalen, maar dan anders
 
-Terug naar programma naam/leeftijd.
-```py
-# stap 1:
-age = int(input("What's your age?"))
-while age < 0:
-    age = int(input("What's your age?"))
+We hebben 10.000 baseparen gecontroleerd op mutaties. Dat was een kleine taak, die we _heel vaak_ hebben uitgevoerd. We wisten van tevoren _hoe_ vaak: namelijk één keer voor ieder basepaar in het stuk DNA dat we bekeken hebben. Soms wil je echter een taak uitvoeren _zonder_ dat je van tevoren weet hoe lang. Je wilt de taak _blijven uitvoeren terwijl ..._ De letterlijke vertaling van _terwijl_ is _while_ en we gaan in de volgende opdrachten aan de slag met `#!py while`-loops.
 
-# stap 2:
-age = -1
-while age < 0:
-    age = int(input("What's your age?"))
+Om dit te oefenen gaan we voor het gemak even terug naar ons script {{file}}`name_and_age.py`.
 
-# stap 3:
-while True:
-    name = input("What's your name?")
-    if name == "stop":
-        break
-```
+!!! opdracht-basis "_Hoe_ oud ben je?"
+
+    In het script {{file}}`name_and_age.py` vragen we naar de leeftijd van de gebruiker. Maar... wat als die een onzin-leeftijd geeft? Wat als de gebruiker vertelt dat zij $-20$ jaar oud is? Als dat gebeurt wil je graag nogmaals de leeftijd blijven vragen, en dat _blijven_ doen terwijl de leeftijd onder nul is. Is de leeftijd nul of hoger, dan gaat het programma door. Voeg een `#!py while`-loop toe aan je programma zodat je altijd een leeftijd krijgt die positief is. Zorg eerst dat het werkt, en denk dan na of er andere oplossingen mogelijk zijn en kies de handigste.
+
+!!! opdracht-basis "Stop-conditie"
+
+    Regelmatig heb je voor een taak input nodig van de gebruiker en wil je de taak blijven herhalen. Je wilt de taak _altijd_ blijven uitvoeren. Als je je laptop openklapt vul je je wachtwoord in en ga je aan het werk. Niet drie keer, niet vijf keer, maar _altijd_. Het zou raar zijn als je laptop na de vijfde keer besluit volledig uit te schakelen omdat het wel mooi is geweest voor vandaag.
+
+    Je kunt een `#!py while`-loop gebruiken om iets altijd te blijven doen door een conditie te kiezen die altijd waar is.
+
+    1. Pas je script {{file}}`name_and_age.py` aan zodat hij altijd blijft herhalen. Hij vraagt je naam, je leeftijd, geeft output en herhaalt door opnieuw je naam te vragen.
+    1. Echt _voor altijd_ is niet handig. Breek de `#!py while`-loop af wanneer iemand als naam "STOP" intypt.
 
 [^git]: GitHub is een gebruiksvriendelijke laag over Git, het eigenlijke versiebeheersysteem. Git wordt tegenwoordig door bijna iedereen gebruikt of ondersteund. Git is ontwikkeld door Linus Torvalds als alternatief voor het commerciële systeem dat gebruikt werd voor de ontwikkeling van de Linux kernel.[@git] Het begon als een zeer eenvoudig &mdash; en volkomen ongebruiksvriendelijk &mdash; programma. Later is het in een veel gebruiksvriendelijker jasje gestoken. Relatief dan: je moet nog steeds ingewikkelde commando's intypen om iets voor elkaar te krijgen.
 [^branches]: Een branch is een splitsing in je versiegeschiedenis. Je kunt het gebruiken om over een langere tijd een grote wijziging uit te testen, terwijl je af en toe heen en weer springt tussen je main branch en de nieuwe branch. Commits in de verschillende branches blijven gescheiden. Later kun je ervoor kiezen om de wijzigingen in de nieuwe branch te _mergen_ met je main branch, maar dat hoeft niet.
