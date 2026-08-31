@@ -309,7 +309,7 @@ Om dit te oefenen gaan we voor het gemak even terug naar ons script {{file}}`nam
 
 !!! opdracht-basis "_Hoe_ oud ben je?"
 
-    In het script {{file}}`name_and_age.py` vragen we naar de leeftijd van de gebruiker. Maar... wat als die een onzin-leeftijd geeft? Wat als de gebruiker vertelt dat zij $-20$ jaar oud is? Als dat gebeurt wil je graag nogmaals de leeftijd blijven vragen, en dat _blijven_ doen terwijl de leeftijd onder nul is. Is de leeftijd nul of hoger, dan gaat het programma door. Voeg een `#!py while`-loop toe aan je programma zodat je altijd een leeftijd krijgt die positief is. Zorg eerst dat het werkt, en denk dan na of er andere oplossingen mogelijk zijn en kies de handigste. Voeg (korte) comments toe om duidelijk te maken welk stukje code wat doet. Commit daarna je wijzigingen.
+    In het script {{file}}`name_and_age.py` vragen we naar de leeftijd van de gebruiker. Maar... wat als die een onzin-leeftijd geeft? Wat als de gebruiker vertelt dat zij $-20$ jaar oud is? Als dat gebeurt wil je graag nogmaals de leeftijd blijven vragen, en dat _blijven_ doen terwijl de leeftijd onder nul is. Is de leeftijd nul of hoger, dan gaat het programma door. Voeg een `#!py while`-loop toe aan je programma zodat je altijd een leeftijd krijgt die positief is. Voeg (korte) comments toe om duidelijk te maken welk stukje code wat doet. Commit daarna je wijzigingen. Overleg ook met je buren of zij dezelfde oplossing gekozen hebben.
 
 !!! opdracht-basis "Stop-conditie"
 
