@@ -9,7 +9,7 @@ In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet
 
 In de volgende opdracht vind je de installatie-instructies. Aangezien deze instructies afhankelijk zijn van het besturingssysteem zijn er specifieke instructies geschreven voor macOS en voor Windows. De instructies gaan ervan uit dat je Python, uv, Visual Studio Code én GitHub Desktop nog niet geïnstalleerd hebt. Heb je één of meer van deze programma's al geïnstalleerd, kijk dan even welke stappen je kunt overslaan.
 
-!!! warning "Controleer of de installatie gelukt is"
+!!! warning "Controleer altijd of de installatie gelukt is"
 
     Lees tijdens de installatie de meldingen die in de terminal verschijnen. Meestal zie je een bevestiging dat een programma succesvol is geïnstalleerd. Twijfel je of een stap goed is gegaan, roep er dan een assistent bij zodat die even met je mee kan kijken.
 
@@ -17,7 +17,7 @@ In de volgende opdracht vind je de installatie-instructies. Aangezien deze instr
 
     === "macOS"
 
-        Hieronder staan de installatie-instructies voor **macOS**. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows.
+        Hieronder staan de installatie-instructies voor **macOS**. <br> Heb je Windows op je laptop staan, ga dan naar het [tabblad Windows](#__tabbed_1_2).
         <br><br>
 
         **Stap 1: installeer Homebrew**
@@ -55,7 +55,7 @@ In de volgende opdracht vind je de installatie-instructies. Aangezien deze instr
 
     === "Windows"
 
-        Hieronder staan de installatie-instructies voor **Windows**. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS.
+        Hieronder staan de installatie-instructies voor **Windows**. <br> Heb je macOS op je laptop staan, ga dan naar het [tabblad macOS](#__tabbed_1_1).
         <br><br>
 
         **Stap 1: installeer uv, Visual Studio Code en GitHub Desktop**
@@ -99,7 +99,7 @@ Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual
 
     === "macOS"
 
-        Hieronder staan de installatie-instructies voor **macOS**. Heb je Windows op je laptop staan, ga dan naar het tabblad Windows.
+        Hieronder staan de installatie-instructies voor **macOS**. <br> Heb je Windows op je laptop staan, ga dan naar het [tabblad Windows](#__tabbed_2_2).
         <br><br>
 
         1. Open een terminal door op ++cmd+space++ te drukken en te zoeken op _Terminal_.
@@ -112,7 +112,7 @@ Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual
 
     === "Windows"
 
-        Hieronder staan de installatie-instructies voor **Windows**. Heb je macOS op je laptop staan, ga dan naar het tabblad macOS.
+        Hieronder staan de installatie-instructies voor **Windows**. <br> Heb je macOS op je laptop staan, ga dan naar het [tabblad macOS](#__tabbed_2_1).
         <br><br>
 
         1. Open een terminal door in het zoekveld van de taakbalk te zoeken op _Windows PowerShell_.  
