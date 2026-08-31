@@ -65,6 +65,8 @@ nav:
   - bio-informatica-vervolg.md
   - echografie.md
   - eindopdracht.md
+  - Appendices:
+    - python-constructen.md
 
 extra:
     arrow_rotate: ':fontawesome-solid-arrow-rotate-right:'
