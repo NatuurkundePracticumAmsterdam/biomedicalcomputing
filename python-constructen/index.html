@@ -1,0 +1,845 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/python-constructen/">
+      
+      
+        <link rel="prev" href="../eindopdracht/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../figures/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Python-constructen - Biomedical Computing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/opdrachten.css">
+    
+      <link rel="stylesheet" href="../stylesheets/folder_tree.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-constructen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Biomedical Computing" class="md-header__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  <img src="../figures/Logo_white background_temporary.jpeg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Biomedical Computing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python-constructen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Biomedical Computing" class="md-nav__button md-logo" aria-label="Biomedical Computing" data-md-component="logo">
+      
+  <img src="../figures/Logo_white background_temporary.jpeg" alt="logo">
+
+    </a>
+    Biomedical Computing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introductie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installatie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 1: installatie van benodigde software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dna-mutaties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 2: DNA-mutaties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uv-vis-spectroscopie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 3: UV-Vis spectroscopie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../farmacokinetiek/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 4: farmacokinetiek
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../audiologie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 6: audiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 7: Bio-informatica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bio-informatica-vervolg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 8: Bio-informatica (vervolg)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../echografie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 9: Echografie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eindopdracht/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 11 &amp; 12: vrije eindopdracht
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python-constructen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python-constructen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#variabelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variabelen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commentaar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commentaar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datatypes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datatypes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Datatypes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#float" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Float
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        print()
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-constructen">Python-constructen<a class="headerlink" href="#python-constructen" title="Permanent link">&para;</a></h1>
+<p>In deze appendix vind je een overzicht van de Python-constructen die in de module aan bod komen. Per construct staat een korte uitleg en een voorbeeld, soms aangevuld met een toelichting. De appendix is bedoeld als naslagwerk. Als je iets wilt teruglezen of opzoeken, dan ben je hier aan het juiste adres.</p>
+<p>Wil je meer weten over een Python-construct? Of wil je meer leren over Python? In <em>Think Python</em> van Allen B. Downey vind je uitgebreidere uitleg en extra oefeningen. Het boek is gratis beschikbaar op <a href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a>. </p>
+<h2 id="variabelen">Variabelen<a class="headerlink" href="#variabelen" title="Permanent link">&para;</a></h2>
+<p>Een variabele is een naam waaronder je een waarde opslaat. Je maakt een variabele aan door een naam te kiezen, een <code class="language-py highlight"><span class="o">=</span></code> te schrijven en daarna de waarde te geven.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+</span></code></pre></div>
+Nu je de variabele <code class="language-py highlight"><span class="n">age</span></code> hebt aangemaakt, kun je de naam <code class="language-py highlight"><span class="n">age</span></code> gebruiken in je code. Python onthoudt welke waarde de variabele heeft. </p>
+<p>Je kunt de waarde van een variabele ook later aanpassen, dan overschrijf je de oude waarde.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
+</span></code></pre></div>
+Na de tweede regel heeft <code class="language-py highlight"><span class="n">age</span></code> de waarde <code class="language-py highlight"><span class="mi">19</span></code>. De waarde <code class="language-py highlight"><span class="mi">18</span></code> is overschreven.</p>
+<p>Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij namen met meerdere woorden een underscore als verbinding, dit heet <em>snake_case</em>. Een naam als <code class="language-py highlight"><span class="n">age</span></code> of <code class="language-py highlight"><span class="n">blood_pressure</span></code> maakt meteen duidelijk wat de variabele bevat. Een naam als <code class="language-py highlight"><span class="n">x</span></code> of <code class="language-py highlight"><span class="n">a</span></code> (meestal) niet. Een variabelenaam mag niet beginnen met een cijfer en mag geen spaties bevatten. <code>01patient</code> en <code class="language-py highlight"><span class="n">blood</span> <span class="n">pressure</span></code> zijn dus geen goede namen, <code class="language-py highlight"><span class="n">patient01</span></code> en <code class="language-py highlight"><span class="n">blood_pressure</span></code> wel. </p>
+<h2 id="commentaar">Commentaar<a class="headerlink" href="#commentaar" title="Permanent link">&para;</a></h2>
+<p>Goede code is leesbaar, voor jezelf als je er later op terugkijkt en voor anderen die ermee werken. Commentaar helpt daarbij. Commentaar is tekst die uitlegt wat de code doet, maar door Python negeert wordt. Je schrijft commentaar met een <code class="language-py highlight"><span class="c1">#</span></code>. Alles wat daarna op dezelfde regel staat, wordt door Python genegeerd.</p>
+<p>Je kunt commentaar achter een regel code plaatsen, bijvoorbeeld om de eenheid van een grootheid aan te geven:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">heart_rate</span> <span class="o">=</span> <span class="mi">72</span>  <span class="c1"># beats per minute</span>
+</span></code></pre></div>
+Ook kun je commentaar op een eigen regel plaatsen, vóór de code waar het bij hoort:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># convert hours to seconds</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">seconds</span> <span class="o">=</span> <span class="n">hours</span> <span class="o">*</span> <span class="mi">3600</span>
+</span></code></pre></div>
+Meerdere opeenvolgende commentaarregels zijn ook mogelijk:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># calculate BMI</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># weight in kg; height in m</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">**</span><span class="mi">2</span>
+</span></code></pre></div></p>
+<p>Niet elke regel code heeft commentaar nodig. Gebruik commentaar daar waar de code zelf niet meteen duidelijk maakt <em>wat</em> er gebeurt of <em>hoe</em> iets werkt. Duidelijke variabelenamen, zoals <code class="language-py highlight"><span class="n">heart_rate</span></code>, maken commentaar vaak overbodig.</p>
+<h2 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h2>
+<p>Python kent verschillende datatypes. Een datatype bepaalt wat voor soort waarde een variabele bevat en daarmee ook wat Python ermee kan doen. Zo betekent <code class="language-py highlight"><span class="o">+</span></code> afhankelijk van het datatype iets anders: <code class="language-py highlight"><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span></code> is optellen en geeft <code class="language-py highlight"><span class="mi">4</span></code>, terwijl <code class="language-py highlight"><span class="s2">&quot;2&quot;</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span></code> samenvoegen is en <code class="language-py highlight"><span class="s2">&quot;22&quot;</span></code> geeft. Pas je een bewerking toe op een datatype waar die niet voor bedoeld is, zoals <code class="language-py highlight"><span class="s2">&quot;2&quot;</span> <span class="o">+</span> <span class="mi">2</span></code>, dan geeft Python een foutmelding. </p>
+<h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<p>Een string (<code class="language-py highlight"><span class="nb">str</span></code>) is een stuk tekst. Dat kunnen letters zijn, maar ook cijfers of een combinatie. Je schrijft een string altijd tussen aanhalingstekens.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">module</span> <span class="o">=</span> <span class="s2">&quot;BMC&quot;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">patient_id</span> <span class="o">=</span> <span class="s2">&quot;042&quot;</span>
+</span></code></pre></div></p>
+<h3 id="integer">Integer<a class="headerlink" href="#integer" title="Permanent link">&para;</a></h3>
+<p>Een integer (<code class="language-py highlight"><span class="nb">int</span></code>) is een geheel getal, zonder decimalen. Het kan zowel een positief als negatief getal zijn.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">year</span> <span class="o">=</span> <span class="mi">2026</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">temperature_change</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>  <span class="c1"># degrees Celsius</span>
+</span></code></pre></div></p>
+<h3 id="float">Float<a class="headerlink" href="#float" title="Permanent link">&para;</a></h3>
+<p>Een float (<code class="language-py highlight"><span class="nb">float</span></code>) is een decimaal getal. Het kan zowel een positief als negatief decimaal getal zijn. Let op: ook een geheel getal met een decimaal punt is een float. 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">height</span> <span class="o">=</span> <span class="mf">1.83</span>  <span class="c1"># meter</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">freezing_point</span> <span class="o">=</span> <span class="mf">0.0</span>  <span class="c1"># degrees Celsius</span>
+</span></code></pre></div></p>
+<h2 id="print"><code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code><a class="headerlink" href="#print" title="Permanent link">&para;</a></h2>
+<p>Met <code class="language-py highlight"><span class="nb">print</span><span class="p">()</span></code> geef je Python de opdracht iets weer te geven. Wat je tussen haakjes zet, wordt geprint in de terminal.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</span></code></pre></div>
+geven als uitvoer <code>Hello, world!</code> en <code>42</code>.</p>
+<p>Je kunt ook variabelen printen in de terminal:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">blood_sugar</span> <span class="o">=</span> <span class="mf">5.4</span>  <span class="c1"># mmol/L</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">blood_sugar</span><span class="p">)</span>
+</span></code></pre></div>
+Python print dan de waarde die in de variabele is opgeslagen, niet de naam van de variabele. In dit geval dus <code>5.4</code>.</p>
+<p>Je kunt meerdere waarden meegeven door ze te scheiden met een komma. Python voegt automatisch een spatie in tussen de waarden:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</span></code></pre></div>
+Dit geeft als uitvoer <code>Hello Alice</code>.</p>
+<details class="meer-leren" open="open">
+<summary>f-strings</summary>
+<p>Met een f-string heb je meer controle over de opmaak van je uitvoer. Bij een f-string schrijf je een <code class="language-py highlight"><span class="n">f</span></code> voor de aanhalingstekens en zet je variabelenamen tussen accolades:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Anna&quot;</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">blood_sugar</span> <span class="o">=</span> <span class="mf">5.4</span>  <span class="c1"># mmol/L</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Patient </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> has a blood sugar of </span><span class="si">{</span><span class="n">blood_sugar</span><span class="si">}</span><span class="s2"> mmol/L.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+Dit geeft als uitvoer <code>Patient Anna has a blood sugar of 5.4 mmol/L.</code> F-strings zijn handig als je tekst en variabelen wilt combineren tot een leesbare zin in je code.</p>
+<p>Je kunt binnen een f-string ook <code class="language-py highlight"><span class="p">{</span><span class="n">variable</span><span class="o">=</span><span class="p">}</span></code> schrijven. In de terminal print Python dan zowel de variabelenaam als de waarde af:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">blood_sugar</span> <span class="o">=</span> <span class="mf">5.4</span>  <span class="c1"># mmol/L</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">blood_sugar</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+Dit geeft als uitvoer <code>blood_sugar=5.4</code>. Handig als je meerdere variabelen print en wilt weten welke waarde bij welke variabele hoort.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "toc.integrate", "navigation.top", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../javascripts/katex.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
