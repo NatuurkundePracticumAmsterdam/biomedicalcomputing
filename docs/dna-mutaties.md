@@ -35,13 +35,24 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
 
     Start Visual Studio Code en open de map {{folder}}`BiomedicalComputing` via het dropdownmenu **File** en kies voor **Open Folder...** of, in een leeg venster, het map-icoontje met `Open...` onder het kopje **Start**. In het venster dat opent is normaal gesproken direct je thuismap gekozen en zie je {{folder}}`BiomedicalComputing` er tussenstaan. Dan, omdat het de eerste keer is dat je deze map opent, doe nog het volgende:
 
-    1.  Links onderin verschijnt een blauwe knop met `Restricted Mode`. Klik daarop, dan op _Trust_ (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren) en dan rechtsboven in dat nieuwe venster klik je op het kruisje. Als het goed is, is het blauwe `Restricted Mode` verdwenen.
+    1.  Bovenin verschijnt een blauwe balk met `Restricted Mode`.
+
+        ![Screenshot van restricted mode in Visual Studio Code](figures/restricted_mode.png){: style="width:75%"}
+
+        Klik op _Manage_ en dan in het nieuwe venster op _Trust_ (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren). Klik daarna in het nieuwe venster rechtsboven op het kruisje. Als het goed is, is het blauwe `Restricted Mode` nu verdwenen.
     2.  Open een nieuwe _Terminal_ via het dropdownmenu **Terminal** en kies voor **New Terminal**. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
     ```
     uv venv
     ```
+    
+        ![Screenshot van terminal in Visual Studio Code](figures/terminal_vsc.png){: style="width:75%"}
+        
         Met deze regel voer je het commando `uv` uit en vraag je die om een _virtual environment_ aan te maken voor jouw project. Dit is een omgeving met Python en alle extra's die je nodig hebt.
-    3.  Aan de linkerkant zie je een lege balk met bovenin het woord `Explorer` met daaronder `BiomedicalComputing`. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik op het icoontje om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam `hello.py`. Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat Visual Studio Code dat voor je installeert. Klik op `Don't Ask Again`. We hebben Python immers zojuist geïnstalleerd...
+    3.  Aan de linkerkant zie je een lege balk met bovenin het woord `Explorer` met daaronder `BiomedicalComputing`. Hier krijg je een overzicht te zien van al je bestanden en submappen. Zodra je je muis in die kolom beweegt verschijnen er vier nieuwe icoontjes naast de naam van onze map. De eerste is de knop om een nieuw bestand aan te maken en de tweede is een knop om een nieuwe submap aan te maken. Klik op het icoontje om een nieuw bestand aan te maken en type in het lege veld met blauwe rand de naam `hello.py`.
+    
+        ![Screenshot van Explorer met bestand in Visual Studio Code](figures/explorer_vsc.png){: style="width:75%"}
+
+        Visual Studio Code denkt even na en kan je dan een pop-up geven met de mededeling dat Python niet gevonden kan worden en de vraag of je wilt dat Visual Studio Code dat voor je installeert. Klik op `Don't Ask Again`. We hebben Python immers zojuist geïnstalleerd...
 
 !!! opdracht-basis "Hello World!"
 
@@ -50,6 +61,7 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
     ``` py
     print("Hello World!")
     ```
+    ![Screenshot van editor in Visual Studio Code](figures/editor_vsc.png){: style="width:75%"}
 
     Sla daarna het bestand op via het dropdownmenu **File** en kies voor **Save** óf gebruik de sneltoetscombinatie ++ctrl+s++. Druk dan rechtsbovenin het venster op het driehoekje {{run_small}} om de code uit te voeren. In de terminal onderaan het scherm verschijnt nu automatisch het commando om {{file}}`hello.py` uit te voeren én daarna de tekst `Hello World!` voordat er een nieuwe regel verschijnt waar je weer commando's kunt typen.
 
@@ -67,7 +79,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
     In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ in het Nederlands.
 
-    1. Schrijf een script {{new_file}}`name_and_age.py` dat eerst vraagt hoe je heet, en dan hallo zegt en je naam gebruikt. Een voorbeeld van wat je in de terminal ziet is:
+    1. Schrijf een script {{new_file}}`name_and_age.py` dat eerst vraagt hoe je heet en daarna hallo zegt waarbij je naam gebruikt wordt. Een voorbeeld van wat je in de terminal ziet is:
         ```
         What is your name? Alice
         Hi Alice
