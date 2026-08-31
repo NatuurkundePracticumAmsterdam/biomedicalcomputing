@@ -2,6 +2,8 @@ site_name: Biomedical Computing
 site_url: https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing
 theme:
   name: material
+  logo: figures/Logo_white background_temporary.jpeg
+  favicon: figures/favicon.ico
   features:
     - content.code.copy
     - toc.integrate
