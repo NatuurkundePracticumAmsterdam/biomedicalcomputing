@@ -4,23 +4,6 @@ In deze appendix vind je een overzicht van de Python-constructen die in de modul
 
 Wil je meer weten over een Python-construct? Of wil je meer leren over Python? In _Think Python_ van Allen B. Downey vind je uitgebreidere uitleg en extra oefeningen. Het boek is een goed startpunt en is gratis beschikbaar op [https://allendowney.github.io/ThinkPython/](https://allendowney.github.io/ThinkPython/). 
 
-## Variabelen
-
-Een variabele is een naam waaronder je een waarde opslaat. Je maakt een variabele aan door een naam te kiezen, een `#!py =` te schrijven en daarna de waarde te geven.
-```python
-age = 18
-```
-Nu je de variabele `#!py age` hebt aangemaakt, kun je de naam `#!py age` gebruiken in je code. Python onthoudt welke waarde de variabele heeft. 
-
-Je kunt de waarde van een variabele ook later aanpassen, dan overschrijf je de oude waarde.
-```python
-age = 18
-age = 19
-```
-Na de tweede regel heeft `#!py age` de waarde `#!py 19`. De waarde `#!py 18` is overschreven.
-
-Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij namen met meerdere woorden een underscore als verbinding, dit heet _snake_case_. Een naam als `#!py age` of `#!py blood_pressure` maakt meteen duidelijk wat de variabele bevat. Een naam als `#!py x` of `#!py a` (meestal) niet. Een variabelenaam mag niet beginnen met een cijfer en mag geen spaties bevatten. `01patient` en `#!py blood pressure` zijn dus geen goede namen, `#!py patient01` en `#!py blood_pressure` wel. 
-
 ## Commentaar
 
 Goede code is leesbaar, voor jezelf als je er later naar terugkijkt en voor anderen die ermee werken. Commentaar helpt daarbij. Commentaar is tekst die uitlegt wat de code doet, maar door Python negeert wordt. Je schrijft commentaar met een `#!py #`. Alles wat na het `#!py #` op dezelfde regel staat, wordt door Python genegeerd.
@@ -42,6 +25,23 @@ bmi = weight / height**2
 ```
 
 Niet elke regel code heeft commentaar nodig. Gebruik commentaar daar waar de code zelf niet meteen duidelijk maakt _wat_ er gebeurt of _hoe_ iets werkt. Duidelijke variabelenamen, zoals `#!py heart_rate`, maken commentaar vaak overbodig.
+
+## Variabelen
+
+Een variabele is een naam waaronder je een waarde opslaat. Je maakt een variabele aan door een naam te kiezen, een `#!py =` te schrijven en daarna de waarde te geven.
+```python
+age = 18
+```
+Nu je de variabele `#!py age` hebt aangemaakt, kun je de naam `#!py age` gebruiken in je code. Python onthoudt welke waarde de variabele heeft. 
+
+Je kunt de waarde van een variabele ook later aanpassen, dan overschrijf je de oude waarde.
+```python
+age = 18
+age = 19
+```
+Na de tweede regel heeft `#!py age` de waarde `#!py 19`. De waarde `#!py 18` is overschreven.
+
+Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij namen met meerdere woorden een underscore als verbinding, dit heet _snake_case_. Een naam als `#!py age` of `#!py blood_pressure` maakt meteen duidelijk wat de variabele bevat. Een naam als `#!py x` of `#!py a` (meestal) niet. Een variabelenaam mag niet beginnen met een cijfer en mag geen spaties bevatten. `01patient` en `#!py blood pressure` zijn dus geen goede namen, `#!py patient01` en `#!py blood_pressure` wel. 
 
 ## Datatypes
 
