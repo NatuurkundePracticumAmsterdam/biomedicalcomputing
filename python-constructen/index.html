@@ -583,10 +583,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#variabelen" class="md-nav__link">
+  <a href="#commentaar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variabelen
+        Commentaar
       
     </span>
   </a>
@@ -594,10 +594,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#commentaar" class="md-nav__link">
+  <a href="#variabelen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commentaar
+        Variabelen
       
     </span>
   </a>
@@ -879,32 +879,32 @@
 <h1 id="python-constructen">Python-constructen<a class="headerlink" href="#python-constructen" title="Permanent link">&para;</a></h1>
 <p>In deze appendix vind je een overzicht van de Python-constructen die in de module <em>Biomedical Computing</em> aan bod komen. Per construct staat een korte uitleg en een voorbeeld, soms aangevuld met een toelichting. De appendix is bedoeld als naslagwerk. Als je iets wilt teruglezen of opzoeken, dan ben je hier aan het juiste adres.</p>
 <p>Wil je meer weten over een Python-construct? Of wil je meer leren over Python? In <em>Think Python</em> van Allen B. Downey vind je uitgebreidere uitleg en extra oefeningen. Het boek is een goed startpunt en is gratis beschikbaar op <a href="https://allendowney.github.io/ThinkPython/">https://allendowney.github.io/ThinkPython/</a>. </p>
-<h2 id="variabelen">Variabelen<a class="headerlink" href="#variabelen" title="Permanent link">&para;</a></h2>
-<p>Een variabele is een naam waaronder je een waarde opslaat. Je maakt een variabele aan door een naam te kiezen, een <code class="language-py highlight"><span class="o">=</span></code> te schrijven en daarna de waarde te geven.
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
-</span></code></pre></div>
-Nu je de variabele <code class="language-py highlight"><span class="n">age</span></code> hebt aangemaakt, kun je de naam <code class="language-py highlight"><span class="n">age</span></code> gebruiken in je code. Python onthoudt welke waarde de variabele heeft. </p>
-<p>Je kunt de waarde van een variabele ook later aanpassen, dan overschrijf je de oude waarde.
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
-</span></code></pre></div>
-Na de tweede regel heeft <code class="language-py highlight"><span class="n">age</span></code> de waarde <code class="language-py highlight"><span class="mi">19</span></code>. De waarde <code class="language-py highlight"><span class="mi">18</span></code> is overschreven.</p>
-<p>Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij namen met meerdere woorden een underscore als verbinding, dit heet <em>snake_case</em>. Een naam als <code class="language-py highlight"><span class="n">age</span></code> of <code class="language-py highlight"><span class="n">blood_pressure</span></code> maakt meteen duidelijk wat de variabele bevat. Een naam als <code class="language-py highlight"><span class="n">x</span></code> of <code class="language-py highlight"><span class="n">a</span></code> (meestal) niet. Een variabelenaam mag niet beginnen met een cijfer en mag geen spaties bevatten. <code>01patient</code> en <code class="language-py highlight"><span class="n">blood</span> <span class="n">pressure</span></code> zijn dus geen goede namen, <code class="language-py highlight"><span class="n">patient01</span></code> en <code class="language-py highlight"><span class="n">blood_pressure</span></code> wel. </p>
 <h2 id="commentaar">Commentaar<a class="headerlink" href="#commentaar" title="Permanent link">&para;</a></h2>
 <p>Goede code is leesbaar, voor jezelf als je er later naar terugkijkt en voor anderen die ermee werken. Commentaar helpt daarbij. Commentaar is tekst die uitlegt wat de code doet, maar door Python negeert wordt. Je schrijft commentaar met een <code class="language-py highlight"><span class="c1">#</span></code>. Alles wat na het <code class="language-py highlight"><span class="c1">#</span></code> op dezelfde regel staat, wordt door Python genegeerd.</p>
 <p>Je kunt commentaar achter een regel code plaatsen, bijvoorbeeld om de eenheid van een grootheid aan te geven:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">heart_rate</span> <span class="o">=</span> <span class="mi">72</span>  <span class="c1"># beats per minute</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">heart_rate</span> <span class="o">=</span> <span class="mi">72</span>  <span class="c1"># beats per minute</span>
 </span></code></pre></div>
 Ook kun je commentaar op een eigen regel plaatsen, vóór de code waar het bij hoort:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># convert hours to seconds</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">seconds</span> <span class="o">=</span> <span class="n">hours</span> <span class="o">*</span> <span class="mi">3600</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># convert hours to seconds</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">seconds</span> <span class="o">=</span> <span class="n">hours</span> <span class="o">*</span> <span class="mi">3600</span>
 </span></code></pre></div>
 Meerdere opeenvolgende commentaarregels zijn ook mogelijk:
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># calculate BMI</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># weight in kg; height in m</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">**</span><span class="mi">2</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># calculate BMI</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># weight in kg; height in m</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="n">height</span><span class="o">**</span><span class="mi">2</span>
 </span></code></pre></div></p>
 <p>Niet elke regel code heeft commentaar nodig. Gebruik commentaar daar waar de code zelf niet meteen duidelijk maakt <em>wat</em> er gebeurt of <em>hoe</em> iets werkt. Duidelijke variabelenamen, zoals <code class="language-py highlight"><span class="n">heart_rate</span></code>, maken commentaar vaak overbodig.</p>
+<h2 id="variabelen">Variabelen<a class="headerlink" href="#variabelen" title="Permanent link">&para;</a></h2>
+<p>Een variabele is een naam waaronder je een waarde opslaat. Je maakt een variabele aan door een naam te kiezen, een <code class="language-py highlight"><span class="o">=</span></code> te schrijven en daarna de waarde te geven.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+</span></code></pre></div>
+Nu je de variabele <code class="language-py highlight"><span class="n">age</span></code> hebt aangemaakt, kun je de naam <code class="language-py highlight"><span class="n">age</span></code> gebruiken in je code. Python onthoudt welke waarde de variabele heeft. </p>
+<p>Je kunt de waarde van een variabele ook later aanpassen, dan overschrijf je de oude waarde.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">18</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">age</span> <span class="o">=</span> <span class="mi">19</span>
+</span></code></pre></div>
+Na de tweede regel heeft <code class="language-py highlight"><span class="n">age</span></code> de waarde <code class="language-py highlight"><span class="mi">19</span></code>. De waarde <code class="language-py highlight"><span class="mi">18</span></code> is overschreven.</p>
+<p>Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij namen met meerdere woorden een underscore als verbinding, dit heet <em>snake_case</em>. Een naam als <code class="language-py highlight"><span class="n">age</span></code> of <code class="language-py highlight"><span class="n">blood_pressure</span></code> maakt meteen duidelijk wat de variabele bevat. Een naam als <code class="language-py highlight"><span class="n">x</span></code> of <code class="language-py highlight"><span class="n">a</span></code> (meestal) niet. Een variabelenaam mag niet beginnen met een cijfer en mag geen spaties bevatten. <code>01patient</code> en <code class="language-py highlight"><span class="n">blood</span> <span class="n">pressure</span></code> zijn dus geen goede namen, <code class="language-py highlight"><span class="n">patient01</span></code> en <code class="language-py highlight"><span class="n">blood_pressure</span></code> wel. </p>
 <h2 id="datatypes">Datatypes<a class="headerlink" href="#datatypes" title="Permanent link">&para;</a></h2>
 <p>Python kent verschillende datatypes. Een datatype bepaalt wat voor soort waarde een variabele bevat en daarmee ook wat Python ermee kan doen. Zo betekent <code class="language-py highlight"><span class="o">+</span></code> afhankelijk van het datatype iets anders: <code class="language-py highlight"><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span></code> is optellen en geeft <code class="language-py highlight"><span class="mi">4</span></code>, terwijl <code class="language-py highlight"><span class="s2">&quot;2&quot;</span> <span class="o">+</span> <span class="s2">&quot;2&quot;</span></code> samenvoegen is en <code class="language-py highlight"><span class="s2">&quot;22&quot;</span></code> geeft. Pas je een bewerking toe op een datatype waar die niet voor bedoeld is, zoals <code class="language-py highlight"><span class="s2">&quot;2&quot;</span> <span class="o">+</span> <span class="mi">2</span></code>, dan geeft Python een foutmelding. </p>
 <h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
