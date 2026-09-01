@@ -63,7 +63,7 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
     ```
     ![Screenshot van editor in Visual Studio Code](figures/editor_vsc.png){: style="width:75%"}
 
-    Sla daarna het bestand op via het dropdownmenu **File** en kies voor **Save** óf gebruik de sneltoetscombinatie ++ctrl+s++. Druk dan rechtsbovenin het venster op het driehoekje {{run_small}} om de code uit te voeren. In de terminal onderaan het scherm verschijnt nu automatisch het commando om {{file}}`hello.py` uit te voeren én daarna de tekst `Hello World!` voordat er een nieuwe regel verschijnt waar je weer commando's kunt typen.
+    Sla daarna het bestand op via het dropdownmenu **File** en kies voor **Save** óf gebruik de sneltoetscombinatie ++cmd+s++ (macOS) / ++ctrl+s++ (Windows). Druk dan rechtsbovenin het venster op het driehoekje {{run_small}} om de code uit te voeren. In de terminal onderaan het scherm verschijnt nu automatisch het commando om {{file}}`hello.py` uit te voeren én daarna de tekst `Hello World!` voordat er een nieuwe regel verschijnt waar je weer commando's kunt typen.
 
 Het is gelukt om een werkomgeving aan te maken en je eerste code uit te voeren!
 
@@ -180,7 +180,7 @@ Hieronder zie je een aantal voorbeelden van commit messages. De titel (_summary_
     Voer de volgende opdrachten uit:
 
     1. Open GitHub Desktop, klik op _Current repository_ (links onder de menubalk) en selecteer de repository {{github}}`BiomedicalComputing`.
-    2. Ga naar het dropdownmenu **Repository** en kies voor **Open in Visual Studio Code** (of druk op ++ctrl+shift+a++ ) en open de repository {{github}}`BiomedicalComputing` in Visual Studio Code.
+    2. Ga naar het dropdownmenu **Repository** en kies voor **Open in Visual Studio Code** (of gebruik de sneltoetscombinatie ++cmd+shift+a++ (macOS) / ++ctrl+shift+a++ (Windows)) en open de repository {{github}}`BiomedicalComputing` in Visual Studio Code.
     3. Open in Visual Studio Code één van je Pythonscripts.
     4. Type een stukje code erbij &mdash; bijvoorbeeld een `#!py print`-statement &mdash; en haal ergens anders iets weg. Sla het bestand op.
     5. Ga terug naar GitHub Desktop. Controleer bij _Current repository_ (links onder de menubalk) of de repository {{github}}`BiomedicalComputing` nog steeds is geopend.
@@ -321,7 +321,7 @@ Om dit te oefenen gaan we voor het gemak even terug naar ons script {{file}}`nam
    
         !!! info "Hoe doorbreek je een oneidige loop?"
     
-            Een `#!py while`-loop kan per ongeluk oneindig doorlopen. Gebruik ++ctrl+c++ om het programma te stoppen. En nog slimmer: voeg een stopconditie toe zodat de loop netjes eindigt, zoals je in de volgende opdracht gaat doen.
+            Een `#!py while`-loop kan per ongeluk oneindig doorlopen. Gebruik de sneltoetscombinatie ++cmd+c++ (macOS) / ++ctrl+c++ (Windows) in de terminal om het programma te stoppen. En nog slimmer: voeg een stopconditie toe zodat de loop netjes eindigt, zoals je in de volgende opdracht gaat doen.
    
     2. Echt _voor altijd_ is niet handig. Breek de `#!py while`-loop af wanneer iemand als naam "STOP" intypt.
     3. Voeg (korte) comments toe en commit je wijzigingen.

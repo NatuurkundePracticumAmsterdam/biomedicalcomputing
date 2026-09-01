@@ -339,7 +339,7 @@ while number > 100:
 ```
 De variabele `number` begint op 120. Bij elke herhaling controleert de loop of `#!py number > 100` nog steeds `#!py True` is. Als dat zo is, dan wordt de waarde van `number` in de terminal geprint en daarna met `10` verlaagd. Zodra `#!py number` de waarde `100` bereikt, stopt de loop.
 
-Het is belangrijk dat de voorwaarde van de `#!py while`-loop uiteindelijk `#!py False` wordt, anders stopt de loop nooit. Een loop die voor altijd draait, heet een _oneindige loop_. Als je per ongeluk een oneindige loop hebt gestart, dan kun je het programma onderbreken met de sneltoetscombinatie ++ctrl+c++ (Windows) / ++cmd+c++ (macOS) in de terminal.
+Het is belangrijk dat de voorwaarde van de `#!py while`-loop uiteindelijk `#!py False` wordt, anders stopt de loop nooit. Een loop die voor altijd draait, heet een _oneindige loop_. Als je per ongeluk een oneindige loop hebt gestart, dan kun je het programma onderbreken met de sneltoetscombinatie ++cmd+c++ (macOS) / ++ctrl+c++ (Windows) in de terminal.
 
 #### `#!py while`-loop onderbreken met `#!py break`
 

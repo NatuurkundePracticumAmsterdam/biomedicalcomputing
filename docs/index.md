@@ -11,7 +11,7 @@ De module bestaat uit twaalf sessies. De eerste tien sessies draaien elk om een 
 
 De handleiding is in het Nederlands geschreven, met uitzondering van code. Code schrijven we in het Engels omdat dit de internationale taal van de wetenschap is. Jij mag straks zelf bepalen of je code in het Engels of Nederlands schrijft, maar doe dit wel consequent.
 
-In blokken met voorbeeldcode vind je rechtsboven een kopieerknop, aangeduid met een {{copy}}-icoon. Daarmee kopieer je de volledige code naar het klembord, waarna je die met ++ctrl+v++ in je programma kunt plakken.
+In blokken met voorbeeldcode vind je rechtsboven een kopieerknop, aangeduid met een {{copy}}-icoon. Daarmee kopieer je de volledige code naar het klembord, waarna je die met de sneltoetscombinatie ++cmd+v++ (macOS) / ++ctrl+v++ (Windows) in je programma kunt plakken.
 
 In de handleiding staan twee soorten opdrachten. Je maakt deze _tijdens_ de sessies. 
 

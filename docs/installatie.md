@@ -123,7 +123,7 @@ Nu de programma's zijn geïnstalleerd, installeren we twee extensies voor Visual
             ```
         3. Sluit de terminal af.
 
-Nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met ++cmd+s++ (macOS)/++ctrl+s++ (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.
+Nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal instellingen aan in Visual Studio Code, onder andere om te zorgen dat de extensies ook echt hun werk kunnen doen. Zo stellen we in dat elke keer als je een bestand opslaat met ++cmd+s++ (macOS) / ++ctrl+s++ (Windows) de tool Ruff aan het werk gaat: je code wordt opgeschoond en import statements worden gesorteerd. Daardoor hoef je je veel minder druk te maken over hoe netjes je code eruitziet.
 
 !!! opdracht-basis "Instellingen Visual Studio Code"
 
@@ -135,7 +135,7 @@ Nu de programma's en extensies zijn geïnstalleerd, passen we nog een aantal ins
     4. Typ in het zoekvenster _chat: disable AI features_ en vink de instelling aan.
     5. Typ in het zoekvenster _format on save_ en vink de bovenste instelling aan.
     6. Typ in het zoekvenster _@lang:python default formatter_ en kies _Ruff_.
-    7. Typ in het zoekvenster _@lang:python code actions on save_, kies _Edit in settings.json_ en selecteer _source.organizeImports.ruff_. Zet de waarde op _explicit_. De volledige regel luidt dan: ```"source.organizeImports.ruff": "explicit"```. Sla de wijzigingen op via het dropdownmenu **File** en kies **Save** of met ++cmd+s++ (macOS)/++ctrl+s++ (Windows).
+    7. Typ in het zoekvenster _@lang:python code actions on save_, kies _Edit in settings.json_ en selecteer _source.organizeImports.ruff_. Zet de waarde op _explicit_. De volledige regel luidt dan: ```"source.organizeImports.ruff": "explicit"```. Sla de wijzigingen op via het dropdownmenu **File** en kies **Save** of met de sneltoetscombinatie ++cmd+s++ (macOS) / ++ctrl+s++ (Windows).
     8. Sluit de tabbladen met de instellingen.
 
 Dat was het voor sessie 1: de programma's staan klaar en de instellingen zijn goed. Je bent klaar voor sessie 2 {{feesttoeter}} We gaan in sessie 2 de eerste regels Python-code schrijven in Visual Studio Code. Hoe dat precies werkt leggen we dan stap voor stap uit.
