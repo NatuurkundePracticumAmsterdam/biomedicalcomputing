@@ -250,7 +250,7 @@ Nu we het proces van DNA-replicatie een beetje doorhebben, kunnen we onze kennis
 
     Maak een nieuw bestand met de naam {{new_file}}`find_DNA_mistake.py`.
 
-    1. Neem weer `#!py strand1 = "ATATAGAGTC"`. Daarnaast is `#!py strand2 = "AATATCGCAA"`. We willen nu weer een `#!py for`-loop schrijven, maar hierbij de eerste letter uit strand1 vergelijken met de eerste letter uit strand2, en vervolgens de tweede letter uit strand1 vergelijken met de tweede letter uit strand2, enz. Dit betekent dat we een specifieke vorm van een `#!py for`-loop nodig hebben. Overleg met een buurmens welke vorm dit is.
+    1. Neem weer `#!py strand1 = "ATATAGAGTC"`. Daarnaast is `#!py strand2 = "AATATCGCAA"`. We willen nu weer een `#!py for`-loop schrijven, maar hierbij de eerste letter uit strand1 vergelijken met de eerste letter uit strand2, en vervolgens de tweede letter uit strand1 vergelijken met de tweede letter uit strand2, enz. Dit betekent dat je niet alleen de string wilt doorlopen, maar ook de positie wilt bijhouden. Je hebt eerder al een `#!py for`-loop gezien waarmee dat kan. Welke? Overleg met een buurmens.
     2. Schrijf code dat op zoek gaat naar _alle_ fouten in strand2. Voor iedere gevonden fout: print de positie van de fout (tel de eerste base als 1), print wat de fout is, en print wat de correcte base zou moeten zijn. Controleer met de hand of de output van je script klopt. Voeg (korte) comments toe om duidelijk te maken welk stukje code wat doet.
     3. Ga naar GitHub Desktop en commit de code van deze opdracht.
 
