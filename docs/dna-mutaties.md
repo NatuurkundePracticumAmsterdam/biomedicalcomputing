@@ -27,9 +27,6 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
         7. Klik onderin het menu op je eigen naam.
         8. Klik linksboven op **Nieuw** en kies dan **Map**.
         9. Type als naam `BiomedicalComputing` (zonder spatie).
-    
-!!! warning "Open altijd de goede map"
-    Test nog een keer of "select environment" nodig is, of zeg daar in ieder geval iets over. VS Code -> Visual Studio Code. Versiebeheer verplaatsen (zie geraamte). 
 
 !!! opdracht-basis "Sessie starten in Visual Studio Code"
 
