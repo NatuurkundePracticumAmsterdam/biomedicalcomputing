@@ -37,7 +37,7 @@ Het is handig om de code die bij elkaar hoort in één map te plaatsen en die ma
         ![Screenshot van restricted mode in Visual Studio Code](figures/restricted_mode.png){: style="width:75%"}
 
         Klik op _Manage_ en dan in het nieuwe venster op _Trust_ (je vertrouwt je eigen map en geeft dan rechten om je eigen code uit te voeren). Klik daarna in het nieuwe venster rechtsboven op het kruisje. Als het goed is, is het blauwe `Restricted Mode` nu verdwenen.
-    2.  Open een nieuwe _Terminal_ via het dropdownmenu **Terminal** en kies voor **New Terminal**. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
+    2.  Open een nieuwe _Terminal_ via het dropdownmenu **Terminal** (die kan verborgen zitten, klik dan eerst op de drie puntjes :material-dots-horizontal: rechts in het menu) en kies voor **New Terminal**. Er opent nu een venster onderin Visual Studio Code. Hier kun je commando's typen die vervolgens door het systeem worden uitgevoerd. Type in:
     ```
     uv venv
     ```
