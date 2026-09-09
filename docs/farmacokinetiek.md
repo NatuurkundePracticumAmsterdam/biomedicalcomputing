@@ -301,7 +301,7 @@ Net als bij paracetamol maken we ook hier een vereenvoudigd model. We gaan ervan
 <div id="opdr:dosis-fenytoine"></div>
 !!! opdracht-basis "Veilige dosis" 
 
-    1. Maak een nieuw bestand aan met de naam {{new_file}}`fenytoine.py`. Kopieer de code uit het bestand {{file}}`paracetamol.py` naar dit nieuwe bestand. Gebruik de volgende waarden voor fenytoïne:
+    1. Maak een nieuw bestand aan met de naam {{new_file}}`phenytoin.py`. Kopieer de code uit het bestand {{file}}`paracetamol.py` naar dit nieuwe bestand. Gebruik de volgende waarden voor fenytoïne:
         * Dosering: 200-400 mg, eenmaal per dag[^farkompas-fenytoine]
         * Halfwaardetijd: ongeveer 24 uur[^farkompas-fenytoine]
         * Verdelingsvolume: ongeveer 0.65 l$\,$kg$^{-1}$[^farkompas-fenytoine]
