@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://natuurkundepracticumamsterdam.github.io/biomedicalcomputing/epidemiologie/">
       
       
+        <link rel="prev" href="../farmacokinetiek/">
+      
+      
+        <link rel="next" href="../audiologie/">
       
       
         
@@ -334,6 +338,130 @@
       
   
   
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 5: epidemiologie
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sessie 5: epidemiologie
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#farmacokinetische-simulaties-vergelijken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Farmacokinetische simulaties vergelijken
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verspreiding-van-infectieziektes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verspreiding van infectieziektes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verspreiding van infectieziektes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sir-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SIR-model
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenarios-vergelijken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario's vergelijken
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     <li class="md-nav__item">
@@ -480,10 +608,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
             
   
   
@@ -501,8 +629,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -565,19 +693,106 @@
 
 
 <h1 id="sessie-5-epidemiologie">Sessie 5: epidemiologie<a class="headerlink" href="#sessie-5-epidemiologie" title="Permanent link">&para;</a></h1>
-<p>In de vorige sessie hebben we modellen gebouwd en de uitkomsten gevisualiseerd. Maar een model wordt pas echt krachtig als je het kunt gebruiken om te onderzoeken wat er gebeurt als de situatie verandert. We kunnen bijvoorbeeld onderzoeken wat er met een uitbraak van een infectieziekte gebeurt als een deel van de populatie is gevaccineerd. Of we kunnen berekenen hoeveel ziekenhuisbedden nodig zijn tijdens de piek van een uitbraak. Dit noemen we <em>simuleren</em>, een veelgebruikte aanpak in de (bio)medische wetenschappen. Simulaties worden gebruikt om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. In deze sessie passen we dit toe op epidemiologie: de studie van hoe ziektes zich verspreiden in een populatie. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Onderstaand deel nog inbedden. </p>
-<p>De halfwaardetijd van paracetamol kan verschillen tussen mensen. Dit kan bijvoorbeeld komen door verschillen in hoe snel het lichaam paracetamol afbreekt en uitscheidt. Leeftijd, de werking van de lever en nieren en het gebruik van andere medicijnen kunnen hierbij een rol spelen. </p>
+<p>In de vorige sessie hebben we modellen gebouwd, uitkomsten gevisualiseerd en al gekeken naar wat er verandert als we een parameter aanpassen. Juist die laatste stap maakt een model krachtig. We kunnen het model dan gebruiken om te onderzoeken wat er gebeurt als de situatie verandert. In deze sessie passen we dit toe op epidemiologie: de studie van hoe ziektes zich verspreiden in een populatie. We kunnen bijvoorbeeld onderzoeken wat er met een uitbraak van een infectieziekte gebeurt als een deel van de populatie is gevaccineerd. Of we kunnen berekenen hoeveel ziekenhuisbedden nodig zijn tijdens de piek van een uitbraak. Dit noemen we <em>simuleren</em>, een veelgebruikte aanpak in de (bio)medische wetenschappen. Simulaties worden gebruikt om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. </p>
+<h2 id="farmacokinetische-simulaties-vergelijken">Farmacokinetische simulaties vergelijken<a class="headerlink" href="#farmacokinetische-simulaties-vergelijken" title="Permanent link">&para;</a></h2>
+<p>In de vorige sessie hebben we een model gebouwd van de concentratie fenytoïne in het bloed. Met dit model hebben we onder andere de invloed van massa op de dagelijkse dosis bekeken en het effect van een vergeten dosis gesimuleerd. Elk scenario vroeg om een aanpassing in de code, waarna we het programma opnieuw uitvoerden. Dat werkte, maar vergelijken was daardoor lastig. We zagen telkens maar één grafiek. Om dit probleem op te lossen zouden we code kunnen dupliceren, maar dat leidt snel tot lange, onoverzichtelijke code. Functies bieden een elegante oplossing en daar gaan we in deze sessie mee aan de slag.</p>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Verschillende halfwaardetijd</p>
-<p>Stel dat de halfwaardetijd van paracetamol bij drie verschillende patiënten 1, 2.5 en 4 uur is. </p>
+<p class="admonition-title">Code ombouwen</p>
+<p>Het is tijd om een functie te gaan gebruiken. Je gebruikt daarvoor de bestaande code in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>phenytoin.py</code> en geeft de dosis mee als parameter.</p>
 <ol>
-<li>Hoe verwacht je dat de hoeveelheid paracetamol in het lichaam verschilt bij voor deze drie patiënten gedurende 24 uur? Schets je verwachting.</li>
-<li>Gebruik je numerieke model om de hoeveelheid paracetamol gedurende 24 uur te berekenen voor de drie verschillende halfwaardetijden. Gebruik steeds dezelfde beginhoeveelheid en hetzelfde doseerschema. Plot de drie verschillende situaties in één grafiek. Wat valt je op?</li>
+<li>Open het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>phenytoin.py</code>. Voer het programma uit voor een patiënt met een massa van 80 kg en een dagelijkse dosis van 300 mg. Plot de concentratie gedurende 20 dagen. Maak een schets van deze plot, zodat je later kunt controleren of de code na het ombouwen dezelfde uitkomst geeft. Noteer de piek- en dalwaarden in de steady-state en hoe lang het ongeveer duurt om deze steady-state te bereiken.</li>
+<li>Maak een functie aan met de volgende header:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">simulate_concentration</span><span class="p">(</span><span class="n">dose</span><span class="p">):</span>
+</span></code></pre></div>
+Deze functie voert de simulatie uit. Verplaats de lege lijst(en), de beginwaarden van variabelen die in de <code class="language-py highlight"><span class="k">for</span></code>-loop worden bijgewerkt en de <code class="language-py highlight"><span class="k">for</span></code>-loop met de berekeningen naar de functie en zorg voor de juiste indentatie. Voeg onderaan de functie een <code class="language-py highlight"><span class="k">return</span></code>-regel toe die de gevulde lijst(en) teruggeeft. Behalve de functieheader en de <code class="language-py highlight"><span class="k">return</span></code>-regel hoef je geen nieuwe code te schrijven. Let op: gebruik je een andere variabelenaam dan <code>dose</code>? Pas die dan aan, zodat de naam in de functieheader en in de rest van de functie overeenkomt.</li>
+<li>Roep de functie aan op de regel vóór <code class="language-py highlight"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">...</span><span class="p">)</span></code> met
+    <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">simulate_concentration</span><span class="p">(</span><span class="n">dose</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span></code></pre></div>
+Sla de uitkomst van de functie op in variabele(n) die je voor de plot kunt gebruiken. Staat de waarde voor <code>dose</code> ook nog los bovenin het bestand? Verwijder die dan, want de functie ontvangt deze waarde nu via de parameter.</li>
+<li>Voer het programma uit en los eventuele fouten op. Controleer of de plot overeenkomt met de plot van voordat je de code ombouwde. Klopt alles? Commit.</li>
 </ol>
 </div>
+<p>Nu we een deel van de code in een functie hebben gezet, kunnen we makkelijker scenario's vergelijken. We kunnen de functie meerdere keren aanroepen met verschillende waarden voor <code>dose</code>. De uitkomsten slaan we elke keer op in aparte variabele(n). Deze variabelen gebruiken we daarna om meerdere lijnen in één plot te tekenen. </p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Verschillende doses vergelijken</p>
+<p>De dagelijkse dosis voor fenytoïne ligt tussen de 200 mg en 400 mg. Voor een patiënt van 80 kg vergelijken we drie scenario's in één plot om te bepalen welke dagelijkse dosis het meest geschikt is. </p>
+<ol>
+<li>Roep de functie <code class="language-py highlight"><span class="n">simulate_concentration</span><span class="p">()</span></code> drie keer aan met een andere waarde voor <code>dose</code>: 200, 300 en 400 mg. Sla de uitkomsten van de functie elke keer op in aparte variabele(n). Voor de concentratie kun je bijvoorbeeld kiezen voor <code>concentration_200</code>, <code>concentration_300</code> en <code>concentration_400</code>.</li>
+<li>Geef alle drie de scenario's in dezelfde plot weer. Geef de verschillende lijnen in de plot duidelijke labels en voeg een legenda toe. Commit.</li>
+<li>Welke verschillen zie je tussen de scenario's? Welke dagelijkse dosis is voor deze patiënt het meest geschikt? Vergelijk je antwoord met dat van de <a href="../farmacokinetiek/#opdr:dosis-fenytoine"><em>opdracht Veilige dosis</em></a>. Kom je tot hetzelfde antwoord? Wat voegt de visualisatie toe?</li>
+</ol>
+</div>
+<p>De functie <code class="language-py highlight"><span class="n">simulate_concentration</span><span class="p">()</span></code> heeft nu één parameter: <code>dose</code>. Maar een functie kan ook meerdere parameters hebben. Zo kunnen we ook de massa van patiënten meegeven en scenario's vergelijken voor patiënten met een verschillend lichaamsgewicht. Of de halfwaardetijd, die sterk kan variëren &mdash; tussen de 7 en 42 uur<sup id="fnref:farkompas-fenytoine"><a class="footnote-ref" href="#fn:farkompas-fenytoine">1</a></sup> &mdash; en daardoor grote invloed heeft op de concentratie in het bloed. In de volgende opdracht voegen we deze parameters stap voor stap toe.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Massa variëren</p>
+<ol>
+<li>Voeg de massa toe als tweede parameter aan de functieheader, bijvoorbeeld met de naam <code>m</code>:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">simulate_concentration</span><span class="p">(</span><span class="n">dose</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+</span></code></pre></div>
+Staat de waarde voor de massa ook nog los bovenin het bestand? Verwijder die dan, want de functie ontvangt deze waarde nu ook via een parameter. Als je het programma uitvoert voor een patiënt van 80 kg, is de uitkomst dan gelijk aan wat je eerder had? Los eventuele fouten op. Commit.</li>
+<li>Roep de functie drie keer aan voor een patiënt van 60, 80 en 100 kg, steeds met een dagelijkse dosis van 300 mg. Bijvoorbeeld:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">simulate_concentration</span><span class="p">(</span><span class="n">dose</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+</span></code></pre></div>
+Geef alle drie de scenario's in dezelfde plot weer met een duidelijke legenda. Commit. </li>
+<li>Welke verschillen zie je tussen de scenario's? Bij welke massa blijft de concentratie binnen het therapeutisch venster?</li>
+</ol>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Halfwaardetijd variëren</p>
+<ol>
+<li>Doe nu hetzelfde voor de halfwaardetijd. Voeg een parameter toe aan de functieheader met bijvoorbeeld de naam <code>half_life</code>. Staat de waarde van de halfwaardetijd ook nog los bovenin het bestand? Verwijder die dan. Voer het programma uit en los eventuele fouten op. Commit.</li>
+<li>Roep de functie drie keer aan met de halfwaardetijden van 7, 24 en 42 uur, voor een patiënt van 80 kg met een dagelijkse dosis van 300 mg. Geef alle drie de scenario's in dezelfde plot weer met een duidelijke legenda. Commit. </li>
+<li>Welke verschillen zie je tussen de scenario's? Wat betekent een korte halfwaardetijd voor de piek- en dalwaarden in de steady-state? Bereiken alle scenario's de steady-state op hetzelfde moment?</li>
+</ol>
+</div>
+<details class="meer-leren" open="open">
+<summary>Keyword arguments versus positional arguments</summary>
+<p>Tot nu toe roep je de functie aan met parameternamen, bijvoorbeeld:
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">simulate_concentration</span><span class="p">(</span><span class="n">dose</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">half_life</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+</span></code></pre></div>
+Dit worden <em>keyword arguments</em> genoemd. Je mag in dit geval de volgorde van de argumenten veranderen, omdat Python aan de naam ziet welke waarde bij welke parameter hoort. Het gebruik van keyword arguments maakt je code beter leesbaar. </p>
+<p>Je mag de parameternamen ook weglaten. Maar je moet de argumenten dan in de juiste volgorde meegeven.
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">simulate_concentration</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</span></code></pre></div>
+geeft een andere en hoogstwaarschijnlijk onverwachte uitkomst dan
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">simulate_concentration</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+</span></code></pre></div>
+Nu wordt het eerste argument aan <code>dose</code> gekoppeld, het tweede argument aan <code>m</code> en het derde argument aan <code>half_life</code>. Dit worden <em>positional arguments</em> genoemd. Een functie op deze manier aanroepen is minder leesbaar en gevoeliger voor fouten, maar vergt wel minder typewerk.</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Functie met positional arguments</p>
+<ol>
+<li>Pas in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>phenytoin.py</code> de aanroepen van de functie aan zodat je geen parameternamen gebruikt. Controleer of de uitkomst gelijk blijft. Commit.</li>
+<li>Test uit wat er gebeurt als je de volgorde van de argumenten omdraait. Verklaar de uitkomst.</li>
+</ol>
+</div>
+</details>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Anti-epileptica</p>
+<p>Valproïnezuur is een veelgebruikt medicijn dat bij epilepsie kan worden voorgeschreven. De farmacokinetische waarden van valproïnezuur verschillen sterk van fenytoïne. Door beide concentratiecurves naast elkaar te zetten, zie je direct hoe verschillen in de farmacokinetische waarden doorwerken in het concentratieverloop.</p>
+<p>De typische farmacokinetische waarden voor valproïnezuur zijn:</p>
+<ul>
+<li>Dosering: 20-30 mg$\,$kg$^{-1} \,$dag$^{-1}$, tweemaal of vaker per dag<sup id="fnref:farkompas-valproinezuur"><a class="footnote-ref" href="#fn:farkompas-valproinezuur">2</a></sup></li>
+<li>Halfwaardetijd: 10-15 uur<sup id="fnref2:farkompas-valproinezuur"><a class="footnote-ref" href="#fn:farkompas-valproinezuur">2</a></sup></li>
+<li>Verdelingsvolume: 0.1-0.4 L$\,$kg$^{-1}$<sup id="fnref:tdm-valproinezuur"><a class="footnote-ref" href="#fn:tdm-valproinezuur">3</a></sup></li>
+<li>Therapeutisch venster: 50-100 mg$\,$L$^{-1}$<sup id="fnref:bepalingwijzer-vaproinezuur"><a class="footnote-ref" href="#fn:bepalingwijzer-vaproinezuur">4</a></sup></li>
+<li>Toxische grens: &gt; 120 mg$\,$L$^{-1}$<sup id="fnref2:bepalingwijzer-vaproinezuur"><a class="footnote-ref" href="#fn:bepalingwijzer-vaproinezuur">4</a></sup></li>
+</ul>
+<p>De dagelijkse dosis bereken je door het gewicht van de patiënt te vermenigvuldigen met de dosering. Deel dit getal vervolgens door het aantal doses per dag om de dosis per keer te krijgen.</p>
+<ol>
+<li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>anti_epileptics.py</code>. Kopieer de code uit het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>phenytoin.py</code> naar dit nieuwe bestand. </li>
+<li>Pas de functie <code class="language-py highlight"><span class="n">simulate_concentration</span><span class="p">()</span></code> aan zodat je naast de bestaande argumenten ook het verdelingsvolume en het doseringsinterval meegeeft als argumenten. Verwijder de vaste waarde voor het verdelingsvolume bovenin het bestand. Vervang ook de vaste waarde voor het doseringsinterval in de <code class="language-py highlight"><span class="k">for</span></code>-loop. Gebruik het betreffende argument om te bepalen na hoeveel uur een volgende dosis wordt ingenomen.</li>
+<li>Roep de functie aan voor fenytoïne en plot de concentratiecurve. Controleer of de uitkomst overeenkomt met een uitkomst die je eerder gekregen hebt. Los eventuele fouten op. Commit.</li>
+<li>Roep nu ook de functie aan voor valproïnezuur. Kies zelf waarden die passen bij de farmacokinetische waarden die hierboven gegeven zijn. Let op: bereken eerst de dagelijkse dosis en deel deze door het aantal doses per dag om de waarde voor <code>dose</code> te bepalen. Geef beide medicijnen in dezelfde plot weer met een duidelijke legenda. Voeg ook het therapeutisch venster van valproïnezuur toe. Pas de $y$-as aan zodat beide therapeutische vensters goed zichtbaar zijn. Commit.</li>
+<li>Bekijk de twee concentratiecurves. Wat valt je op? Pas eens de massa aan en beschrijf wat er verandert in beide curves.</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Therapeutisch venster controleren</p>
+<p>In de plot zie je aan de horizontale lijnen of de concentratie binnen het therapeutisch venster valt. Je moet de bijbehorende tijdstippen echter zelf aflezen. Schrijf daarom een functie die voor elk tijdstip waarop de concentratie buiten het therapeutisch venster valt een waarschuwing afgeeft. Gebruik voor deze opdracht het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>phenytoin.py</code> of <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>anti_epileptics.py</code>.</p>
+<ol>
+<li>Schrijf een nieuwe functie <code class="language-py highlight"><span class="n">check_therapeutic_window</span><span class="p">()</span></code> die de tijdstippen, een lijst met concentraties en de onder- en bovengrens van het therapeutisch venster ontvangt. De functie controleert voor elke tijdstap of de concentratie binnen het therapeutisch venster valt. Valt de concentratie erbuiten? Print dan een waarschuwing met het bijbehorende tijdstip, de concentratie en de melding dat de concentratie onder of boven het therapeutisch venster ligt. Vergelijk de waarschuwingen met de concentratiecurve in de plot. Komt dit overeen? Commit.</li>
+<li>Roep de functie aan voor verschillende scenario's. Bij welk scenario komen de minste waarschuwingen voor? Bekijk ook of de waarschuwingen gaan over een te lage of juist een te hoge concentratie.</li>
+</ol>
 </div>
 <h2 id="verspreiding-van-infectieziektes">Verspreiding van infectieziektes<a class="headerlink" href="#verspreiding-van-infectieziektes" title="Permanent link">&para;</a></h2>
 <p>Epidemiologie is het vakgebied dat zich bezighoudt met de verspreiding van ziektes in een populatie. Epidemiologen bestuderen vragen als: Hoe snel verspreidt een infectieziekte zich? Hoeveel mensen raken besmet? Wanneer dooft een uitbraak uit? Die vragen zijn niet alleen wetenschappelijk interessant, ze bepalen mede welke maatregelen een overheid neemt bij een uitbraak. Tijdens de COVID-19-pandemie waren dit soort voorspellingen dan ook bepalend voor het beleid. </p>
@@ -587,7 +802,7 @@
 <p>In dit deel van de sessie simuleren we de verspreiding van infectieziektes met behulp van het SIR-model. Daarmee sluit de sessie aan bij het vak <em>Mathematische methoden</em> (jaar 1, periode 5), waarbinnen onder andere stelsels van differentiaalvergelijkingen aan bod komen. Het SIR-model bestaat uit zo'n stelsel.  </p>
 </div>
 <h3 id="sir-model">SIR-model<a class="headerlink" href="#sir-model" title="Permanent link">&para;</a></h3>
-<p>Het SIR-model is een van de bekendste en meest gebruikte modellen in de epidemiologie. Het model werd in 1927 geïntroduceerd door Kermack en McKendrick<sup id="fnref:SIR-model"><a class="footnote-ref" href="#fn:SIR-model">1</a></sup> en is sindsdien de basis van veel epidemiologische modellen. Het model verdeelt een populatie in drie compartimenten:</p>
+<p>Het SIR-model is een van de bekendste en meest gebruikte modellen in de epidemiologie. Het model werd in 1927 geïntroduceerd door Kermack en McKendrick<sup id="fnref:SIR-model"><a class="footnote-ref" href="#fn:SIR-model">5</a></sup> en is sindsdien de basis van veel epidemiologische modellen. Het model verdeelt een populatie in drie compartimenten:</p>
 <ul>
 <li>
 <p>$S$ (<em>susceptible</em>, vatbaar): personen die vatbaar zijn voor de ziekte, maar nog niet besmet;</p>
@@ -610,7 +825,7 @@ Het minteken geeft aan dat het aantal vatbare personen door nieuwe besmettingen 
 \begin{equation}
 \frac{dR}{dt} = \gamma \cdot I(t).
 \end{equation}
-De parameter $\gamma$<sup id="fnref:gamma"><a class="footnote-ref" href="#fn:gamma">2</a></sup> geeft aan hoe snel besmette personen herstellen. De herstelsnelheid is evenredig met $I(t)$, het aantal besmette personen op een bepaald tijdstip. $R$ neemt dus alleen toe.</p>
+De parameter $\gamma$<sup id="fnref:gamma"><a class="footnote-ref" href="#fn:gamma">6</a></sup> geeft aan hoe snel besmette personen herstellen. De herstelsnelheid is evenredig met $I(t)$, het aantal besmette personen op een bepaald tijdstip. $R$ neemt dus alleen toe.</p>
 <p>Tot slot verandert $I$ door twee stromen tegelijk: $I$ ontvangt personen vanuit $S$ en verliest personen naar $R$. De verandering van $I$ is het verschil tussen die twee stromen:
 \begin{equation}
 \frac{dI}{dt} = \beta \cdot \frac{S(t)}{N} \cdot I(t) - \gamma \cdot I(t).
@@ -645,8 +860,8 @@ Voor $I$ en $R$ gebruik je dezelfde aanpak. En hoe kleiner $\Delta t$, hoe nauwk
 <ol>
 <li>Maak een nieuw bestand aan met de naam <span style="color: green;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span></span><code>sir_model.py</code>. Definieer bovenaan in het bestand alle beginwaarden en parameters. Gebruik dezelfde beginwaarden en parameters als in de <a href="#opdr:eerste-dagen"><em>opdracht De eerste dagen van de uitbraak</em></a>.</li>
 <li>Vertaal nu de berekeningen die je op papier hebt gedaan naar Python-code. Bereken de waarden van $S$, $I$ en $R$ voor de eerste 50 dagen. Bereken bij elke tijdstap ook $N$, zodat je kunt controleren of de populatie constant blijft. Zorg dat voor elke tijdstap het volgende geprint wordt:
-    <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>t = 0: S = 1990, I = 10, R = 0, N = 2000
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>t = 1: S = ..., I = ..., R = ..., N = ...
+    <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>t = 0: S = 1990, I = 10, R = 0, N = 2000
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>t = 1: S = ..., I = ..., R = ..., N = ...
 </span></code></pre></div></li>
 <li>Controleer de eerste tijdstappen met de uitkomst van de <a href="#opdr:eerste-dagen"><em>opdracht De eerste dagen van de uitbraak</em></a>. Komen de antwoorden overeen? Zo niet, zoek dan eerst uit waarom je andere waarden vindt. Commit.</li>
 </ol>
@@ -654,7 +869,7 @@ Voor $I$ en $R$ gebruik je dezelfde aanpak. En hoe kleiner $\Delta t$, hoe nauwk
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Waarden afgerond weergeven</p>
 <p>In de <a href="#opdr:eerste-dagen"><em>opdracht De eerste dagen van de uitbraak</em></a> heb je de waarden afgerond op één decimaal. Je programma doet dat nu niet. Met f-strings kun je getallen afgerond weergeven. De regel
-    <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number1</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">number2</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">number1</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">number2</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div>
 geeft de variabelen <code>number1</code> en <code>number2</code> weer op één decimaal.</p>
 <ol>
@@ -667,11 +882,11 @@ geeft de variabelen <code>number1</code> en <code>number2</code> weer op één d
 <p class="admonition-title">Een functie toevoegen</p>
 <ol>
 <li>Schrijf in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>sir_model.py</code> de functie <code class="language-py highlight"><span class="n">simulate_sir</span></code> met de volgende header: 
-    <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">simulate_sir</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">days</span><span class="p">):</span>
+    <div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">simulate_sir</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">R0</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">days</span><span class="p">):</span>
 </span></code></pre></div>
 Deze functie voert de simulatie uit en print de waarden voor elke tijdstap. Verplaats de <code class="language-py highlight"><span class="k">for</span></code>-loop met de berekeningen en de printregels naar de functie en zorg voor de juiste indentatie. Je hoeft geen nieuwe code te schrijven. Let op: gebruik je andere variabelenamen dan de parameternamen in de header van de functie? Pas die dan wel aan zodat ze overeenkomen.</li>
 <li>De beginwaarden en parameters bovenaan in het bestand zijn nu overbodig, omdat de functie die waarden via de parameters verwacht te ontvangen. Verwijder ze daarom. Roep onderaan in het bestand de functie aan met de volgende waarden voor de parameters:
-    <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">simulate_sir</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">I0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">R0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    <div class="language-py highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">simulate_sir</span><span class="p">(</span><span class="n">N</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">I0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">R0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">beta</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">days</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
 </span></code></pre></div>
 Controleer de eerste tijdstappen met de uitkomst van de <a href="#opdr:eerste-dagen"><em>opdracht De eerste dagen van de uitbraak</em></a>. Komen ze overeen? Zo niet, zoek dan eerst uit waarom je andere getallen vindt. Commit.</li>
 </ol>
@@ -681,7 +896,7 @@ Controleer de eerste tijdstappen met de uitkomst van de <a href="#opdr:eerste-da
 <p class="admonition-title">De uitbraak gevisualiseerd</p>
 <ol>
 <li>Voeg bovenaan in het bestand
-    <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </span></code></pre></div>
 toe.</li>
 <li>Pas de functie <code>simulate_sir</code> aan, zodat de functie de waarden voor $S$, $I$, $R$ en de tijd ook in lijsten opslaat. Geef deze lijsten aan het einde van de functie terug met <code class="language-py highlight"><span class="k">return</span></code>. </li>
@@ -692,8 +907,8 @@ toe.</li>
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Plotten tegen de index</p>
 <p>Als je met <code>matplotlib</code> plot, hoef je geen $x$-waardes mee te geven. De volgende regels code geven dus beide een plot:
-    <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </span></code></pre></div>
 In het eerste geval wordt $y$ tegen $x$ uitgezet. In het tweede geval wordt voor $x$ de index van de $y$-lijst gebruikt. Wanneer je $x$-waarden gelijk zijn aan de index, geven beide regels code hetzelfde resultaat. Maar zodra dat niet zo is, bijvoorbeeld als je alleen voor de dagen 20 tot 50 de berekeningen uitvoert, geeft <code class="language-py highlight"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">)</span></code> een verkeerd beeld.</p>
 <p>Op dit moment lopen de tijdstappen van 0 tot 50, wat gelijk is aan de index. Pas je code zo aan dat je voor het plotten alleen gebruikmaakt van de $y$-waarden en verwijder code die nu overbodig is geworden. Commit.</p>
@@ -708,11 +923,23 @@ In het eerste geval wordt $y$ tegen $x$ uitgezet. In het tweede geval wordt voor
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:farkompas-fenytoine">
+<p><a href="https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine">https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine</a>&#160;<a class="footnote-backref" href="#fnref:farkompas-fenytoine" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:farkompas-valproinezuur">
+<p><a href="https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/v/valproinezuur">https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/v/valproinezuur</a>&#160;<a class="footnote-backref" href="#fnref:farkompas-valproinezuur" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:farkompas-valproinezuur" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:tdm-valproinezuur">
+<p><a href="https://tdm-monografie.org/valproinezuur/">https://tdm-monografie.org/valproinezuur/</a>&#160;<a class="footnote-backref" href="#fnref:tdm-valproinezuur" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:bepalingwijzer-vaproinezuur">
+<p><a href="https://www.umcutrecht.nl/bepalingenwijzer/valproinezuur">https://www.umcutrecht.nl/bepalingenwijzer/valproinezuur</a>&#160;<a class="footnote-backref" href="#fnref:bepalingwijzer-vaproinezuur" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:bepalingwijzer-vaproinezuur" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
 <li id="fn:SIR-model">
-<p>William Ogilvy Kermack en Anderson Gray McKendrick. "A contribution to the mathematical theory of epidemics". In: <em>Proceedings of the Royal Society of London</em>, Series A, 115.772 (1927), p. 700–721. <a href="https://doi.org/10.1098/rspa.1927.0118">https://doi.org/10.1098/rspa.1927.0118</a>&#160;<a class="footnote-backref" href="#fnref:SIR-model" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>William Ogilvy Kermack en Anderson Gray McKendrick. "A contribution to the mathematical theory of epidemics". In: <em>Proceedings of the Royal Society of London</em>, Series A, 115.772 (1927), p. 700–721. <a href="https://doi.org/10.1098/rspa.1927.0118">https://doi.org/10.1098/rspa.1927.0118</a>&#160;<a class="footnote-backref" href="#fnref:SIR-model" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:gamma">
-<p>De herstelsnelheid $\gamma$ is te bepalen uit de gemiddelde besmettelijke periode. Als een persoon gemiddeld $d$ dagen besmettelijk is, geldt $\gamma = \frac{1}{d}$.&#160;<a class="footnote-backref" href="#fnref:gamma" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>De herstelsnelheid $\gamma$ is te bepalen uit de gemiddelde besmettelijke periode. Als een persoon gemiddeld $d$ dagen besmettelijk is, geldt $\gamma = \frac{1}{d}$.&#160;<a class="footnote-backref" href="#fnref:gamma" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
