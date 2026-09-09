@@ -74,7 +74,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
 
 !!! opdracht-basis "Naam en leeftijd"
 
-    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ in het Nederlands.
+    In het allereerste voorbeeld heb je al gezien dat je met `#!py print()` dingen kunt _printen_ naar het beeldscherm. Met `#!py input()` kun je dingen _vragen_ aan de gebruiker. Het antwoord van de gebruiker slaan we op in een _variabele_. In de volgende opdrachten gaan we hier gebruik van maken. Wij schrijven alle code in het Engels, dus bestandsnamen, variabelenamen én berichten die op het scherm worden geprint zijn in onze opdrachten Engelstalig. Werk je liever in het Nederlands, wees dan het liefst wel consequent en doe _alles_ &mdash; behalve de Python-syntax &mdash; in het Nederlands. 
 
     1. Schrijf een script {{new_file}}`name_and_age.py` dat eerst vraagt hoe je heet en daarna hallo zegt waarbij je naam gebruikt wordt. Een voorbeeld van wat je in de terminal ziet is:
         ```
