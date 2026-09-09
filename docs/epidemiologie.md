@@ -1,18 +1,115 @@
 # Sessie 5: epidemiologie
 
-In de vorige sessie hebben we modellen gebouwd en de uitkomsten gevisualiseerd. Maar een model wordt pas echt krachtig als je het kunt gebruiken om te onderzoeken wat er gebeurt als de situatie verandert. We kunnen bijvoorbeeld onderzoeken wat er met een uitbraak van een infectieziekte gebeurt als een deel van de populatie is gevaccineerd. Of we kunnen berekenen hoeveel ziekenhuisbedden nodig zijn tijdens de piek van een uitbraak. Dit noemen we _simuleren_, een veelgebruikte aanpak in de (bio)medische wetenschappen. Simulaties worden gebruikt om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. In deze sessie passen we dit toe op epidemiologie: de studie van hoe ziektes zich verspreiden in een populatie. 
+In de vorige sessie hebben we modellen gebouwd, uitkomsten gevisualiseerd en al gekeken naar wat er verandert als we een parameter aanpassen. Juist die laatste stap maakt een model krachtig. We kunnen het model dan gebruiken om te onderzoeken wat er gebeurt als de situatie verandert. In deze sessie passen we dit toe op epidemiologie: de studie van hoe ziektes zich verspreiden in een populatie. We kunnen bijvoorbeeld onderzoeken wat er met een uitbraak van een infectieziekte gebeurt als een deel van de populatie is gevaccineerd. Of we kunnen berekenen hoeveel ziekenhuisbedden nodig zijn tijdens de piek van een uitbraak. Dit noemen we _simuleren_, een veelgebruikte aanpak in de (bio)medische wetenschappen. Simulaties worden gebruikt om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. 
 
-!!! warning
+## Farmacokinetische simulaties vergelijken
 
-    Onderstaand deel nog inbedden. 
+In de vorige sessie hebben we een model gebouwd van de concentratie fenytoïne in het bloed. Met dit model hebben we onder andere de invloed van massa op de dagelijkse dosis bekeken en het effect van een vergeten dosis gesimuleerd. Elk scenario vroeg om een aanpassing in de code, waarna we het programma opnieuw uitvoerden. Dat werkte, maar vergelijken was daardoor lastig. We zagen telkens maar één grafiek. Om dit probleem op te lossen zouden we code kunnen dupliceren, maar dat leidt snel tot lange, onoverzichtelijke code. Functies bieden een elegante oplossing en daar gaan we in deze sessie mee aan de slag.
 
-    De halfwaardetijd van paracetamol kan verschillen tussen mensen. Dit kan bijvoorbeeld komen door verschillen in hoe snel het lichaam paracetamol afbreekt en uitscheidt. Leeftijd, de werking van de lever en nieren en het gebruik van andere medicijnen kunnen hierbij een rol spelen. 
+!!! opdracht-basis "Code ombouwen"
 
-    !!! opdracht-basis "Verschillende halfwaardetijd"
-        Stel dat de halfwaardetijd van paracetamol bij drie verschillende patiënten 1, 2.5 en 4 uur is. 
+    Het is tijd om een functie te gaan gebruiken. Je gebruikt daarvoor de bestaande code in het bestand {{file}}`phenytoin.py` en geeft de dosis mee als parameter.
 
-        1. Hoe verwacht je dat de hoeveelheid paracetamol in het lichaam verschilt bij voor deze drie patiënten gedurende 24 uur? Schets je verwachting.
-        2. Gebruik je numerieke model om de hoeveelheid paracetamol gedurende 24 uur te berekenen voor de drie verschillende halfwaardetijden. Gebruik steeds dezelfde beginhoeveelheid en hetzelfde doseerschema. Plot de drie verschillende situaties in één grafiek. Wat valt je op?
+    1. Open het bestand {{file}}`phenytoin.py`. Voer het programma uit voor een patiënt met een massa van 80 kg en een dagelijkse dosis van 300 mg. Plot de concentratie gedurende 20 dagen. Maak een schets van deze plot, zodat je later kunt controleren of de code na het ombouwen dezelfde uitkomst geeft. Noteer de piek- en dalwaarden in de steady-state en hoe lang het ongeveer duurt om deze steady-state te bereiken.
+    2. Maak een functie aan met de volgende header:
+        ```python
+        def simulate_concentration(dose):
+        ```
+    Deze functie voert de simulatie uit. Verplaats de lege lijst(en), de beginwaarden van variabelen die in de `#!py for`-loop worden bijgewerkt en de `#!py for`-loop met de berekeningen naar de functie en zorg voor de juiste indentatie. Voeg onderaan de functie een `#!py return`-regel toe die de gevulde lijst(en) teruggeeft. Behalve de functieheader en de `#!py return`-regel hoef je geen nieuwe code te schrijven. Let op: gebruik je een andere variabelenaam dan `dose`? Pas die dan aan, zodat de naam in de functieheader en in de rest van de functie overeenkomt.
+    3. Roep de functie aan op de regel vóór `#!py plt.plot(...)` met
+        ```py
+        simulate_concentration(dose=300)
+        ```
+    Sla de uitkomst van de functie op in variabele(n) die je voor de plot kunt gebruiken. Staat de waarde voor `dose` ook nog los bovenin het bestand? Verwijder die dan, want de functie ontvangt deze waarde nu via de parameter.
+    4.  Voer het programma uit en los eventuele fouten op. Controleer of de plot overeenkomt met de plot van voordat je de code ombouwde. Klopt alles? Commit.
+
+Nu we een deel van de code in een functie hebben gezet, kunnen we makkelijker scenario's vergelijken. We kunnen de functie meerdere keren aanroepen met verschillende waarden voor `dose`. De uitkomsten slaan we elke keer op in aparte variabele(n). Deze variabelen gebruiken we daarna om meerdere lijnen in één plot te tekenen. 
+
+!!! opdracht-basis "Verschillende doses vergelijken"
+
+    De dagelijkse dosis voor fenytoïne ligt tussen de 200 mg en 400 mg. Voor een patiënt van 80 kg vergelijken we drie scenario's in één plot om te bepalen welke dagelijkse dosis het meest geschikt is. 
+
+    1. Roep de functie `#!py simulate_concentration()` drie keer aan met een andere waarde voor `dose`: 200, 300 en 400 mg. Sla de uitkomsten van de functie elke keer op in aparte variabele(n). Voor de concentratie kun je bijvoorbeeld kiezen voor `concentration_200`, `concentration_300` en `concentration_400`.
+    2. Geef alle drie de scenario's in dezelfde plot weer. Geef de verschillende lijnen in de plot duidelijke labels en voeg een legenda toe. Commit.
+    3. Welke verschillen zie je tussen de scenario's? Welke dagelijkse dosis is voor deze patiënt het meest geschikt? Vergelijk je antwoord met dat van de [_opdracht Veilige dosis_](farmacokinetiek.md#opdr:dosis-fenytoine). Kom je tot hetzelfde antwoord? Wat voegt de visualisatie toe?
+
+De functie `#!py simulate_concentration()` heeft nu één parameter: `dose`. Maar een functie kan ook meerdere parameters hebben. Zo kunnen we ook de massa van patiënten meegeven en scenario's vergelijken voor patiënten met een verschillend lichaamsgewicht. Of de halfwaardetijd, die sterk kan variëren &mdash; tussen de 7 en 42 uur[^farkompas-fenytoine] &mdash; en daardoor grote invloed heeft op de concentratie in het bloed. In de volgende opdracht voegen we deze parameters stap voor stap toe.
+
+[^farkompas-fenytoine]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine)
+
+!!! opdracht-basis "Massa variëren"
+
+    1. Voeg de massa toe als tweede parameter aan de functieheader, bijvoorbeeld met de naam `m`:
+        ```python
+        def simulate_concentration(dose, m):
+        ```
+    Staat de waarde voor de massa ook nog los bovenin het bestand? Verwijder die dan, want de functie ontvangt deze waarde nu ook via een parameter. Als je het programma uitvoert voor een patiënt van 80 kg, is de uitkomst dan gelijk aan wat je eerder had? Los eventuele fouten op. Commit.
+    2. Roep de functie drie keer aan voor een patiënt van 60, 80 en 100 kg, steeds met een dagelijkse dosis van 300 mg. Bijvoorbeeld:
+        ```python
+        simulate_concentration(dose=300, m=60)
+        ```
+    Geef alle drie de scenario's in dezelfde plot weer met een duidelijke legenda. Commit. 
+    3. Welke verschillen zie je tussen de scenario's? Bij welke massa blijft de concentratie binnen het therapeutisch venster?
+
+!!! opdracht-basis "Halfwaardetijd variëren"
+
+    1. Doe nu hetzelfde voor de halfwaardetijd. Voeg een parameter toe aan de functieheader met bijvoorbeeld de naam `half_life`. Staat de waarde van de halfwaardetijd ook nog los bovenin het bestand? Verwijder die dan. Voer het programma uit en los eventuele fouten op. Commit.
+    2. Roep de functie drie keer aan met de halfwaardetijden van 7, 24 en 42 uur, voor een patiënt van 80 kg met een dagelijkse dosis van 300 mg. Geef alle drie de scenario's in dezelfde plot weer met een duidelijke legenda. Commit. 
+    3. Welke verschillen zie je tussen de scenario's? Wat betekent een korte halfwaardetijd voor de piek- en dalwaarden in de steady-state? Bereiken alle scenario's de steady-state op hetzelfde moment?
+
+???+ meer-leren "Keyword arguments versus positional arguments"
+
+    Tot nu toe roep je de functie aan met parameternamen, bijvoorbeeld:
+        ```python
+        simulate_concentration(dose=300, m=80, half_life=24)
+        ```
+    Dit worden _keyword arguments_ genoemd. Je mag in dit geval de volgorde van de argumenten veranderen, omdat Python aan de naam ziet welke waarde bij welke parameter hoort. Het gebruik van keyword arguments maakt je code beter leesbaar. 
+
+    Je mag de parameternamen ook weglaten. Maar je moet de argumenten dan in de juiste volgorde meegeven.
+        ```python
+        simulate_concentration(80, 24, 300)
+        ```
+    geeft een andere en hoogstwaarschijnlijk onverwachte uitkomst dan
+        ```python
+        simulate_concentration(300, 80, 24)
+        ```
+    Nu wordt het eerste argument aan `dose` gekoppeld, het tweede argument aan `m` en het derde argument aan `half_life`. Dit worden _positional arguments_ genoemd. Een functie op deze manier aanroepen is minder leesbaar en gevoeliger voor fouten, maar vergt wel minder typewerk.
+
+    !!! opdracht-meer "Functie met positional arguments"
+
+        1. Pas in het bestand {{file}}`phenytoin.py` de aanroepen van de functie aan zodat je geen parameternamen gebruikt. Controleer of de uitkomst gelijk blijft. Commit.
+        2. Test uit wat er gebeurt als je de volgorde van de argumenten omdraait. Verklaar de uitkomst.
+
+!!! opdracht-meer "Anti-epileptica"
+
+    Valproïnezuur is een veelgebruikt medicijn dat bij epilepsie kan worden voorgeschreven. De farmacokinetische waarden van valproïnezuur verschillen sterk van fenytoïne. Door beide concentratiecurves naast elkaar te zetten, zie je direct hoe verschillen in de farmacokinetische waarden doorwerken in het concentratieverloop.
+
+    De typische farmacokinetische waarden voor valproïnezuur zijn:
+
+       * Dosering: 20-30 mg$\,$kg$^{-1} \,$dag$^{-1}$, tweemaal of vaker per dag[^farkompas-valproinezuur]
+       * Halfwaardetijd: 10-15 uur[^farkompas-valproinezuur]
+       * Verdelingsvolume: 0.1-0.4 L$\,$kg$^{-1}$[^tdm-valproinezuur]
+       * Therapeutisch venster: 50-100 mg$\,$L$^{-1}$[^bepalingwijzer-vaproinezuur]
+       * Toxische grens: > 120 mg$\,$L$^{-1}$[^bepalingwijzer-vaproinezuur]
+  
+    De dagelijkse dosis bereken je door het gewicht van de patiënt te vermenigvuldigen met de dosering. Deel dit getal vervolgens door het aantal doses per dag om de dosis per keer te krijgen.
+  
+    [^farkompas-valproinezuur]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/v/valproinezuur](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/v/valproinezuur) 
+    [^tdm-valproinezuur]: [https://tdm-monografie.org/valproinezuur/](https://tdm-monografie.org/valproinezuur/)
+    [^bepalingwijzer-vaproinezuur]:[https://www.umcutrecht.nl/bepalingenwijzer/valproinezuur](https://www.umcutrecht.nl/bepalingenwijzer/valproinezuur)
+    
+    1. Maak een nieuw bestand aan met de naam {{new_file}}`anti_epileptics.py`. Kopieer de code uit het bestand {{file}}`phenytoin.py` naar dit nieuwe bestand. 
+    2. Pas de functie `#!py simulate_concentration()` aan zodat je naast de bestaande argumenten ook het verdelingsvolume en het doseringsinterval meegeeft als argumenten. Verwijder de vaste waarde voor het verdelingsvolume bovenin het bestand. Vervang ook de vaste waarde voor het doseringsinterval in de `#!py for`-loop. Gebruik het betreffende argument om te bepalen na hoeveel uur een volgende dosis wordt ingenomen.
+    3. Roep de functie aan voor fenytoïne en plot de concentratiecurve. Controleer of de uitkomst overeenkomt met een uitkomst die je eerder gekregen hebt. Los eventuele fouten op. Commit.
+    4. Roep nu ook de functie aan voor valproïnezuur. Kies zelf waarden die passen bij de farmacokinetische waarden die hierboven gegeven zijn. Let op: bereken eerst de dagelijkse dosis en deel deze door het aantal doses per dag om de waarde voor `dose` te bepalen. Geef beide medicijnen in dezelfde plot weer met een duidelijke legenda. Voeg ook het therapeutisch venster van valproïnezuur toe. Pas de $y$-as aan zodat beide therapeutische vensters goed zichtbaar zijn. Commit.
+    5. Bekijk de twee concentratiecurves. Wat valt je op? Pas eens de massa aan en beschrijf wat er verandert in beide curves.
+
+!!! opdracht-meer "Therapeutisch venster controleren"
+
+    In de plot zie je aan de horizontale lijnen of de concentratie binnen het therapeutisch venster valt. Je moet de bijbehorende tijdstippen echter zelf aflezen. Schrijf daarom een functie die voor elk tijdstip waarop de concentratie buiten het therapeutisch venster valt een waarschuwing afgeeft. Gebruik voor deze opdracht het bestand {{file}}`phenytoin.py` of {{file}}`anti_epileptics.py`.
+
+    1. Schrijf een nieuwe functie `#!py check_therapeutic_window()` die de tijdstippen, een lijst met concentraties en de onder- en bovengrens van het therapeutisch venster ontvangt. De functie controleert voor elke tijdstap of de concentratie binnen het therapeutisch venster valt. Valt de concentratie erbuiten? Print dan een waarschuwing met het bijbehorende tijdstip, de concentratie en de melding dat de concentratie onder of boven het therapeutisch venster ligt. Vergelijk de waarschuwingen met de concentratiecurve in de plot. Komt dit overeen? Commit.
+    2. Roep de functie aan voor verschillende scenario's. Bij welk scenario komen de minste waarschuwingen voor? Bekijk ook of de waarschuwingen gaan over een te lage of juist een te hoge concentratie.
 
 ## Verspreiding van infectieziektes
 
