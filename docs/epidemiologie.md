@@ -1,14 +1,16 @@
 # Sessie 5: epidemiologie
 
-In de vorige sessie hebben we modellen gebouwd, uitkomsten gevisualiseerd en al gekeken naar wat er verandert als we een parameter aanpassen. Juist die laatste stap maakt een model krachtig. We kunnen het model dan gebruiken om te onderzoeken wat er gebeurt als de situatie verandert. In deze sessie passen we dit toe op epidemiologie: de studie van hoe ziektes zich verspreiden in een populatie. We kunnen bijvoorbeeld onderzoeken wat er met een uitbraak van een infectieziekte gebeurt als een deel van de populatie is gevaccineerd. Of we kunnen berekenen hoeveel ziekenhuisbedden nodig zijn tijdens de piek van een uitbraak. Dit noemen we _simuleren_, een veelgebruikte aanpak in de (bio)medische wetenschappen. Simulaties worden gebruikt om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. 
+In de vorige sessie hebben we modellen gebouwd, uitkomsten gevisualiseerd en al gekeken naar wat er verandert als we een parameter aanpassen. Juist die laatste stap maakt een model krachtig. We kunnen het model dan gebruiken om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. Dit noemen we _simuleren_, een veelgebruikte aanpak in de (bio)medische wetenschappen. 
+
+In deze sessie gebruiken we simulaties uiteindelijk om de verspreiding van infectieziekten in een populatie te onderzoeken. We bouwen daar stap voor stap naar toe. Eerst oefenen we met een farmacokinetisch model uit de vorige sessie. Dit model is al bekend, zodat we ons kunnen richten op het nieuwe Python-construct functies. Daarna bouwen we een nieuw epidemiologisch model en gebruiken we dit om verschillende scenario's te onderzoeken.
 
 ## Farmacokinetische simulaties vergelijken
 
-In de vorige sessie hebben we een model gebouwd van de concentratie fenytoïne in het bloed. Met dit model hebben we onder andere de invloed van massa op de dagelijkse dosis bekeken en het effect van een vergeten dosis gesimuleerd. Elk scenario vroeg om een aanpassing in de code, waarna we het programma opnieuw uitvoerden. Dat werkte, maar vergelijken was daardoor lastig. We zagen telkens maar één grafiek. Om dit probleem op te lossen zouden we code kunnen dupliceren, maar dat leidt snel tot lange, onoverzichtelijke code. Functies bieden een elegante oplossing en daar gaan we in deze sessie mee aan de slag.
+In de vorige sessie hebben we een model gebouwd van de concentratie fenytoïne in het bloed. Met dit model hebben we onder andere onderzocht hoe de lichaamsmassa de concentratie fenytoïne in het bloed beïnvloedt en wat er gebeurt als een patiënt een dosis vergeet. Elk scenario vroeg om een aanpassing in de code, waarna we het programma opnieuw uitvoerden. Dat werkte, maar vergelijken was daardoor lastig. We zagen telkens maar één grafiek. Om dit probleem op te lossen zouden we code kunnen dupliceren, maar dat leidt snel tot lange, onoverzichtelijke code. Functies bieden een elegante oplossing en daar gaan we in deze sessie mee aan de slag.
 
 !!! opdracht-basis "Code ombouwen"
 
-    Het is tijd om een functie te gaan gebruiken. Je gebruikt daarvoor de bestaande code in het bestand {{file}}`phenytoin.py` en geeft de dosis mee als parameter.
+    Het is tijd om een functie te gaan gebruiken. Je gebruikt daarvoor de bestaande code in het bestand {{file}}`phenytoin.py`. Je bouwt deze code om, maar je  hoeft het programma niet opnieuw te schrijven: veel van je bestaande code kun je hergebruiken.
 
     1. Open het bestand {{file}}`phenytoin.py`. Voer het programma uit voor een patiënt met een massa van 80 kg en een dagelijkse dosis van 300 mg. Plot de concentratie gedurende 20 dagen. Maak een schets van deze plot, zodat je later kunt controleren of de code na het ombouwen dezelfde uitkomst geeft. Noteer de piek- en dalwaarden in de steady-state en hoe lang het ongeveer duurt om deze steady-state te bereiken.
     2. Maak een functie aan met de volgende header:
@@ -33,7 +35,7 @@ Nu we een deel van de code in een functie hebben gezet, kunnen we makkelijker sc
     2. Geef alle drie de scenario's in dezelfde plot weer. Geef de verschillende lijnen in de plot duidelijke labels en voeg een legenda toe. Commit.
     3. Welke verschillen zie je tussen de scenario's? Welke dagelijkse dosis is voor deze patiënt het meest geschikt? Vergelijk je antwoord met dat van de [_opdracht Veilige dosis_](farmacokinetiek.md#opdr:dosis-fenytoine). Kom je tot hetzelfde antwoord? Wat voegt de visualisatie toe?
 
-De functie `#!py simulate_concentration()` heeft nu één parameter: `dose`. Maar een functie kan ook meerdere parameters hebben. Zo kunnen we ook de massa van patiënten meegeven en scenario's vergelijken voor patiënten met een verschillend lichaamsgewicht. Of de halfwaardetijd, die sterk kan variëren &mdash; tussen de 7 en 42 uur[^farkompas-fenytoine] &mdash; en daardoor grote invloed heeft op de concentratie in het bloed. In de volgende opdracht voegen we deze parameters stap voor stap toe.
+De functie `#!py simulate_concentration()` heeft nu één parameter: `dose`. Maar een functie kan ook meerdere parameters hebben. Zo kunnen we ook de massa van patiënten meegeven om scenario's te vergelijken voor patiënten met een verschillend lichaamsgewicht. Of de halfwaardetijd, die sterk kan variëren &mdash; tussen de 7 en 42 uur voor fenytoïne[^farkompas-fenytoine] &mdash; en daardoor grote invloed heeft op de concentratie in het bloed. In de volgende opdracht voegen we deze parameters stap voor stap toe.
 
 [^farkompas-fenytoine]: [https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine](https://www.farmacotherapeutischkompas.nl/bladeren/preparaatteksten/f/fenytoine)
 
@@ -113,7 +115,9 @@ De functie `#!py simulate_concentration()` heeft nu één parameter: `dose`. Maa
 
 ## Verspreiding van infectieziektes
 
-Epidemiologie is het vakgebied dat zich bezighoudt met de verspreiding van ziektes in een populatie. Epidemiologen bestuderen vragen als: Hoe snel verspreidt een infectieziekte zich? Hoeveel mensen raken besmet? Wanneer dooft een uitbraak uit? Die vragen zijn niet alleen wetenschappelijk interessant, ze bepalen mede welke maatregelen een overheid neemt bij een uitbraak. Tijdens de COVID-19-pandemie waren dit soort voorspellingen dan ook bepalend voor het beleid. 
+We hebben gezien dat we met functies één model voor meerdere scenario's kunnen gebruiken en de uitkomsten direct kunnen vergelijken. Tijd om deze aanpak toe te passen op een nieuw vraagstuk uit de epidemiologie.
+
+Epidemiologie is het vakgebied dat zich bezighoudt met de verspreiding van ziektes in een populatie. Epidemiologen bestuderen vragen als: Hoe snel verspreidt een infectieziekte zich? Hoeveel mensen raken besmet? Wanneer dooft een uitbraak uit? Zij onderzoeken ook wat het vaccineren van de populatie betekent voor het verloop van een uitbraak en of er tijdens de piek van de uitbraak voldoende ziekenhuisbedden beschikbaar zijn. Dit soort vragen zijn niet alleen wetenschappelijk interessant, de antwoorden helpen mede bepalen welke maatregelen een overheid tijdens een uitbraak neemt. Tijdens de COVID-19-pandemie vormden uitkomsten van epidemiologische modellen en simulaties dan ook een belangrijke basis voor beleidskeuzes. 
 
 Om zulke vragen te beantwoorden, maken epidemiologen gebruik van wiskundige modellen. Zo'n model beschrijft in een stelsel van vergelijkingen hoe een ziekte zich door een populatie beweegt. Een besmet persoon komt in contact met gezonde mensen en kan die besmetten. Hoe besmettelijk de ziekte is en hoe lang iemand ziek blijft, bepalen samen hoe snel een uitbraak groeit of afneemt. Door die factoren in een model te stoppen, kun je simuleren hoe een uitbraak zich ontwikkelt en wat er gebeurt als je ingrijpt, bijvoorbeeld door vaccinatie of isolatie. 
 
@@ -253,3 +257,6 @@ Tot nu toe het je de verschillende waarden laten printen in de terminal, maar ee
 ## Scenario's vergelijken
 
 Nu het model geschreven is, kunnen we gaan simuleren. We leggen verschillende scenario's naast elkaar en kijken hoe een ziekte zich verspreidt door een populatie. 
+
+
+
