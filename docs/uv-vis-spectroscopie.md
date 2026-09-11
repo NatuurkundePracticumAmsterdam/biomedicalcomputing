@@ -4,10 +4,6 @@ In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een e
 
 Deze sessie oefenen we eerst met berekeningen over stralingsveiligheid en bepalen we de nierfunctie. Vervolgens richten we ons op het hoofdonderwerp _UV-Vis spectroscopie_. Dit onderwerp komt uitgebreid aan bod tijdens het vak _Practicum bio-analytische chemie_ dat gegeven wordt in periode 5 van het eerste jaar. De scripts die je hier gaat programmeren komen dan ook zeker van pas!
 
-!!! info "Operatoren"
-
-    Het is goed om te weten hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met `#!py int()` en `#!py float()`.
-
 ## Stralingsveiligheid
 
 Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.
