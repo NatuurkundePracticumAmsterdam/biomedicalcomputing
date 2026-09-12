@@ -156,5 +156,11 @@ met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de h
 
 !!! opdracht-basis "IJken van de UV-Vis spectrometer"
 
-    1. Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule 8. 
-    2. Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41.
+    Lees, voordat je aan de opdracht begint, de [appendix over lmfit](package-lmfit.md). Dit is een Python package dat bedoeld is voor het fitten van een model aan meetgegevens. Je moet even leren hoe het werkt, maar het scheelt je heel veel programeerwerk.
+
+    1. Importeer de functionaliteit uit lmfit.
+    1. Definieer twee variabelen met de meetgegevens uit bovenstaande tabel.
+    1. Definieer het model aan de hand van vergelijking 8 en voer de fit uit.
+    1. Print de waardes en de onzekerheden van de parameters $a$ en $b$.
+    1. Controleer, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in in een nieuw Tailor project en fit aan formule 8. Zijn de waardes en onzekerheden dezelfde of zijn er verschillen?
+    1. Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41. Doe dit in je Pythonscript.

@@ -70,6 +70,7 @@ nav:
   - eindopdracht.md
   - Appendices:
     - python-constructen.md
+    - package-lmfit.md
 
 extra:
     arrow_rotate: ':fontawesome-solid-arrow-rotate-right:'
