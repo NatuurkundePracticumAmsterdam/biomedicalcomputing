@@ -679,6 +679,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-lmfit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package: lmfit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -706,10 +734,6 @@
 <h1 id="sessie-3-uv-vis-spectroscopie">Sessie 3: UV-Vis spectroscopie<a class="headerlink" href="#sessie-3-uv-vis-spectroscopie" title="Permanent link">&para;</a></h1>
 <p>In de vorige sessie heb je al gemerkt dat een computer heel geschikt is om een eenvoudig klusje dat 10.000 keer herhaald moet worden uit te voeren zodat jij dat niet zelf hoeft te doen. Een ander groot voordeel is dat een computer kan rekenen. <em>To compute</em> betekent niet voor niets <em>berekenen.</em> Rekenwerk kan natuurlijk ook met de hand, maar is niet altijd het leukste klusje om te doen. Daarnaast is het mogelijk dat er ergens een fout(je) insluipt. Zeker als bepaald rekenwerk meer dan eens gedaan moet worden, is het fijn om dit te programmeren.</p>
 <p>Deze sessie oefenen we eerst met berekeningen over stralingsveiligheid en bepalen we de nierfunctie. Vervolgens richten we ons op het hoofdonderwerp <em>UV-Vis spectroscopie</em>. Dit onderwerp komt uitgebreid aan bod tijdens het vak <em>Practicum bio-analytische chemie</em> dat gegeven wordt in periode 5 van het eerste jaar. De scripts die je hier gaat programmeren komen dan ook zeker van pas!</p>
-<div class="admonition info">
-<p class="admonition-title">Operatoren</p>
-<p>Het is goed om te weten hoe je in Python moet optellen, aftrekken, vermenigvuldigen, delen en machtsverheffen, en hoe je van strings een integer of een floating point number kunt maken met <code class="language-py highlight"><span class="nb">int</span><span class="p">()</span></code> en <code class="language-py highlight"><span class="nb">float</span><span class="p">()</span></code>.</p>
-</div>
 <h2 id="stralingsveiligheid">Stralingsveiligheid<a class="headerlink" href="#stralingsveiligheid" title="Permanent link">&para;</a></h2>
 <p>Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.</p>
 <p>Omdat de exacte hoeveelheid ontvangen straling wordt bijgehouden met badges die de medewerkers op hun lichaam dragen is het vaak voldoende om voor de berekeningen gebruik te maken van een vuistregel:</p>
@@ -721,15 +745,9 @@ H = \gamma \frac{A t}{r^2},
 <p class="admonition-title">Stralingsveiligheid</p>
 <p>In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule 1 de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.</p>
 <ol>
-<li>
-<p>Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld <code class="language-py highlight"><span class="n">A</span> <span class="o">=</span> <span class="o">...</span></code>. Print het resultaat van je berekening. Commit je code.</p>
-</li>
-<li>
-<p>Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.</p>
-</li>
-<li>
-<p>Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn bovenaan je script, maar aan de gebruiker worden gevraagd. Commit.</p>
-</li>
+<li>Schrijf een script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>radiation_dose.py</code> waarin je berekent wat de ontvangen stralingsdosis is als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld <code class="language-py highlight"><span class="n">A</span> <span class="o">=</span> <span class="o">...</span></code>. Print het resultaat van je berekening. Voor deze waardes zou je een stralingsdosis van 0,021 µSv moeten vinden. Commit je code.</li>
+<li>Nadat je de dosis print voeg je een aantal checks toe en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Speel met de waardes van afstand, tijd en activiteit om je checks uit te testen. Commit.</li>
+<li>Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn bovenaan je script, maar aan de gebruiker worden gevraagd. Commit.</li>
 </ol>
 </div>
 <div class="admonition opdracht-meer">
@@ -790,7 +808,7 @@ H = \gamma \frac{A t}{r^2},
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Nierfunctie eGFR</p>
 <ol>
-<li>Schrijf een script waarbij je bovenin je script variabelen definieert voor geslacht, leeftijd en de kreatineconcentratie. Bereken vervolgens de eGFR. Tip: gebruik <code class="language-py highlight"><span class="k">if</span><span class="o">...</span><span class="k">else</span><span class="o">...</span></code>-statements om de goede formule te gebruiken. Print de gevonden waarde.</li>
+<li>Schrijf een script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>kidney_eGFR.py</code> waarbij je bovenin je script variabelen definieert voor geslacht, leeftijd en de kreatineconcentratie. Bereken vervolgens de eGFR. Tip: gebruik <code class="language-py highlight"><span class="k">if</span><span class="o">...</span><span class="k">else</span><span class="o">...</span></code>-statements om de goede formule te gebruiken. Print de gevonden waarde. Voor een vrouw van 55 met een kreatineconcentratie van 100 µmol/L vind je als eGFR-waarde 4,90 mL/min/1.73 m².</li>
 <li>Breid je script uit zodat ook het stadium (bijvoorbeeld G2), en een beschrijving van dat stadium (bijvoorbeeld "mild afgenomen nierfunctie") worden gegeven.</li>
 <li>Vraag de gebruiker om de waardes van de variabelen in plaats van dat je ze definieert in je script. Test met een paar verschillend inputs.</li>
 </ol>
@@ -816,7 +834,7 @@ D = \frac{C_1}{C_2}.
 <p class="admonition-title">Pipetteerschema</p>
 <ol>
 <li>Stel je hebt een stockoplossing van 0.10 mol/L. Bereken, met de hand, hoeveel van deze oplossing je nodig hebt om 5.0 mL oplossing te maken die een concentratie heeft van 0.025 mol/L? Hoeveel verdund is dat? Hoeveel oplosmiddel heb je dan nog nodig?</li>
-<li>Schrijf nu een script die deze berekening voor je uitvoert. Denk er weer aan om de formule te programmeren met grootheden, niet direct met getallen. Definieer de waardes van de grootheden weer bovenaan je script. Vergeet niet om je antwoord duidelijk te printen: verdunningsfactor, benodigde hoeveelheid stockoplossing, benodigde hoeveelheid oplosmiddel.</li>
+<li>Schrijf nu een script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>pipetting_scheme.py</code> die deze berekening voor je uitvoert. Denk er weer aan om de formule te programmeren met grootheden, niet direct met getallen. Definieer de waardes van de grootheden weer bovenaan je script. Vergeet niet om je antwoord duidelijk te printen: verdunningsfactor, benodigde hoeveelheid stockoplossing, benodigde hoeveelheid oplosmiddel.</li>
 <li>Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010, 0.005 en 0.000 mol/L.</li>
 <li>Het kan soms handig zijn om de resultaten van je berekeningen te bewaren voor later, en pas op een later moment de resultaten te printen, of op te slaan in een bestand, of op een andere manier te gebruiken. Om dat te oefenen passen we ons script aan zodat de resultaten eerst worden bewaard en pas later worden geprint. Maak een lijst aan voor iedere grootheid die je wilt berekenen en bewaar het resultaat in die lijst, maar print niets binnen de for-loop. Als allerlaatste onderdeel van je script print je in één keer de resultaten.</li>
 </ol>
@@ -895,9 +913,15 @@ S = ac_s + b,
 met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de helling $a$ en asafsnijding $b$ de kalibratieparameters.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">IJken van de UV-Vis spectrometer</p>
+<p>Lees, voordat je aan de opdracht begint, de <a href="../package-lmfit/">appendix over lmfit</a>. Dit is een Python package dat bedoeld is voor het fitten van een model aan meetgegevens. Je moet even leren hoe het werkt, maar het scheelt je heel veel programeerwerk.</p>
 <ol>
-<li>Bepaal, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in en fit aan formule 8. </li>
-<li>Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41.</li>
+<li>Schrijf een script <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>uv_vis_calibration.py</code>.</li>
+<li>Importeer de functionaliteit uit lmfit.</li>
+<li>Definieer twee variabelen met de meetgegevens uit bovenstaande tabel.</li>
+<li>Definieer het model aan de hand van vergelijking 8 en voer de fit uit.</li>
+<li>Print de waardes en de onzekerheden van de parameters $a$ en $b$.</li>
+<li>Controleer, met behulp van Tailor, de kalibratieparameters. Voer daartoe bovenstaande metingen in in een nieuw Tailor project en fit aan formule 8. Zijn de waardes en onzekerheden dezelfde of zijn er verschillen?</li>
+<li>Bepaal, met behulp van je ijking, de concentratie stof in een onbekend monster met een absorptiesignaal van 0.41. Doe dit in je Pythonscript.</li>
 </ol>
 </div>
 
