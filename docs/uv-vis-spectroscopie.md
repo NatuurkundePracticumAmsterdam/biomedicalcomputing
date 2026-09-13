@@ -20,10 +20,8 @@ Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, 
 
     In deze opdracht ga je een rekentool ontwikkelen die stralingsmedewerkers kunnen gebruiken om in te schatten of ze veilig kunnen werken. Voor cesium-137, een veelgebruikte radioactieve isotoop, is de gammaconstante gelijk aan $0.084 \, \mu\text{Sv} \, \text{m}^2 \, \text{MBq}^{-1} \, \text{h}^{-1}$. Tip: als je in formule 1 de eenheden meter, megabecquerel en uur gebruikt vallen de eenheden weg en is je antwoord vanzelf in microsievert.
 
-    1. Bereken de ontvangen stralingsdosis als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
-
-    2. Nadat je de dosis print doe je een aantal checks en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Commit.
-
+    1. Schrijf een script {{file}}`radiation_dose.py` waarin je berekent wat de ontvangen stralingsdosis is als je gedurende twee uur werkt met een bron met een activiteit van 2 MBq op een afstand van 4 m. Gebruik in de berekening de formule met letters en vul niet de getallen direct in. Bovenaan je script definieer je dan de waardes, bijvoorbeeld `#!py A = ...`. Print het resultaat van je berekening. Commit je code.
+    2. Nadat je de dosis print voeg je een aantal checks toe en print je, zonodig, nog wat meer informatie. Jaarlijks ontvang je via natuurlijke weg ongeveer 2 mSv aan straling. Als je volgens je berekening méér ontvangt wil je dat wel weten. Meer dan 2 Sv (dus 2000 mSv) is dodelijk. Minder dan 1 mSv mag je als veilig beschouwen. Speel met de waardes van afstand, tijd en activiteit om je checks uit te testen. Commit.
     3. Pas nu je script aan zodat de getallen voor activiteit, afstand en verblijfsduur niet vast gedefinieerd zijn bovenaan je script, maar aan de gebruiker worden gevraagd. Commit.
 
 !!! opdracht-meer "Gammaconstantes"
