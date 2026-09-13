@@ -156,6 +156,7 @@ met het absorbtiesignaal $S$, de concentratie van het monster $c_s$, en met de h
 
     Lees, voordat je aan de opdracht begint, de [appendix over lmfit](package-lmfit.md). Dit is een Python package dat bedoeld is voor het fitten van een model aan meetgegevens. Je moet even leren hoe het werkt, maar het scheelt je heel veel programeerwerk.
 
+    1. Schrijf een script {{file}}`uv_vis_calibration.py`.
     1. Importeer de functionaliteit uit lmfit.
     1. Definieer twee variabelen met de meetgegevens uit bovenstaande tabel.
     1. Definieer het model aan de hand van vergelijking 8 en voer de fit uit.
