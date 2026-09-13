@@ -65,7 +65,7 @@ Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te ge
 
 !!! opdracht-basis "Nierfunctie eGFR"
 
-    1. Schrijf een script waarbij je bovenin je script variabelen definieert voor geslacht, leeftijd en de kreatineconcentratie. Bereken vervolgens de eGFR. Tip: gebruik `#!py if...else...`-statements om de goede formule te gebruiken. Print de gevonden waarde.
+    1. Schrijf een script {{file}}`kidney_eGFR.py` waarbij je bovenin je script variabelen definieert voor geslacht, leeftijd en de kreatineconcentratie. Bereken vervolgens de eGFR. Tip: gebruik `#!py if...else...`-statements om de goede formule te gebruiken. Print de gevonden waarde. Voor een vrouw van 55 met een kreatineconcentratie van 100 µmol/L vind je als eGFR-waarde 4,90 mL/min/1.73 m².
     2. Breid je script uit zodat ook het stadium (bijvoorbeeld G2), en een beschrijving van dat stadium (bijvoorbeeld "mild afgenomen nierfunctie") worden gegeven.
     3. Vraag de gebruiker om de waardes van de variabelen in plaats van dat je ze definieert in je script. Test met een paar verschillend inputs.
 
