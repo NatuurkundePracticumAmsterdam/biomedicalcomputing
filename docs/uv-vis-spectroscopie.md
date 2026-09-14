@@ -103,7 +103,7 @@ D = \frac{C_1}{C_2}.
 
     1. Stel je hebt een stockoplossing van 0.10 mol/L. Bereken, met de hand, hoeveel van deze oplossing je nodig hebt om 5.0 mL oplossing te maken die een concentratie heeft van 0.025 mol/L? Hoeveel verdund is dat? Hoeveel oplosmiddel heb je dan nog nodig?
     2. Schrijf nu een script {{file}}`pipetting_scheme.py` die deze berekening voor je uitvoert. Denk er weer aan om de formule te programmeren met grootheden, niet direct met getallen. Definieer de waardes van de grootheden weer bovenaan je script. Vergeet niet om je antwoord duidelijk te printen: verdunningsfactor, benodigde hoeveelheid stockoplossing, benodigde hoeveelheid oplosmiddel.
-    3. Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010, 0.005 en 0.000 mol/L.
+    3. Pas je script aan zodat hij in één keer een hele verdunningsreeks maakt. Tip: definieer een lijst van concentraties en gebruik een for-loop om je berekening voor iedere concentratie uit te voeren. Bepaald de verdunningsreeks voor concentraties 0.025, 0.020, 0.015, 0.010 en 0.005 mol/L.
     4. Het kan soms handig zijn om de resultaten van je berekeningen te bewaren voor later, en pas op een later moment de resultaten te printen, of op te slaan in een bestand, of op een andere manier te gebruiken. Om dat te oefenen passen we ons script aan zodat de resultaten eerst worden bewaard en pas later worden geprint. Maak een lijst aan voor iedere grootheid die je wilt berekenen en bewaar het resultaat in die lijst, maar print niets binnen de for-loop. Als allerlaatste onderdeel van je script print je in één keer de resultaten.
     
 <div id="opdr:tabellen-printen"></div>
@@ -116,6 +116,10 @@ D = \frac{C_1}{C_2}.
     betekent dat de getallen in totaal zeven karakters mogen innemen (de lengte van de tekst `kolom #`) en dat je, binnen die zeven karakters, twee cijfers achter de komma wilt. De `f` betekent dat je wilt dat Python het getal behandelt als een floating point number, ofwel een kommagetal.
 
     Pas je script voor het pipetteerschema aan zodat de resultaten worden weergegeven in een tabel. Schrijf een goede koptekst, tel de breedte van de kolommen en maak een mooi print-statement zodat alles netjes wordt uitgelijnd.
+
+!!! opdracht-meer "Delen door nul"
+
+    Voor een ijkcurve is het wel mooi als je ook een concentratie van nul maakt: alleen oplosmiddel. Maar als je de waarde $0.0$ toevoegt aan je programma krijg je een foutmelding. Pas je code aan zodat je, als de waarde nul is, niet crasht en alsnog een zinnig antwoord geeft.
 
 !!! opdracht-meer "Ritsen"
 
