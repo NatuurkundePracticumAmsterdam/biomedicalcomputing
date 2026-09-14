@@ -8,6 +8,10 @@ Deze sessie oefenen we eerst met berekeningen over stralingsveiligheid en bepale
 
 Ioniserende straling is gevaarlijk, maar kan ook heel nuttig zijn bij de behandeling van tumoren of bij diagnostiek. Het is dan wel belangrijk om ervoor te zorgen dat patiënten en zorgpersoneel zo min mogelijk straling ontvangen. Daarom zal een tandarts(assistent) ook altijd kort de behandelruimte verlaten op het moment dat er een röntgenfoto van je gebit wordt gemaakt. Doen ze dat niet, dan ontvangen ze de straling van tientallen, zo niet honderden, röntgenfoto’s per jaar. Ook bij het produceren van radioactieve isotopen of bij het doen van wetenschappelijk onderzoek kunnen medewerkers blootgesteld worden aan straling. Bij alfa- en bètastraling is het niet heel ingewikkeld om de medewerkers af te schermen. Bij gammastraling is dat wél een probleem: deze straling heeft een groot doordringend vermogen en is moeilijk af te schermen. Daarom worden regelmatig berekeningen gemaakt om de ontvangen equivalente dosis (in Sievert) te bepalen. Op deze manier kan in de gaten gehouden of een medewerker niet teveel straling ontvangt.
 
+!!! info "Aansluiting MNW-programma"
+
+    Bij het vak _Natuurkunde en Gezondheid_ (jaar 1, periode 5) leer je onder andere over de thema's geluid en straling. Het thema straling vind je terug in bijvoorbeeld de radiodiagnostiek en radiotherapie. Deze opdracht over stralingsveiligheid loopt daarop vooruit en laat je zien hoe je (stralings)berekeningen kunt programmeren.
+
 Omdat de exacte hoeveelheid ontvangen straling wordt bijgehouden met badges die de medewerkers op hun lichaam dragen is het vaak voldoende om voor de berekeningen gebruik te maken van een vuistregel:
 
 \begin{equation}
@@ -30,7 +34,12 @@ Met de ontvangen equivalente dosis $H$, de gammaconstante van de bron $\gamma$, 
 
 ## Nierfunctie
 
+
 Je nieren zijn een belangrijk orgaan. Je hebt er twee, en kunt er één missen, maar kunt absoluut niet zonder. Dit orgaan haalt afvalstoffen uit het bloed die je vervolgens uitplast. Mensen die een heel slechte nierfunctie hebben moeten gedialyseerd worden waarbij een machine gedurende een aantal uur de afvalstoffen uit het bloed haalt. Dit moet dan vaak zo’n drie keer per week. Als een arts vermoedt dat er mogelijk iets mis is met je nieren, kan je nierfunctie worden gemeten.
+
+!!! info "Aansluiting MNW-programma"
+
+    Bij het vak _Medische (Patho)fysiologie 1_ (jaar 1, periode 2 en 3) leer je onder andere over celmembraan transport, de werking van het hart op orgaanniveau, bloedvaten en bloeddrukregulatie, bloed en hemostase, nierfunctie en hersenfunctie. Deze opdracht over nierfunctie loopt hier op vooruit. Zo krijg je alvast een idee van hoe programmeren ingezet kan worden bij vraagstukken die je later in de opleiding tegenkomt.
 
 De eGFR-meting (_estimated Glomerular Filtration Rate_) meet de hoeveelheid kreatine in je bloed. Kreatine is een afvalproduct van de spieren en je nieren filteren dat uit het bloed, tenzij ze niet goed meer functioneren. Hoeveel kreatine er normaal gesproken in het bloed zit (en dus mág zitten) verschilt per persoon afhankelijk van de hoeveelheid spiermassa. Dit kan geschat worden op basis van het biologisch geslacht en de leeftijd van de patiënt. Aan de hand van de meting van de kreatineconcentratie, geslacht en leeftijd kan de glomerulaire filtratiesnelheid als schatting worden berekend aan de hand van de volgende empirische formules:
 
@@ -71,13 +80,11 @@ Artsen gebruiken verschillende categorieën (stadia) om de nierfunctie aan te ge
 
 ## UV-Vis spectroscopie
 
-!!! info "Practicum bio-analytische chemie (jaar 1, periode 5)"
+!!! info "Aansluiting MNW-programma"
+    
+    Bij het vak _Practicum Bio-analytische Chemie (jaar 1, periode 5)_ leer je onder andere over detectietechnieken om de concentratie van opgeloste stoffen te bepalen. De methode berust op de absorptie van licht bij specifieke golflengten, die karakteristiek zijn voor bepaalde stoffen. Om dit mogelijk te maken moet je via bekende concentraties een ijkcurve opstellen. Hiervoor gebruik je een verdunningsreeks die je tijdens het practicum zelf moet maken aan de hand van een pipetteerschema. De code die je gaat schrijven tijdens deze opdracht kun je later tijdens het practicum gebruiken.
 
-    _UV-Vis-spectroscopie is een veelgebruikte detectietechniek om de concentratie van opgeloste stoﬀen te bepalen. De methode berust op de absorptie van licht bij specifieke golflengten, die karakteristiek zijn voor een bepaalde stoﬀen. Volgens de wet van Lambert-Beer is deze absorptie recht evenredig met de concentratie, waardoor de concentratie van een stof in oplossing kan worden bepaald. In dit experiment wordt deze techniek toegepast om de hoeveelheid vitamine B12 in een vitaminepil te bepalen. Hiervoor wordt een kalibratielijn opgesteld met een standaardoplossing van vitamine B12, waarmee de concentratie in het monster kan worden berekend._
-
-    -- Handleiding UV-Vis experiment, practicum bio-analytische chemie voor MNW, Vrije Universiteit
-
-Naast bepalen hoeveel vitamine er écht zit in een voedingssupplement kun je met behulp van deze techniek ook vragen beaantwoorden als _Hoeveel cafeïne zit er in een energy drink?_, of _welke zonnebrand heeft een hogere spf-factor?_. Om nauwkeurig te kunnen bepalen wat de concentratie is van een bepaalde stof in een bepaald oplosmiddel moeten wel een paar stappen worden doorlopen.
+Naast bepalen hoeveel vitamine er écht zit in een voedingssupplement kun je met behulp van UV-Vis spectroscopie ook vragen beaantwoorden als _Hoeveel cafeïne zit er in een energy drink?_, of _welke zonnebrand heeft een hogere spf-factor?_. Om nauwkeurig te kunnen bepalen wat de concentratie is van een bepaalde stof in een bepaald oplosmiddel moeten wel een paar stappen worden doorlopen.
 
 In het experiment schijn je licht door je monster heen. De hoeveelheid licht die geabsorbeerd wordt is dan een maat voor de hoeveelheid stof. Daarvoor moet je wel weten hoeveel licht er normaal gesproken geabsorbeerd wordt door die stof. Daarvoor maak je heel nauwkeurig een oplossing met een bekende hoeveelheid stof (de _stockoplossing_) en die ga je vervolgens een aantal keer verdunnen zodat je veel verschillende concentraties hebt, van hoog naar laag, een _verdunningsreeks_. Die meet je allemaal door en zo kun je een ijklijn of kalibratiecurve maken. Als laatste meet je de onbekende hoeveelheid door en dan kun je op de ijklijn aflezen hoeveel stof er in de onbekende oplossing zit.
 
