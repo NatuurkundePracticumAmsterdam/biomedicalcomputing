@@ -9,7 +9,7 @@ Wil je meer weten over een Python-construct? Of wil je meer leren over Python? I
 Goede code is leesbaar, voor jezelf als je er later naar terugkijkt en voor anderen die ermee werken. Commentaar helpt daarbij. Commentaar is tekst die uitlegt wat de code doet, maar door Python negeert wordt. Je schrijft commentaar met een `#!py #`. Alles wat na het `#!py #` op dezelfde regel staat, wordt door Python genegeerd.
 
 Je kunt commentaar achter een regel code plaatsen, bijvoorbeeld om de eenheid van een grootheid aan te geven:
-```python
+```py
 heart_rate = 72  # beats per minute
 ```
 Ook kun je commentaar op een eigen regel plaatsen, vóór de code waar het bij hoort:
@@ -53,6 +53,11 @@ Een string (`#!py str`) is een stuk tekst. Dat kunnen letters zijn, maar ook cij
 module = "BMC"
 patient_id = "042"
 ```
+Strings ondersteunen [indexing en slicing](#indexing-en-slicing). Je kunt de lengte van een string opvragen met `#! len()`:
+```py
+module ="BMC"
+print(len(module))  # 3
+```
 
 ### Integer
 Een integer (`#!py int`) is een geheel getal, zonder decimalen. Het kan zowel een positief als een negatief getal zijn.
@@ -75,6 +80,32 @@ Een boolean (`#!py bool`) bevat één van de volgende twee waarden: `#!py True` 
 * `#!py 6 < 2` geeft `#!py False`
 
 Je kunt een boolean ook rechtstreeks toekennen aan een variabele. Let op: `#!py True` en `#!py False` schrijf je altijd met een hoofdletter.
+
+### Lists
+Een `#!py list` is een lijst van elementen. Deze lijst kan alle andere datatypes bevatten: strings, ints, floats, booleans en zelfs andere lists. Je kunt deze zelfs door elkaar gebruiken:
+```py
+base_positions = [428, 846, 3128, 5237]
+elements = ["H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne"]
+grades = [7.0, 7.0, 6.5, 8.5, 8.0]
+mix_and_match = [4, "times", 2.5, "is", 10]
+```
+Lists ondersteunen [indexing en slicing](#indexing-en-slicing). Je kunt de lengte van een lijst opvragen met `#! len()`:
+```py
+numbers = [1, 2, 3, 4, 5]
+print(len(numbers))  # 5
+```
+en elementen toevoegen aan een lijst met `#!py .append()`:
+```py
+numbers = [1, 2, 3]
+numbers.append(4)
+numbers.append(5)
+print(numbers)  # [1, 2, 3, 4, 5]
+
+new_list = []
+new_list.append(10)
+new_list.append(20)
+print(new_list)  # [10, 20]
+```
 
 ### Datatypes omzetten
 Je kunt een waarde van het ene datatype omzetten naar een ander datatype. Dit doe je met `#!py str()`, `#!py int()` en `#!py float()`:
