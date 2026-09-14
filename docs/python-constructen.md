@@ -213,6 +213,31 @@ Let op: `#!py ==` vergelijkt twee waarden, terwijl `=` een waarde toekent aan ee
         print("working age")
     ```
 
+## Indexing en slicing
+
+Van sommige datatypes, zoals strings en lists, kun je afzonderlijke elementen benaderen. Dit noem je _indexing_. Dit doe je door Python te vertellen welk element je wilt hebben (eerste, tweede, derde, laatste) door de _index_ tussen blokhaakjes te zetten:
+```py
+study = "MNW"
+print(study[0])  # M
+print(study[1])  # N
+print(study[2])  # W
+
+years = [2020, 2021, 2022, 2023, 2024, 2025, 2026, 2027, 2028, 2029]
+print(years[0])  # 2020
+print(years[5])  # 2025
+print(years[-1])  # 2029
+```
+Let op: zoals heel veel programmeertalen begint Python te tellen vanaf nul. Zet je een min-teken vóór de index, dan telt hij vanaf het eind terug: `-1` is het laatste element, `-2` het één-na-laatste, enzovoorts.
+
+Met _slicing_ kun je stukjes uit een lijst of string pakken met een _vanaf_ / _tot_-notatie. Als je de _vanaf_ weglaat dan begint hij aan het begin. Als je de _tot_ weglaat stopt hij aan het eind:
+```py
+module = "BiomedicalComputing"
+print(module[3:10])  # medical
+print(module[:10])  # Biomedical
+print(module[10:])  # Computing
+```
+Zowel indexing als slicing kunnen heel handig zijn in [for-loops](#indexeren-met-rangelen).
+
 ## `#!py if`-statements
 
 In een programma wil je soms specifieke acties uitvoeren afhankelijk van een voorwaarde. Stel dat je een lichaamstemperatuur uitleest: is de temperatuur te hoog, dan wil je een waarschuwing geven en is de temperatuur normaal, dan niet. Met een `#!py if`-statement kun je dit programmeren: 
