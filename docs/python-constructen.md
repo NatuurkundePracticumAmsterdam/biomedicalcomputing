@@ -106,6 +106,12 @@ new_list.append(10)
 new_list.append(20)
 print(new_list)  # [10, 20]
 ```
+Bij lists kun je ook bestaande elementen _vervangen_ met index-notatie:
+```py
+numbers = [1, 2, 4, 4, 5]  # oeps, de 3 vergeten
+numbers[2] = 3
+print(numbers)  # 1, 2, 3, 4, 5
+```
 
 ### Datatypes omzetten
 Je kunt een waarde van het ene datatype omzetten naar een ander datatype. Dit doe je met `#!py str()`, `#!py int()` en `#!py float()`:
