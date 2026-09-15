@@ -4,16 +4,18 @@ Met lmfit kun je een model fitten aan metingen, precies zoals je dat op het natu
 
 Tailor is handig als je snel verschillende dingen wil proberen en vergelijken en één of twee keer een set metingen wilt verwerken. Lmfit is handig als je een analyse vaker en op _precies dezelfde manier_ wilt herhalen. Run je script, en je weet _zeker_ dat je dezelfde fit doet als de vorige keer. Het is alleen wel meer typewerk en je moet je houden aan de 'spelregels'.
 
+We bespreken het gebruik van dit package stap voor stap. Als je dit al gelezen hebt en snel iets op wilt zoeken dan is de [samenvatting](#samenvattend) handig.
+
 ## Installatie
 
-Om lmfit te installeren in je venv, open een terminal in Visual Studio Code en type in:
+Om deze module te kunnen gebruiken, moet je deze eerst installeren in de virtuele omgeving. Open in Visual Studio Code een terminal via het dropdownmenu **Terminal** en kies **New Terminal**. Installeer vervolgens de module met:
 ```
 uv pip install lmfit
 ```
 
 ## Data invoeren
 
-Als je een fit wilt uitvoeren met lmfit dan moet je natuurlijk eerst de data definiëren. Dat kan door lists aan te maken. Je mag elke naam kiezen, maar voor dit voorbeeld nemen we $x$ en $y$:
+Als je een fit wilt uitvoeren met lmfit dan moet je natuurlijk eerst de data definiëren. Dat kan door lists aan te maken. Je mag elke naam kiezen, maar voor dit voorbeeld nemen we `x_data` en `y_data`.
 ```py
 x_data = [0, 1, 2, 3, 4, 5]
 y_data = [0, 1, 5, 8, 15, 27]

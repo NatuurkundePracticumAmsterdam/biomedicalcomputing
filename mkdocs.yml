@@ -71,6 +71,7 @@ nav:
   - Appendices:
     - python-constructen.md
     - package-lmfit.md
+    - package-matplotlib.md
 
 extra:
     arrow_rotate: ':fontawesome-solid-arrow-rotate-right:'
