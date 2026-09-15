@@ -14,6 +14,8 @@
         <link rel="prev" href="../python-constructen/">
       
       
+        <link rel="next" href="../package-matplotlib/">
+      
       
         
       
@@ -712,6 +714,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../package-matplotlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package: matplotlib
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -739,12 +769,13 @@
 <h1 id="package-lmfit">Package: lmfit<a class="headerlink" href="#package-lmfit" title="Permanent link">&para;</a></h1>
 <p>Met lmfit kun je een model fitten aan metingen, precies zoals je dat op het natuurkundepracticum gewend bent met Tailor te doen. Alleen: Tailor is een grafische applicatie die je niet aan kunt sturen met een Pythonscript. Met lmfit kan dat wel.</p>
 <p>Tailor is handig als je snel verschillende dingen wil proberen en vergelijken en één of twee keer een set metingen wilt verwerken. Lmfit is handig als je een analyse vaker en op <em>precies dezelfde manier</em> wilt herhalen. Run je script, en je weet <em>zeker</em> dat je dezelfde fit doet als de vorige keer. Het is alleen wel meer typewerk en je moet je houden aan de 'spelregels'.</p>
+<p>We bespreken het gebruik van dit package stap voor stap. Als je dit al gelezen hebt en snel iets op wilt zoeken dan is de <a href="#samenvattend">samenvatting</a> handig.</p>
 <h2 id="installatie">Installatie<a class="headerlink" href="#installatie" title="Permanent link">&para;</a></h2>
-<p>Om lmfit te installeren in je venv, open een terminal in Visual Studio Code en type in:
+<p>Om deze module te kunnen gebruiken, moet je deze eerst installeren in de virtuele omgeving. Open in Visual Studio Code een terminal via het dropdownmenu <strong>Terminal</strong> en kies <strong>New Terminal</strong>. Installeer vervolgens de module met:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uv pip install lmfit
 </span></code></pre></div></p>
 <h2 id="data-invoeren">Data invoeren<a class="headerlink" href="#data-invoeren" title="Permanent link">&para;</a></h2>
-<p>Als je een fit wilt uitvoeren met lmfit dan moet je natuurlijk eerst de data definiëren. Dat kan door lists aan te maken. Je mag elke naam kiezen, maar voor dit voorbeeld nemen we $x$ en $y$:
+<p>Als je een fit wilt uitvoeren met lmfit dan moet je natuurlijk eerst de data definiëren. Dat kan door lists aan te maken. Je mag elke naam kiezen, maar voor dit voorbeeld nemen we <code>x_data</code> en <code>y_data</code>.
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">27</span><span class="p">]</span>
 </span></code></pre></div></p>
