@@ -54,7 +54,7 @@ plt.ylabel("Position (m)")
 
 ## Het bereik van de assen
 
-Matplotlib schaalt de assen automatisch zodat de alle metingen te zien zijn, maar laat ook wat extra ruimte over. Daardoor komt het vaak voor dat een grafiek niet in de oorsprong begint. Je kunt het bereik van de assen aanpassen met:
+Matplotlib schaalt de assen automatisch zodat alle metingen te zien zijn, maar laat ook wat extra ruimte over. Daardoor komt het vaak voor dat een grafiek niet in de oorsprong begint. Je kunt het bereik van de assen aanpassen met:
 ```py
 plt.xlim(0, 5)
 plt.ylim(0, 30)
@@ -63,7 +63,7 @@ Bovenstaande code past het bereik van de x-as aan zodat hij begint bij 0 en loop
 
 ## Een legenda toevoegen
 
-Als je meerdere datasets plot dan is het handig om aan te geven welke dataset waarbij hoort. Je kunt dit doen met een legenda. Je moet dan wel bij je `#!py plt.plot()` aanroepen een label meegeven, en aan het eind van je plot-code een legenda maken. Doe dit pas nadat je alle datasets geplot hebt, anders is de legenda niet compleet:
+Als je meerdere datasets plot dan is het handig om aan te geven welke dataset waarbij hoort. Je kunt dit doen met een legenda. Je moet dan bij je `#!py plt.plot()` een label meegeven, en aan het eind van je plot-code  &mdash; maar vóór `#!py plt.show()` &mdash; een legenda maken. Maak de legenda pas nadat je alle datasets geplot hebt, anders is de legenda niet compleet:
 ```py
 plt.plot(x_data, y_data, label="Fast car")
 plt.plot(x_data, y2_data, label="Slow car")
