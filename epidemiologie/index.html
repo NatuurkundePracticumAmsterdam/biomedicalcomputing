@@ -434,12 +434,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#scenarios-vergelijken" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -447,6 +442,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -976,8 +976,60 @@ In het eerste geval wordt $y$ tegen $x$ uitgezet. In het tweede geval wordt voor
 <p>De beginwaarden en parameters staan nu vast in het script. Met <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> kun je via de terminal opvragen wat deze waarden zijn.</p>
 <p>Pas je code aan zodat de beginwaarden en parameters via <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> worden opgevraagd. Zorg dat de invoer ook daadwerkelijk gebruikt wordt. Houd er rekening mee dat <code class="language-py highlight"><span class="nb">input</span><span class="p">()</span></code> altijd een string teruggeeft, zet de invoer dus om naar het juiste type. Commit. </p>
 </div>
-<h2 id="scenarios-vergelijken">Scenario's vergelijken<a class="headerlink" href="#scenarios-vergelijken" title="Permanent link">&para;</a></h2>
+<h3 id="scenarios-vergelijken">Scenario's vergelijken<a class="headerlink" href="#scenarios-vergelijken" title="Permanent link">&para;</a></h3>
 <p>Nu het model geschreven is, kunnen we gaan simuleren. We leggen verschillende scenario's naast elkaar en kijken hoe een ziekte zich verspreidt door een populatie. </p>
+<div id="opdr:seizoensgriep"></div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Seizoensgriep</p>
+<p>We gebruiken het SIR-model om een uitbraak van seizoensgriep te simuleren en onderzoeken het effect van $\gamma$ op het verloop van de uitbraak.</p>
+<ol>
+<li>Simuleer drie scenario's met $\gamma = 0.2$, $\gamma = 0.25$ en $\gamma = 0.33$. Gebruik in alle scenario's $\beta = 0.5$ en een totale populatie van 2000 personen. Bij de start van de uitbraak zijn 10 personen geïnfecteerd en is nog niemand hersteld. Begin bij elk scenario met een simulatie van 50 dagen en maak een plot. Bepaal aan de hand van elke plot of de simulatie langer moet lopen. Tip: nu je code in functies hebt geplaatst, kun je <code>simulate_sir()</code> en <code>plot_sir()</code> onderaan je bestand meerdere keren aanroepen.</li>
+<li>
+<p>Lees voor elk scenario onderstaande informatie uit de grafiek af. Maak op papier een tabel waarin je deze waarden noteert.</p>
+<ul>
+<li>Het hoogste aantal geïnfecteerde personen</li>
+<li>De dag waarop het hoogste aantal geïnfecteerde personen voorkomt</li>
+<li>Het hoogste aantal herstelde personen</li>
+<li>Het laagste aantal vatbare personen</li>
+</ul>
+</li>
+<li>
+<p>Vergelijk de drie scenario's. Wat verandert er als $\gamma$ groter wordt? Onderbouw je antwoord met de gegevens die je in je tabel hebt genoteerd.</p>
+</li>
+</ol>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Waarden automatisch bepalen</p>
+<p>Je hebt de waarden in de <a href="#opdr:seizoensgriep"><em>opdracht Seizoensgriep</em></a> uit grafieken afgelezen. Python kan deze waarden ook bepalen vanuit de lijsten. </p>
+<p>We gebruiken in dit voorbeeld de ljst <code>infected</code>. In deze lijst staat voor elke dag het aantal geïnfecteerde personen.  Gebruik <code class="language-py highlight"><span class="nb">max</span><span class="p">()</span></code> om het hoogste aantal personen in een compartiment te vinden:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">highest_infected</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">infected</span><span class="p">)</span>
+</span></code></pre></div>
+Met <code class="language-py highlight"><span class="o">.</span><span class="n">index</span><span class="p">()</span></code> kun je vervolgens bepalen op welke plaats dat hoogste aantal in de lijst <code>infected</code> staat:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">peak_index</span> <span class="o">=</span> <span class="n">infected</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">highest_infected</span><span class="p">)</span>
+</span></code></pre></div>
+In deze simulatie is die plaats toevallig gelijk aan de dag van de piek, omdat de lijst <code>time</code> bij dag 0 begint. Netter is om de bijbehorende dag uit de lijst <code>time</code> op te vragen: 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">peak_day</span> <span class="o">=</span> <span class="n">time</span><span class="p">[</span><span class="n">peak_index</span><span class="p">]</span>
+</span></code></pre></div></p>
+<ol>
+<li>Pas de code. Laat je programma voor elk scenario de volgende informatie in de terminal printen:<ul>
+<li>Het hoogste aantal geïnfecteerde personen</li>
+<li>De dag waarop het hoogste aantal geïnfecteerde personen voorkomt</li>
+<li>Het hoogste aantal herstelde personen</li>
+<li>Het laagste aantal vatbare personen</li>
+</ul>
+</li>
+<li>Komen de waarden die je programma berekent overeen met de waarden die je eerder uit de grafieken hebt afgelezen? Commit.</li>
+</ol>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Griepgolf</p>
+<p>In de winter hebben mensen vaker en langer contact binnenshuis. Dat kan de verspreiding van griep bevorderen. In deze opdracht onderzoeken we hoe zo'n winterscenario de uitkomst van het model verandert. </p>
+<ol>
+<li>Je wilt in de simulatie weergeven dat mensen vaker en langer contact met elkaar hebben. Welke parameter verander je daarvoor? </li>
+<li>Vergelijk een winterscenario met een basisscenario. Gebruik voor het basisscenario $\beta = 0.5$ en $\gamma = 0.25$. Verander in het winterscenario alleen de parameter uit de vorige vraag, houd alle andere parameters en beginwaarden gelijk. Probeer eerst de waarde 0.6 en vervolgens ook andere waarden. Maak een plot van zowel het basisscenario als de verschillende winterscenario's. </li>
+<li>Wat is het effect van een hogere waarde voor deze parameter op de griepgolf? Waar blijkt dat uit?</li>
+</ol>
+</div>
 <div class="footnote">
 <hr />
 <ol>
