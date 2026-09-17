@@ -475,14 +475,14 @@ print_results(BMI)
 ```
 Kijk goed naar de informatie die bij iedere stap nodig is (tussen haakjes) en de informatie die teruggegeven wordt (vóór het is-gelijk-teken). Een functie definieer je met `#!py def functie_naam()` en kun je dan verderop in je script aanroepen:
 ```py
-def get_square_number(n):
+def get_squared_number(n):
     return n**2
 
-print(get_square_number(4))  # 16
-print(get_square_number(5))  # 25
-print(get_square_number(12))  # 144
+print(get_squared_number(4))  # 16
+print(get_squared_number(5))  # 25
+print(get_squared_number(12))  # 144
 ```
-De functie `#!py get_square_number(n)` accepteert de _parameter_ `n`. De _waardes_ die je meegeeft als parameter noem je _arguments_ (hier 4, 5 en 12). In de _body_ van de functie staat de code en kun je de parameter gebruiken als variabele en heeft die dus de waarde van het argument. Wil je iets teruggeven als resultaat, dan kan dat met `#!py return` gevolgd door de _return value_. Wil je meerdere waardes teruggeven dan kun je ze scheiden met een komma:
+De functie `#!py get_squared_number(n)` accepteert de _parameter_ `n`. De _waardes_ die je meegeeft als parameter noem je _arguments_ (hier 4, 5 en 12). In de _body_ van de functie staat de code en kun je de parameter gebruiken als variabele en heeft die dus de waarde van het argument. Wil je iets teruggeven als resultaat, dan kan dat met `#!py return` gevolgd door de _return value_. Wil je meerdere waardes teruggeven dan kun je ze scheiden met een komma:
 ```py
 def get_quotient_and_remainder(number, divisor):
     quotient = number // divisor
