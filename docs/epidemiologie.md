@@ -257,9 +257,51 @@ Tot nu toe het je de verschillende waarden laten printen in de terminal, maar ee
 
     Pas je code aan zodat de beginwaarden en parameters via `#!py input()` worden opgevraagd. Zorg dat de invoer ook daadwerkelijk gebruikt wordt. Houd er rekening mee dat `#!py input()` altijd een string teruggeeft, zet de invoer dus om naar het juiste type. Commit. 
 
-## Scenario's vergelijken
+### Scenario's vergelijken
 
 Nu het model geschreven is, kunnen we gaan simuleren. We leggen verschillende scenario's naast elkaar en kijken hoe een ziekte zich verspreidt door een populatie. 
 
+<div id="opdr:seizoensgriep"></div>
+!!! opdracht-basis "Seizoensgriep"
+    We gebruiken het SIR-model om een uitbraak van seizoensgriep te simuleren en onderzoeken het effect van $\gamma$ op het verloop van de uitbraak.
+    
+    1. Simuleer drie scenario's met $\gamma = 0.2$, $\gamma = 0.25$ en $\gamma = 0.33$. Gebruik in alle scenario's $\beta = 0.5$ en een totale populatie van 2000 personen. Bij de start van de uitbraak zijn 10 personen geïnfecteerd en is nog niemand hersteld. Begin bij elk scenario met een simulatie van 50 dagen en maak een plot. Bepaal aan de hand van elke plot of de simulatie langer moet lopen. Tip: nu je code in functies hebt geplaatst, kun je `simulate_sir()` en `plot_sir()` onderaan je bestand meerdere keren aanroepen.
+    2. Lees voor elk scenario onderstaande informatie uit de grafiek af. Maak op papier een tabel waarin je deze waarden noteert.
+        * Het hoogste aantal geïnfecteerde personen
+        * De dag waarop het hoogste aantal geïnfecteerde personen voorkomt
+        * Het hoogste aantal herstelde personen
+        * Het laagste aantal vatbare personen
+    
+    3. Vergelijk de drie scenario's. Wat verandert er als $\gamma$ groter wordt? Onderbouw je antwoord met de gegevens die je in je tabel hebt genoteerd.
 
+!!! opdracht-meer "Waarden automatisch bepalen"
 
+    Je hebt de waarden in de [_opdracht Seizoensgriep_](#opdr:seizoensgriep) uit grafieken afgelezen. Python kan deze waarden ook bepalen vanuit de lijsten. 
+    
+    We gebruiken in dit voorbeeld de ljst `infected`. In deze lijst staat voor elke dag het aantal geïnfecteerde personen.  Gebruik `#!py max()` om het hoogste aantal personen in een compartiment te vinden:
+    ```python
+    highest_infected = max(infected)
+    ```
+    Met `#!py .index()` kun je vervolgens bepalen op welke plaats dat hoogste aantal in de lijst `infected` staat:
+    ```python
+    peak_index = infected.index(highest_infected)
+    ```
+    In deze simulatie is die plaats toevallig gelijk aan de dag van de piek, omdat de lijst `time` bij dag 0 begint. Netter is om de bijbehorende dag uit de lijst `time` op te vragen: 
+    ```python
+    peak_day = time[peak_index]
+    ```
+
+    1. Pas de code. Laat je programma voor elk scenario de volgende informatie in de terminal printen:
+        * Het hoogste aantal geïnfecteerde personen
+        * De dag waarop het hoogste aantal geïnfecteerde personen voorkomt
+        * Het hoogste aantal herstelde personen
+        * Het laagste aantal vatbare personen
+    2. Komen de waarden die je programma berekent overeen met de waarden die je eerder uit de grafieken hebt afgelezen? Commit.
+
+!!! opdracht-basis "Griepgolf"
+
+    In de winter hebben mensen vaker en langer contact binnenshuis. Dat kan de verspreiding van griep bevorderen. In deze opdracht onderzoeken we hoe zo'n winterscenario de uitkomst van het model verandert. 
+
+    1. Je wilt in de simulatie weergeven dat mensen vaker en langer contact met elkaar hebben. Welke parameter verander je daarvoor? 
+    2. Vergelijk een winterscenario met een basisscenario. Gebruik voor het basisscenario $\beta = 0.5$ en $\gamma = 0.25$. Verander in het winterscenario alleen de parameter uit de vorige vraag, houd alle andere parameters en beginwaarden gelijk. Probeer eerst de waarde 0.6 en vervolgens ook andere waarden. Maak een plot van zowel het basisscenario als de verschillende winterscenario's. 
+    3. Wat is het effect van een hogere waarde voor deze parameter op de griepgolf? Waar blijkt dat uit?
