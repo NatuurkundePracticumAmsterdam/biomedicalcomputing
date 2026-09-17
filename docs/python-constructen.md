@@ -446,3 +446,90 @@ from math import pi, sin
 result = sin(pi / 2)
 print(result)
 ```
+
+## Functies
+
+Wanneer scripts langer worden is het lastiger om het overzicht te bewaren. Je kunt dan commentaarregels toevoegen om blokken te scheiden. Een heel eenvoudig voorbeeld:
+```py
+# get patient data (returns height, weight)
+height = float(input("Height (m): "))
+weight = float(input("Weight (kg): "))
+
+# calculate BMI (needs height, weight)
+BMI = weight / height**2
+
+# print results (needs BMI)
+print("The patient's BMI is", BMI)
+```
+Hier hebben we ook aangegeven welke informatie ieder blokje teruggeeft of juist nodig heeft (height, weight of BMI). Deze blokjes zijn nog kort, maar zodra ze langer worden is het voor het overzicht in je script veel makkelijker als die code er niet tussendoor staat:
+```py
+# get patient data (returns height, weight)
+# calculate BMI (needs height, weight)
+# print results (needs BMI)
+```
+Dat kan, met functies. Als je de stukken code in functies hebt gestopt (dat laten we verderop zien) dan kun je het hoofdbestanddeel van je script als volgt schrijven:
+```py
+height, weight = get_patient_data()
+BMI = calculate_BMI(height, weight)
+print_results(BMI)
+```
+Kijk goed naar de informatie die bij iedere stap nodig is (tussen haakjes) en de informatie die teruggegeven wordt (vóór het is-gelijk-teken). Een functie definieer je met `#!py def functie_naam()` en kun je dan verderop in je script aanroepen:
+```py
+def get_square_number(n):
+    return n**2
+
+print(get_square_number(4))  # 16
+print(get_square_number(5))  # 25
+print(get_square_number(12))  # 144
+```
+De functie `#!py get_square_number(n)` accepteert de _parameter_ `n`. De _waardes_ die je meegeeft als parameter noem je _arguments_ (hier 4, 5 en 12). In de _body_ van de functie staat de code en kun je de parameter gebruiken als variabele en heeft die dus de waarde van het argument. Wil je iets teruggeven als resultaat, dan kan dat met `#!py return` gevolgd door de _return value_. Wil je meerdere waardes teruggeven dan kun je ze scheiden met een komma:
+```py
+def get_quotient_and_remainder(number, divisor):
+    quotient = number // divisor
+    remainder = number % divisor
+    return quotient, remainder
+
+a, b = get_quotient_and_remainder(7, 5)
+print("7 divided by 5 is", a, "with a remainder of", b)
+```
+De namen `a` en `b` zijn niet per se slim gekozen maar illustreert dat de functie twee waardes teruggeeft (`quotient` and `remainder`) en dat je die dan in twee variabelen kunt vangen (hier `a` en `b`). Het maakt dus niet uit dat die verschillende namen hebben. Bovenstaand hebben we een functie `get_quotient_and_remainder()` met _parameters_ `number` en `divisor` en _return values_ `quotient` en `remainder` die we aanroepen met de _argumenten_ `7` en `5`.
+
+Schrijf de naam van functies in snake case, net als de namen van variabelen. Je kunt de naam vrij kiezen, maar gebruikelijk is het om de gebiedende wijs te gebruiken: `get_patient_data()`, `calculate_bmi()`, `print_results()`. Kies ook zoveel mogelijk namen waarmee je direct snapt wat de functie doet en je daar niet naar hoeft te raden. In bovenstaand voorbeeld zie je ook een ander veelgebruikt voordeel van functies: herhaaldelijk code uitvoeren kan door simpelweg de functie nog een keer aan te roepen. Je kunt ook op heel verschillende plekken in je code dezelfde functie aanroepen.
+
+Als je functies gaat gebruiken word je script in eerste instantie _langer_. Voor korte scripts heeft het gebruik van functies dus niet heel veel zin. Voor langere scripts of zodra er veel stappen gezet moeten worden geeft het gebruik van functies veel meer overzicht en gemak.
+
+### Samenvattend
+
+Terugkerend naar het oorspronkelijke voorbeeld kunnen we het script met functies schrijven als:
+=== "Met functies"
+    ```py
+    def get_patient_data():
+        height = float(input("Height (m): "))
+        weight = float(input("Weight (kg): "))
+        return height, weight
+
+
+    def calculate_BMI(height, weight):
+        return weight / height**2
+
+
+    def print_results(BMI):
+        print("The patient's BMI is", BMI)
+
+
+    height, weight = get_patient_data()
+    BMI = calculate_BMI(height, weight)
+    print_results(BMI)
+    ```
+=== "Zonder functies"
+    ```py
+    # get patient data (returns height, weight)
+    height = float(input("Height (m): "))
+    weight = float(input("Weight (kg): "))
+
+    # calculate BMI (needs height, weight)
+    BMI = weight / height**2
+
+    # print results (needs BMI)
+    print("The patient's BMI is", BMI)
+    ```
