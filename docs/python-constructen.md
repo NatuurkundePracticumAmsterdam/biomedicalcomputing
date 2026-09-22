@@ -496,6 +496,9 @@ De namen `a` en `b` zijn niet per se slim gekozen maar illustreert dat de functi
 
 Schrijf de naam van functies in snake case, net als de namen van variabelen. Je kunt de naam vrij kiezen, maar gebruikelijk is het om de gebiedende wijs te gebruiken: `get_patient_data()`, `calculate_bmi()`, `print_results()`. Kies ook zoveel mogelijk namen waarmee je direct snapt wat de functie doet en je daar niet naar hoeft te raden. In bovenstaand voorbeeld zie je ook een ander veelgebruikt voordeel van functies: herhaaldelijk code uitvoeren kan door simpelweg de functie nog een keer aan te roepen. Je kunt ook op heel verschillende plekken in je code dezelfde functie aanroepen.
 
+### Keyword arguments
+Zodra een functie meerdere parameters heeft kun je al snel in de war raken met argumenten. In bovenstaand voorbeeld hadden we de aanroep `#!py get_quotient_and_remainder(7, 5)`, maar wat zijn die 7 en 5 ook alweer? Zijn dat de _quotient_ en _remainder_, zoals de functienaam misschien doet vermoeden? Nee, juist niet! Het zijn de _number_ en _divisor_ die je op elkaar deelt. Het is daarom vaak handig om de niet alleen de argumenten 7 en 5 mee te geven, maar om dat te doen met de naam erbij: `#!py get_quotient_and_remainder(number=7, divisor=5)`. Dit heten _keyword arguments_. De namen moeten kloppen, anders krijg je een error. Een bijkomend voordeel is dat het nu niet uitmaakt in welke volgorde je de argumenten meegeeft want met de naam erbij weet Python welk getal waarin moet. Deze aanroep doet precies hetzelfde als de vorige: `#!py get_quotient_and_remainder(divisor=5, number=7)`, waarin we de argumenten hebben omgedraaid.
+
 Als je functies gaat gebruiken word je script in eerste instantie _langer_. Voor korte scripts heeft het gebruik van functies dus niet heel veel zin. Voor langere scripts of zodra er veel stappen gezet moeten worden geeft het gebruik van functies veel meer overzicht en gemak.
 
 ### Samenvattend
