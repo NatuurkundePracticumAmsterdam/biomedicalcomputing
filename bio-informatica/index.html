@@ -25,7 +25,7 @@
     
     
       
-        <title>Sessie 7: Bio-informatica - Biomedical Computing</title>
+        <title>Bio-informatica - Biomedical Computing</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sessie-7-bio-informatica" class="md-skip">
+        <a href="#bio-informatica" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sessie 7: Bio-informatica
+              Bio-informatica
             
           </span>
         </div>
@@ -240,7 +240,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 1: installatie van benodigde software
+    Installatie van benodigde software
   
 
     
@@ -267,7 +267,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 2: DNA-mutaties
+    DNA-mutaties
   
 
     
@@ -294,7 +294,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 3: UV-Vis spectroscopie
+    UV-Vis spectroscopie
   
 
     
@@ -321,7 +321,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 4: farmacokinetiek
+    Farmacokinetiek
   
 
     
@@ -348,7 +348,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 5: epidemiologie
+    Epidemiologie
   
 
     
@@ -375,7 +375,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 6: audiologie
+    Audiologie
   
 
     
@@ -411,7 +411,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 7: Bio-informatica
+    Bio-informatica
   
 
     
@@ -429,7 +429,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 7: Bio-informatica
+    Bio-informatica
   
 
     
@@ -509,7 +509,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 8: Bio-informatica (vervolg)
+    Bio-informatica (vervolg)
   
 
     
@@ -536,7 +536,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 9: Echografie
+    Echografie
   
 
     
@@ -563,7 +563,7 @@
   <span class="md-ellipsis">
     
   
-    Sessie 11 &amp; 12: vrije eindopdracht
+    Vrije eindopdracht
   
 
     
@@ -731,7 +731,7 @@
 
 
 
-<h1 id="sessie-7-bio-informatica">Sessie 7: Bio-informatica<a class="headerlink" href="#sessie-7-bio-informatica" title="Permanent link">&para;</a></h1>
+<h1 id="bio-informatica">Bio-informatica<a class="headerlink" href="#bio-informatica" title="Permanent link">&para;</a></h1>
 <p>Bio-informatica combineert, zoals de naam al doet vermoeden, <em>biologie</em> met <em>informatica</em>. Dat wil zeggen dat computers uitgebreid worden ingezet om onderzoek te doen naar biologische processen en aanverwante onderzoeksrichtingen. <a href="https://vu.nl/en/about-vu/faculties/faculty-of-science/more-about/bioinformatics-computer-science">Aan de VU</a> wordt vooral onderzoek gedaan naar hoe het genoom het gedrag van een cel bepaalt, op alle niveau's. Computers worden onder andere ingezet om uit grote hoeveelheden data te achterhalen hoe het DNA codeert voor bepaalde eiwitten, hoe deze zich vouwen en leiden tot een bepaalde eiwitstructuur, en hoe de verschillende moleculen in een cel de chemische processen sturen. Op deze manier kan goed bestudeerd worden hoe een DNA-mutatie leidt tot ziekte.</p>
 <p>In deze en de volgende sessie zullen we kennismaken met de basisbeginselen. We gaan de genetische code van chromosoom 11 downloaden, knippen daar één bepaald gen uit en bepalen voor welk eiwit het gen codeert. Vervolgens zoeken we op welk eiwit dit is en wat de functie daarvan is in het menselijk lichaam. Daarna gaan we verder met patiëntgegevens: welke patiënten hebben mutaties in dit gen en zijn deze mutaties schadelijk voor de gezondheid? We zullen hiervoor best wat werk moeten verrichten. Ben je uiteindelijk als wetenschapper aan het werk, dan gebruik je uitgebreide bibliotheken waarin al dat werk al is gedaan door andere wetenschappers, maar hier gaan we, als het ware, het wiel opnieuw uitvinden zodat je goed kunt zien welke stappen er nodig zijn.</p>
 <h2 id="fasta-bestanden">FASTA-bestanden<a class="headerlink" href="#fasta-bestanden" title="Permanent link">&para;</a></h2>
@@ -755,7 +755,8 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
 <ol>
 <li>Inlezen van tekst uit een bestand:
    <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pathlib</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">text</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;my_data.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">text</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;my_data.txt&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
 </span></code></pre></div></li>
 <li>Het splitsen van tekst in losse regels. Dit geeft een lijst van regels en verwijdert de 'enters' uit de tekst:
    <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
