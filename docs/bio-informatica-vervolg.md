@@ -1,4 +1,4 @@
-# Sessie 8: Bio-informatica (vervolg)
+# Bio-informatica (vervolg)
 
 ## Genen en coding sequences
 

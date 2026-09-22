@@ -1,4 +1,4 @@
-# Sessie 11 & 12: vrije eindopdracht
+# Vrije eindopdracht
 
 De laatste twee sessies staan in het teken van een vrije eindopdracht. Het doel is om datgene wat je de afgelopen weken hebt geleerd &mdash; en dat is nogal wat! &mdash; toe te passen op een (bio)medisch onderwerp dat je zelf interessant vindt. Hieronder staan een aantal suggesties, maar je mag ook met een eigen idee komen. Overleg dat dan wel even met de staf, zodat we samen kunnen inschatten of het plan haalbaar is.
 

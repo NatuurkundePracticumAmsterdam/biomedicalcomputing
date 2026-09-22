@@ -1,4 +1,4 @@
-# Sessie 1: installatie van benodigde software
+# Installatie van benodigde software
 
 In deze sessie heb je al flink wat code gezien en gelezen, maar je hebt nog niet zelf code geschreven. Voordat je dat kunt, moet je een aantal programma's installeren. Je hebt het volgende nodig:
 

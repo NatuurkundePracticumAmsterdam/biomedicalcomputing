@@ -1,4 +1,4 @@
-# Sessie 2: DNA-mutaties
+# DNA-mutaties
 
 Tot nu toe hebben we vooral code gelezen en voorspeld wat de uitkomst is. In deze sessie bouwen we daarop voort: we blijven code lezen, maar we gaan ook steeds meer zelf schrijven. Daarbij maken we gebruik van Python-constructen die we al kennen en maken we kennis met een aantal nieuwe mogelijkheden, zoals loops. Daarmee bouwen we stap voor stap toe naar een programma dat het DNA-probleem uit de vorige sessie kan oplossen. Het was immers best een karwei om met de hand al die baseparen te vergelijken en het was ook gemakkelijk om een mutatie over het hoofd te zien. Juist bij dit soort problemen kan programmeren een handige oplossing zijn.
 

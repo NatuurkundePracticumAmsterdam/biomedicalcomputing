@@ -1,4 +1,4 @@
-# Sessie 9: Echografie
+# Echografie
 
 ## Uitleg over de werking van Echografie
 

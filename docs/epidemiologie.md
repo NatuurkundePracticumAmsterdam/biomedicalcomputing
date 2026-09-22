@@ -1,4 +1,4 @@
-# Sessie 5: epidemiologie
+# Epidemiologie
 
 In de vorige sessie hebben we modellen gebouwd, uitkomsten gevisualiseerd en al gekeken naar wat er verandert als we een parameter aanpassen. Juist die laatste stap maakt een model krachtig. We kunnen het model dan gebruiken om verschillende scenario's door te rekenen en de uitkomsten te vergelijken. Dit noemen we _simuleren_, een veelgebruikte aanpak in de (bio)medische wetenschappen. 
 
