@@ -184,8 +184,9 @@ Voor $I$ en $R$ gebruik je dezelfde aanpak. En hoe kleiner $\Delta t$, hoe nauwk
 
     We gaan uit van een populatie van 2000 personen, waarvan aan het begin 10 personen besmet zijn en nog geen personen hersteld zijn. De parameters zijn $\beta = 0.5$ en $\gamma = 0.2$. Als tijdstap nemen we $\Delta t = 1$ dag.
 
-    1. Werk de eerste drie tijdstappen uit op papier. Maak een tabel met daarin $t$, $S$, $I$, $R$ en $N$. Begin bij $t=0$ en eindig bij $t=3$. Goed om te weten: het model behandelt de populatie als continu, ondanks dat een persoon in werkelijkheid niet deelbaar is. De waarden voor $S$, $I$ en $R$ kunnen daarom kommagetallen zijn. Rond voor deze opdracht de waarden af op één decimaal.
-    2. Bekijk je tabel. Neemt $S$ af over de tijd? Neemt $I$ toe? Wat gebeurt er met $R$? En blijft $N$ constant? Controleer je berekeningen als de uitkomsten niet overeenkomen met je verwachting.
+    1. Om een aantal tijdstappen uit te rekenen, bereken je bij elke tijdstap de nieuwe waarden voor $S$, $I$ en $R$. Voor $S$ gebruik je vergelijking 5. Schrijf zelf de vergelijkingen voor $I$ en $R$ op. Gebruik daarbij dezelfde numerieke aanpak als voor $S$.
+    2. Werk de eerste drie tijdstappen uit op papier. Maak een tabel met daarin $t$, $S$, $I$, $R$ en $N$. Begin bij $t=0$ en eindig bij $t=3$. Goed om te weten: het model behandelt de populatie als continu, ondanks dat een persoon in werkelijkheid niet deelbaar is. De waarden voor $S$, $I$ en $R$ kunnen daarom kommagetallen zijn. Rond voor deze opdracht de waarden af op één decimaal.
+    3. Bekijk je tabel. Neemt $S$ af over de tijd? Neemt $I$ toe? Wat gebeurt er met $R$? En blijft $N$ constant? Controleer je berekeningen als de uitkomsten niet overeenkomen met je verwachting.
 
 Nu je de eerste drie dagen met de hand hebt uitgerekend en je weet wat je voor elke tijdstap moet berekenen, gaan we het model programmeren. 
 
