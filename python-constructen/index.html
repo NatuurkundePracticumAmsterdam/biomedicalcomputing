@@ -907,6 +907,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#keyword-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keyword arguments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#samenvattend" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1398,6 +1409,8 @@ De functie <code class="language-py highlight"><span class="n">get_squared_numbe
 </span></code></pre></div>
 De namen <code>a</code> en <code>b</code> zijn niet per se slim gekozen maar illustreert dat de functie twee waardes teruggeeft (<code>quotient</code> and <code>remainder</code>) en dat je die dan in twee variabelen kunt vangen (hier <code>a</code> en <code>b</code>). Het maakt dus niet uit dat die verschillende namen hebben. Bovenstaand hebben we een functie <code>get_quotient_and_remainder()</code> met <em>parameters</em> <code>number</code> en <code>divisor</code> en <em>return values</em> <code>quotient</code> en <code>remainder</code> die we aanroepen met de <em>argumenten</em> <code>7</code> en <code>5</code>.</p>
 <p>Schrijf de naam van functies in snake case, net als de namen van variabelen. Je kunt de naam vrij kiezen, maar gebruikelijk is het om de gebiedende wijs te gebruiken: <code>get_patient_data()</code>, <code>calculate_bmi()</code>, <code>print_results()</code>. Kies ook zoveel mogelijk namen waarmee je direct snapt wat de functie doet en je daar niet naar hoeft te raden. In bovenstaand voorbeeld zie je ook een ander veelgebruikt voordeel van functies: herhaaldelijk code uitvoeren kan door simpelweg de functie nog een keer aan te roepen. Je kunt ook op heel verschillende plekken in je code dezelfde functie aanroepen.</p>
+<h3 id="keyword-arguments">Keyword arguments<a class="headerlink" href="#keyword-arguments" title="Permanent link">&para;</a></h3>
+<p>Zodra een functie meerdere parameters heeft kun je al snel in de war raken met argumenten. In bovenstaand voorbeeld hadden we de aanroep <code class="language-py highlight"><span class="n">get_quotient_and_remainder</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code>, maar wat zijn die 7 en 5 ook alweer? Zijn dat de <em>quotient</em> en <em>remainder</em>, zoals de functienaam misschien doet vermoeden? Nee, juist niet! Het zijn de <em>number</em> en <em>divisor</em> die je op elkaar deelt. Het is daarom vaak handig om de niet alleen de argumenten 7 en 5 mee te geven, maar om dat te doen met de naam erbij: <code class="language-py highlight"><span class="n">get_quotient_and_remainder</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">divisor</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></code>. Dit heten <em>keyword arguments</em>. De namen moeten kloppen, anders krijg je een error. Een bijkomend voordeel is dat het nu niet uitmaakt in welke volgorde je de argumenten meegeeft want met de naam erbij weet Python welk getal waarin moet. Deze aanroep doet precies hetzelfde als de vorige: <code class="language-py highlight"><span class="n">get_quotient_and_remainder</span><span class="p">(</span><span class="n">divisor</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span></code>, waarin we de argumenten hebben omgedraaid.</p>
 <p>Als je functies gaat gebruiken word je script in eerste instantie <em>langer</em>. Voor korte scripts heeft het gebruik van functies dus niet heel veel zin. Voor langere scripts of zodra er veel stappen gezet moeten worden geeft het gebruik van functies veel meer overzicht en gemak.</p>
 <h3 id="samenvattend">Samenvattend<a class="headerlink" href="#samenvattend" title="Permanent link">&para;</a></h3>
 <p>Terugkerend naar het oorspronkelijke voorbeeld kunnen we het script met functies schrijven als:</p>
