@@ -44,7 +44,7 @@ Eerst importeren we de module. Daarna maken we een lijst aan met de waarden van 
     Je schrijft een programma dat een toon van 1000 Hz genereert en afspeelt.
 
     1. Maak een nieuw bestand aan met de naam {{new_file}}`play_tone.py` en importeer daarin de module `sounddevice`. Definieer bovenaan in het bestand de frequentie van 1000 Hz en maak een lege lijst `values` aan om de waarden van de sinusgolf in op te slaan. 
-    2. Schrijf een for-loop om de lijst `values` te vullen met 44100 elementen van een sinusgolf, zodat de toon één seconde duurt. Laat de tijd &mdash; nodig voor de sinusgolf &mdash; starten bij 0 en verhoog deze bij elke iteratie met 1/44100. Commit.
+    2. Schrijf een loop om de lijst `values` te vullen met 44100 elementen van een sinusgolf, zodat de toon één seconde duurt. Laat de tijd &mdash; nodig voor de sinusgolf &mdash; starten bij 0 en verhoog deze bij elke iteratie met 1/44100. Commit.
     3. Speel de toon af en controleer of je de toon hoort. 
     4. Zorg ervoor dat het programma de frequentie print van de toon die wordt afgespeeld. Bijvoorbeeld: `Playing a tone of 1000 Hz.` Zet het print-statement vóór het afspelen van de toon. Controleer of je programma zowel print als de toon afspeelt. Commit.
 
