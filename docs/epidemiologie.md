@@ -124,7 +124,7 @@ Om zulke vragen te beantwoorden, maken epidemiologen gebruik van wiskundige mode
 
 !!! info "Aansluiting MNW-programma" 
 
-    In dit deel van de sessie simuleren we de verspreiding van infectieziekten met behulp van het SIR-model. Daarmee sluit de sessie aan bij het vak _Mathematische methoden_ (jaar 1, periode 5), waarbinnen onder andere stelsels van differentiaalvergelijkingen aan bod komen. Het SIR-model bestaat uit zo'n stelsel.  
+    In dit deel van de sessie simuleren we de verspreiding van infectieziekten met behulp van het SIR-model. Daarmee sluit de sessie aan bij het vak _Mathematische methoden_ (jaar 1, periode 5), waarbinnen onder andere stelsels van differentiaalvergelijkingen aan bod komen. Het SIR-model bestaat uit zo'n stelsel, en komt ook specifiek aan bod in de module systeembiologie van het vak _Basics of Bioinformatics and Systems Biology_ (jaar 2, periode 1).
 
 ### SIR-model
 
