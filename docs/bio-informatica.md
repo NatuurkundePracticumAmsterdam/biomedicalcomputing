@@ -44,19 +44,18 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
        joined = "".join(["apple", "banana", "lemon"])
        # applebananalemon
        ```
+    4. Voor het werken met stukjes uit een string of list (eerste element, laatste zes, etc.) heb je [indexing en slicing](python-constructen.md#indexing-en-slicing) nodig
 
 !!! opdracht-basis "Inlezen van FASTA-bestanden"
 
-    Maak een nieuw {{file}}`translate_gene.py`. Schrijf een functie `#!py read_fasta_file()` die het volgende doet:
+    Let op: je hebt de informatie uit het bovenstaande info-blok nodig bij het maken van deze opdracht. We gaan een functie schrijven die een FASTA-bestand inleest en de genetische code teruggeeft. We doen dat in stapjes en bij elk stapje zullen we iets printen om te controleren dat de code werkt. Pas daarna gaan we door met de volgende stap. Dit is een handige programmeerstrategie.
 
-    1. De functie accepteert een bestandsnaam.
-    1. Print dat je een FASTA-bestand inleest en hoe dat bestand heet.
-    1. Lees alle tekst in het bestand en splits dat in losse regels.
-    1. Print de header-regel zodat de gebruiker weet wát er wordt ingelezen.
-    1. Plak alle andere regels aan elkaar vast; dit is de sequentie.
-    1. Print de eerste zes nucleobasen, dan `...` en dan de laatste zes nucleabasen.
-    1. Geef de sequentie terug.
-    1. Roep de functie ook daadwerkelijk aan om {{file}}`IFITM1-cds.fna` in te lezen.
+    1. Maak een nieuw {{file}}`translate_gene.py`.
+    1. Maak een functie `#!py read_fasta_file()` die een bestandsnaam accepteert als parameter. Print dat je een FASTA-bestand inleest en hoe dat bestand heet. Roep de functie aan met de bestandsnaam `IFITM1-cds.fna`. Test je code; het print-statement zou moeten printen.
+    1. Lees alle tekst in het bestand en splits dat in losse regels (zie het info-blok). Print de _header_-regel zodat de gebruiker weet wát er wordt ingelezen. Test je code.
+    1. Plak alle andere regels aan elkaar vast zonder scheidingsteken; dit is de sequentie. Print deze.
+    1. Print nu _niet_ de hele sequentie, maar alleen de eerste zes nucleobasen, dan `...` en dan de laatste zes nucleobasen.
+    1. Geef de sequentie terug en, helemaal aan het eind van je programma, print deze ter controle. Als je zeker weet dat het werkt, mag dit laatste print-statement weer weg.
 
 ## Van sequentie naar eiwit
 
