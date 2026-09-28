@@ -47,18 +47,6 @@ Kies altijd een duidelijke, beschrijvende naam voor een variabele. Gebruik bij n
 
 Python kent verschillende datatypes. Een datatype bepaalt wat voor soort waarde een variabele bevat en daarmee ook wat Python ermee kan doen. Zo betekent `#!py +` afhankelijk van het datatype iets anders: `#!py 2 + 2` is optellen en geeft `#!py 4`, terwijl `#!py "2" + "2"` samenvoegen is en `#!py "22"` geeft. Pas je een bewerking toe op een datatype waar die niet voor bedoeld is, zoals `#!py "2" + 2`, dan geeft Python een foutmelding. 
 
-### String 
-Een string (`#!py str`) is een stuk tekst. Dat kunnen letters zijn, maar ook cijfers of een combinatie. Je schrijft een string altijd tussen aanhalingstekens.
-```python
-module = "BMC"
-patient_id = "042"
-```
-Strings ondersteunen [indexing en slicing](#indexing-en-slicing). Je kunt de lengte van een string opvragen met `#! len()`:
-```py
-module = "BMC"
-print(len(module))  # 3
-```
-
 ### Integer
 Een integer (`#!py int`) is een geheel getal, zonder decimalen. Het kan zowel een positief als een negatief getal zijn.
 ```python
@@ -80,6 +68,48 @@ Een boolean (`#!py bool`) bevat één van de volgende twee waarden: `#!py True` 
 * `#!py 6 < 2` geeft `#!py False`
 
 Je kunt een boolean ook rechtstreeks toekennen aan een variabele. Let op: `#!py True` en `#!py False` schrijf je altijd met een hoofdletter.
+
+### String 
+Een string (`#!py str`) is een stuk tekst. Dat kunnen letters zijn, maar ook cijfers of een combinatie. Je schrijft een string altijd tussen aanhalingstekens.
+```python
+module = "BMC"
+patient_id = "042"
+```
+Strings ondersteunen [indexing en slicing](#indexing-en-slicing). Je kunt de lengte van een string opvragen met `#! len()`:
+```py
+module = "BMC"
+print(len(module))  # 3
+```
+Strings kun je ook nog op allerlei andere manieren bewerken zoals het splitsen of samenvoegen van strings, of alles veranderen in UPPERCASE of juist lowercase letters, of het tellen van letters en nog veel meer. Een volledige lijst kun je in de [officiële documentatie](https://docs.python.org/3/builtins/stdtypes.html#string-methods) terugvinden. Een paar voorbeelden die we gebruiken in deze cursus bespreken we hier. Je kunt tekst dat uit meerdere regels bestaat opsplitsen in een lijst van regels:
+```py
+text = "Regel 1\nRegel 2"  # De \n betekent "nieuwe regel"
+# Regel 1
+# Regel 2
+
+lines = text.splitlines()
+# ['Regel 1', 'Regel 2']
+```
+Met `#!py .split()` kun je hetzelfde doen:
+```py
+text = "Regel 1\nRegel 2"  # De \n betekent "nieuwe regel"
+# Regel 1
+# Regel 2
+
+lines = text.split("\n")
+# ['Regel 1', 'Regel 2']
+```
+maar je kunt ook iets anders kiezen om te splitsen:
+```py
+text = "apple/banana/cherry"
+fruits = text.split("/")
+# ['apple', 'banana', 'cherry']
+```
+Het omgekeerde kun je doen met `#!py .join()`, waarmee je elementen uit een lijst aan elkaar plakt tot één string:
+```py
+names = ["Alice", "Bob", "Charlie"]
+text = " -- ".join(names)
+# Alice -- Bob -- Charlie
+```
 
 ### Lists
 Een `#!py list` is een lijst van elementen. Deze lijst kan alle andere datatypes bevatten: strings, ints, floats, booleans en zelfs andere lists. Je kunt deze zelfs door elkaar gebruiken:

@@ -38,10 +38,10 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
        ```
     3. Het aan elkaar plakken van stukken tekst, met of zonder scheidingstekens:
        ```py
-       text = "123".join(["apple", "banana", "lemon"])
+       joined = "123".join(["apple", "banana", "lemon"])
        # apple123banana123lemon
 
-       text = "".join(["apple", "banana", "lemon"])
+       joined = "".join(["apple", "banana", "lemon"])
        # applebananalemon
        ```
 
