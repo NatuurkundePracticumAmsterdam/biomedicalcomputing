@@ -134,13 +134,16 @@ Bij het maken van eiwitten wordt allereerst een gen afgelezen en wordt een stren
 
 !!! opdracht-basis "Aminozuursequentie"
 
-    Schrijf een functie `#!py get_aminoacid_sequence()` die het volgende doet:
+    We gaan een functie schrijven die, op basis van genetische code, de aminozuursequentie bepaalt. We doen dat weer in stapjes.
 
-    1. De functie accepteert een DNA-sequentie (bijvoorbeeld uit het FASTA-bestand).
-    1. Loop, met stappen van 3 over de sequentie en bepaal ieder codon.
-    1. Zoek het bijbehorende aminozuur op en voeg die toe aan een lijst.
-    1. Geef de lijst terug, minus het laatste (STOP) codon.
-    1. Roep de functie aan met de DNA-sequentie uit het FASTA-bestand en print de volledige lijst met aminozuren.
+    1. Kopieer bovenstaande dictionary in je {{file}}`translate_gene.py`-bestand. Plak de code bovenaan je script, maar _onder_ de import-statement(s).
+    1. Definieer, meteen onder de `#!py read_fasta-file()`-functie, een nieuwe functie `#!py get_aminoacid_sequence()` die een `dna_sequence` accepteert als parameter en deze print. Roep, onderin je script, de functie aan met de test-sequentie `TTTGGGTGA`. Test je code. Wat verwacht je nu te zien?
+    1. Schrijf een for-loop die een index `i` gebruikt om over de lengte van de DNA-sequentie te stappen. Maak stappen van 3, omdat een codon uit drie basen bestaat, en print de index bij elke stap. Wat verwacht je als uitvoer?
+    1. Gebruik de index in je for-loop om ieder codon uit de sequentie te bepalen. Print het codon, en controleer of het klopt.
+    1. Zoek bij ieder codon het bijbehorende aminozuur op en voeg die toe aan een lijst van aminozuren. Print aan het eind van je functie de hele lijst van aminozuren.
+    1. Geef de lijst terug, minus het laatste (STOP) codon. Bewaar het resultaat van de aanroep naar `#!py get_aminoacid_sequence()` en print deze. Klopt het resultaat?
+    1. Haal nu de (overbodig geworden) print-statements weg uit je `#!py get_aminoacid_sequence()`-functie. Te veel output maakt het onoverzichtelijk.
+    1. Roep de functie aan met de DNA-sequentie uit het FASTA-bestand in plaats van de test-sequentie en print de volledige lijst met aminozuren.
 
 Als het goed is begint de sequentie met Met, His, Lys en eindigt die op Arg, Gly, Tyr.
 
@@ -219,14 +222,14 @@ CODON_TO_AA1 = {
 ```
 
 !!! opdracht-basis "Compacte notatie"
-    Schrijf een nieuwe functie `#!py get_short_aminoacid_sequence()` die niet een lijst, maar een string teruggeeft met de éénletternotatie van de aminozuursequentie.
+    Schrijf een nieuwe functie `#!py get_short_aminoacid_sequence()` die niet een lijst, maar een string teruggeeft met de éénletternotatie van de aminozuursequentie. Gebruik als basis de functie `#!py get_aminoacid_sequence()`. Kopieer de code en pas die daarna aan voor je nieuwe functie.
 
 ## Proteomics
 
 Het vakgebied _proteomics_ bestudeert het geheel aan eiwitten in een cel, weefsel of monster: het _proteoom_. Terwijl DNA voor elke cel hetzelfde is verandert het proteoom voortdurend. Allereerst worden in verschillende typen cellen verschillende eiwitten tot expressie gebracht maar een cel reageert ook voortdurend op haar omgeving. Bijvoorbeeld bij een virusinfectie; eiwitten die betrokken zijn bij de afweer kunnen dan veel meer aanwezig zijn. Bij het bepalen van de betrokken eiwitten worden meestal enzymen gebruikt om alle eiwitten in kleine stukken te knippen, zogenaamde _peptidefragmenten_. Met een massaspectrometer wordt van alle stukken de massa bepaalt en met behulp van software wordt aan de hand van doe massa bepaald wat inhoud van de fragmenten zijn en daaruit wat de meest waarschijnlijke eiwitsequenties zijn. Een heel proces, maar zo eindig je met een aminozuursequentie die je kunt opzoeken in [een database](https://www.uniprot.org/blast). Wij hebben een andere weg bewandeld, maar hebben wél een aminozuursequentie.
 
 !!! opdracht-basis "Welke eiwit hebben we?"
-    Ga naar de [UniProt BLAST database](https://www.uniprot.org/blast) en plak de aminozuursequentie in het veld `Protein or nucleotide sequence` en bekijk het resultaat. Als je op het eiwit klikt in het zoekresultaat krijg je veel informatie, onder andere over de functie van het eiwit, en waar het voorkomt binnen een cel.
+    Ga naar de [UniProt BLAST database](https://www.uniprot.org/blast) en plak de aminozuursequentie in het veld `Protein or nucleotide sequence(s) in FASTA format.`. De sequentie hoeft, in tegenstelling tot wat het tekstveld suggereert, _niet_ in FASTA-formaat. Gewoon copy-pasten van je eigen output is voldoende. Bekijk het resultaat. Welk eiwit heb je gevonden? Als je op het eiwit klikt in het zoekresultaat krijg je heel veel informatie, onder andere over de functie van het eiwit, en waar het voorkomt binnen een cel.
 
 ## Genen en coding sequences
 
@@ -306,7 +309,7 @@ Van een gen weten we het volgende:
 
 !!! opdracht-basis "Zoek het eiwit"
 
-    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Zoek in de [UniProt database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
+    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Zoek in de [UniProt BLAST database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
 
 !!! opdracht-meer "Waar halen wij de informatie vandaan?"
 
