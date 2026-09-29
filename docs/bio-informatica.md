@@ -243,9 +243,9 @@ We hebben tot nu toe gewerkt met een _Coding DNA Sequence_, of CDS, van een gen.
 Wat niet helemaal duidelijk is in het plaatje is dat de de UTRs onderdeel zijn van de exonen. Als je van DNA naar eiwit wilt moet je dus het volgende stappenplan doorlopen:
 
 1. Zorg dat je het DNA kent van een volledig chromosoom.
-1. Knip een stuk uit, het gen.
-1. Bepaal welke stukjes de exonen zijn en plak die aan elkaar.
-1. Knip het middenstuk (zonder de UTRs) er uit, de CDS.
+1. Knip een stuk uit: het gen.
+1. Bepaal welke stukjes binnen het gen de exonen zijn en plak die aan elkaar.
+1. Knip het middenstuk (zonder de UTRs) er uit: de coding DNA sequence (CDS).
 1. Vertaal het CDS naar de eiwitsequentie.
 
 Informatie over genen en eiwitten zijn te vinden in verschillende databases, zoals die van de [National Center for Biotechnology Information](https://www.ncbi.nlm.nih.gov/datasets/gene/). Het hele menselijke genoom is daar ook te downloaden. Voor bovenstaande stappen heb je dus wel wat informatie nodig:
@@ -264,9 +264,9 @@ Deze informatie is niet eenvoudig te bepalen uit onderzoek, maar inmiddels is he
     1. Ga naar [https://www.ncbi.nlm.nih.gov/datasets/genome/](https://www.ncbi.nlm.nih.gov/datasets/genome/) en zoek op `Homo Sapiens`.
     1. Onder **Assembly** zie je `GRCh38.p14` met een groen vinkje, het zogenaamde "referentiegenoom". Klik daar op.
     1. Scroll naar beneden naar **Chromosomes** en klik op de regel `11` op het RefSeq-linkje `NC_000011.10`.
-    1. Rechtsbovenin staat in het klein `Send to:`. Klik daar op, kies voor **File** en verander het **Format** in `FASTA`. Klik dan op **Create File**.
+    1. Rechtsbovenin staat in het klein `Send to:`. Klik daar op, kies voor **File** en verander het **Format** in `FASTA`. Klik dan op **Create File**. Het kan makkelijk zijn om het {{file}}`sequence.fasta` bestand te hernoemen naar {{file}}`chromosome_11.fasta`.
 
-    Als je het bestand opent in Teksteditor (TextEditor) of Kladblok (Notepad) dan zie je bovenaan de bekende header, dan een hoop `NNNNN` van `uNknown` omdat de uiteindes van een DNA-streng zeer moeilijk te ontrafelen zijn, en als je verder naar beneden scrollt heel veel A, T, G en C. Chromosoom 11 bestaat uit 135.086.622 nucleobasen!
+    Als je het bestand opent in Teksteditor (TextEditor) of Kladblok (Notepad) dan zie je bovenaan de bekende header, dan een hoop `NNNNN` (de N van uNknown) omdat de uiteindes van een DNA-streng zeer moeilijk te ontrafelen zijn, en als je verder naar beneden scrollt heel veel A, T, G en C. Chromosoom 11 bestaat uit 135.086.622 nucleobasen!
 
 Voor IFITM1 geldt het volgende:
 
@@ -274,16 +274,17 @@ Voor IFITM1 geldt het volgende:
 1. Exon 2 loopt van base 314922 tot en met 315272.
 1. Binnen het geconstrueerde mRNA loopt de coding sequence van base 132 tot en met 509.
     
-Omdat de exon-coördinaten 'absoluut' zijn kun je die direct uit het chromosoom knippen. Je hoeft niet eerst het volledige gen te zoeken.
+Omdat de exon-coördinaten gegeven zijn ten opzichte van de start van het chromosoom kun je die direct uit het chromosoom knippen. Je hoeft niet eerst het volledige gen te zoeken.
 
 !!! opdracht-basis "Knip het exon"
 
     1. Maak een nieuw bestand {{file}}`gene_splicing.py` en kopieer daar je code uit {{file}}`translate_gene.py`.
-    1. Maak van de onderste regels commentaar zodat al je functies behouden blijven, maar het script niets doet als je het runt. Haal de regels niet weg, zodat je een geheugensteuntje hebt.
-    1. Gebruik je bestaande functies om het FASTA-bestand van chromosoom 11 in te lezen en bewaar dat in de variable `chromosome_11`.
-    1. Schrijf een functie `get_dna_region()` die het dna en een begin en eind als parameters accepteert, het stukje exon uitknipt en dat teruggeeft. Tip: in de genetica wordt de allereerste base in een chromosoom als base nummer 1 geteld. Denk na over waarom dit belangrijk is.
-    1. Knip exon 1 en exon 2 van het IFITM1 gen uit het chromosoom en plak ze aan elkaar. Dit is het stuk dat overeenkomt met het mRNA. Omdat we hier naar DNA-basen kijken, stop de gegevens in de variabele `mDNA`.
-    1. Knip de _coding DNA sequence_ uit het mDNA, maak de aminozuursequentie en vergelijk of dit overeenkomt met je eerder gevonden sequentie.
+    1. Maak van de onderste regels commentaar (gebruik de sneltoetscombinatie ++cmd+slash++ (macOS) / ++ctrl+slash++ (Windows)) zodat al je functies behouden blijven, maar het script niets doet wanneer je het runt. Haal de regels niet weg, zodat je een geheugensteuntje hebt.
+    1. Kijk naar je geheugensteuntje en gebruik nieuwe functie-aanroepen om het FASTA-bestand van chromosoom 11 in te lezen en bewaar dat in de variable `chromosome_11`.
+    1. Schrijf een functie `get_dna_region()` die het `dna` en een `begin` en `end` als parameters accepteert. De functie knipt een stukje uit het dna, van `begin` _tot en met_ `end` en geeft dat terug. Let op: in de genetica telt de _eerste base_ als base 1. Python telt anders. Je kunt de functie testen op een stukje test-dna. Knip base 3 t/m base 5 uit het onzin-dna "abcdefg". Welk antwoord verwacht je dan?
+    1. Gebruik je functie om exon 1 en exon 2 van het IFITM1 gen uit het chromosoom te knippen en plak ze aan elkaar. Dit is het stuk dat correspondeert met het mRNA. Omdat we hier nog naar DNA-basen kijken, stop je het aan elkaar geplakte stuk in de variabele `mDNA`.
+    1. Knip de _coding DNA sequence_ uit het mDNA en print die. Controleer dat het eerste codon "ATG" is, het start-codon, en controleer dat het laatste codon een stop-codon is.
+    1. Maak de korte aminozuursequentie. Je hoeft nu niet meer de hele CDS te printen, maar print wel de kort aminozuursequentie en vergelijk of dit overeenkomt met je eerder gevonden sequentie.
 
 ## De min-streng
 
