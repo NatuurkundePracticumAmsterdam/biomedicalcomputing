@@ -14,7 +14,7 @@
         <link rel="prev" href="../audiologie/">
       
       
-        <link rel="next" href="../bio-informatica-vervolg/">
+        <link rel="next" href="../echografie/">
       
       
         
@@ -487,37 +487,43 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#genen-en-coding-sequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Genen en coding sequences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-min-streng" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        De min-streng
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dna-mutaties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNA-mutaties
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bio-informatica-vervolg/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Bio-informatica (vervolg)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -591,10 +597,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -612,8 +618,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -762,26 +768,25 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
    <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
 </span></code></pre></div></li>
 <li>Het aan elkaar plakken van stukken tekst, met of zonder scheidingstekens:
-   <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">])</span>
+   <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">joined</span> <span class="o">=</span> <span class="s2">&quot;123&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">])</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># apple123banana123lemon</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">])</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">joined</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;lemon&quot;</span><span class="p">])</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># applebananalemon</span>
 </span></code></pre></div></li>
+<li>Voor het werken met stukjes uit een string of list (eerste element, laatste zes, etc.) heb je <a href="../python-constructen/#indexing-en-slicing">indexing en slicing</a> nodig</li>
 </ol>
 </div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Inlezen van FASTA-bestanden</p>
-<p>Maak een nieuw <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>translate_gene.py</code>. Schrijf een functie <code class="language-py highlight"><span class="n">read_fasta_file</span><span class="p">()</span></code> die het volgende doet:</p>
+<p>Let op: je hebt de informatie uit het bovenstaande info-blok nodig bij het maken van deze opdracht. We gaan een functie schrijven die een FASTA-bestand inleest en de genetische code teruggeeft. We doen dat in stapjes en bij elk stapje zullen we iets printen om te controleren dat de code werkt. Pas daarna gaan we door met de volgende stap. Dit is een handige programmeerstrategie.</p>
 <ol>
-<li>De functie accepteert een bestandsnaam.</li>
-<li>Print dat je een FASTA-bestand inleest en hoe dat bestand heet.</li>
-<li>Lees alle tekst in het bestand en splits dat in losse regels.</li>
-<li>Print de header-regel zodat de gebruiker weet wát er wordt ingelezen.</li>
-<li>Plak alle andere regels aan elkaar vast; dit is de sequentie.</li>
-<li>Print de eerste zes nucleobasen, dan <code>...</code> en dan de laatste zes nucleabasen.</li>
-<li>Geef de sequentie terug.</li>
-<li>Roep de functie ook daadwerkelijk aan om <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>IFITM1-cds.fna</code> in te lezen.</li>
+<li>Maak een nieuw <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>translate_gene.py</code>.</li>
+<li>Maak een functie <code class="language-py highlight"><span class="n">read_fasta_file</span><span class="p">()</span></code> die een bestandsnaam accepteert als parameter. Print dat je een FASTA-bestand inleest en hoe dat bestand heet. Roep de functie aan met de bestandsnaam <code>IFITM1-cds.fna</code>. Test je code; het print-statement zou moeten printen.</li>
+<li>Lees alle tekst in het bestand en splits dat in losse regels (zie het info-blok). Print de <em>header</em>-regel zodat de gebruiker weet wát er wordt ingelezen. Test je code.</li>
+<li>Plak alle andere regels aan elkaar vast zonder scheidingsteken; dit is de sequentie. Print deze.</li>
+<li>Print nu <em>niet</em> de hele sequentie, maar alleen de eerste zes nucleobasen, dan <code>...</code> en dan de laatste zes nucleobasen.</li>
+<li>Geef de sequentie terug en, helemaal aan het eind van je programma, print deze ter controle. Als je zeker weet dat het werkt, mag dit laatste print-statement weer weg.</li>
 </ol>
 </div>
 <h2 id="van-sequentie-naar-eiwit">Van sequentie naar eiwit<a class="headerlink" href="#van-sequentie-naar-eiwit" title="Permanent link">&para;</a></h2>
@@ -859,13 +864,16 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
 </div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Aminozuursequentie</p>
-<p>Schrijf een functie <code class="language-py highlight"><span class="n">get_aminoacid_sequence</span><span class="p">()</span></code> die het volgende doet:</p>
+<p>We gaan een functie schrijven die, op basis van genetische code, de aminozuursequentie bepaalt. We doen dat weer in stapjes.</p>
 <ol>
-<li>De functie accepteert een DNA-sequentie (bijvoorbeeld uit het FASTA-bestand).</li>
-<li>Loop, met stappen van 3 over de sequentie en bepaal ieder codon.</li>
-<li>Zoek het bijbehorende aminozuur op en voeg die toe aan een lijst.</li>
-<li>Geef de lijst terug, minus het laatste (STOP) codon.</li>
-<li>Roep de functie aan met de DNA-sequentie uit het FASTA-bestand en print de volledige lijst met aminozuren.</li>
+<li>Kopieer bovenstaande dictionary in je <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>translate_gene.py</code>-bestand. Plak de code bovenaan je script, maar <em>onder</em> de import-statement(s).</li>
+<li>Definieer, meteen onder de <code class="language-py highlight"><span class="n">read_fasta</span><span class="o">-</span><span class="n">file</span><span class="p">()</span></code>-functie, een nieuwe functie <code class="language-py highlight"><span class="n">get_aminoacid_sequence</span><span class="p">()</span></code> die een <code>dna_sequence</code> accepteert als parameter en deze print. Roep, onderin je script, de functie aan met de test-sequentie <code>TTTGGGTGA</code>. Test je code. Wat verwacht je nu te zien?</li>
+<li>Schrijf een for-loop die een index <code>i</code> gebruikt om over de lengte van de DNA-sequentie te stappen. Maak stappen van 3, omdat een codon uit drie basen bestaat, en print de index bij elke stap. Wat verwacht je als uitvoer?</li>
+<li>Gebruik de index in je for-loop om ieder codon uit de sequentie te bepalen. Print het codon, en controleer of het klopt.</li>
+<li>Zoek bij ieder codon het bijbehorende aminozuur op en voeg die toe aan een lijst van aminozuren. Print aan het eind van je functie de hele lijst van aminozuren.</li>
+<li>Geef de lijst terug, minus het laatste (STOP) codon. Bewaar het resultaat van de aanroep naar <code class="language-py highlight"><span class="n">get_aminoacid_sequence</span><span class="p">()</span></code> en print deze. Klopt het resultaat?</li>
+<li>Haal nu de (overbodig geworden) print-statements weg uit je <code class="language-py highlight"><span class="n">get_aminoacid_sequence</span><span class="p">()</span></code>-functie. Te veel output maakt het onoverzichtelijk.</li>
+<li>Roep de functie aan met de DNA-sequentie uit het FASTA-bestand in plaats van de test-sequentie en print de volledige lijst met aminozuren.</li>
 </ol>
 </div>
 <p>Als het goed is begint de sequentie met Met, His, Lys en eindigt die op Arg, Gly, Tyr.</p>
@@ -943,14 +951,127 @@ Het grootste deel van het bestand is de genetische code: de nucleobasen A, T, G 
 </span></code></pre></div></p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Compacte notatie</p>
-<p>Schrijf een nieuwe functie <code class="language-py highlight"><span class="n">get_short_aminoacid_sequence</span><span class="p">()</span></code> die niet een lijst, maar een string teruggeeft met de éénletternotatie van de aminozuursequentie.</p>
+<p>Schrijf een nieuwe functie <code class="language-py highlight"><span class="n">get_short_aminoacid_sequence</span><span class="p">()</span></code> die niet een lijst, maar een string teruggeeft met de éénletternotatie van de aminozuursequentie. Gebruik als basis de functie <code class="language-py highlight"><span class="n">get_aminoacid_sequence</span><span class="p">()</span></code>. Kopieer de code en pas die daarna aan voor je nieuwe functie.</p>
 </div>
 <h2 id="proteomics">Proteomics<a class="headerlink" href="#proteomics" title="Permanent link">&para;</a></h2>
 <p>Het vakgebied <em>proteomics</em> bestudeert het geheel aan eiwitten in een cel, weefsel of monster: het <em>proteoom</em>. Terwijl DNA voor elke cel hetzelfde is verandert het proteoom voortdurend. Allereerst worden in verschillende typen cellen verschillende eiwitten tot expressie gebracht maar een cel reageert ook voortdurend op haar omgeving. Bijvoorbeeld bij een virusinfectie; eiwitten die betrokken zijn bij de afweer kunnen dan veel meer aanwezig zijn. Bij het bepalen van de betrokken eiwitten worden meestal enzymen gebruikt om alle eiwitten in kleine stukken te knippen, zogenaamde <em>peptidefragmenten</em>. Met een massaspectrometer wordt van alle stukken de massa bepaalt en met behulp van software wordt aan de hand van doe massa bepaald wat inhoud van de fragmenten zijn en daaruit wat de meest waarschijnlijke eiwitsequenties zijn. Een heel proces, maar zo eindig je met een aminozuursequentie die je kunt opzoeken in <a href="https://www.uniprot.org/blast">een database</a>. Wij hebben een andere weg bewandeld, maar hebben wél een aminozuursequentie.</p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Welke eiwit hebben we?</p>
-<p>Ga naar de <a href="https://www.uniprot.org/blast">UniProt BLAST database</a> en plak de aminozuursequentie in het veld <code>Protein or nucleotide sequence</code> en bekijk het resultaat. Als je op het eiwit klikt in het zoekresultaat krijg je veel informatie, onder andere over de functie van het eiwit, en waar het voorkomt binnen een cel.</p>
+<p>Ga naar de <a href="https://www.uniprot.org/blast">UniProt BLAST database</a> en plak de aminozuursequentie in het veld <code>Protein or nucleotide sequence(s) in FASTA format.</code>. De sequentie hoeft, in tegenstelling tot wat het tekstveld suggereert, <em>niet</em> in FASTA-formaat. Gewoon copy-pasten van je eigen output is voldoende. Bekijk het resultaat. Welk eiwit heb je gevonden? Als je op het eiwit klikt in het zoekresultaat krijg je heel veel informatie, onder andere over de functie van het eiwit, en waar het voorkomt binnen een cel.</p>
 </div>
+<h2 id="genen-en-coding-sequences">Genen en coding sequences<a class="headerlink" href="#genen-en-coding-sequences" title="Permanent link">&para;</a></h2>
+<p>We hebben tot nu toe gewerkt met een <em>Coding DNA Sequence</em>, of CDS, van een gen. Je kunt hierbij direct afleiden wat de aminozuur- of eiwitsequentie wordt. Dit is echter niet het <em>volledige</em> gen. Verspreid over het DNA zitten <em>promotor sites</em>, waardoor de cel weet dat er een gen begint dat afgelezen moet worden. Vervolgens wordt het volledige gen afgelezen en gekopieerd naar <em>precursor messenger RNA</em> (pre-mRNA). Deze bevat een letterlijke vertaling van het hele gen, maar wordt niet direct gebruikt om eiwitten te maken. Zogeheten <em>spliceosomen</em> koppelen aan stukken in het pre-mRNA en knippen dat eruit. De uitgeknipte stukjes heten <em>intronen</em> en coderen dus niet voor het eiwit. De overgebleven <em>exonen</em> coderen wél voor het eiwit en vormen samen het <em>mature messenger RNA</em> ofwel het bekende mRNA. Vóór het startcodon en ná het stopcodon zitten nog stukjes gen die bedoeld zijn als koppelplaats voor enzymen en eiwitten om te helpen bij het vertalen van het mRNA naar een eiwit, de zogeheten <em>untranslated regions</em>, ofwel UTRs. Zie onderstaande afbeelding:</p>
+<figure>
+<p><img alt="Overzicht van hoe een gen naar een eiwit wordt vertaald" src="../figures/Exon.jpg" /></p>
+<figcaption>Bron: National Human Genome Research Institute (https://www.genome.gov/genetics-glossary/Exon)</figcaption>
+</figure>
+<p>Wat niet helemaal duidelijk is in het plaatje is dat de de UTRs onderdeel zijn van de exonen. Als je van DNA naar eiwit wilt moet je dus het volgende stappenplan doorlopen:</p>
+<ol>
+<li>Zorg dat je het DNA kent van een volledig chromosoom.</li>
+<li>Knip een stuk uit: het gen.</li>
+<li>Bepaal welke stukjes binnen het gen de exonen zijn en plak die aan elkaar.</li>
+<li>Knip het middenstuk (zonder de UTRs) er uit: de coding DNA sequence (CDS).</li>
+<li>Vertaal het CDS naar de eiwitsequentie.</li>
+</ol>
+<p>Informatie over genen en eiwitten zijn te vinden in verschillende databases, zoals die van de <a href="https://www.ncbi.nlm.nih.gov/datasets/gene/">National Center for Biotechnology Information</a>. Het hele menselijke genoom is daar ook te downloaden. Voor bovenstaande stappen heb je dus wel wat informatie nodig:</p>
+<ol>
+<li>Het chromosoomnummer.</li>
+<li>De locatie van het gen.</li>
+<li>De locatie van de exonen <em>binnen</em> gen.</li>
+<li>De locatie van het coderende deel wanneer je de exonen aan elkaar hebt geplakt.</li>
+</ol>
+<p>Deze informatie is niet eenvoudig te bepalen uit onderzoek, maar inmiddels is het menselijk genoom grotendeels ontcijferd en zijn deze gegevens te vinden in de databases. We gaan bovenstaand stappenplan doorlopen.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Download chromosoom 11</p>
+<p>Download chromosoom 11 van Canvas, óf doorloop onderstaande stappen om het zelf op te zoeken in de database:</p>
+<ol>
+<li>Ga naar <a href="https://www.ncbi.nlm.nih.gov/datasets/genome/">https://www.ncbi.nlm.nih.gov/datasets/genome/</a> en zoek op <code>Homo Sapiens</code>.</li>
+<li>Onder <strong>Assembly</strong> zie je <code>GRCh38.p14</code> met een groen vinkje, het zogenaamde "referentiegenoom". Klik daar op.</li>
+<li>Scroll naar beneden naar <strong>Chromosomes</strong> en klik op de regel <code>11</code> op het RefSeq-linkje <code>NC_000011.10</code>.</li>
+<li>Rechtsbovenin staat in het klein <code>Send to:</code>. Klik daar op, kies voor <strong>File</strong> en verander het <strong>Format</strong> in <code>FASTA</code>. Klik dan op <strong>Create File</strong>. Het kan makkelijk zijn om het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>sequence.fasta</code> bestand te hernoemen naar <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>chromosome_11.fasta</code>.</li>
+</ol>
+<p>Als je het bestand opent in Teksteditor (TextEditor) of Kladblok (Notepad) dan zie je bovenaan de bekende header, dan een hoop <code>NNNNN</code> (de N van uNknown) omdat de uiteindes van een DNA-streng zeer moeilijk te ontrafelen zijn, en als je verder naar beneden scrollt heel veel A, T, G en C. Chromosoom 11 bestaat uit 135.086.622 nucleobasen!</p>
+</div>
+<p>Voor IFITM1 geldt het volgende:</p>
+<ol>
+<li>Exon 1 loopt van base 314040 tot en met 314356.</li>
+<li>Exon 2 loopt van base 314922 tot en met 315272.</li>
+<li>Binnen het geconstrueerde mRNA loopt de coding sequence van base 132 tot en met 509.</li>
+</ol>
+<p>Omdat de exon-coördinaten gegeven zijn ten opzichte van de start van het chromosoom kun je die direct uit het chromosoom knippen. Je hoeft niet eerst het volledige gen te zoeken.</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Knip het exon</p>
+<ol>
+<li>Maak een nieuw bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>gene_splicing.py</code> en kopieer daar je code uit <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>translate_gene.py</code>.</li>
+<li>Maak van de onderste regels commentaar (gebruik de sneltoetscombinatie <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-slash">/</kbd></span> (macOS) / <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-slash">/</kbd></span> (Windows)) zodat al je functies behouden blijven, maar het script niets doet wanneer je het runt. Haal de regels niet weg, zodat je een geheugensteuntje hebt.</li>
+<li>Kijk naar je geheugensteuntje en gebruik nieuwe functie-aanroepen om het FASTA-bestand van chromosoom 11 in te lezen en bewaar dat in de variable <code>chromosome_11</code>.</li>
+<li>Schrijf een functie <code>get_dna_region()</code> die het <code>dna</code> en een <code>begin</code> en <code>end</code> als parameters accepteert. De functie knipt een stukje uit het dna, van <code>begin</code> <em>tot en met</em> <code>end</code> en geeft dat terug. Let op: in de genetica telt de <em>eerste base</em> als base 1. Python telt anders. Je kunt de functie testen op een stukje test-dna. Knip base 3 t/m base 5 uit het onzin-dna "abcdefg". Welk antwoord verwacht je dan?</li>
+<li>Gebruik je functie om exon 1 en exon 2 van het IFITM1 gen uit het chromosoom te knippen en plak ze aan elkaar. Dit is het stuk dat correspondeert met het mRNA. Omdat we hier nog naar DNA-basen kijken, stop je het aan elkaar geplakte stuk in de variabele <code>mDNA</code>.</li>
+<li>Knip de <em>coding DNA sequence</em> uit het mDNA en print die. Controleer dat het eerste codon "ATG" is, het start-codon, en controleer dat het laatste codon een stop-codon is.</li>
+<li>Maak de korte aminozuursequentie. Je hoeft nu niet meer de hele CDS te printen, maar print wel de kort aminozuursequentie en vergelijk of dit overeenkomt met je eerder gevonden sequentie.</li>
+</ol>
+</div>
+<h2 id="de-min-streng">De min-streng<a class="headerlink" href="#de-min-streng" title="Permanent link">&para;</a></h2>
+<p>De natuur heeft nog een verrassing voor ons in petto. Het FASTA-bestand bevat een lange lijst van de nucleobasen in chromosoom 11. Het probleem is dat dit maar één lijst is, terwijl het DNA <em>twee</em> strengen heeft. Slechts één van die twee strengen staat in het bestand. Deze streng noemt men de <em>plus-streng</em>. Dat is een afspraak. Het is gelukkig niet moeilijk om de andere streng, de <em>min-streng</em>, te achterhalen want tegenover iedere A ligt een T, tegenover iedere C een G, en omgekeerd. Toch wordt de situatie iets complexer.</p>
+<p>De machinerie in de cel zoekt binnen het DNA naar een <em>promotor site</em> en begint vanaf daar het gen af te lezen. Het probleem is dat zo'n promotor site niet altijd op de plus-streng ligt. In ongeveer de helft van de gevallen ligt die op de min-streng. Ook is het zo dat de min-streng in omgekeerde richting wordt afgelezen. Dus als de plus-streng 'van links naar rechts' wordt afgelezen, dan wordt de min-streng 'van rechts van links' afgelezen. Als we een gen hebben dat op de min-streng ligt dan moeten we een exon uitknippen uit de plus-streng, omkeren en complementeren (de 'andere' base bepalen).</p>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Reverse complement</p>
+<p>Werk verder in <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>gene_splicing.py</code>.</p>
+<ol>
+<li>Schrijf een functie <code>get_reverse_complement()</code> die een string met DNA-basen accepteert. De functie keert de string om, en geeft een string terug waarin elke A een T is geworden en omgekeerd, en iedere C een G en omgekeerd.</li>
+<li>Test je functie met een heel kort stuk verzonnen DNA en controleer het resultaat met de hand.</li>
+<li>Schrijf een functie <code>get_dna_minus_region()</code> die dna, begin en eind als parameters accepteert en dat je kunt gebruiken om een exon uit de min-streng te knippen. Deze functie knipt, keert om en complementeert. Tip: je had al een functie om te knippen en je hebt net een functie geschreven om om te keren en te complementeren. Gebruik die functies in plaats van dat je het nu weer opnieuw schrijft.</li>
+</ol>
+</div>
+<p>Van een gen weten we het volgende:</p>
+<ol>
+<li>Het ligt op de min-streng.</li>
+<li>Exon 1 loopt van base 5226930 tot en met 5227071.</li>
+<li>Exon 2 loopt van base 5226577 tot en met 5226799.</li>
+<li>Exon 3 loopt van base 5225464 tot en met 5225726.</li>
+<li>Binnen het geconstrueerde mRNA loopt de coding sequence van base 51 tot en met 494.</li>
+</ol>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Zoek het eiwit</p>
+<p>Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Zoek in de <a href="https://www.uniprot.org/blast">UniProt BLAST database</a> welk eiwit en welk gen dit is.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Waar halen wij de informatie vandaan?</p>
+<p>Hoe komen we aan bovenstaande informatie? Hoe wisten we dat dat gen op de min-streng ligt op chromosoom 11, en waar de exonen liggen? Als je wilt, kun je zelf de dataset opzoeken en analyseren.</p>
+<ol>
+<li>Ga naar <a href="https://www.ncbi.nlm.nih.gov/datasets/gene/">de genen databank van het NCBI</a>.</li>
+<li>Type in het veld <em>Gene symbol</em> de verkorte naam van het gen dat je bij de vorige opdracht hebt gevonden, en in het veld <em>Taxon</em> type en kies je <code>Homo sapiens</code>.</li>
+<li>Kies dan in de lijst het gen met goede symbool (helaas geeft de zoekfunctie veel meer terug).</li>
+<li>Klik dan op de blauwe <em>Download</em>-knop.</li>
+<li>Je kunt dan een aantal verschillende opties aangeven maar zorg dat in ieder geval <em>Product report</em> aangevinkt is en download de dataset.</li>
+<li>Pak het zip-bestand uit.</li>
+<li>Open, in Visual Code, het <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ncbi_dataset/data/product_report.jsonl</code>-bestand.</li>
+<li>De informatie is nu nog niet echt overzichtelijk. Klink rechtsonder in het VS Code venster op het woord <em>JSON Lines</em>.</li>
+<li>Kies dan <em>JSON</em> (dus zonder toevoeging).</li>
+<li>Ga dan in het menu naar <strong>Help &gt; Show All Commands</strong>.</li>
+<li>Type in <em>Format Document</em> en type enter.</li>
+</ol>
+<p>Als het goed is is het document nu over veel regels verspreid en is met inspringing een structuur zichtbaar. Hier staat heel veel (cryptische) informatie, maar als je zoekt op <code>Reference GRCh38.p14 Primary Assembly</code> bijvoorbeeld, of <code>exons</code> of <code>cds</code> dan zie je daar de getallen terug die we jullie hierboven gegeven hebben.</p>
+<p>Als je goed hebt opgelet heb je bij het downloaden gezien dat je niet zelf een heel chromosoom hoeft te downloaden om de coding DNA sequence te vinden. Leerzaam om te oefenen met programmeren en het hele proces te begrijpen, maar wat veel werk als je dat voor veel genen wilt doen.</p>
+</div>
+<h2 id="dna-mutaties">DNA-mutaties<a class="headerlink" href="#dna-mutaties" title="Permanent link">&para;</a></h2>
+<details class="meer-leren" open="open">
+<summary>Zoek de ziekmakende mutaties</summary>
+<p>Het eiwit dat je hebt ontcijferd is, net als de meeste eiwitten, heel belangrijk voor de mens. Je wilt dus niet dat er iets mis is met dit eiwit. Toch komt het relatief veel voor dat er een fout zit in dit eiwit en dat mensen daar ziek van worden. We gaan daarom in het DNA van 100 patiënten op zoek naar mutaties en zoeken uit of die ziekmakend (kunnen) zijn.</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Inlezen patiëntdata</p>
+<p>Download het bestand <a href="../data/hbb-patienten-cds.fasta"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>hbb-patienten-cds.fasta</code></a>. Open het bestand in VS Code om te zien wat het formaat ongeveer is. Schrijf een script dat deze data inleest en een lijst maakt met de CDS van elke patiënt. Tip: een nieuwe patiënt begint met een nieuwe regel waarna een <code>&gt;</code> staat. Analoog aan <code class="language-py highlight"><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span></code> kun je <code class="language-py highlight"><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span></code> gebruiken waarbij je een string opgeeft waar hij moet splitsen. Een nieuwe regel geef je aan met <code>\n</code>, dus waar moet je op splitsen? Na het splitsen op patiënt, kun je oude code deels hergebruiken om een FASTA-bestand in te lezen.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Zoek de mutatie</p>
+<p>Als je de patiëntendata hebt ingelezen, heb je een lijst met CDS. Vergelijk dit met het CDS dat je eerder hebt gevonden voor dit gen. Elke letter moet hetzelfde zijn. Als dit niet zo is, is er blijkbaar een mutatie. We noteren zo'n mutatie in een standaard formaat als volgt: <code>c.123A&gt;T</code> wat betekent dat we kijken naar de <em>Coding DNA Sequence</em> (<code>c.</code>), dat de mutatie zit op base 123, en dat daar in de referentie een A staat terwijl de patiënt een T heeft. Als dit gelukt is heb je een lijst van mutatie-codes.</p>
+</div>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Leiden Open Variational Database</p>
+<p>De <em>Leiden Open Variational Database (LOVD)</em> bevat gegevens van <em>varianten</em> bij patiënten. Een variant is een versie van een gen, die anders kan zijn door een mutatie. Artsen en onderzoekers kunnen gevonden mutaties invoeren en koppelen aan patiënten, en melding maken van ziektebeelden. Op die manier kunnen onderzoekers ontdekken of bepaalde mutaties wel of niet ziekmakend zijn, of alleen in bepaalde combinaties. Ook kan vastgelegd worden hoe vaak deze varianten voorkomen.</p>
+<p>Ga naar <a href="https://databases.lovd.nl/shared/variants/HBB/unique">de LOVD-pagina voor varianten van ons gen</a>. Type in het zoekveld <em>DNA Change (cDNA)</em> de code in van een mutatie die je hebt gevonden. Als je een resultaat krijgt, kijk dan in de kolom <em>Clinical Classification</em> of deze mutatie ziekmakend is of niet. Mogelijk staat er in de kolom <em>Haplotype</em> informatie over de naam van deze (eventuele) ziekte.</p>
+</div>
+</details>
 
 
 
