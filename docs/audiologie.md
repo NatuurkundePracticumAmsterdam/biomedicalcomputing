@@ -84,27 +84,27 @@ Eerst importeren we de module. Daarna maken we een lijst aan met de waarden van 
 
 Om een hoortest uit te voeren, hebben we een slimme strategie nodig. Een hoortest moet namelijk niet alleen betrouwbaar zijn, maar ook zo kort mogelijk duren. Elke toon kost immers tijd en vraagt aandacht van de proefpersoon. Met een slimme strategie kunnen we de gehoordrempel efficiënt bepalen. Computers kunnen zulke vaste stappen systematisch uitvoeren. Voordat we deze stappen programmeren, onderzoeken we eerst welke strategie het efficiënst is om een onbekende waarde te vinden.
 
-In de volgende opdracht gebruiken we een vereenvoudigde situatie. De gehoordrempel ligt in deze opdracht al vast, terwijl een proefpersoon in een echte hoortest zelf aangeeft of een toon hoorbaar is. Door de situatie te vereenvoudigen, kunnen we verschillende strategieën goed met elkaar vergelijken. 
+In de volgende opdracht gebruiken we een vereenvoudigde situatie. We onderzoeken hoe snel we een geheim, geheel getal kunnen vinden met verschillende zoekstrategieën. We gebruiken hiervoor een kleiner bereik dan bij een hoortest. Zo blijft de opdracht overzichtelijk, terwijl we wel een idee kunnen krijgen van welke zoekstrategie het efficiëntst is.
 
 !!! opdracht-basis "Slim zoeken"
 
-    Stel je voor dat je audicien bent. De proefpersoon heeft een onbekende gehoordrempel tussen 0 en 100. Je mag steeds één getal voorstellen. De proefpersoon vertelt alleen of de werkelijke drempel **hoger**, **lager** of **gelijk aan** jouw voorstel is. Hoe vind je de gehoordrempel met zo weinig mogelijk vragen?
+    Jullie vormen zometeen kleine groepjes. Eén persoon in het groepje krijgt een geheim, geheel getal tussen 0 en 100. De anderen proberen dit getal te vinden. Er mag steeds één getal voorgesteld worden. Na ieder voorstel krijgen jullie alleen te horen of het geheime getal **hoger**, **lager** of **gelijk aan** het voorstel is. Hoe vinden jullie het geheime getal in zo min mogelijk stappen?
 
     1. Werk in een klein groepje. Bedenk meerdere strategieën om een onbekend geheel getal tussen 0 en 100 snel te vinden. 
     2. Bespreek de bedachte strategieën met de gehele groep. Noteer de verschillende strategieën op een whiteboard.
-    3. Beslis als groep welke strategieën jullie willen testen en verdeel deze over de groepjes.
-    4. Werk weer in het kleine groepje. Jullie testen de toegewezen strategie met vijf onbekende getallen tussen 0 en 100. Ieder groepje gebruikt dezelfde vijf getallen, zodat jullie de resultaten straks eerlijk kunnen vergelijken. Wijs binnen het groepje de volgende rollen toe: 
+    3. Beslis samen welke strategieën jullie willen testen en verdeel deze over de groepjes.
+    4. Werk weer in het kleine groepje. Jullie testen de toegewezen strategie met vijf onbekende, gehele getallen tussen 0 en 100. Ieder groepje gebruikt dezelfde vijf getallen, zodat jullie de resultaten straks eerlijk kunnen vergelijken. Wijs binnen het groepje de volgende rollen toe: 
         
-        **Proefpersoon**: trekt aan het begin van een ronde een kaartje met het geheime getal. De proefpersoon mag dit getal niet met de rest van het groepje delen. De proefpersoon beantwoordt vragen van de audicien alleen met _hoger_, _lager_ of _gelijk aan_. 
+        **Bewaker**: trekt aan het begin van een ronde een kaartje met een getal en houdt dit geheim. De bewaker antwoordt op ieder voorstel van de zoeker alleen met _hoger_, _lager_ of _gelijk aan_. 
     
-        **Audicien**: stelt getallen voor op basis van de toegewezen strategie. De audicien doet dit net zo lang totdat het geheime getal gevonden is. 
+        **Zoeker**: stelt gehele getallen voor volgens de toegewezen strategie. De zoeker doet dit totdat het geheime getal gevonden is. 
         
         **Notulist**: houdt alle voorgestelde getallen en antwoorden bij.
     
         Stop zodra het geheime getal is gevonden. Wissel daarna van rol, zodat iedereen minimaal één keer in elke rol aan de beurt is geweest.
-    5. Nadat jullie alle rondes doorlopen hebben, tel je voor elke ronde het aantal vragen dat nodig was. Bereken daarna het gemiddelde, het minimum en het maximum aantal vragen. Schrijf deze waarden op het whiteboard.
-    6. Vergelijk de resultaten van de verschillende strategieën. Welke strategie heeft gemiddeld de minste vragen nodig? Hoe verklaar je dat?
-    7. Bij een hoortest zoek je niet in een bereik van 0 tot 100, maar van 20 tot 20.000. Denk je dat de strategie die het beste werkt voor een klein bereik dat ook doet voor een groot bereik? Waarom wel of niet?
+    5. Tel aan het einde per ronde hoeveel voorstellen nodig waren om het geheime getal te vinden. Bereken daarna het gemiddelde, het minimum en het maximum aantal voorstellen. Schrijf deze waarden op het whiteboard.
+    6. Vergelijk de resultaten van de verschillende strategieën. Welke strategie heeft gemiddeld de minste stappen nodig? Hoe verklaar je dat?
+    7. Bij een hoortest zoek je niet in een bereik van 0 tot 100, maar van 20 tot 20.000. Verwacht je dat dezelfde strategie dan nog steeds het efficiëntst is? Waarom wel of niet? 
 
 ## De hoortest
 
