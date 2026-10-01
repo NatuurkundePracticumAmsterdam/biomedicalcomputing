@@ -295,15 +295,16 @@ Omdat de exon-coördinaten gegeven zijn ten opzichte van de start van het chromo
 
 De natuur heeft nog een verrassing voor ons in petto. Het FASTA-bestand bevat een lange lijst van de nucleobasen in chromosoom 11. Het probleem is dat dit maar één lijst is, terwijl het DNA _twee_ strengen heeft. Slechts één van die twee strengen staat in het bestand. Deze streng noemt men de _plus-streng_. Dat is een afspraak. Het is gelukkig niet moeilijk om de andere streng, de _min-streng_, te achterhalen want tegenover iedere A ligt een T, tegenover iedere C een G, en omgekeerd. Toch wordt de situatie iets complexer.
 
-De machinerie in de cel zoekt binnen het DNA naar een _promotor site_ en begint vanaf daar het gen af te lezen. Het probleem is dat zo'n promotor site niet altijd op de plus-streng ligt. In ongeveer de helft van de gevallen ligt die op de min-streng. Ook is het zo dat de min-streng in omgekeerde richting wordt afgelezen. Dus als de plus-streng 'van links naar rechts' wordt afgelezen, dan wordt de min-streng 'van rechts van links' afgelezen. Als we een gen hebben dat op de min-streng ligt dan moeten we een exon uitknippen uit de plus-streng, omkeren en complementeren (de 'andere' base bepalen).
+De machinerie in de cel zoekt binnen het DNA naar een _promotor site_ en begint vanaf daar het gen af te lezen. Het probleem is dat zo'n promotor site niet altijd op de plus-streng ligt. In ongeveer de helft van de gevallen ligt die op de min-streng. Ook is het zo dat de min-streng in omgekeerde richting wordt afgelezen. Dus als de plus-streng 'van links naar rechts' wordt afgelezen, dan wordt de min-streng 'van rechts naar links' afgelezen. Als we een gen hebben dat op de min-streng ligt dan moeten we, in onze data, een exon uitknippen uit de plus-streng, omkeren en complementeren (de 'andere' base bepalen).
 
 !!! opdracht-basis "Reverse complement"
 
-    Werk verder in {{file}}`gene_splicing.py`.
+    Werk verder in {{file}}`gene_splicing.py`. We gaan twee functies maken en delen het werk op in kleine stappen die we steeds zullen testen.
 
-    1. Schrijf een functie `get_reverse_complement()` die `dna` als parameter accepteert. De functie keert de string om, en geeft een string terug waarin elke A een T is geworden en omgekeerd, en iedere C een G en omgekeerd. Tip: dit lijkt op een opdracht die we in de tweede sessie hebben gedaan.
-    1. Test je functie met een heel kort stuk verzonnen DNA, bijvoorbeeld `ATCG` en controleer het resultaat met de hand.
-    1. Schrijf een functie `get_dna_minus_region()` die dna, begin en eind als parameters accepteert en dat je kunt gebruiken om een exon uit de min-streng te knippen. Deze functie knipt, keert om en complementeert. Tip: je had al een functie om te knippen en je hebt net een functie geschreven voor een reverse complement. Gebruik die functies in plaats van dat je het nu weer opnieuw schrijft.
+    1. Schrijf een functie `get_reverse_complement()` die `dna` als parameter accepteert. Roep de functie aan met een stukje test-DNA: `AATCG`. Laat de functie `dna` printen.
+    1. In de functie keer je de string om, bewaar dat in `reversed_dna` en print het resultaat. Klopt het met je verwachting?
+    1. Als laatste moet de functie een string teruggeven waarin elke A een T is geworden en omgekeerd, en iedere C een G en omgekeerd. Tip: doe dit letter voor letter en gebruik een dictionary. Als je in die dictionary de `A` opzoekt, krijg je `T` als resultaat, enz. Blijf het resultaat printen terwijl je bezig bent en test ieder stapje.
+    1. Schrijf een functie `get_dna_minus_region()` die `dna`, `begin` en `end` als parameters accepteert en dat je kunt gebruiken om een exon uit de min-streng te knippen. Deze functie knipt, keert om en complementeert. Tip: je had al een functie om te knippen en je hebt net een functie geschreven voor een reverse complement. Gebruik die functies in plaats van dat je het nu weer opnieuw schrijft. Test de functie met het onzin-DNA "AATCG" en knip base 2 t/m 4 eruit. Wat verwacht je? Klopt je uitkomst?
 
 Van een gen weten we het volgende:
 
@@ -315,7 +316,7 @@ Van een gen weten we het volgende:
 
 !!! opdracht-basis "Zoek het eiwit"
 
-    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Zoek in de [UniProt BLAST database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
+    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Controleer dat het eerste codon weer een start-codon is en het laatste codon een stop-codon, voordat je de aminozuursequentie vaststelt. Zoek in de [UniProt BLAST database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
 
 !!! opdracht-meer "Waar halen wij de informatie vandaan?"
 
@@ -339,20 +340,39 @@ Van een gen weten we het volgende:
 
 ## DNA-mutaties
 
-???+ meer-leren "Zoek de ziekmakende mutaties"
+Het eiwit dat je hebt ontcijferd is, net als de meeste eiwitten, heel belangrijk voor de mens. Je wilt dus niet dat er iets mis is met dit eiwit. Toch komt het relatief veel voor dat er een fout zit in dit eiwit en dat mensen daar ziek van worden. We gaan daarom in het DNA van 100 patiënten op zoek naar mutaties en zoeken uit of die ziekmakend (kunnen) zijn.
 
-    Het eiwit dat je hebt ontcijferd is, net als de meeste eiwitten, heel belangrijk voor de mens. Je wilt dus niet dat er iets mis is met dit eiwit. Toch komt het relatief veel voor dat er een fout zit in dit eiwit en dat mensen daar ziek van worden. We gaan daarom in het DNA van 100 patiënten op zoek naar mutaties en zoeken uit of die ziekmakend (kunnen) zijn.
+!!! opdracht-basis "Inlezen patiëntdata"
+    
+    Download het bestand [{{file}}`hbb-patienten-cds.fasta`](data/hbb-patienten-cds.fasta). Open het bestand in VS Code om te zien wat het formaat ongeveer is. We gaan een script schrijven dat deze data inleest en een lijst maakt met de CDS van elke patiënt. Een nieuwe patiënt begint met een nieuwe regel waarna een `>` staat. Analoog aan `#!py text.splitlines()` kun je `#!py text.split()` gebruiken waarbij je een string opgeeft waar hij moet splitsen.
 
-    !!! opdracht-meer "Inlezen patiëntdata"
-        
-        Download het bestand [{{file}}`hbb-patienten-cds.fasta`](data/hbb-patienten-cds.fasta). Open het bestand in VS Code om te zien wat het formaat ongeveer is. Schrijf een script dat deze data inleest en een lijst maakt met de CDS van elke patiënt. Tip: een nieuwe patiënt begint met een nieuwe regel waarna een `>` staat. Analoog aan `#!py text.splitlines()` kun je `#!py text.split()` gebruiken waarbij je een string opgeeft waar hij moet splitsen. Een nieuwe regel geef je aan met `\n`, dus waar moet je op splitsen? Na het splitsen op patiënt, kun je oude code deels hergebruiken om een FASTA-bestand in te lezen.
+    1. Start een nieuw script {{file}}`find_mutations.py`. Definieer een nieuwe functie `#!py read_patient_data()` die `filename` als parameter accepteert. Roep je functie aan met {{file}}`hbb-patienten-cds.fasta` als argument.
+    1. In je functie lees je de tekst uit het bestand en splitst het vervolgens op `>`. Print het eerste, tweede en derde element uit het resultaat. Wat valt je op aan het eerste element?
+    1. Maak een lege lijst `sequences`. Schrijf een for-loop waarmee je over alle patiëntgegevens loopt. Je hebt nu voor iedere patiënt feitelijk een stukje FASTA-bestand. Print de header (zodat je weet welke patiënt je inleest), bepaal de sequentie, en print weer de eerste zes en de laatste zes nucleobasen. Je hebt dit eerder gedaan en kunt wat oude code kopiëren en aanpassen.
+    1. De sequentie die je per patiënt bepaalt kun je toevoegen aan de `sequences` variabelen, en geef die terug uit de functie.
+    1. Na het aanroepen van de functie, print de sequentie van de eerste patiënt. Lijkt dat te kloppen met wat er in het FASTA-bestand staat? Hoeveel patiënten heb je uitgelezen? Klopt dat?
 
-    !!! opdracht-meer "Zoek de mutatie"
+!!! opdracht-basis "Zoek de mutatie"
 
-        Als je de patiëntendata hebt ingelezen, heb je een lijst met CDS. Vergelijk dit met het CDS dat je eerder hebt gevonden voor dit gen. Elke letter moet hetzelfde zijn. Als dit niet zo is, is er blijkbaar een mutatie. We noteren zo'n mutatie in een standaard formaat als volgt: `c.123A>T` wat betekent dat we kijken naar de *Coding DNA Sequence* (`c.`), dat de mutatie zit op base 123, en dat daar in de referentie een A staat terwijl de patiënt een T heeft. Als dit gelukt is heb je een lijst van mutatie-codes.
+    Als je de patiëntendata hebt ingelezen, heb je een lijst met CDSs. We gaan dit vergelijken met het CDS dat je eerder hebt gevonden voor dit gen. Elke letter moet hetzelfde zijn. Als dit niet zo is, is er blijkbaar een mutatie. We noteren zo'n mutatie in een standaard formaat als volgt: `c.123A>T` wat betekent dat we kijken naar de *Coding DNA Sequence* (`c.`), dat de mutatie zit op base 123, en dat daar in de referentie een A staat terwijl de patiënt een T heeft. Als dit gelukt is heb je een lijst van mutatie-codes. Voer de volgende opdrachten uit:
+    
+    1. Gebruik je oude programma {{file}}`gene_splicing.py` om de CDS uit te printen dat je hebt gevonden voor het gen dat op de min-streng ligt (dit was de laatste opdracht). Kopieer de tekst en definieer in {{file}}`find_mutations.py` een variabele `reference_cds` met als inhoud de gevonden CDS.
+    1. Schrijf een functie `#!py find_mutations()` die `patient_data` en `reference_cds` als parameters accepteert. Om te testen, roep je je functie als volgt aan:
+    ```py
+    find_mutations(["AATCG", "ATTCC"], "AATCG")
+    ```
+    Hoe zit deze aanroep in elkaar?
+    1. Loop over de patiëntgegevens. Print de CDS van iedere patiënt om te testen.
+    1. Binnen die loop, vergelijk de CDS van de patiënt base voor base met de referentie-CDS. Tel de letters: als er één verschilt, willen we weten wat het nummer is van de base. Als je een verschil vindt: print het verschil in bovenstaand format `c.123A>T`. Wat verwacht je te krijgen uit je test-aanroep?
+    1. Als je geen f-strings gebruikt (paarse opdracht) krijg je nu spaties tussen de verschillende onderdelen in je print-statement. Je kunt `sep=""` toevoegen aan je print-statement als volgt:
+    ```py
+    print("Text1", var1, var2, "text2", sep="")
+    ```
+    om de spaties weg te halen. "sep" staat voor _separator_ ofwel scheidingsteken.
+    1. Als je tevreden bent over je resultaat, roep dan de functie `#!py find_mutations()` aan met de echte referentie CDS en de echte patiëntgegevens.
 
-    !!! opdracht-meer "Leiden Open Variational Database"
+!!! opdracht-basis "Leiden Open Variational Database"
 
-        De _Leiden Open Variational Database (LOVD)_ bevat gegevens van _varianten_ bij patiënten. Een variant is een versie van een gen, die anders kan zijn door een mutatie. Artsen en onderzoekers kunnen gevonden mutaties invoeren en koppelen aan patiënten, en melding maken van ziektebeelden. Op die manier kunnen onderzoekers ontdekken of bepaalde mutaties wel of niet ziekmakend zijn, of alleen in bepaalde combinaties. Ook kan vastgelegd worden hoe vaak deze varianten voorkomen.
+    De _Leiden Open Variational Database (LOVD)_ bevat gegevens van _varianten_ bij patiënten. Een variant is een versie van een gen, die anders kan zijn door een mutatie. Artsen en onderzoekers kunnen gevonden mutaties invoeren en koppelen aan patiënten, en melding maken van ziektebeelden. Op die manier kunnen onderzoekers ontdekken of bepaalde mutaties wel of niet ziekmakend zijn, of alleen in bepaalde combinaties. Ook kan vastgelegd worden hoe vaak deze varianten voorkomen.
 
-        Ga naar [de LOVD-pagina voor varianten van ons gen](https://databases.lovd.nl/shared/variants/HBB/unique). Type in het zoekveld *DNA Change (cDNA)* de code in van een mutatie die je hebt gevonden. Als je een resultaat krijgt, kijk dan in de kolom _Clinical Classification_ of deze mutatie ziekmakend is of niet. Mogelijk staat er in de kolom _Haplotype_ informatie over de naam van deze (eventuele) ziekte.
+    Ga naar [de LOVD-pagina voor varianten van ons gen](https://databases.lovd.nl/shared/variants/HBB/unique). Type in het zoekveld *DNA Change (cDNA)* de code in van een mutatie die je hebt gevonden. Als je een resultaat krijgt, kijk dan in de kolom _Clinical Classification_ of deze mutatie ziekmakend is of niet. Mogelijk moet je de gebruikte termen opzoeken, zoals `VUS`. Voor relatief veel voorkomende mutaties staat er in de kolom _Haplotype_ informatie over de naam van deze (eventuele) ziekte.
