@@ -143,6 +143,34 @@ numbers[2] = 3
 print(numbers)  # 1, 2, 3, 4, 5
 ```
 
+### Dictionaries
+Een dictionary (`#!py dict`) slaat waarden op onder een naam, de _key_. Elke key heeft een bijbehorende waarde. Je maakt een dictionary met accolades en scheidt keys en waarden met een dubbele punt:
+
+De naam komt van een woordenboek: je zoekt een woord op en vindt de betekenis. Bij een dictionary zoek je een key op en krijg je de bijbehorende waarde.
+```py
+patient = {
+    "name": "Alice",
+    "age": 29,
+    "blood_type": "O+",
+}
+```
+Een waarde vraag je op met de bijbehorende key tussen blokhaken:
+```py
+print(patient["name"])  # Alice
+print(patient["age"])  # 29
+```
+Met dezelfde notatie kun je een waarde veranderen of een nieuwe key met waarde toevoegen:
+```py
+patient["age"] = 30
+patient["height"] = 1.72
+```
+De _key_ mag ook in een variabele zitten:
+```py
+key = "age"
+print(patient[key])  # 29
+```
+Dictionaries zijn heel handig als je opzoektabellen wilt maken. Wat is de complementaire base van "A"? En die van "G"? Of welk aminozuur krijg je van het codon "ATG"? Daarvoor gebruik je een dictionary.
+
 ### Datatypes omzetten
 Je kunt een waarde van het ene datatype omzetten naar een ander datatype. Dit doe je met `#!py str()`, `#!py int()` en `#!py float()`:
 ```python
