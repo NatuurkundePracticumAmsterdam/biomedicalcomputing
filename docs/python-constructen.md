@@ -303,6 +303,15 @@ print(module[3:10])  # medical
 print(module[:10])  # Biomedical
 print(module[10:])  # Computing
 ```
+Je kunt ook een derde getal, de _step_, meegeven: daarmee bepaal je hoeveel elementen Python steeds overslaat. Met een negatieve step loop je van achter naar voren:
+```py
+reeks = "abcdefgh"
+print(reeks[::2])  # aceg
+print(reeks[::-1])  # hgfedcba
+print(reeks[1:6:2])  # bdf
+```
+Met `[::-1]` kun je dus eenvoudig een volledige lijst of string omkeren.
+
 Zowel indexing als slicing kunnen heel handig zijn in [for-loops](#indexeren-met-rangelen).
 
 ## `#!py if`-statements
