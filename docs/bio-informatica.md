@@ -4,6 +4,10 @@ Bio-informatica combineert, zoals de naam al doet vermoeden, _biologie_ met _inf
 
 In deze en de volgende sessie zullen we kennismaken met de basisbeginselen. We gaan de genetische code van chromosoom 11 downloaden, knippen daar één bepaald gen uit en bepalen voor welk eiwit het gen codeert. Vervolgens zoeken we op welk eiwit dit is en wat de functie daarvan is in het menselijk lichaam. Daarna gaan we verder met patiëntgegevens: welke patiënten hebben mutaties in dit gen en zijn deze mutaties schadelijk voor de gezondheid? We zullen hiervoor best wat werk moeten verrichten. Ben je uiteindelijk als wetenschapper aan het werk, dan gebruik je uitgebreide bibliotheken waarin al dat werk al is gedaan door andere wetenschappers, maar hier gaan we, als het ware, het wiel opnieuw uitvinden zodat je goed kunt zien welke stappen er nodig zijn. En wie weet, misschien help jij in de toekomst wel om bestaande bibliotheken uit te breiden met jouw analysetools!
 
+!!! info "Aansluiting MNW-programma" 
+
+    In de volgende twee sessies hanteren we een grote hoeveelheid genetische data en gaan we op zoek naar de eiwitten waarvoor bepaalde genen coderen. We zoeken vervolgens informatie daarover op in een publieke database. De module _Basics of Bioinformatics_ van het vak _Basics of Bioinformatics and Systems Biology_ (jaar 2, periode 1) gaat hier dieper op in.
+
 ## FASTA-bestanden
 
 Om genetische code uit te wisselen is een heel eenvoudig bestandsformaat bedacht: FASTA. Het ziet er, voor het IFITM1-gen, zó uit:
