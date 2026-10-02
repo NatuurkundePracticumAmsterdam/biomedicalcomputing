@@ -419,7 +419,17 @@ De variabele `i`is hier de zogeheten loopvariabele en krijgt bij elke herhaling 
 for i in range(2, 6):
     print(i)
 ```
-Nu worden de getallen `2`, `3`, `4`, en `5` onder elkaar in de terminal geprint.
+Nu worden de getallen `2`, `3`, `4`, en `5` onder elkaar in de terminal geprint. Wanneer je een begin- en eindwaarde opgeeft kun je een derde parameter meegeven, de stapgrootte:
+```python
+for i in range(5, 10, 2):
+    print(i)
+```
+die de getallen `5`, `7`, en `9` print. Ofwel, van 5 _tot_ 10, met sprongen van 2. Samenvattend zijn dit de drie manieren waarop je `#!py range()` kunt aanroepen:
+```py
+range(stop)
+range(start, stop)
+range(start, stop, step)
+```
 
 ???+ meer-leren "Weggooivariabele"
 

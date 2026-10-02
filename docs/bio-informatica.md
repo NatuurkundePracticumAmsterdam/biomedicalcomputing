@@ -136,6 +136,10 @@ Bij het maken van eiwitten wordt allereerst een gen afgelezen en wordt een stren
     }
     ```
 
+!!! Itereren in sprongen
+
+    Je kent de functie `#!py range()` die je kunt gebruiken in een for-loop om met een index te itereren over een lijst of een string. Bijvoorbeeld met `#!py range(len(dna))`. Range begint bij nul en telt _tot_ de gegeven stopwaarde. Je kunt ook een startwaarde meegeven. Zo telt `#!py range(5, 10)` de waardes 5, 6, 7, 8, 9 af. En als laatste, nuttig voor de volgende opdracht, kun je een step-parameter meegeven: `#!py range(5, 10, 2)` telt de waardes 5, 7, 9 af.
+
 !!! opdracht-basis "Aminozuursequentie"
 
     We gaan een functie schrijven die, op basis van genetische code, de aminozuursequentie bepaalt. We doen dat weer in stapjes.
