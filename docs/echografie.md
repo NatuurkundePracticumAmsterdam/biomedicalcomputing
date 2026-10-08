@@ -2,28 +2,32 @@
 
 Met echografie kunnen we in het lichaam kijken zonder het open te maken. We kunnen bijvoorbeeld een ongeboren kind in beeld brengen of onderzoeken hoe het hart eruitziet en functioneert. Daarvoor gebruiken we geluidsgolven: een echoapparaat zendt geluid uit en vangt de terugkerende echo's op. Deze echo's leveren nog geen kant-en-klaar beeld op. Software verwerkt de ontvangen geluidssignalen tot een beeld van de weefsels. In dit hoofdstuk onderzoeken we dit proces. We zoeken eerst uit hoe we geluidssignalen kunnen omzetten in een beeld. Daarna vertalen we die stappen naar code en programmeren we het proces zelf.
 
-## Van geluidsgolf naar beeld
+## Hoe ontstaat een echobeeld?
 
 Om te begrijpen hoe we van geluidssignalen een beeld kunnen maken, bekijken we eerst hoe die signalen ontstaan. Bij echografie gebruiken we geluidsgolven met een hoge frequentie. Dit noemen we ultrageluid (Engels: _ultrasound_). Een probe zendt deze golven het lichaam in. Op de grens tussen twee weefsels wordt een deel van het geluid gereflecteerd. Daardoor ontstaat een echo. De rest wordt doorgelaten en kan dieper in het lichaam opnieuw worden gereflecteerd. 
 
 De probe wisselt tussen het uitzenden van geluid en het ontvangen van echo's. Uit de tijd tussen het uitzenden en het ontvangen kunnen we, met behulp van de geluidssnelheid, de afstand berekenen tot de plek waar de echo ontstond. De sterkte van de echo bepaalt hoe helder die plek in het beeld wordt weergegeven. Een probe zendt geluidsgolven in verschillende richtingen binnen een vlak uit en ontvangt de bijbehorende echo's. De software combineert deze informatie tot een tweedimensionaal beeld van de weefsels.
 
-## Hoe komt de data tot stand
-(titel nog aanpassen)
+## Van meetpunt naar gegevensbestand
 
-Om straks de bestanden met gegevens goed te kunnen interpreteren, verzamelen we eerst zelf data op papier. Zo ontdekken we hoe zo'n bestand is opgebouwd en wat de waarden erin betekenen. We gebruiken hiervoor een sterk vereenvoudigd model van echografie. In onderstaand figuur zie je een grijs gebied in de vorm van een hart. 
+Om straks de bestanden met gegevens goed te kunnen interpreteren, verzamelen we eerst zelf data op papier. Zo ontdekken we hoe zo'n bestand is opgebouwd en wat de waarden erin betekenen. We gebruiken hiervoor een sterk vereenvoudigd model van echografie. 
+
+In onderstaand figuur zie je een grijs gebied in de vorm van een hart: 
 
 ![afbeelding met grijs hart in wit vlak](figures/hart_ultra-sound_2.svg)
 
-In onderstaand figuur zijn de probe $P$ en de vijf richtingen waarin deze meet toegevoegd. De probe staat bovenaan in het midden en zendt geluidsgolven uit in het $x$,$y$-vlak. De vijf meetrichtingen komen overeen met hoeken van -90$\degree$, -30$\degree$, 0$\degree$, 30$\degree$ en 90$\degree$, waarbij 0$\degree$ recht naar beneden wijst. In elke richting meten we op drie afstanden vanaf de probe. Elk meetpunt is aangegeven met een zwarte stip. De eerste meting doen we bij de probe zelf, op afstand 0. 
+In het volgende figuur zijn de probe $P$ en de vijf richtingen waarin deze meet toegevoegd. De probe staat bovenaan in het midden en zendt geluidsgolven uit in het $x$,$y$-vlak. De vijf meetrichtingen komen overeen met hoeken van -90$\degree$, -30$\degree$, 0$\degree$, 30$\degree$ en 90$\degree$, waarbij 0$\degree$ recht naar beneden wijst. In elke richting meten we op drie afstanden vanaf de probe. Elk meetpunt is aangegeven met een zwarte stip. De eerste meting doen we bij de probe zelf, op afstand 0. 
 
 ![afbeelding met probe bovenaan in het midden die in 5 richtingen signaal uitzend](figures/hart_ultra-sound_3.svg)
 
-In ons vereenvoudigde model geeft een meetpunt in het witte gebied een laag signaal, dat we noteren als 0. Een meetpunt in het grijze gebied geeft een hoog signaal, dat we noteren als 1. Het signaal hangt dus alleen af van de kleur op het meetpunt. We kijken in dit geval niet naar reflecties op weefselgrenzen, zoals bij echografie wel gebeurt.
+In ons vereenvoudigde model geeft een meetpunt in het witte gebied een laag signaal, dat we noteren als 0. Een meetpunt in het grijze gebied geeft een hoog signaal, dat we noteren als 1. Het signaal hangt dus alleen af van de kleur op het meetpunt. We kijken in dit model niet naar reflecties op weefselgrenzen, zoals bij echografie wel gebeurt.
 
+<div id="opdr:handmatige-scan"></div>
 !!! opdracht-basis "Handmatige scan"
 
-    Als voorbeeld kijken we naar de richting $-90$. Bij het eerste zwarte rondje is het weefsel wit en is het signaal laag $(0)$, bij het tweede zwarte rondje is het weefsel grijs en is het signaal hoog $(1)$, bij het derde zwarte rondje is het signaal weer laag $(0)$. De data die de probe naar de computer stuurt is de hoek gevolgd door de signalen op de drie posities, op één regel en gescheiden door komma's: `-90,0,1,0`. Maak de data af voor de overige hoeken.
+    We gaan nu de meetgegevens op papier noteren zoals ze straks in een bestand staan. Voor elke meetrichting schrijven we de hoek en de signalen op de drie meetpunten op, van dichtbij naar ver weg. We zetten deze waarden op één regel, gescheiden door komma's. Voor de richting -90$\degree$ zijn de signalen achtereenvolgens laag, hoog en laag. Dat geeft: `-90,0,1,0`.
+
+    1. Neem de voorbeeldregel voor -90$\degree$ over op papier en vul de gegevens voor de overige vier richtingen aan. Gebruik voor elke richting een nieuwe regel en dezelfde opbouw als in het voorbeeld. Aan het einde heb je vijf regels: één voor elke richting.
 
 <!--
 ### antwoord
@@ -36,22 +40,25 @@ In ons vereenvoudigde model geeft een meetpunt in het witte gebied een laag sign
 ```
 -->
 
-## Hoe weet je waar het signaal vandaan kwam
+## Van meetgegevens naar beeld
 
-In het echt heb je geen idee van hoe het weefsel eruit ziet en krijg je alleen de data terug die je bij de vorige opdracht hebt opgeschreven. We gaan het plaatje pixel voor pixel opbouwen. Als je naar de vorige afbeelding kijkt zie je dat we op de $x$-as 5 meetpunten hebben, dus laten we een een plaatje van 5 bij 5 pixels maken. We zetten de oorsprong linksonder en geven de locatie van de pixel aan met x en y waardes. Pixel $(0,0)$ ligt linksonder en pixel $(4,4)$ ligt rechtsboven. De probe zat in het midden bovenaan, dus op pixel $(2,4)$.
+Bij echografie wordt een beeld opgebouwd op basis van meetgegevens. We doen dit eerst op papier, zodat we begrijpen hoe die gegevens worden omgezet in een beeld. Hiervoor gebruiken we de uitkomst van de [_opdracht Handmatige scan_](#opdr:handmatige-scan).
 
-![afbeelding van 5 bij 5 pixels met (0,0), (2,4) en (4,4) aangegeven in de betreffende pixel](figures/hart_ultra-sound_4a.svg).
+We bouwen het beeld pixel voor pixel op. Hiervoor gebruiken we een raster van 5 bij 5 pixels, zoals in onderstaand figuur. We zetten de oorsprong linksonder en geven de positie van elke pixel aan met twee coördinaten: eerst de $x$-coördinaat en daarna de $y$-coördinaat. Beide lopen van 0 tot en met 4. Pixel [0,0] ligt dus linksonder en pixel [4,4] rechtsboven. De probe $P$ staat bovenaan in het midden, op pixel [2,4].
 
+![afbeelding van 5 bij 5 pixels met [0,0], [2,4] en [4,4] aangegeven in de betreffende pixel](figures/hart_ultra-sound_4a.svg).
 
-!!! opdracht-basis "Coördinaten bepalen"
+Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpunt ligt. Waar ligt bijvoorbeeld het derde meetpunt in de richting 30$\degree$? Als we de $x$- en $y$-coördinaten kennen, kunnen we de signaalwaarde aan een pixel toekennen.
 
-    We moeten er nu achter gaan komen wat de locatie was van bijvoorbeeld het derde datapunt bij een hoek van $30$ graden. Als we de $x$ en $y$ waarde daarvan weten, kunnen we de waarde van de data aan de pixel toekennen en op die manier een plaatje construeren. Zoals eerder gezegd hangt een datapunt samen met een afstand. Om het eenvoudig te houden stellen we dat het eerste datapunt op afstand $r=0$ zit, het tweede op afstand $r=1$ en het derde op afstand $r=2$. De hoek van de geluidsgolf met de $0$ graden lijn noemen we $\phi$. Gebruik onderstaande afbeelding en al je geometrische toverkracht om een algemene uitdrukking voor $x$ en $y$ te vinden.
+!!! opdracht-basis "Van meetpunt naar pixel"
 
+    Elk meetpunt ligt op een bepaalde afstand van de probe $P$. Het eerste meetpunt ligt bij de probe zelf, op afstand $r=0$. Het tweede meetpunt ligt op afstand $r=1$ en het derde meetpunt op $r=2$. We gebruiken hier de pixels van het raster als maat: een afstand van 1 is gelijk aan de breedte van één pixel. De hoek ten opzichte van de richting naar beneden, 0$\degree$, noemen we $\phi$.
+    
     ![afbeelding met 5 bij 5 pixels met p midden bovenaan, hoek phi, afstand r en x en y.](figures/hart_ultra-sound_4b.svg)
 
-!!! opdracht-basis "Welke pixel is dat?"
-
-    Je hebt nu een uitdrukking voor $x$ en $y$ in termen van een hoek $\phi$ en een afstand $r$. Als je terugkijkt naar de vorige afbeelding dan zie je dat een datapunt ergens in een pixel terechtkomt en niet per se in het midden. Om tijdens de reconstructie de waarde van het datapunt aan de pixel toe te kennen moeten we niet alleen de berekende onafgeronde $x$ en $y$ waarde weten, maar vooral de coördinaten van de pixel waarin het punt ligt. Geef voor de 3 datapunten in de afbeelding de $x$ en $y$ waarde van de _pixel_.
+    1. In bovenstaand figuur zijn drie meetpunten aangegeven voor de richting van 30$\degree$. In welke pixels liggen deze meetpunten? Noteer voor elk meetpunt de coördinaten van de bijbehorende pixel en de afstand $r$ tot de probe.
+    2. Gebruik het figuur en je kennis van goniometrie om vergelijkingen voor $x$ en $y$ op te stellen in termen van $r$ en $\phi$. Houd rekening met de positie van de probe in pixel [2,4].
+    3. Bereken met je vergelijkingen de coördinaten van de drie meetpunten voor de richting 30$\degree$. Rond de coördinaten af op gehele getallen en vergelijk ze met de pixelcoördinaten die je eerder hebt afgelezen. Komen ze overeen?
 
 <!--
 ### antwoord
@@ -60,14 +67,20 @@ r=1: [3,3]
 r=2: [3,2]
 -->
 
-!!! opdracht-basis "Reconstructie"
+Met de gevonden vergelijkingen kunnen we bepalen waar een meetpunt ligt. Om een beeld te reconstrueren, geven we de bijbehorende pixel de signaalwaarde van dat meetpunt. In dit eenvoudige geval is dat een 0 of een 1. Zo bouwen we het beeld stap voor stap op.
 
-    Teken een vlak van 5 bij 5 pixels, geef alle pixels in eerste instantie een waarde $0$. Je kunt de waarde aangeven met een kleur (bijvoorbeeld $0=$ wit, $1=$ grijs).  Gebruik de data uit een vorig opdrachten en de uitdrukkingen voor $x$ en $y$ om de data te vertalen naar $x$ en $y$ waardes van de pixel. Tip: reken alleen de pixel locaties uit voor de datapunten met waarde $1$.
+!!! opdracht-basis "Reconstructie van het beeld"
+
+    1. Teken een raster van 5 bij 5 pixels. Geef de pixel linksonder de coördinaten [0,0]. Nummer de pixels op beide assen van 0 tot en met 4. Laat alle pixels wit, ze hebben dan allemaal de waarde 0.
+    2. Gebruik de uitkomst van de [_opdracht Handmatige scan_](#opdr:handmatige-scan). Bereken voor elk meetpunt de $x$- en $y$-coördinaten met de gevonden vergelijkingen. Rond de coördinaten af op gehele getallen en geef de bijbehorende pixel de signaalwaarde van het meetpunt. Laat pixels met de waarde 0 wit en kleur pixels met de waarde 1 grijs.
+    3. Vergelijk het gereconstrueerde beeld met het oorspronkelijke beeld. Komen ze overeen?
 
 <!--
 ### antwoord
 ![afbeelding met 5 bij 5 pixels, met 6 grijze blokjes in de vorm van een soort hartje](figures/hart_ultra-sound_5.svg)
 -->
+
+Het gereconstrueerde beeld komt niet precies overeen met het oorspronkelijke beeld. Sommige meetpunten liggen precies op de grens tussen twee pixels. Door hun coördinaten af te ronden, kiezen we aan welke pixel we de signaalwaarde toekennen. Die keuze kan ervoor zorgen dat het gereconstrueerde beeld iets afwijkt van het origineel.
 
 ## Meer data is beter
 
