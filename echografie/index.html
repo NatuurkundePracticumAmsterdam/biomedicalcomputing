@@ -482,10 +482,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#uitleg-over-de-werking-van-echografie" class="md-nav__link">
+  <a href="#hoe-ontstaat-een-echobeeld" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Uitleg over de werking van Echografie
+        Hoe ontstaat een echobeeld?
       
     </span>
   </a>
@@ -493,10 +493,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hoe-komt-de-data-tot-stand" class="md-nav__link">
+  <a href="#van-meetpunt-naar-gegevensbestand" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hoe komt de data tot stand
+        Van meetpunt naar gegevensbestand
       
     </span>
   </a>
@@ -504,21 +504,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hoe-weet-je-waar-het-signaal-vandaan-kwam" class="md-nav__link">
+  <a href="#van-meetgegevens-naar-beeld" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hoe weet je waar het signaal vandaan kwam
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#meer-data-is-beter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Meer data is beter
+        Van meetgegevens naar beeld
       
     </span>
   </a>
@@ -530,6 +519,17 @@
     <span class="md-ellipsis">
       
         Beeldreconstructie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meer-data-is-beter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Meer data is beter
       
     </span>
   </a>
@@ -727,16 +727,28 @@
 
 
 <h1 id="echografie">Echografie<a class="headerlink" href="#echografie" title="Permanent link">&para;</a></h1>
-<h2 id="uitleg-over-de-werking-van-echografie">Uitleg over de werking van Echografie<a class="headerlink" href="#uitleg-over-de-werking-van-echografie" title="Permanent link">&para;</a></h2>
-<p>Bij echografie wordt gebruik gemaakt van geluidsgolven met een hoge frequentie (ultrasound). De geluidsgolven worden door een probe (P) uitgezonden. Wanneer een geluidsgolf bij een overgang van het ene weefsel en het andere weefsel aankomt zal een deel van de geluidsgolf gereflecteerd worden (echo) en een deel doorgelaten worden (transmissie). De doorgelaten geluidsgolven kunnen verderop in het lichaam alsnog reflecteren en een echo signaal veroorzaken. De probe kan deze signalen ontvangen en registreren. Tijdens het maken van een beeld wisselt de probe tussen uitzenden en ontvangen. De tijd tussen het uitzenden van de geluidsgolf en het ontvangen van de echo geeft in combinatie met de geluidssnelheid informatie over de afstand van de probe tot aan het weefsel. Door in een vlak onder verschillende hoeken echo signalen op te vangen kan een 2D beeld van de locatie van weefsel gevormd worden.</p>
-<h2 id="hoe-komt-de-data-tot-stand">Hoe komt de data tot stand<a class="headerlink" href="#hoe-komt-de-data-tot-stand" title="Permanent link">&para;</a></h2>
-<p>Om een idee te krijgen van het proces van echografie ga je zelf data verzamelen. We maken daarbij gebruik van een versimpelde werking van echografie. In onderstaande figuur zie je grijs weefsel in de vorm van een hart.</p>
+<p>Met echografie kunnen we in het lichaam kijken zonder het open te maken. We kunnen bijvoorbeeld een ongeboren kind in beeld brengen of onderzoeken hoe het hart eruitziet en functioneert. Daarvoor gebruiken we geluidsgolven: een echoapparaat zendt geluid uit en vangt de terugkerende echo's op. Deze echo's leveren nog geen kant-en-klaar beeld op. Software verwerkt de ontvangen geluidssignalen tot een beeld van de weefsels. In dit hoofdstuk onderzoeken we dit proces. We zoeken eerst uit hoe we geluidssignalen kunnen omzetten in een beeld. Daarna vertalen we die stappen naar code en programmeren we het proces zelf.</p>
+<div class="admonition info">
+<p class="admonition-title">Aansluiting MNW-programma</p>
+<p>In deze sessie onderzoeken we hoe bij echografie meetgegevens worden omgezet in een beeld en programmeren we zelf een beeldreconstructie. Daarmee sluit de sessie aan bij de minor <em>Biomedische beeldvorming</em> (jaar 3, semester 1). In deze minor leer je de fysische en chemische principes achter verschillende beeldvormende technieken kennen, waaronder echografie. Ook ga je aan de slag met beeldanalyse en beeldbewerking.</p>
+</div>
+<h2 id="hoe-ontstaat-een-echobeeld">Hoe ontstaat een echobeeld?<a class="headerlink" href="#hoe-ontstaat-een-echobeeld" title="Permanent link">&para;</a></h2>
+<p>Om te begrijpen hoe we van geluidssignalen een beeld kunnen maken, bekijken we eerst hoe die signalen ontstaan. Bij echografie gebruiken we geluidsgolven met een hoge frequentie. Dit noemen we ultrageluid (Engels: <em>ultrasound</em>). Een probe zendt deze golven het lichaam in. Op de grens tussen twee weefsels wordt een deel van het geluid gereflecteerd. Daardoor ontstaat een echo. De rest wordt doorgelaten en kan dieper in het lichaam opnieuw worden gereflecteerd. </p>
+<p>De probe wisselt tussen het uitzenden van geluid en het ontvangen van echo's. Uit de tijd tussen het uitzenden en het ontvangen kunnen we, met behulp van de geluidssnelheid, de afstand berekenen tot de plek waar de echo ontstond. De sterkte van de echo bepaalt hoe helder die plek in het beeld wordt weergegeven. Een probe zendt geluidsgolven in verschillende richtingen binnen een vlak uit en ontvangt de bijbehorende echo's. De software combineert deze informatie tot een tweedimensionaal beeld van de weefsels.</p>
+<h2 id="van-meetpunt-naar-gegevensbestand">Van meetpunt naar gegevensbestand<a class="headerlink" href="#van-meetpunt-naar-gegevensbestand" title="Permanent link">&para;</a></h2>
+<p>Om straks de bestanden met gegevens goed te kunnen interpreteren, verzamelen we eerst zelf data op papier. Zo ontdekken we hoe zo'n bestand is opgebouwd en wat de waarden erin betekenen. We gebruiken hiervoor een sterk vereenvoudigd model van echografie. </p>
+<p>In onderstaand figuur zie je een grijs gebied in de vorm van een hart: </p>
 <p><img alt="afbeelding met grijs hart in wit vlak" src="../figures/hart_ultra-sound_2.svg" /></p>
-<p>De probe (P) wordt in het midden bovenaan geplaats en zend in een het $x,y$-vlak geluidsgolven uit. Om het eenvoudig te houden gaan we in ieder van de 5 richtingen $(-90,-30,0,30,90)$ op 3 afstanden kijken naar het echosignaal (zwarte rondjes).</p>
+<p>In het volgende figuur zijn de probe $P$ en de vijf richtingen waarin deze meet toegevoegd. De probe staat bovenaan in het midden en zendt geluidsgolven uit in het $x$,$y$-vlak. De vijf meetrichtingen komen overeen met hoeken van -90$\degree$, -30$\degree$, 0$\degree$, 30$\degree$ en 90$\degree$, waarbij 0$\degree$ recht naar beneden wijst. In elke richting meten we op drie afstanden vanaf de probe. Elk meetpunt is aangegeven met een zwarte stip. De eerste meting doen we bij de probe zelf, op afstand 0. </p>
 <p><img alt="afbeelding met probe bovenaan in het midden die in 5 richtingen signaal uitzend" src="../figures/hart_ultra-sound_3.svg" /></p>
+<p>In ons vereenvoudigde model geeft een meetpunt in het witte gebied een laag signaal, dat we noteren als 0. Een meetpunt in het grijze gebied geeft een hoog signaal, dat we noteren als 1. Het signaal hangt dus alleen af van de kleur op het meetpunt. We kijken in dit model niet naar reflecties op weefselgrenzen, zoals bij echografie wel gebeurt.</p>
+<div id="opdr:handmatige-scan"></div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Handmatige scan</p>
-<p>Als voorbeeld kijken we naar de richting $-90$. Bij het eerste zwarte rondje is het weefsel wit en is het signaal laag $(0)$, bij het tweede zwarte rondje is het weefsel grijs en is het signaal hoog $(1)$, bij het derde zwarte rondje is het signaal weer laag $(0)$. De data die de probe naar de computer stuurt is de hoek gevolgd door de signalen op de drie posities, op één regel en gescheiden door komma's: <code>-90,0,1,0</code>. Maak de data af voor de overige hoeken.</p>
+<p>We gaan nu de meetgegevens op papier noteren zoals ze straks in een bestand staan. Voor elke meetrichting schrijven we de hoek en de signalen op de drie meetpunten op, van dichtbij naar ver weg. We zetten deze waarden op één regel, gescheiden door komma's. Voor de richting -90$\degree$ zijn de signalen achtereenvolgens laag, hoog en laag. Dat geeft: <code>-90,0,1,0</code>.</p>
+<ol>
+<li>Neem de voorbeeldregel voor -90$\degree$ over op papier en vul de gegevens voor de overige vier richtingen aan. Gebruik voor elke richting een nieuwe regel en dezelfde opbouw als in het voorbeeld. Aan het einde heb je vijf regels: één voor elke richting.</li>
+</ol>
 </div>
 <!--
 ### antwoord
@@ -748,17 +760,21 @@
 </span></code></pre></div>
 -->
 
-<h2 id="hoe-weet-je-waar-het-signaal-vandaan-kwam">Hoe weet je waar het signaal vandaan kwam<a class="headerlink" href="#hoe-weet-je-waar-het-signaal-vandaan-kwam" title="Permanent link">&para;</a></h2>
-<p>In het echt heb je geen idee van hoe het weefsel eruit ziet en krijg je alleen de data terug die je bij de vorige opdracht hebt opgeschreven. We gaan het plaatje pixel voor pixel opbouwen. Als je naar de vorige afbeelding kijkt zie je dat we op de $x$-as 5 meetpunten hebben, dus laten we een een plaatje van 5 bij 5 pixels maken. We zetten de oorsprong linksonder en geven de locatie van de pixel aan met x en y waardes. Pixel $(0,0)$ ligt linksonder en pixel $(4,4)$ ligt rechtsboven. De probe zat in het midden bovenaan, dus op pixel $(2,4)$.</p>
-<p><img alt="afbeelding van 5 bij 5 pixels met (0,0), (2,4) en (4,4) aangegeven in de betreffende pixel" src="../figures/hart_ultra-sound_4a.svg" />.</p>
+<h2 id="van-meetgegevens-naar-beeld">Van meetgegevens naar beeld<a class="headerlink" href="#van-meetgegevens-naar-beeld" title="Permanent link">&para;</a></h2>
+<p>Bij echografie wordt een beeld opgebouwd op basis van meetgegevens. We doen dit eerst op papier, zodat we begrijpen hoe die gegevens worden omgezet in een beeld. Hiervoor gebruiken we de uitkomst van de <a href="#opdr:handmatige-scan"><em>opdracht Handmatige scan</em></a>.</p>
+<p>We bouwen het beeld pixel voor pixel op. Hiervoor gebruiken we een raster van 5 bij 5 pixels, zoals in onderstaand figuur. We zetten de oorsprong linksonder en geven de positie van elke pixel aan met twee coördinaten: eerst de $x$-coördinaat en daarna de $y$-coördinaat. Beide lopen van 0 tot en met 4. Pixel [0,0] ligt dus linksonder en pixel [4,4] rechtsboven. De probe $P$ staat bovenaan in het midden, op pixel [2,4].</p>
+<p><img alt="afbeelding van 5 bij 5 pixels met [0,0], [2,4] en [4,4] aangegeven in de betreffende pixel" src="../figures/hart_ultra-sound_4a.svg" />.</p>
+<p>Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpunt ligt. Waar ligt bijvoorbeeld het derde meetpunt in de richting 30$\degree$? Als we de $x$- en $y$-coördinaten kennen, kunnen we de signaalwaarde aan een pixel toekennen.</p>
+<div id="opdr:meetpunt-naar-pixel"></div>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Coördinaten bepalen</p>
-<p>We moeten er nu achter gaan komen wat de locatie was van bijvoorbeeld het derde datapunt bij een hoek van $30$ graden. Als we de $x$ en $y$ waarde daarvan weten, kunnen we de waarde van de data aan de pixel toekennen en op die manier een plaatje construeren. Zoals eerder gezegd hangt een datapunt samen met een afstand. Om het eenvoudig te houden stellen we dat het eerste datapunt op afstand $r=0$ zit, het tweede op afstand $r=1$ en het derde op afstand $r=2$. De hoek van de geluidsgolf met de $0$ graden lijn noemen we $\phi$. Gebruik onderstaande afbeelding en al je geometrische toverkracht om een algemene uitdrukking voor $x$ en $y$ te vinden.</p>
+<p class="admonition-title">Van meetpunt naar pixel</p>
+<p>Elk meetpunt ligt op een bepaalde afstand van de probe $P$. Het eerste meetpunt ligt bij de probe zelf, op afstand $r=0$. Het tweede meetpunt ligt op afstand $r=1$ en het derde meetpunt op $r=2$. We gebruiken hier de pixels van het raster als maat: een afstand van 1 is gelijk aan de breedte van één pixel. De hoek ten opzichte van de richting naar beneden, 0$\degree$, noemen we $\phi$.</p>
 <p><img alt="afbeelding met 5 bij 5 pixels met p midden bovenaan, hoek phi, afstand r en x en y." src="../figures/hart_ultra-sound_4b.svg" /></p>
-</div>
-<div class="admonition opdracht-basis">
-<p class="admonition-title">Welke pixel is dat?</p>
-<p>Je hebt nu een uitdrukking voor $x$ en $y$ in termen van een hoek $\phi$ en een afstand $r$. Als je terugkijkt naar de vorige afbeelding dan zie je dat een datapunt ergens in een pixel terechtkomt en niet per se in het midden. Om tijdens de reconstructie de waarde van het datapunt aan de pixel toe te kennen moeten we niet alleen de berekende onafgeronde $x$ en $y$ waarde weten, maar vooral de coördinaten van de pixel waarin het punt ligt. Geef voor de 3 datapunten in de afbeelding de $x$ en $y$ waarde van de <em>pixel</em>.</p>
+<ol>
+<li>In bovenstaand figuur zijn drie meetpunten aangegeven voor de richting van 30$\degree$. In welke pixels liggen deze meetpunten? Noteer voor elk meetpunt de coördinaten van de bijbehorende pixel en de afstand $r$ tot de probe.</li>
+<li>Gebruik het figuur en je kennis van goniometrie om vergelijkingen voor $x$ en $y$ op te stellen in termen van $r$ en $\phi$. Houd rekening met de positie van de probe in pixel [2,4].</li>
+<li>Bereken met je vergelijkingen de coördinaten van de drie meetpunten voor de richting 30$\degree$. Rond de coördinaten af op gehele getallen en vergelijk ze met de pixelcoördinaten die je eerder hebt afgelezen. Komen ze overeen?</li>
+</ol>
 </div>
 <!--
 ### antwoord
@@ -767,84 +783,179 @@ r=1: [3,3]
 r=2: [3,2]
 -->
 
+<p>Met de gevonden vergelijkingen kunnen we bepalen waar een meetpunt ligt. Om een beeld te reconstrueren, geven we de bijbehorende pixel de signaalwaarde van dat meetpunt. In dit eenvoudige geval is dat een 0 of een 1. Zo bouwen we het beeld stap voor stap op.</p>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Reconstructie</p>
-<p>Teken een vlak van 5 bij 5 pixels, geef alle pixels in eerste instantie een waarde $0$. Je kunt de waarde aangeven met een kleur (bijvoorbeeld $0=$ wit, $1=$ grijs).  Gebruik de data uit een vorig opdrachten en de uitdrukkingen voor $x$ en $y$ om de data te vertalen naar $x$ en $y$ waardes van de pixel. Tip: reken alleen de pixel locaties uit voor de datapunten met waarde $1$.</p>
+<p class="admonition-title">Reconstructie van het beeld</p>
+<ol>
+<li>Teken een raster van 5 bij 5 pixels. Geef de pixel linksonder de coördinaten [0,0]. Nummer de pixels op beide assen van 0 tot en met 4. Laat alle pixels wit, ze hebben dan allemaal de waarde 0.</li>
+<li>Gebruik de uitkomst van de <a href="#opdr:handmatige-scan"><em>opdracht Handmatige scan</em></a>. Bereken voor elk meetpunt de $x$- en $y$-coördinaten met de gevonden vergelijkingen. Rond de coördinaten af op gehele getallen en geef de bijbehorende pixel de signaalwaarde van het meetpunt. Laat pixels met de waarde 0 wit en kleur pixels met de waarde 1 grijs.</li>
+<li>Vergelijk het gereconstrueerde beeld met het oorspronkelijke beeld. Komen ze overeen?</li>
+</ol>
 </div>
 <!--
 ### antwoord
 ![afbeelding met 5 bij 5 pixels, met 6 grijze blokjes in de vorm van een soort hartje](figures/hart_ultra-sound_5.svg)
 -->
 
-<h2 id="meer-data-is-beter">Meer data is beter<a class="headerlink" href="#meer-data-is-beter" title="Permanent link">&para;</a></h2>
-<p>Je hebt bij de vorige opdracht vast gezien dat het plaatje meer leek op een kip dan op een hartje<sup id="fnref:afronden"><a class="footnote-ref" href="#fn:afronden">1</a></sup>. Als je onder meer hoeken en met meer datapunten zou werken zal je zien dat de resolutie van het plaatje steeds beter wordt. Maar dan is het niet meer met de hand uit te rekenen, dus op naar de programmeeropdracht!</p>
-<p><img alt="afbeelding met 10 bij 10 pixels en een grijs hartje" src="../figures/hart_ultra-sound_6.svg" /></p>
+<p>Het gereconstrueerde beeld komt niet precies overeen met het oorspronkelijke beeld. Sommige meetpunten liggen precies op de grens tussen twee pixels. Door hun coördinaten af te ronden, kiezen we aan welke pixel we de signaalwaarde toekennen. Die keuze kan ervoor zorgen dat het gereconstrueerde beeld iets afwijkt van het origineel.</p>
 <h2 id="beeldreconstructie">Beeldreconstructie<a class="headerlink" href="#beeldreconstructie" title="Permanent link">&para;</a></h2>
-<p>Het reconstrueren van het plaatje vanuit de echografiedata heb je zojuist met de hand gedaan. In de volgende opdrachten ga je de stappen omzetten naar Python code. </p>
-<p>Er zijn twee csv-bestanden beschikbaar: <a href="../data/ultrasound_phantom.csv">phantom</a> en <a href="../data/ultrasound_mystery.csv">mystery</a>. De eerste is een test-bestand. De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Als je deze data omzet in een plaatje verwacht je een ovaal met een cirkel:</p>
-<p><img alt="phantom" src="../figures/phantom.png" /></p>
-<p>Als het test-bestand gelukt is gaan we daarna het mystery-plaatje reconstrueren. Deze data bestaat uit meer hoeken en meer data-niveaus. Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en het verder niet uitmaakt hoeveel rijen of dataniveau's er zijn.</p>
+<p>Het reconstrueren van het plaatje vanuit de echografiedata heb je zojuist met de hand gedaan. In de volgende opdrachten ga je de stappen omzetten naar Python code. We starten met het hartje zodat je kunt controleren of je met de computer hetzelfde resultaat krijgt als met de hand.</p>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Phantom reconstruction</p>
-<p>Reconstrueer het plaatje op een vlak van 500 bij 500 pixels. De probe zit weer in het midden bovenaan (pixel $(250,499)$). Om een vlak van $x$ bij $y$ pixels in Python te construeren kun je een lege lijst vullen met $y$ keer een lijst met $x$ kolomen. Hieronder zie je een voorbeeld met code voor een vlak van 5 bij 5 pixels. In eerste instantie hebben alle pixels dezelfde waarde $(0.0)$ met behulp van pixelcoördinaten kun je de waarde aanpassen. Let op: geef eerst aan in welke rij de pixel zit ($y$-waarde) en daarna in welke kolom ($x$-waarde). Dat is nodig omdat de functie waarmee je de afbeelding op het scherm zet (<code class="language-py highlight"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span></code>) dat verwacht.
+<p class="admonition-title">Data-invoer</p>
+<p>Maak een nieuw bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_heart.csv</code> en vul daar de gegevens in die je met de hand hebt 'gemeten'. De eerste regel wordt dan <code>-90,0,1,0</code>. Vul het bestand aan met alle metingen.</p>
+</div>
+<p>Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het resultaat kunnen visualiseren. Dat gaat heel goed met <code class="language-py highlight"><span class="n">matplotlib</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span></code> (afgekort van <em>show image</em>). Je kunt met die functie een <em>image</em>, een plaatje, laten zien. Je moet dan een soort tweedimensionale tabel van waardes aanleveren, die overeen komen met $x$- en $y$-coördinaten. Als je kiest voor een grijze <em>color map</em>, dan wordt de waarde 0 zwart, de waarde 1 wit, en alles er tussenin wordt een grijstint. Het is voor ons rekenwerk handig als de oorsprong linksonder begint, zoals we tot nu toe steeds gedaan hebben. Computerschermen rekenen normaal gesproken vanaf boven, dus dit moeten we excpliciet aangeven.</p>
+<div class="admonition info">
+<p class="admonition-title">Tweedimensionale gegevens visualiseren</p>
+<p>Het maken van de tweedimensionale tabel en het laten zien van het plaatje ziet er als volgt uit:
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">SIZE_X</span> <span class="o">=</span> <span class="mi">5</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">SIZE_Y</span> <span class="o">=</span> <span class="mi">5</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">image</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">SIZE_Y</span><span class="p">):</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="c1"># Add one row with SIZE pixels. Repeating this builds a 2D image.</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">image</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="n">SIZE_X</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">image</span><span class="p">[</span><span class="n">y_pixel</span><span class="p">][</span><span class="n">x_pixel</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</span></code></pre></div></p>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># 3x3 image</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">row0</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">row1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">row2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">image</span> <span class="o">=</span> <span class="p">[</span><span class="n">row0</span><span class="p">,</span> <span class="n">row1</span><span class="p">,</span> <span class="n">row2</span><span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+We maken een lijst voor iedere regel, met een 0.0 (zwart) voor iedere kolom die we hebben. Het plaatje zelf bestaat vervolgens uit een lijst van al die regels. Als we nu een element willen veranderen dan kan dat op twee manieren. Stel we willen het <em>eerste element</em> op de <em>derde regel</em> veranderen:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># fetching the third row</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">row</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># changing the first element</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># shorthand, combining both:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">image</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span></code></pre></div>
+Een openstaande vraag is nog wat de $(x, y)$-coördinaten zijn van dit element.</p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Werken met plaatjes</p>
+<p>Maak een bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_reconstruction.py</code> en plak bovenstaande code daarin. Als je het runt krijg je een zwart plaatje, want alle staat op nul.</p>
 <ol>
-<li>De variabelen <code>y_pixel</code> en <code>x_pixel</code> gaan we vervangen door echte coördinaten. In de oefenopdracht was de probe in pixel $(2,4)$ geplaatst. Pas de code hierboven aan zodat pixel $(2,4)$ de waarde $1.0$ krijgt. </li>
-<li>Om de pixels op het scherm te tonen gebruiken we <code class="language-py highlight"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">()</span></code> van <code class="language-py highlight"><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span></code>. Het stukje <code class="language-py highlight"><span class="n">cmap</span> <span class="o">=</span><span class="s2">&quot;gray&quot;</span></code> (<em>colormap gray</em>) zorgt ervoor dat de waardes van de pixels worden omgezet in grijswaardes, <code class="language-py highlight"><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span></code> zorgt ervoor dat pixel $(0,0)$ in de linkeronderhoek terecht komt. Wat gebeurt er als je <code class="language-py highlight"><span class="n">cmap</span> <span class="o">=</span><span class="s2">&quot;gray&quot;</span></code> of <code class="language-py highlight"><span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span></code> weghaalt?</li>
+<li>Maak de $(x, y)$-coördinaten (1, 1) en (2, 1) wit. Doe dit met een <code class="language-py highlight"><span class="n">image</span><span class="p">[</span><span class="o">...</span><span class="p">][</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span></code>-regel. Controleer of het plaatje klopt met je verwachting.</li>
+<li>Als ik dat met variabelen doe, dus bijvoorbeeld:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">image</span><span class="p">[</span><span class="o">...</span><span class="p">][</span><span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span>
+</span></code></pre></div>
+Hoe moet de laatste regel er dan uitzien?</li>
+<li>De reconstructie die we met de hand gedaan hebben was een 5x5-plaatje, en niet 3x3. Pas je code aan zodat je volledig zwart 5x5 plaatje krijgt; dat plaatje gaan we later vullen met de resultaten van onze metingen.</li>
 </ol>
 </div>
-<p>In de oefenopdracht ben je waarschijlijk tot de conclusie gekomen dat je sinus en cosinus nodig hebt om de locaties te bepalen en dat je moet afronden om pixel waardes te krijgen. Let op: de meeste wiskunde en dus ook computers rekenen in radialen. In de code hieronder staat uitgelegd hoe je dat doet in Python:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">radians</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># zet de hoek om in radialen!</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">phi_rad</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">sin_30</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">phi_rad</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">cos_30</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">phi_rad</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># afronden doe je met round()</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">rounded_sin_30</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">sin_30</span><span class="p">)</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">rounded_cos_30</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">cos_30</span><span class="p">)</span>
+<div class="admonition info">
+<p class="admonition-title">Splitsen, splitsen, splitsen!</p>
+<p>Je hebt inmiddels al vaker de tekst van een bestand ingelezen. Vervolgens heb je de tekst gesplitst in regels met <code>.splitlines()</code>. Je kunt op méér splitsen dan alleen regeleindes met de aanroep <code>#!.split()</code>. Je geeft dan een stukje tekst mee waarop hij moet splitsen. Bijvoorbeeld:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Biomedical Computing&quot;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># [&#39;Biomedical&#39;, &#39;Computing&#39;]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Hahahahahaha&quot;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;h&quot;</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># [&#39;Ha&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;1;2;3;4;5&quot;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]</span>
+</span></code></pre></div></p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Inlezen van de data</p>
+<p>Het databestand dat we gemaakt hebben bestaat uit regels waarin de verschillende waardes gescheiden worden door komma's, een zogeheten <em>comma-separated values</em>-bestand (CSV-bestand). Kijk zonodig nog even terug naar eerdere opdrachten waar je bestanden in moest lezen.</p>
+<ol>
+<li>Werk verder in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_reconstruction.py</code>. De code die we nu gaan schrijven komt ná het maken van de variabele <code>image</code>, maar de twee regels die beginnen met <code>plt.</code> blijven altijd aan het eind van het script staan.</li>
+<li>Schrijf code om de tekst uit het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_heart.csv</code> in te lezen, en splits op in regels.</li>
+<li>Loop over iedere regel en voor iedere regel:<ol>
+<li>Splits de regel op in de verschillende waardes.</li>
+<li>Denk na over wat elke waarde ook alweer betekent en bewaar de hoek in de variabele <code>angle</code>.</li>
+<li>Print de hoek.</li>
+</ol>
+</li>
+</ol>
+<p>Je bent nu in staat om alle data voor een bepaalde hoek uit te lezen en de data te gaan reconstrueren.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Graden, radialen, en handig omrekenen</p>
+<p>In de oefenopdracht ben je waarschijlijk tot de conclusie gekomen dat je sinus en cosinus nodig hebt om de locaties te bepalen en dat je moet afronden om pixel waardes te krijgen. Let op: de meeste wiskunde en dus ook computers rekenen in radialen. Dat zijn we al eerder tegengekomen in een "verborgen-fout". In de code hieronder staat uitgelegd hoe je het omrekenen makkelijk doet in Python:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">radians</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># radians() zet een hoek van graden om in radialen</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">angle_rad</span> <span class="o">=</span> <span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">sin_angle</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">angle_rad</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">cos_angle</span> <span class="o">=</span> <span class="n">cos</span><span class="p">(</span><span class="n">angle_rad</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># afronden doe je met round()</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">rounded_sin_angle</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">sin_angle</span><span class="p">)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">rounded_cos_angle</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">cos_angle</span><span class="p">)</span>
+</span></code></pre></div></p>
+</div>
+<div class="admonition opdracht-basis">
+<p class="admonition-title">Reconstructie van het beeld</p>
+<p>Voordat je de code verder gaat uitwerken wil je eerst het plan helder hebben. Kijk terug naar de voorbeeldopdrachten, o.a. <a href="#opdr:meetpunt-naar-pixel">van meetpunt naar pixel</a>. Welke rekenstappen heb je daar gemaakt? Maak de stappen zo klein mogelijk en verwerk ze in je code.</p>
+<ol>
+<li>Werk verder in het bestand <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_reconstruction.py</code>.</li>
+<li>Nadat je de hoek print: schrijf een loop over de meetwaardes, waarbij je bijhoudt welke waarde het is (eerste, tweede, derde) want dat is nodig voor de berekeningen.</li>
+<li>Voor iedere meetwaarde, bereken de $x$- en $y$-coördinaten.</li>
+<li>Geef de betreffende pixel in <code>image</code> de bijbehorende meetwaarde.</li>
+</ol>
+<p>Als deze stappen gelukt zijn dan heb je een plaatje! Als je dat nog niet gedaan hebt, dan is dit een <em>heel goed moment</em> om te committen!</p>
+</div>
+<h2 id="meer-data-is-beter">Meer data is beter<a class="headerlink" href="#meer-data-is-beter" title="Permanent link">&para;</a></h2>
+<p>Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat je met de hand hebt gevonden. Zoals eerder is genoemd kan dat te maken hebben met afronden<sup id="fnref:afronden"><a class="footnote-ref" href="#fn:afronden">1</a></sup>. Als je onder meer hoeken en met meer datapunten werkt zul je zien dat de resolutie van het plaatje steeds beter wordt. Dat levert wel een praktisch probleem op: we moeten een <code>image</code> maken met heel veel elementen (pixels).</p>
+<p><img alt="afbeelding met 10 bij 10 pixels en een grijs hartje" src="../figures/hart_ultra-sound_6.svg" /></p>
+<div class="admonition info">
+<p class="admonition-title">Lijsten vermenigvuldigen</p>
+<p>Je kunt af en toe verrassende dingen doen in Python. Zo kun je strings optellen en vermenigvuldigen, zoals we eerder gezien hebben in een predict-the-outcome:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">long_string</span> <span class="o">=</span> <span class="s2">&quot;Hi &quot;</span> <span class="o">+</span> <span class="s2">&quot;there!&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># &quot;Hi there!&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">warning</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="s2">&quot;!&quot;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># !!!!!!!!!!</span>
 </span></code></pre></div>
-Voordat je de code verder gaat uitwerken wil je eerst het plan helder hebben. Kijk terug naar de voorbeeldopdracht. Welke stappen heb je daar gemaakt? Maak de stappen zo klein mogelijk en verwerk ze in de opdrachten hieronder, op papier.</p>
-<div class="admonition opdracht-basis">
-<p class="admonition-title">De starttoestand</p>
-<p>Wat is de starttoestand van het probleem? Beschrijf vanuit waar je het probleem moet gaan oplossen.</p>
+en dat kan ook met lijsten:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">long_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># [1, 2, 3, 4, 5, 6]</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">zeroes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</span>
+</span></code></pre></div>
+Dit vermenigvuldigen van lijsten komt goed van pas in de volgende opdracht.</p>
 </div>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">Het doel</p>
-<p>Wanneer het doel bereikt is, is het probleem opgelost. Omschrijf wat je wilt bereiken.</p>
+<p class="admonition-title">Fantoombaby op hoge resolutie</p>
+<p>Download het csv-bestand <a href="../data/ultrasound_phantom.csv">ultrasound_phantom.csv</a>. De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:</p>
+<p><img alt="phantom" src="../figures/phantom.png" /></p>
+<p>We moeten de code aanpassen om een <code>image</code>-variabele te krijgen met 501 rijen en 501 kolommen. Het is nu niet haalbaar om de code aan te passen zoals we dat eerder gedaan hebben...  Verwijder de code die je hebt staan om rijen te maken en toe te voegen aan image. Vervang die door het volgende:</p>
+<ol>
+<li>Maak een lege lijst en stop die in de variable <code>image</code>.</li>
+<li>Schrijf nu een loop die 501 keer herhaalt.</li>
+<li>Binnen de loop: maak een lijst met 501 nullen en stop die in de variabele <code>row</code>.</li>
+<li>Binnen de loop: voeg <code>row</code> toe aan <code>image</code>.</li>
+</ol>
+<p>Als het goed is is je <code>image</code> nu 501 bij 501 pixels. Controleer of je nog andere dingen moet veranderen in je code om de reconstructie goed te laten gaan en reconstrueer dan de data in <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M64 48h112v88c0 39.8 32.2 72 72 72h88v240c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16m160 19.9 92.1 92.1H248c-13.3 0-24-10.7-24-24zM64 0C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h256c35.3 0 64-28.7 64-64V186.5c0-17-6.7-33.3-18.7-45.3L242.7 18.7C230.7 6.7 214.5 0 197.5 0zm106.2 295.6c8.6-10.1 7.5-25.2-2.6-33.8s-25.2-7.5-33.8 2.6l-48 56c-7.7 9-7.7 22.2 0 31.2l48 56c8.6 10.1 23.8 11.2 33.8 2.6s11.2-23.8 2.6-33.8L135.6 336zm80-31.2c-8.6-10.1-23.8-11.2-33.8-2.6s-11.2 23.8-2.6 33.8l34.6 40.4-34.6 40.4c-8.6 10.1-7.5 25.2 2.6 33.8s25.2 7.5 33.8-2.6l48-56c7.7-9 7.7-22.2 0-31.2z"/></svg></span><code>ultrasound_phantom.csv</code>. Controleer of de afbeelding overeenkomt met het bovenstaande plaatje.</p>
 </div>
 <div class="admonition opdracht-basis">
-<p class="admonition-title">De spelregels</p>
-<p>De mogelijkheden om van de start naar het doel te raken worden beperkt door spelregels. Aan welke spelregels moet jouw oplossing voldoen?</p>
+<p class="admonition-title">Mystery scan</p>
+<p>Download het <a href="../data/ultrasound_mystery.csv">mystery</a>-bestand. Deze data bestaat uit meer hoeken en meer data-niveaus, en bevat een realistisch beeld in plaats van een bedacht plaatje. Reconstrueer de data in dit bestand.</p>
 </div>
-<div class="admonition opdracht-basis">
-<p class="admonition-title">Commentaar</p>
-<p>Verwerk de starttoestend, de spelregels en het doel in zinnen die je als commentaarregels in je Pythoncode plaatst.</p>
-</div>
-<div class="admonition opdracht-basis">
-<p class="admonition-title">Uitwerking van de beeldreconstructie</p>
-<p>Zet onder de regels commentaar de code om het programma te laten werken. Begin met stukjes code die je meteen weet op te schrijven. Test je code steeds voordat je verder gaat. Maak een schets op papier als je niet weet hoe je verder moet. Leg je probleem uit aan je buurmens als je vastloopt. Kijk in vorige (voorbeeld-)opdrachten voor inspiratie om de code werkend te krijgen, en vraag hulp aan assistenten of stafleden. Wat voor soort scan was dit?</p>
+<div class="admonition opdracht-meer">
+<p class="admonition-title">Oh ja, fxuncties</p>
+<p>Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en waar je makkelijk het aantal rijen en kolommen kunt wijzigen. Misschien wil je wel met één script <em>alle</em> voorgaande datasets tegelijk reconstrueren en naast elkaar openen. Dat kan door de reconstructiecode in een functie te stoppen. Schrijf een functie zodat je het volgende kunt doen in je code:
+<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">image</span> <span class="o">=</span> <span class="n">reconstruct_image</span><span class="p">(</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="s2">&quot;ultrasound_mystery.csv&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">501</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+Deze paar regels kun je dan kopiëren om de andere datasets te analyseren,</p>
 </div>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:afronden">
-<p>Mocht je het rekenwerk hebben uitbesteed aan Python dan kan het zijn dat jij een symmetrisch plaatje hebt gekregen terwijl andere mensen die het met de hand uitrekenen een asymmetrisch plaatje kregen (de 'kip'). De reden dat de uitkomsten verschillen heeft te maken met afronden. Als je met de hand hebt uitgerekend rond je waarschijnlijk $2.5$ af naar boven, zoals je ook op school hebt geleerd. Maar Python doet dat anders, die rond het af naar het dichtsbijzijnde even getal. Dus $1.5$ wordt $2$ en $2.5$ wordt ook $2$. Dit voorkomt een bias naar hogere getallen wat je krijgt als je altijd naar boven afrond. Dit algoritme wordt ook door bijvoorbeeld banken gebruikt die niet graag geld verliezen als ze altijd naar boven afronden. Daarom heet het algoritme ook wel <em>Banker's rounding</em>.&#160;<a class="footnote-backref" href="#fnref:afronden" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Mocht je het rekenwerk hebben uitbesteed aan Python dan kan het zijn dat jij een symmetrisch plaatje hebt gekregen terwijl andere mensen die het met de hand uitrekenen een asymmetrisch plaatje kregen (de 'kip'). De reden dat de uitkomsten verschillen heeft te maken met afronden. Als je met de hand hebt uitgerekend rond je waarschijnlijk $2.5$ af naar boven, zoals je ook op school hebt geleerd. Maar Python doet dat anders, die rondt het af naar het dichtsbijzijnde even getal. Dus $1.5$ wordt $2$ en $2.5$ wordt ook $2$. Dit voorkomt een bias naar hogere getallen wat je krijgt als je altijd naar boven afrondt. Dit algoritme wordt ook door bijvoorbeeld banken gebruikt die niet graag geld verliezen als ze altijd naar boven afronden. Daarom heet het algoritme ook wel <em>Banker's rounding</em>.&#160;<a class="footnote-backref" href="#fnref:afronden" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
