@@ -2,6 +2,10 @@
 
 Met echografie kunnen we in het lichaam kijken zonder het open te maken. We kunnen bijvoorbeeld een ongeboren kind in beeld brengen of onderzoeken hoe het hart eruitziet en functioneert. Daarvoor gebruiken we geluidsgolven: een echoapparaat zendt geluid uit en vangt de terugkerende echo's op. Deze echo's leveren nog geen kant-en-klaar beeld op. Software verwerkt de ontvangen geluidssignalen tot een beeld van de weefsels. In dit hoofdstuk onderzoeken we dit proces. We zoeken eerst uit hoe we geluidssignalen kunnen omzetten in een beeld. Daarna vertalen we die stappen naar code en programmeren we het proces zelf.
 
+!!! info "Aansluiting MNW-programma"
+
+    In deze sessie onderzoeken we hoe bij echografie meetgegevens worden omgezet in een beeld en programmeren we zelf een beeldreconstructie. Daarmee sluit de sessie aan bij de minor _Biomedische beeldvorming_ (jaar 3, semester 1). In deze minor leer je de fysische en chemische principes achter verschillende beeldvormende technieken kennen, waaronder echografie. Ook ga je aan de slag met beeldanalyse en beeldbewerking.
+
 ## Hoe ontstaat een echobeeld?
 
 Om te begrijpen hoe we van geluidssignalen een beeld kunnen maken, bekijken we eerst hoe die signalen ontstaan. Bij echografie gebruiken we geluidsgolven met een hoge frequentie. Dit noemen we ultrageluid (Engels: _ultrasound_). Een probe zendt deze golven het lichaam in. Op de grens tussen twee weefsels wordt een deel van het geluid gereflecteerd. Daardoor ontstaat een echo. De rest wordt doorgelaten en kan dieper in het lichaam opnieuw worden gereflecteerd. 
