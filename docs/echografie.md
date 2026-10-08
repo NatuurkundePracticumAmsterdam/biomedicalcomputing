@@ -54,6 +54,7 @@ We bouwen het beeld pixel voor pixel op. Hiervoor gebruiken we een raster van 5 
 
 Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpunt ligt. Waar ligt bijvoorbeeld het derde meetpunt in de richting 30$\degree$? Als we de $x$- en $y$-coördinaten kennen, kunnen we de signaalwaarde aan een pixel toekennen.
 
+<div id="opdr:meetpunt-naar-pixel"></div>
 !!! opdracht-basis "Van meetpunt naar pixel"
 
     Elk meetpunt ligt op een bepaalde afstand van de probe $P$. Het eerste meetpunt ligt bij de probe zelf, op afstand $r=0$. Het tweede meetpunt ligt op afstand $r=1$ en het derde meetpunt op $r=2$. We gebruiken hier de pixels van het raster als maat: een afstand van 1 is gelijk aan de breedte van één pixel. De hoek ten opzichte van de richting naar beneden, 0$\degree$, noemen we $\phi$.
@@ -86,17 +87,120 @@ Met de gevonden vergelijkingen kunnen we bepalen waar een meetpunt ligt. Om een 
 
 Het gereconstrueerde beeld komt niet precies overeen met het oorspronkelijke beeld. Sommige meetpunten liggen precies op de grens tussen twee pixels. Door hun coördinaten af te ronden, kiezen we aan welke pixel we de signaalwaarde toekennen. Die keuze kan ervoor zorgen dat het gereconstrueerde beeld iets afwijkt van het origineel.
 
+## Beeldreconstructie
+
+Het reconstrueren van het plaatje vanuit de echografiedata heb je zojuist met de hand gedaan. In de volgende opdrachten ga je de stappen omzetten naar Python code. We starten met het hartje zodat je kunt controleren of je met de computer hetzelfde resultaat krijgt als met de hand.
+
+!!! opdracht-basis "Data-invoer"
+
+    Maak een nieuw bestand {{file}}`ultrasound_heart.csv` en vul daar de gegevens in die je met de hand hebt 'gemeten'. De eerste regel wordt dan `-90,0,1,0`. Vul het bestand aan met alle metingen.
+
+Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het resultaat kunnen visualiseren. Dat gaat heel goed met `#!py matplotlib.imshow()` (afgekort van _show image_). Je kunt met die functie een _image_, een plaatje, laten zien. Je moet dan een soort tweedimensionale tabel van waardes aanleveren, die overeen komen met $x$- en $y$-coördinaten. Als je kiest voor een grijze _color map_, dan wordt de waarde 0 zwart, de waarde 1 wit, en alles er tussenin wordt een grijstint. Het is voor ons rekenwerk handig als de oorsprong linksonder begint, zoals we tot nu toe steeds gedaan hebben. Computerschermen rekenen normaal gesproken vanaf boven, dus dit moeten we excpliciet aangeven.
+
+!!! info "Tweedimensionale gegevens visualiseren"
+    Het maken van de tweedimensionale tabel en het laten zien van het plaatje ziet er als volgt uit:
+    ```py
+    import matplotlib.pyplot as plt
+
+    # 3x3 image
+    row0 = [0.0, 0.0, 0.0]
+    row1 = [0.0, 0.0, 0.0]
+    row2 = [0.0, 0.0, 0.0]
+    image = [row0, row1, row2]
+
+    plt.imshow(image, cmap="gray", origin="lower")
+    plt.show()
+    ```
+    We maken een lijst voor iedere regel, met een 0.0 (zwart) voor iedere kolom die we hebben. Het plaatje zelf bestaat vervolgens uit een lijst van al die regels. Als we nu een element willen veranderen dan kan dat op twee manieren. Stel we willen het _eerste element_ op de _derde regel_ veranderen:
+    ```py
+    # fetching the third row
+    row = image[2]
+    # changing the first element
+    row[0] = 1.0
+
+    # shorthand, combining both:
+    image[2][0] = 1.0
+    ```
+    Een openstaande vraag is nog wat de $(x, y)$-coördinaten zijn van dit element.
+
+!!! opdracht-basis "Werken met plaatjes"
+
+    Maak een bestand {{file}}`ultrasound_reconstruction.py` en plak bovenstaande code daarin. Als je het runt krijg je een zwart plaatje, want alle staat op nul.
+
+    1. Maak de $(x, y)$-coördinaten (1, 1) en (2, 1) wit. Doe dit met een `#!py image[...][...] = ...`-regel. Controleer of het plaatje klopt met je verwachting.
+    1. Als ik dat met variabelen doe, dus bijvoorbeeld:
+    ```py
+    x = 2
+    y = 1
+    image[...][...] = ...
+    ```
+    Hoe moet de laatste regel er dan uitzien?
+    1. De reconstructie die we met de hand gedaan hebben was een 5x5-plaatje, en niet 3x3. Pas je code aan zodat je volledig zwart 5x5 plaatje krijgt; dat plaatje gaan we later vullen met de resultaten van onze metingen.
+
+!!! info "Splitsen, splitsen, splitsen!"
+
+    Je hebt inmiddels al vaker de tekst van een bestand ingelezen. Vervolgens heb je de tekst gesplitst in regels met `#! .splitlines()`. Je kunt op méér splitsen dan alleen regeleindes met de aanroep `#!.split()`. Je geeft dan een stukje tekst mee waarop hij moet splitsen. Bijvoorbeeld:
+    ```py
+    text = "Biomedical Computing"
+    text.split(" ")
+    # ['Biomedical', 'Computing']
+
+    text = "Hahahahahaha"
+    text.split("h")
+    # ['Ha', 'a', 'a', 'a', 'a', 'a']
+
+    text = "1;2;3;4;5"
+    text.split(";")
+    # ['1', '2', '3', '4', '5']
+    ```
+
+!!! opdracht-basis "Inlezen van de data"
+
+    Het databestand dat we gemaakt hebben bestaat uit regels waarin de verschillende waardes gescheiden worden door komma's, een zogeheten _comma-separated values_-bestand (CSV-bestand). Kijk zonodig nog even terug naar eerdere opdrachten waar je bestanden in moest lezen.
+
+    1. Werk verder in het bestand {{file}}`ultrasound_reconstruction.py`. De code die we nu gaan schrijven komt ná het maken van de variabele `image`, maar de twee regels die beginnen met `plt.` blijven altijd aan het eind van het script staan.
+    1. Schrijf code om de tekst uit het bestand {{file}}`ultrasound_heart.csv` in te lezen, en splits op in regels.
+    1. Loop over iedere regel en voor iedere regel:
+        1. Splits de regel op in de verschillende waardes.
+        1. Denk na over wat elke waarde ook alweer betekent en bewaar de hoek in de variabele `angle`.
+        1. Print de hoek.
+
+    Je bent nu in staat om alle data voor een bepaalde hoek uit te lezen en de data te gaan reconstrueren.
+
+!!! info "Graden, radialen, en handig omrekenen"
+    In de oefenopdracht ben je waarschijlijk tot de conclusie gekomen dat je sinus en cosinus nodig hebt om de locaties te bepalen en dat je moet afronden om pixel waardes te krijgen. Let op: de meeste wiskunde en dus ook computers rekenen in radialen. Dat zijn we al eerder tegengekomen in een "verborgen-fout". In de code hieronder staat uitgelegd hoe je het omrekenen makkelijk doet in Python:
+    ```py
+    from math import radians, sin, cos
+
+    # radians() zet een hoek van graden om in radialen
+    angle_rad = radians(30)
+
+    sin_angle = sin(angle_rad)
+    cos_angle = cos(angle_rad)
+
+    # afronden doe je met round()
+    rounded_sin_angle = round(sin_angle)
+    rounded_cos_angle = round(cos_angle)
+    ```
+
+!!! opdracht-basis "Reconstructie van het beeld"
+    
+    Voordat je de code verder gaat uitwerken wil je eerst het plan helder hebben. Kijk terug naar de voorbeeldopdrachten, o.a. [van meetpunt naar pixel](#opdr:meetpunt-naar-pixel). Welke rekenstappen heb je daar gemaakt? Maak de stappen zo klein mogelijk en verwerk ze in je code.
+
+    1. Werk verder in het bestand {{file}}`ultrasound_reconstruction.py`.
+    1. Nadat je de hoek print: schrijf een loop over de meetwaardes, waarbij je bijhoudt welke waarde het is (eerste, tweede, derde) want dat is nodig voor de berekeningen.
+    1. Voor iedere meetwaarde, bereken de $x$- en $y$-coördinaten.
+    1. Geef de betreffende pixel in `image` de bijbehorende meetwaarde.
+
+    Als deze stappen gelukt zijn dan heb je een plaatje! Als je dat nog niet gedaan hebt, dan is dit een _heel goed moment_ om te committen!
+    
 ## Meer data is beter
 
-Je hebt bij de vorige opdracht vast gezien dat het plaatje meer leek op een kip dan op een hartje[^afronden]. Als je onder meer hoeken en met meer datapunten zou werken zal je zien dat de resolutie van het plaatje steeds beter wordt. Maar dan is het niet meer met de hand uit te rekenen, dus op naar de programmeeropdracht!
+Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat je met de hand hebt gevonden. Zoals eerder is genoemd kan dat te maken hebben met afronden[^afronden]. Als je onder meer hoeken en met meer datapunten werkt zul je zien dat de resolutie van het plaatje steeds beter wordt. Maar dan is het niet meer met de hand uit te rekenen...
 
 ![afbeelding met 10 bij 10 pixels en een grijs hartje](figures/hart_ultra-sound_6.svg)
 
 [^afronden]: Mocht je het rekenwerk hebben uitbesteed aan Python dan kan het zijn dat jij een symmetrisch plaatje hebt gekregen terwijl andere mensen die het met de hand uitrekenen een asymmetrisch plaatje kregen (de 'kip'). De reden dat de uitkomsten verschillen heeft te maken met afronden. Als je met de hand hebt uitgerekend rond je waarschijnlijk $2.5$ af naar boven, zoals je ook op school hebt geleerd. Maar Python doet dat anders, die rond het af naar het dichtsbijzijnde even getal. Dus $1.5$ wordt $2$ en $2.5$ wordt ook $2$. Dit voorkomt een bias naar hogere getallen wat je krijgt als je altijd naar boven afrond. Dit algoritme wordt ook door bijvoorbeeld banken gebruikt die niet graag geld verliezen als ze altijd naar boven afronden. Daarom heet het algoritme ook wel _Banker's rounding_.
-
-## Beeldreconstructie
-
-Het reconstrueren van het plaatje vanuit de echografiedata heb je zojuist met de hand gedaan. In de volgende opdrachten ga je de stappen omzetten naar Python code. 
 
 Er zijn twee csv-bestanden beschikbaar: [phantom](data/ultrasound_phantom.csv) en [mystery](data/ultrasound_mystery.csv). De eerste is een test-bestand. De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Als je deze data omzet in een plaatje verwacht je een ovaal met een cirkel:
 
@@ -127,37 +231,3 @@ Als het test-bestand gelukt is gaan we daarna het mystery-plaatje reconstrueren.
     1. De variabelen `y_pixel` en `x_pixel` gaan we vervangen door echte coördinaten. In de oefenopdracht was de probe in pixel $(2,4)$ geplaatst. Pas de code hierboven aan zodat pixel $(2,4)$ de waarde $1.0$ krijgt. 
     2. Om de pixels op het scherm te tonen gebruiken we `#!py plt.imshow()` van `#!py matplotlib.pyplot`. Het stukje `#!py cmap ="gray"` (_colormap gray_) zorgt ervoor dat de waardes van de pixels worden omgezet in grijswaardes, `#!py origin="lower"` zorgt ervoor dat pixel $(0,0)$ in de linkeronderhoek terecht komt. Wat gebeurt er als je `#!py cmap ="gray"` of `#!py origin="lower"` weghaalt?
 
-In de oefenopdracht ben je waarschijlijk tot de conclusie gekomen dat je sinus en cosinus nodig hebt om de locaties te bepalen en dat je moet afronden om pixel waardes te krijgen. Let op: de meeste wiskunde en dus ook computers rekenen in radialen. In de code hieronder staat uitgelegd hoe je dat doet in Python:
-```py
-from math import radians, sin, cos
-
-# zet de hoek om in radialen!
-phi_rad = radians(30)
-sin_30 = sin(phi_rad)
-cos_30 = cos(phi_rad)
-
-# afronden doe je met round()
-rounded_sin_30 = round(sin_30)
-rounded_cos_30 = round(cos_30)
-```
-Voordat je de code verder gaat uitwerken wil je eerst het plan helder hebben. Kijk terug naar de voorbeeldopdracht. Welke stappen heb je daar gemaakt? Maak de stappen zo klein mogelijk en verwerk ze in de opdrachten hieronder, op papier.
-
-!!! opdracht-basis "De starttoestand"
-
-    Wat is de starttoestand van het probleem? Beschrijf vanuit waar je het probleem moet gaan oplossen.
-
-!!! opdracht-basis "Het doel"
-    
-    Wanneer het doel bereikt is, is het probleem opgelost. Omschrijf wat je wilt bereiken.
-
-!!! opdracht-basis "De spelregels"
-
-    De mogelijkheden om van de start naar het doel te raken worden beperkt door spelregels. Aan welke spelregels moet jouw oplossing voldoen?
-
-!!! opdracht-basis "Commentaar"
-    
-    Verwerk de starttoestend, de spelregels en het doel in zinnen die je als commentaarregels in je Pythoncode plaatst.
-
-!!! opdracht-basis "Uitwerking van de beeldreconstructie"
-
-    Zet onder de regels commentaar de code om het programma te laten werken. Begin met stukjes code die je meteen weet op te schrijven. Test je code steeds voordat je verder gaat. Maak een schets op papier als je niet weet hoe je verder moet. Leg je probleem uit aan je buurmens als je vastloopt. Kijk in vorige (voorbeeld-)opdrachten voor inspiratie om de code werkend te krijgen, en vraag hulp aan assistenten of stafleden. Wat voor soort scan was dit?
