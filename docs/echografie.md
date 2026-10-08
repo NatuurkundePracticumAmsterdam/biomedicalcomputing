@@ -196,38 +196,59 @@ Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het
     
 ## Meer data is beter
 
-Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat je met de hand hebt gevonden. Zoals eerder is genoemd kan dat te maken hebben met afronden[^afronden]. Als je onder meer hoeken en met meer datapunten werkt zul je zien dat de resolutie van het plaatje steeds beter wordt. Maar dan is het niet meer met de hand uit te rekenen...
+Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat je met de hand hebt gevonden. Zoals eerder is genoemd kan dat te maken hebben met afronden[^afronden]. Als je onder meer hoeken en met meer datapunten werkt zul je zien dat de resolutie van het plaatje steeds beter wordt. Dat levert wel een praktisch probleem op: we moeten een `image` maken met heel veel elementen (pixels).
 
 ![afbeelding met 10 bij 10 pixels en een grijs hartje](figures/hart_ultra-sound_6.svg)
 
 [^afronden]: Mocht je het rekenwerk hebben uitbesteed aan Python dan kan het zijn dat jij een symmetrisch plaatje hebt gekregen terwijl andere mensen die het met de hand uitrekenen een asymmetrisch plaatje kregen (de 'kip'). De reden dat de uitkomsten verschillen heeft te maken met afronden. Als je met de hand hebt uitgerekend rond je waarschijnlijk $2.5$ af naar boven, zoals je ook op school hebt geleerd. Maar Python doet dat anders, die rond het af naar het dichtsbijzijnde even getal. Dus $1.5$ wordt $2$ en $2.5$ wordt ook $2$. Dit voorkomt een bias naar hogere getallen wat je krijgt als je altijd naar boven afrond. Dit algoritme wordt ook door bijvoorbeeld banken gebruikt die niet graag geld verliezen als ze altijd naar boven afronden. Daarom heet het algoritme ook wel _Banker's rounding_.
 
-Er zijn twee csv-bestanden beschikbaar: [phantom](data/ultrasound_phantom.csv) en [mystery](data/ultrasound_mystery.csv). De eerste is een test-bestand. De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Als je deze data omzet in een plaatje verwacht je een ovaal met een cirkel:
+!!! info "Lijsten vermenigvuldigen"
 
-![phantom](figures/phantom.png)
-
-Als het test-bestand gelukt is gaan we daarna het mystery-plaatje reconstrueren. Deze data bestaat uit meer hoeken en meer data-niveaus. Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en het verder niet uitmaakt hoeveel rijen of dataniveau's er zijn.
-
-!!! opdracht-basis "Phantom reconstruction"
-
-    Reconstrueer het plaatje op een vlak van 500 bij 500 pixels. De probe zit weer in het midden bovenaan (pixel $(250,499)$). Om een vlak van $x$ bij $y$ pixels in Python te construeren kun je een lege lijst vullen met $y$ keer een lijst met $x$ kolomen. Hieronder zie je een voorbeeld met code voor een vlak van 5 bij 5 pixels. In eerste instantie hebben alle pixels dezelfde waarde $(0.0)$ met behulp van pixelcoördinaten kun je de waarde aanpassen. Let op: geef eerst aan in welke rij de pixel zit ($y$-waarde) en daarna in welke kolom ($x$-waarde). Dat is nodig omdat de functie waarmee je de afbeelding op het scherm zet (`#!py plt.imshow()`) dat verwacht.
+    Je kunt af en toe verrassende dingen doen in Python. Zo kun je strings optellen en vermenigvuldigen, zoals we eerder gezien hebben in een predict-the-outcome:
     ```py
-    import matplotlib.pyplot as plt
+    long_string = "Hi " + "there!"
+    # "Hi there!"
 
-    SIZE_X = 5
-    SIZE_Y = 5
+    warning = 10 * "!"
+    # !!!!!!!!!!
+    ```
+    en dat kan ook met lijsten:
+    ```py
+    long_list = [1, 2, 3] + [4, 5, 6]
+    # [1, 2, 3, 4, 5, 6]
 
-    image = []
-    for y in range(SIZE_Y):
-        # Add one row with SIZE pixels. Repeating this builds a 2D image.
-        image.append([0.0] * SIZE_X)
+    zeroes = [0.0] * 10
+    # [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    ```
+    Dit vermenigvuldigen van lijsten komt goed van pas in de volgende opdracht.
 
-    image[y_pixel][x_pixel] = 1.0
+!!! opdracht-basis "Fantoombaby op hoge resolutie"
 
+    Download het csv-bestand [ultrasound_phantom.csv](data/ultrasound_phantom.csv). De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:
+
+    ![phantom](figures/phantom.png)
+
+    We moeten de code aanpassen om een `image`-variabele te krijgen met 501 rijen en 501 kolommen. Het is nu niet haalbaar om de code aan te passen zoals we dat eerder gedaan hebben...  Verwijder de code die je hebt staan om rijen te maken en toe te voegen aan image. Vervang die door het volgende:
+
+    1. Maak een lege lijst en stop die in de variable `image`.
+    1. Schrijf nu een loop die 501 keer herhaalt.
+    1. Binnen de loop: maak een lijst met 501 nullen en stop die in de variabele `row`.
+    1. Binnen de loop: voeg `row` toe aan `image`.
+    
+    Als het goed is is je `image` nu 501 bij 501 pixels. Controleer of je nog andere dingen moet veranderen in je code om de reconstructie goed te laten gaan en reconstrueer dan de data in {{file}}`ultrasound_phantom.csv`. Controleer of de afbeelding overeenkomt met het bovenstaande plaatje.
+
+!!! opdracht-basis "Mystery scan"
+    
+    Download het [mystery](data/ultrasound_mystery.csv)-bestand. Deze data bestaat uit meer hoeken en meer data-niveaus, en bevat een realistisch beeld in plaats van een bedacht plaatje. Reconstrueer de data in dit bestand.
+
+!!! opdracht-meer "Oh ja, fxuncties"
+
+    Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en waar je makkelijk het aantal rijen en kolommen kunt wijzigen. Misschien wil je wel met één script _alle_ voorgaande datasets tegelijk reconstrueren en naast elkaar openen. Dat kan door de reconstructiecode in een functie te stoppen. Schrijf een functie zodat je het volgende kunt doen in je code:
+    ```py
+    image = reconstruct_image(
+        "ultrasound_mystery.csv", size=501
+    )
     plt.imshow(image, cmap="gray", origin="lower")
     plt.show()
     ```
-
-    1. De variabelen `y_pixel` en `x_pixel` gaan we vervangen door echte coördinaten. In de oefenopdracht was de probe in pixel $(2,4)$ geplaatst. Pas de code hierboven aan zodat pixel $(2,4)$ de waarde $1.0$ krijgt. 
-    2. Om de pixels op het scherm te tonen gebruiken we `#!py plt.imshow()` van `#!py matplotlib.pyplot`. Het stukje `#!py cmap ="gray"` (_colormap gray_) zorgt ervoor dat de waardes van de pixels worden omgezet in grijswaardes, `#!py origin="lower"` zorgt ervoor dat pixel $(0,0)$ in de linkeronderhoek terecht komt. Wat gebeurt er als je `#!py cmap ="gray"` of `#!py origin="lower"` weghaalt?
-
+    Deze paar regels kun je dan kopiëren om de andere datasets te analyseren,
