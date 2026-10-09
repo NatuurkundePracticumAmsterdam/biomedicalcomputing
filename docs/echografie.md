@@ -202,26 +202,6 @@ Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat 
 
 [^afronden]: Mocht je het rekenwerk hebben uitbesteed aan Python dan kan het zijn dat jij een symmetrisch plaatje hebt gekregen terwijl andere mensen die het met de hand uitrekenen een asymmetrisch plaatje kregen (de 'kip'). De reden dat de uitkomsten verschillen heeft te maken met afronden. Als je met de hand hebt uitgerekend rond je waarschijnlijk $2.5$ af naar boven, zoals je ook op school hebt geleerd. Maar Python doet dat anders, die rondt het af naar het dichtsbijzijnde even getal. Dus $1.5$ wordt $2$ en $2.5$ wordt ook $2$. Dit voorkomt een bias naar hogere getallen wat je krijgt als je altijd naar boven afrondt. Dit algoritme wordt ook door bijvoorbeeld banken gebruikt die niet graag geld verliezen als ze altijd naar boven afronden. Daarom heet het algoritme ook wel _Banker's rounding_.
 
-!!! info "Lijsten vermenigvuldigen"
-
-    Je kunt af en toe verrassende dingen doen in Python. Zo kun je strings optellen en vermenigvuldigen, zoals we eerder gezien hebben in een predict-the-outcome:
-    ```py
-    long_string = "Hi " + "there!"
-    # "Hi there!"
-
-    warning = 10 * "!"
-    # !!!!!!!!!!
-    ```
-    en dat kan ook met lijsten:
-    ```py
-    long_list = [1, 2, 3] + [4, 5, 6]
-    # [1, 2, 3, 4, 5, 6]
-
-    zeroes = [0.0] * 10
-    # [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-    ```
-    Dit vermenigvuldigen van lijsten komt goed van pas in de volgende opdracht.
-
 !!! opdracht-basis "Fantoombaby op hoge resolutie"
 
     Download het csv-bestand [ultrasound_phantom.csv](data/ultrasound_phantom.csv). De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:
