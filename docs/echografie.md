@@ -241,7 +241,7 @@ Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat 
     
     Download het [mystery](data/ultrasound_mystery.csv)-bestand. Deze data bestaat uit meer hoeken en meer data-niveaus, en bevat een realistisch beeld in plaats van een bedacht plaatje. Reconstrueer de data in dit bestand.
 
-!!! opdracht-meer "Oh ja, fxuncties"
+!!! opdracht-meer "Oh ja, functies"
 
     Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en waar je makkelijk het aantal rijen en kolommen kunt wijzigen. Misschien wil je wel met één script _alle_ voorgaande datasets tegelijk reconstrueren en naast elkaar openen. Dat kan door de reconstructiecode in een functie te stoppen. Schrijf een functie zodat je het volgende kunt doen in je code:
     ```py
