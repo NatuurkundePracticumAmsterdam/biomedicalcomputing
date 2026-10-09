@@ -905,24 +905,6 @@ Hoe moet de laatste regel er dan uitzien?</li>
 <h2 id="meer-data-is-beter">Meer data is beter<a class="headerlink" href="#meer-data-is-beter" title="Permanent link">&para;</a></h2>
 <p>Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat je met de hand hebt gevonden. Zoals eerder is genoemd kan dat te maken hebben met afronden<sup id="fnref:afronden"><a class="footnote-ref" href="#fn:afronden">1</a></sup>. Als je onder meer hoeken en met meer datapunten werkt zul je zien dat de resolutie van het plaatje steeds beter wordt. Dat levert wel een praktisch probleem op: we moeten een <code>image</code> maken met heel veel elementen (pixels).</p>
 <p><img alt="afbeelding met 10 bij 10 pixels en een grijs hartje" src="../figures/hart_ultra-sound_6.svg" /></p>
-<div class="admonition info">
-<p class="admonition-title">Lijsten vermenigvuldigen</p>
-<p>Je kunt af en toe verrassende dingen doen in Python. Zo kun je strings optellen en vermenigvuldigen, zoals we eerder gezien hebben in een predict-the-outcome:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">long_string</span> <span class="o">=</span> <span class="s2">&quot;Hi &quot;</span> <span class="o">+</span> <span class="s2">&quot;there!&quot;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># &quot;Hi there!&quot;</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">warning</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="s2">&quot;!&quot;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1"># !!!!!!!!!!</span>
-</span></code></pre></div>
-en dat kan ook met lijsten:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">long_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># [1, 2, 3, 4, 5, 6]</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">zeroes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]</span>
-</span></code></pre></div>
-Dit vermenigvuldigen van lijsten komt goed van pas in de volgende opdracht.</p>
-</div>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Fantoombaby op hoge resolutie</p>
 <p>Download het csv-bestand <a href="../data/ultrasound_phantom.csv">ultrasound_phantom.csv</a>. De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:</p>
@@ -943,11 +925,11 @@ Dit vermenigvuldigen van lijsten komt goed van pas in de volgende opdracht.</p>
 <div class="admonition opdracht-meer">
 <p class="admonition-title">Oh ja, functies</p>
 <p>Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en waar je makkelijk het aantal rijen en kolommen kunt wijzigen. Misschien wil je wel met één script <em>alle</em> voorgaande datasets tegelijk reconstrueren en naast elkaar openen. Dat kan door de reconstructiecode in een functie te stoppen. Schrijf een functie zodat je het volgende kunt doen in je code:
-<div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">image</span> <span class="o">=</span> <span class="n">reconstruct_image</span><span class="p">(</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="s2">&quot;ultrasound_mystery.csv&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">501</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">)</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">image</span> <span class="o">=</span> <span class="n">reconstruct_image</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="s2">&quot;ultrasound_mystery.csv&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">501</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </span></code></pre></div>
 Deze paar regels kun je dan kopiëren om de andere datasets te analyseren,</p>
 </div>
