@@ -292,7 +292,7 @@ Omdat de exon-coördinaten gegeven zijn ten opzichte van de start van het chromo
     1. Kijk naar je geheugensteuntje en gebruik nieuwe functie-aanroepen om het FASTA-bestand van chromosoom 11 in te lezen en bewaar dat in de variable `chromosome_11`.
     1. Schrijf een functie `get_dna_region()` die het `dna` en een `begin` en `end` als parameters accepteert. De functie knipt een stukje uit het dna, van `begin` _tot en met_ `end` en geeft dat terug. Let op: in de genetica telt de _eerste base_ als base 1. Python telt anders. Je kunt de functie testen op een stukje test-dna. Knip base 3 t/m base 5 uit het onzin-dna "abcdefg". Welk antwoord verwacht je dan?
     1. Gebruik je functie om exon 1 en exon 2 van het IFITM1 gen uit het chromosoom te knippen en plak ze aan elkaar. Dit is het stuk dat correspondeert met het mRNA. Omdat we hier nog naar DNA-basen kijken, stop je het aan elkaar geplakte stuk in de variabele `mDNA`.
-    1. Knip de _coding DNA sequence_ uit het mDNA en print die. Controleer dat het eerste codon "ATG" is, het start-codon, en controleer dat het laatste codon een stop-codon is.
+    1. Knip de _coding DNA sequence_ uit het mDNA en print die. Controleer dat het eerste codon "ATG" is, het startcodon, en controleer dat het laatste codon een stopcodon is.
     1. Maak de korte aminozuursequentie. Je hoeft nu niet meer de hele CDS te printen, maar print wel de kort aminozuursequentie en vergelijk of dit overeenkomt met de eerder gevonden sequentie van de opdracht [Welk eiwit hebben we?](#opdr:welk-eiwit).
 
 ## De min-streng
@@ -320,7 +320,7 @@ Van een gen weten we het volgende:
 
 !!! opdracht-basis "Zoek het eiwit"
 
-    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Controleer dat het eerste codon weer een start-codon is en het laatste codon een stop-codon, voordat je de aminozuursequentie vaststelt. Zoek in de [UniProt BLAST database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
+    Gebruik bovenstaande gegevens om de eiwitsequentie te bepalen waarvoor dit gen codeert. Controleer dat het eerste codon weer een startcodon (ATG) is en het laatste codon een stopcodon, voordat je de aminozuursequentie vaststelt. Zoek in de [UniProt BLAST database](https://www.uniprot.org/blast) welk eiwit en welk gen dit is.
 
 !!! opdracht-meer "Waar halen wij de informatie vandaan?"
 
