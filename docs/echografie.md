@@ -125,7 +125,7 @@ Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het
 
 !!! opdracht-basis "Werken met plaatjes"
 
-    Maak een bestand {{file}}`ultrasound_reconstruction.py` en plak bovenstaande code daarin. Als je het runt krijg je een zwart plaatje, want alle staat op nul.
+    Maak een bestand {{file}}`ultrasound_reconstruction.py` en plak het eerste deel van bovenstaande code daarin. Als je het runt krijg je een zwart plaatje, want overal staat een nul.
 
     1. Maak de $(x, y)$-coördinaten (1, 1) en (2, 1) wit. Doe dit met een `#!py image[...][...] = ...`-regel. Controleer of het plaatje klopt met je verwachting.
     1. Als ik dat met variabelen doe, dus bijvoorbeeld:
@@ -139,7 +139,7 @@ Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het
 
 !!! info "Splitsen, splitsen, splitsen!"
 
-    Je hebt inmiddels al vaker de tekst van een bestand ingelezen. Vervolgens heb je de tekst gesplitst in regels met `#! .splitlines()`. Je kunt op méér splitsen dan alleen regeleindes met de aanroep `#!.split()`. Je geeft dan een stukje tekst mee waarop hij moet splitsen. Bijvoorbeeld:
+    Je hebt inmiddels al vaker de tekst van een bestand ingelezen. Vervolgens heb je de tekst gesplitst in regels met `py#! .splitlines()`. Je kunt op méér splitsen dan alleen regeleindes met de aanroep `#!.split()`. Je geeft dan een stukje tekst mee waarop hij moet splitsen. Bijvoorbeeld:
     ```py
     text = "Biomedical Computing"
     text.split(" ")
@@ -225,9 +225,7 @@ Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat 
 
     Idealiter schrijf je vanaf het begin de code op zo'n manier dat je alleen het pad naar het bestand hoeft aan te passen en waar je makkelijk het aantal rijen en kolommen kunt wijzigen. Misschien wil je wel met één script _alle_ voorgaande datasets tegelijk reconstrueren en naast elkaar openen. Dat kan door de reconstructiecode in een functie te stoppen. Schrijf een functie zodat je het volgende kunt doen in je code:
     ```py
-    image = reconstruct_image(
-        "ultrasound_mystery.csv", size=501
-    )
+    image = reconstruct_image("ultrasound_mystery.csv", size=501)
     plt.imshow(image, cmap="gray", origin="lower")
     plt.show()
     ```
