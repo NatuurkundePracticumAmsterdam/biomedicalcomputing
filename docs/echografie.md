@@ -20,7 +20,7 @@ In onderstaand figuur zie je een grijs gebied in de vorm van een hart:
 
 ![afbeelding met grijs hart in wit vlak](figures/hart_ultra-sound_2.svg)
 
-In het volgende figuur zijn de probe $P$ en de vijf richtingen waarin deze meet toegevoegd. De probe staat bovenaan in het midden en zendt geluidsgolven uit in het $x$,$y$-vlak. De vijf meetrichtingen komen overeen met hoeken van -90$\degree$, -30$\degree$, 0$\degree$, 30$\degree$ en 90$\degree$, waarbij 0$\degree$ recht naar beneden wijst. In elke richting meten we op drie afstanden vanaf de probe. Elk meetpunt is aangegeven met een zwarte stip. De eerste meting doen we bij de probe zelf, op afstand 0. 
+In het volgende figuur zijn de probe $P$ en de vijf richtingen waarin deze meet toegevoegd. De probe staat bovenaan in het midden en zendt geluidsgolven uit in het $x$,$y$-vlak. De vijf meetrichtingen komen overeen met hoeken van -90$\degree$, -35$\degree$, 0$\degree$, 35$\degree$ en 90$\degree$, waarbij 0$\degree$ recht naar beneden wijst. In elke richting meten we op drie afstanden vanaf de probe. Elk meetpunt is aangegeven met een zwarte stip. De eerste meting doen we bij de probe zelf, op afstand 0. 
 
 ![afbeelding met probe bovenaan in het midden die in 5 richtingen signaal uitzend](figures/hart_ultra-sound_3.svg)
 
@@ -37,9 +37,9 @@ In ons vereenvoudigde model geeft een meetpunt in het witte gebied een laag sign
 ### antwoord
 ```
 -90,0,1,0
--30,0,1,0
+-35,0,1,0
 0,0,1,1
-30,0,1,0
+35,0,1,0
 90,0,1,0
 ```
 -->
@@ -52,7 +52,7 @@ We bouwen het beeld pixel voor pixel op. Hiervoor gebruiken we een raster van 5 
 
 ![afbeelding van 5 bij 5 pixels met [0,0], [2,4] en [4,4] aangegeven in de betreffende pixel](figures/hart_ultra-sound_4a.svg).
 
-Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpunt ligt. Waar ligt bijvoorbeeld het derde meetpunt in de richting 30$\degree$? Als we de $x$- en $y$-coördinaten kennen, kunnen we de signaalwaarde aan een pixel toekennen.
+Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpunt ligt. Waar ligt bijvoorbeeld het derde meetpunt in de richting 35$\degree$? Als we de $x$- en $y$-coördinaten kennen, kunnen we de signaalwaarde aan een pixel toekennen.
 
 <div id="opdr:meetpunt-naar-pixel"></div>
 !!! opdracht-basis "Van meetpunt naar pixel"
@@ -61,9 +61,9 @@ Om de meetgegevens om te zetten in een beeld, moeten we bepalen waar elk meetpun
     
     ![afbeelding met 5 bij 5 pixels met p midden bovenaan, hoek phi, afstand r en x en y.](figures/hart_ultra-sound_4b.svg)
 
-    1. In bovenstaand figuur zijn drie meetpunten aangegeven voor de richting van 30$\degree$. In welke pixels liggen deze meetpunten? Noteer voor elk meetpunt de coördinaten van de bijbehorende pixel en de afstand $r$ tot de probe.
+    1. In bovenstaand figuur zijn drie meetpunten aangegeven voor de richting van 35$\degree$. In welke pixels liggen deze meetpunten? Noteer voor elk meetpunt de coördinaten van de bijbehorende pixel en de afstand $r$ tot de probe.
     2. Gebruik het figuur en je kennis van goniometrie om vergelijkingen voor $x$ en $y$ op te stellen in termen van $r$ en $\phi$. Houd rekening met de positie van de probe in pixel [2,4].
-    3. Bereken met je vergelijkingen de coördinaten van de drie meetpunten voor de richting 30$\degree$. Rond de coördinaten af op gehele getallen en vergelijk ze met de pixelcoördinaten die je eerder hebt afgelezen. Komen ze overeen?
+    3. Bereken met je vergelijkingen de coördinaten van de drie meetpunten voor de richting 35$\degree$. Rond de coördinaten af op gehele getallen en vergelijk ze met de pixelcoördinaten die je eerder hebt afgelezen. Komen ze overeen?
 
 <!--
 ### antwoord
@@ -179,8 +179,8 @@ Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het
     cos_angle = cos(angle_rad)
 
     # afronden doe je met round()
-    rounded_sin_angle = round(sin_angle)
-    rounded_cos_angle = round(cos_angle)
+    number = 32.9786
+    rounded_number = round(number)
     ```
 
 !!! opdracht-basis "Reconstructie van het beeld"
@@ -188,9 +188,9 @@ Voordat we de data gaan verwerken is het handig om vast uit te zoeken hoe we het
     Voordat je de code verder gaat uitwerken wil je eerst het plan helder hebben. Kijk terug naar de voorbeeldopdrachten, o.a. [van meetpunt naar pixel](#opdr:meetpunt-naar-pixel). Welke rekenstappen heb je daar gemaakt? Maak de stappen zo klein mogelijk en verwerk ze in je code.
 
     1. Werk verder in het bestand {{file}}`ultrasound_reconstruction.py`.
-    1. Nadat je de hoek print: schrijf een loop over de meetwaardes, waarbij je bijhoudt welke waarde het is (eerste, tweede, derde) want dat is nodig voor de berekeningen.
-    1. Voor iedere meetwaarde, bereken de $x$- en $y$-coördinaten.
-    1. Geef de betreffende pixel in `image` de bijbehorende meetwaarde.
+    2. Nadat je de hoek print: schrijf een loop over de meetwaardes, waarbij je bijhoudt welke waarde het is (eerste, tweede, derde) want dat is nodig voor de berekeningen.
+    3. Voor iedere meetwaarde, bereken de $x$- en $y$-coördinaten.
+    4. Geef de betreffende pixel in `image` de bijbehorende meetwaarde.
 
     Als deze stappen gelukt zijn dan heb je een plaatje! Als je dat nog niet gedaan hebt, dan is dit een _heel goed moment_ om te committen!
     
@@ -204,7 +204,7 @@ Je hebt bij de vorige opdracht misschien gezien dat het plaatje afwijkt van wat 
 
 !!! opdracht-basis "Fantoombaby op hoge resolutie"
 
-    Download het csv-bestand [ultrasound_phantom.csv](data/ultrasound_phantom.csv). De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:
+    Download het csv-bestand [ultrasound_phantom.csv](data/ultrasound_phantom.csv). De data bestaat uit 3 niveaus, $0.0$ (geen signaal), $0.3$ (een zwak signaal) en $1.0$ (sterk signaal). Net als bij de vorige opdracht bestaat de eerste kolom uit hoeken en de andere kolommen uit metingen. Maar dit databestand bevat zóveel metingen dat we het moeten reconstrueren in een 501x501 plaatje, in plaats van een 5x5 plaatje. De probe staat opnieuw bovenaan in het midden. Aan het eind van deze opdracht verwacht je een ovaal met een cirkel, een fantoombaby:
 
     ![phantom](figures/phantom.png)
 
