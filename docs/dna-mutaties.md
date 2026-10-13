@@ -102,7 +102,7 @@ Nu we onze werkomgeving helemaal hebben ingericht kunnen we aan de slag met de e
     
     1. Laat je script, als je tussen de 18 en 20 jaar oud bent, printen `You're still a teenager, but already an adult!` Controleer ook of de persoon jonger is dan 4 of ouder dan 68. In dat geval hoef je niet te werken en heb je lekker veel vrije tijd.
 
-!!! opdracht-meer "F-strings"
+!!! opdracht-meer "f-strings"
     
     Misschien heb je gemerkt dat als je `#!py print("Hi", name, "!")` gebruikt, dat Python automatisch spaties invoegt tussen de verschillende stukken. Dus `Hi Alice !` in plaats van `HiAlice!`. Als je meer controle wilt over waar wel en niet spaties komen, kun je zogeheten _f-strings_ gebruiken. Een f-string is een string (`#!py "Hi"`) waar je de letter `f` vóór schrijft (`#!py f"Hi"`). Als je dat doet dan werkt dat hetzelfde als een gewone string, _behalve_ dat dingen die tussen accolades `{}` staan worden vervangen. Je kunt dan schrijven: `#!py print(f"Hi {name}!")` met als uitvoer `Hi Alice!`. De variabele die tussen haakjes stond is vervangen door de _waarde_ van die variabele. Hierbij heb je dus kunnen kiezen voor _wel_ een spatie tussen Hi en Alice, maar niet tussen Alice en het uitroepteken.
 

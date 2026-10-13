@@ -100,6 +100,18 @@ plt.plot(x_data, y2_data, color="seagreen", marker="o", linestyle=":", label="Sl
 ```
 De eerste dataset heeft geen linestyle (`""`) dus er worden alleen punten weergegeven. Het valt je misschien op dat we de volgorde van aanroepen verandert hebben: éérst de horizontale en verticale lijnen en dan pas de datasets. Dit zorgt ervoor dat de datasets bovenop de lijnen geplot worden, met de lijnen op de achtergrond.
 
+## Bewaren van de figuur in een bestand
+
+Als je de figuur gemaakt hebt wil je die wellicht bewaren in een bestand om uit te printen of om op te nemen in je verslag. Dit kan eenvoudig met `#!py plt.savefig()`. Geef de bestandsnaam mee en matplotlib bepaalt zelf wat voor bestand je nodig hebt:
+```py
+# bewaar als PDF-bestand
+plt.savefig("plot_paracetamol_80kg_500mg.pdf")
+
+# bewaar als PNG-bestand
+plt.savefig("plot_paracetamol_80kg_500mg.png")
+```
+Kies het liefst voor een PDF-bestand omdat je deze heel scherp kunt afdrukken. Een PNG-bestand verliest zijn scherpte als je de afbeelding te groot afdrukt.
+
 ## Samenvattend
 
 De code van bovenstaand voorbeeld is samengevoegd:
