@@ -49,6 +49,18 @@ fit = model.fit(y_data, x=x_data, a=1, b=1)
 ```
 De eerste parameter is de variabele met de metingen (in ons geval `y_data`). Met `x=x_data` geven we aan dat we voor de `x` uit ons model de waardes uit `x_data` gaan gebruiken. Met `a=1` en `b=1` geven we startwaardes voor de parameters. Daarna gaat lmfit de beste waardes proberen te vinden.
 
+!!! warning
+    
+    Fitten lukt niet altijd! Als je fit mislukt en een gek resultaat geeft, of zelfs je programma laat crashen, probeer dan betere waardes voor de parameters uit je model te vinden. Als je een betere eerste schatting geeft dan kan lmfit gerichter zoeken en lukt het meestal wél om je fit te laten slagen.
+
+## Een fit met foutenvlaggen
+
+Wanneer de data die je wilt fitten foutenvlaggen heeft dan moet je die ook meegeven aan lmfit. Een fit met foutenvlaggen is altijd beter dan zonder foutenvlaggen! Je zult hier echter een beetje moeite voor moeten doen. Fitalgoritmes werken namelijk niet zozeer met foutenvlaggen, maar met _gewichten_: hoe sterk moet een datapunt worden meegenomen? Ofwel: hoe betrouwbaar is het datapunt? Hoe kleiner de onzekerheid, hoe _groter_ het gewicht. Als je de onzekerheden hebt dan moet je voor iedere onzekerheid het gewicht uitrekenen met `#!py weight = 1 / uncertainty`. Als je alle gewichten bewaard hebt in de variabele `weights` dan gaat de fit als volgt:
+```py
+fit = model.fit(y_data, x=x_data, weights=weights, a=1, b=1)
+```
+Alleen de parameter `weights` is dus extra; de rest is hetzelfde.
+
 ## Het fit-resultaat
 
 Als de fit gelukt is zonder foutmelding, dan bevat de variabele `fit` alle informatie over de beste fit. De informatie over de parameters is opgeslagen in `fit.params`. Je kunt de parameter `a` benaderen met `#!py fit.params['a']`. De waarde is beschikbaar in `.value` en de onzekerheid in `.stderr` (afkorting van _standard error_), als volgt:
@@ -56,6 +68,13 @@ Als de fit gelukt is zonder foutmelding, dan bevat de variabele `fit` alle infor
 a_value = fit.params['a'].value
 a_uncertainty = fit.params['a'].stderr
 ```
+Als je de fitcurve wilt plotten dan wil je de y-waardes van de fit weten:
+```py
+# (x_data, y_data) contains the measurement data used for the fit
+y_fit = fit.best_fit
+# (x_data, y_fit) contains the best fit
+```
+Je kunt `(x_data, y_fit)` dan gebruiken voor je plot.
 
 ## Samenvattend
 

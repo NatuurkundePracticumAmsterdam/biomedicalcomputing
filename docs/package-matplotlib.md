@@ -44,6 +44,13 @@ plt.plot(x_data, y_data)
 plt.plot(x_data, y2_data)
 ```
 
+## Foutenvlaggen
+
+Als je een dataset wilt plotten mét foutenvlaggen maak dan gebruik van de `#!py plt.errorbar()` functie. Deze werkt hetzelfde als `#!py plt.plot()` maar accepteert extra parameters `xerr` en `yerr` voor de foutenvlaggen op respectievelijk de x-as en de y-as. Als je foutenvlaggen op de y-as wilt plotten, en de groottes van de onzekerheden zitten in de variabele `y_uncertainty` dan werkt dat als volgt:
+```py
+plt.errorbar(x_data, y_data, yerr=y_uncertainty)
+```
+
 ## Grootheden en eenheden langs de assen plaatsen
 
 Het is belangrijk om in een grafiek te laten zien _wat_ je precies geplot hebt. Wat staat er langs de assen? Voeg aslabels toe met:
