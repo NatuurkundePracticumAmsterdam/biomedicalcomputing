@@ -42,11 +42,11 @@ met $C(t)$ de concentratie medicijn op tijdstip $t$, $C_0$ de beginconcentratie 
 
 !!! opdracht-basis "Fitten van een (te) vereenvoudigd model"
 
-    In de [appendix over lmfit](package-lmfit.md) kun je meer informatie vinden over het uitvoeren van een fit.
+    In de [appendix over lmfit](package-lmfit.md) kun je meer informatie vinden over het uitvoeren van een fit. Lees vooral ook het stukje over fitten met foutenvlaggen.
 
-    1. Gebruik lmfit om de data te fitten met het bovenstaande model. Gebruik voor nu _geen_ foutenvlaggen!
+    1. Maak, voordat we de fit kunnen doen, een lege lijst voor de gewichten. Gebruik een loop om voor iedere meetwaarde het gewicht uit te rekenen en die toe te voegen aan de lijst. Tip: je hebt al een loop die je mogelijk kunt gebruiken.
+    1. Gebruik lmfit om de data te fitten met het bovenstaande model (vergelijking 1) waarbij je gebruik maakt van de gewichten.
     1. Gebruik het fit-resultaat om de fitcurve te plotten in je bestaande grafiek. Plot de curve met een lijn, en zonder punten. Wat vind je van het resultaat?
-    1. Het is beter om wel [foutenvlaggen te gebruiken](package-lmfit.md#een-fit-met-foutenvlaggen). Maak, voordat je de fit doet, een lege lijst voor de gewichten. Gebruik een loop om voor iedere meetwaarde het gewicht uit te rekenen en die toe te voegen aan de lijst. Tip: je hebt al een loop die je mogelijk kunt gebruiken. Pas de fit aan zodat hij gebruik maakt van de foutenvlaggen en bekijk het nieuwe resultaat. Waarom is die zo anders dan het resultaat zonder foutenvlaggen?
 
 Het is je vast opgevallen dat de fit niet goed past op de meetpunten. Dat komt omdat het model te eenvoudig is. Dat gaat er namelijk vanuit dat het medicijn zich snel verspreidt door je lichaam en dan langzaam wordt afgebroken door de lever. In werkelijkheid verspreidt het medicijn zich snel door je bloed (waarvan we de concentratie meten), wordt dan redelijk snel opgenomen door de weefsels in je lichaam (de snelle afname van de concentratie in het bloed) en langzaam afgebroken door de lever terwijl de concentratie in het bloed en de concentratie in de weefsels in evenwicht blijven (de langzame afname). We kunnen dus beter het volgende model gebruiken:
 \begin{equation}
@@ -56,7 +56,7 @@ waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu
 
 !!! opdracht-basis "Fitten van het twee-compartimentenmodel"
 
-    1. Gebruik lmift om de data te fitten met het verbeterde model. Let op: haal de oude fit niet weg, maar plot _beide_ fits in dezelfde grafiek zodat je goed kunt vergelijken.
+    1. Gebruik lmift om de data te fitten met het verbeterde model uit vergelijking 2. Let op: haal de oude fit niet weg, maar plot _beide_ fits in dezelfde grafiek zodat je goed kunt vergelijken.
     1. Gebruik een legenda voor de twee curves zodat je goed kunt zien welke curve bij welk model hoort. Past het twee-compartimentenmodel beter?
     1. Print de waarde mét onzekerheid van de twee halfwaardetijden uit het verbeterde model, en geef de biologische betekenis van de twee waardes.
 
