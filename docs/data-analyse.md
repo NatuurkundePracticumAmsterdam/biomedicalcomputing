@@ -63,7 +63,9 @@ Het is je vast opgevallen dat de fit niet goed past bij de meetpunten. Dat komt 
 \begin{equation}
 C(t) = C_1 \cdot \frac{1}{2}^\frac{t}{T_1} + C_2 \cdot \frac{1}{2}^\frac{t}{T_2},
 \end{equation}
-waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu gebaseerd zijn op twee zogeheten _compartimenten_: het bloed en de weefsels. De twee termen beschrijven samen de concentratie van het medicijn in het bloed. Omdat dit een oplossing is van een gekoppelde differentiaalvergelijking kun je niet eenvoudig stellen dat $C_1$ de concentratie is in het bloed en $C_2$ de concentratie in het weefsel; de volledige uitdrukking is omwille van eenvoud omgeschreven. Dit technisch detail mag je buiten beschouwing laten.
+waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu gebaseerd zijn op twee zogeheten _compartimenten_: het bloed en de weefsels.[^compartimenten]
+
+[^compartimenten]: Dit model beschrijf je wiskundig als een stelsel van twee gekoppelde differentiaalvergelijkingen. Een differentiaalvergelijking is een goede keuze omdat je kijkt naar hoe de medicijnconcentratie _verandert_, en omdat deze verandering afhankelijk is van de concentratie op dat moment. Gekoppeld, omdat we kijken naar niet één verandering bij één toestand, maar twee veranderingen die afhankelijk zijn van twee toestanden (in bloed en weefsels). De concentraties in bloed en weefsels zijn van elkaar afhankelijk. De twee termen in de wiskundige oplossing (vergelijking 2) beschrijven samen de concentratie van het medicijn _in het bloed_ en is dus de oplossing voor één compartiment. Je kunt dus niet eenvoudig stellen dat $C_1$ de concentratie is in het bloed en $C_2$ de concentratie in het weefsel; het zijn coëfficiënten van de oplossing. _Heel vergelijking 2_ is de concentratie in het bloed. Voor de concentratie in de weefsels zul je hetzelfde stelsel moeten oplossen voor het andere compartiment; je krijgt dan een soortgelijke vergelijking maar met andere coëfficiënten, die we $C_3$ en $C_4$ kunnen noemen.
 
 !!! opdracht-basis "Fitten van het tweecompartimentenmodel"
 
