@@ -25,7 +25,7 @@
     
     
       
-        <title>Data-analyse - Biomedical Computing</title>
+        <title>Analyse van (bio)medische meetgegevens - Biomedical Computing</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-analyse" class="md-skip">
+        <a href="#analyse-van-biomedische-meetgegevens" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data-analyse
+              Analyse van (bio)medische meetgegevens
             
           </span>
         </div>
@@ -465,7 +465,7 @@
   <span class="md-ellipsis">
     
   
-    Data-analyse
+    Analyse van (bio)medische meetgegevens
   
 
     
@@ -483,7 +483,7 @@
   <span class="md-ellipsis">
     
   
-    Data-analyse
+    Analyse van (bio)medische meetgegevens
   
 
     
@@ -693,7 +693,7 @@
 
 
 
-<h1 id="data-analyse">Data-analyse<a class="headerlink" href="#data-analyse" title="Permanent link">&para;</a></h1>
+<h1 id="analyse-van-biomedische-meetgegevens">Analyse van (bio)medische meetgegevens<a class="headerlink" href="#analyse-van-biomedische-meetgegevens" title="Permanent link">&para;</a></h1>
 <p>In het hoofdstuk <em>Farmacokinetiek</em> hebben we van twee medicijnen bekeken hoe ze worden opgenomen en afgebroken in het menselijk lichaam. We zijn ervan uitgegaan dat de medicijnen zich zeer snel verdeelden over het lichaam en vervolgens langzaam werden afgebroken volgens een eenvoudig exponentieel model met een halfwaardetijd. Als je wilt weten of dat klopt, zul je de concentratie van het medicijn in het bloed van een patiënt op verschillende momenten moeten meten. Je neemt dan op gezette tijden een buisje bloed af en analyseert dat. Als je de concentraties hebt bepaald en uitgezet in een grafiek, zul je het exponentiële model aan de meetgegevens moeten fitten om te kijken of de datapunten en het model goed overeenkomen. Dit is dezelfde werkwijze als die je hebt toegepast op het natuurkundepracticum. Daar voerde je een experiment uit en fitte je de metingen aan een natuurkundig model om te kijken of die goed overeen kwamen en zo ja, wat de waardes van de modelparameters waren. Je hebt dat daar gedaan met Tailor. Maar dat kan natuurlijk ook met Python! Dat is meer typewerk maar geeft je veel meer vrijheid over wat je <em>precies</em> gedaan wilt krijgen.</p>
 <div class="admonition info">
 <p class="admonition-title">Aansluiting MNW-programma</p>
@@ -804,7 +804,7 @@ Maak een lege lijst voor de gewichten. Gebruik een loop om voor elke gemeten con
 \begin{equation}
 C(t) = C_1 \cdot \frac{1}{2}^\frac{t}{T_1} + C_2 \cdot \frac{1}{2}^\frac{t}{T_2},
 \end{equation}
-waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu gebaseerd zijn op twee zogeheten <em>compartimenten</em>: het bloed en de weefsels. De twee termen beschrijven samen de concentratie van het medicijn in het bloed. Omdat dit een oplossing is van een gekoppelde differentiaalvergelijking kun je niet eenvoudig stellen dat $C_1$ de concentratie is in het bloed en $C_2$ de concentratie in het weefsel; de volledige uitdrukking is omwille van eenvoud omgeschreven. Dit technisch detail mag je buiten beschouwing laten.</p>
+waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu gebaseerd zijn op twee zogeheten <em>compartimenten</em>: het bloed en de weefsels.<sup id="fnref:compartimenten"><a class="footnote-ref" href="#fn:compartimenten">2</a></sup></p>
 <div class="admonition opdracht-basis">
 <p class="admonition-title">Fitten van het tweecompartimentenmodel</p>
 <p>Je gaat zo <em>naast</em> het vereenvoudigde model ook het tweecompartimentenmodel fitten. Je volgt hiervoor dezelfde stappen als in de <a href="#opdr:vereenvoudigd-model"><em>opdracht Fitten van een (te) vereenvoudigd model</em></a>. Gebruik voor het tweecompartimentenmodel en het fitresultaat andere variabelenamen dan bij de eerdere fit, zodat je de resultaten van beide modellen naast elkaar kunt blijven gebruiken.</p>
@@ -852,6 +852,9 @@ waarbij de concentraties $C_1$ en $C_2$ en de halfwaardetijden $T_1$ en $T_2$ nu
 <ol>
 <li id="fn:scatter">
 <p>Een scatter plot geeft datapunten weer als losse punten, zonder ze met een lijn te verbinden.&#160;<a class="footnote-backref" href="#fnref:scatter" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:compartimenten">
+<p>Dit model beschrijf je wiskundig als een stelsel van twee gekoppelde differentiaalvergelijkingen. Een differentiaalvergelijking is een goede keuze omdat je kijkt naar hoe de medicijnconcentratie <em>verandert</em>, en omdat deze verandering afhankelijk is van de concentratie op dat moment. Gekoppeld, omdat we kijken naar niet één verandering bij één toestand, maar twee veranderingen die afhankelijk zijn van twee toestanden (in bloed en weefsels). De concentraties in bloed en weefsels zijn van elkaar afhankelijk. De twee termen in de wiskundige oplossing (vergelijking 2) beschrijven samen de concentratie van het medicijn <em>in het bloed</em> en is dus de oplossing voor één compartiment. Je kunt dus niet eenvoudig stellen dat $C_1$ de concentratie is in het bloed en $C_2$ de concentratie in het weefsel; het zijn coëfficiënten van de oplossing. <em>Heel vergelijking 2</em> is de concentratie in het bloed. Voor de concentratie in de weefsels zul je hetzelfde stelsel moeten oplossen voor het andere compartiment; je krijgt dan een soortgelijke vergelijking maar met andere coëfficiënten, die we $C_3$ en $C_4$ kunnen noemen.&#160;<a class="footnote-backref" href="#fnref:compartimenten" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
